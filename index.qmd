@@ -1,6 +1,16 @@
 ---
-title: "MATH 476 — Spring 2026"
-redirect: pages/index.html
+title: "MATH 476 — Statistics"
+subtitle: "Spring 2026"
 ---
 
-Redirecting…
+Welcome to **MATH 476 — Statistics**.
+
+This course introduces probability and statistics with an emphasis on
+modeling, data, and careful reasoning.
+
+## Practical Information
+
+- **Instructor:** Fred J. Hickernell  
+- **Meeting times:** T/Th (time and room TBA)  
+- **Textbook:** Wackerly, Mendenhall & Scheaffer  
+- **Course website:** This site

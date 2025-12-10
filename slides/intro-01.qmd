@@ -1,0 +1,34 @@
+---
+title: "Introduction & Course Overview"
+subtitle: "MATH 476 — Spring 2026"
+author: "Fred J. Hickernell"
+date: 2026-01-13
+format:
+  revealjs:
+    slide-number: true
+    center: false
+---
+
+## Course Information
+
+- Instructor: Fred J. Hickernell  
+- Course: MATH 476 — Statistics  
+- Semester: Spring 2026  
+
+---
+
+## What is Statistics?
+
+- Descriptive statistics
+- Inferential statistics
+- Probability as the foundation
+- Modeling real-world variability
+
+---
+
+## Course Components
+
+- Reading from the textbook
+- In-class activities and examples
+- Homework assignments
+- Exams (details in syllabus)

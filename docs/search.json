@@ -1,0 +1,254 @@
+[
+  {
+    "objectID": "pages/schedule.html",
+    "href": "pages/schedule.html",
+    "title": "Schedule",
+    "section": "",
+    "text": "Date\nLecture\nTopic\nSlides\n\n\n\n\nJan 13\n1\nIntro & Course Overview\nSlides\n\n\nJan 15\n2\nReview of Probability"
+  },
+  {
+    "objectID": "pages/syllabus.html",
+    "href": "pages/syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "This course introduces probability models and statistical methods, including discrete and continuous random variables, estimation, hypothesis testing, and simple regression."
+  },
+  {
+    "objectID": "pages/syllabus.html#course-description",
+    "href": "pages/syllabus.html#course-description",
+    "title": "Syllabus",
+    "section": "",
+    "text": "This course introduces probability models and statistical methods, including discrete and continuous random variables, estimation, hypothesis testing, and simple regression."
+  },
+  {
+    "objectID": "pages/syllabus.html#learning-objectives",
+    "href": "pages/syllabus.html#learning-objectives",
+    "title": "Syllabus",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\n\nUnderstand basic probability concepts.\nWork with discrete and continuous distributions.\nUse sampling distributions to construct estimators and tests.\nInterpret confidence intervals and p-values in context."
+  },
+  {
+    "objectID": "pages/homework.html",
+    "href": "pages/homework.html",
+    "title": "Homework",
+    "section": "",
+    "text": "Homework assignments will be posted here as the semester progresses."
+  },
+  {
+    "objectID": "pages/homework.html#homework-1",
+    "href": "pages/homework.html#homework-1",
+    "title": "Homework",
+    "section": "Homework 1",
+    "text": "Homework 1\nTo be announced."
+  },
+  {
+    "objectID": "slides/intro-01.html#course-information",
+    "href": "slides/intro-01.html#course-information",
+    "title": "Introduction & Course Overview",
+    "section": "Course Information",
+    "text": "Course Information\n\nInstructor: Fred J. Hickernell\n\nCourse: MATH 476 — Statistics\n\nSemester: Spring 2026"
+  },
+  {
+    "objectID": "slides/intro-01.html#what-is-statistics",
+    "href": "slides/intro-01.html#what-is-statistics",
+    "title": "Introduction & Course Overview",
+    "section": "What is Statistics?",
+    "text": "What is Statistics?\n\nDescriptive statistics\nInferential statistics\nProbability as the foundation\nModeling real-world variability"
+  },
+  {
+    "objectID": "slides/intro-01.html#course-components",
+    "href": "slides/intro-01.html#course-components",
+    "title": "Introduction & Course Overview",
+    "section": "Course Components",
+    "text": "Course Components\n\nReading from the textbook\nIn-class activities and examples\nHomework assignments\nExams (details in syllabus)"
+  },
+  {
+    "objectID": "classlib/classlib/math_565_→_qmcpy_kernels_discrepancy_convergence_plan.html",
+    "href": "classlib/classlib/math_565_→_qmcpy_kernels_discrepancy_convergence_plan.html",
+    "title": "MATH565 → QMCPy: Kernels & Discrepancy Convergence Plan",
+    "section": "",
+    "text": "Owner: Fred J. Hickernell\nRepos:\n- Class repo (staging): QMCSoftware/MATH565Fall2025\n- Library repo (integration target): QMCSoftware/QMCSoftware (branch: develop)\n\n\n\nKeep course code useful for teaching and production-ready enough to upstream into QMCPy.\nUnify kernel & discrepancy abstractions so the same APIs serve: (a) discrepancy metrics, (b) two-sample tests, (c) Gaussian-process (GP) regression / Bayesian cubature.\nProvide a clean growth path for new kernels and target distributions (measures).\nSupport comparisons point set vs measure and point set vs point set.\nAllow efficient O(n) discrepancy evaluation when kernel/point-set structure matches.\nEnsure all kernel–measure integrals are exact/analytical, not estimated by Monte Carlo.\n\n\n\n\n\nTerminology: public API should use discrepancy (historical name) instead of mmd; documentation may reference MMD for clarity.\nSingle source of truth for APIs: define abstract base classes (ABCs) once; keep MATH565 in lockstep with QMCPy’s develop branch.\nStateless kernels (parameters immutable/frozen dataclasses) + lightweight vectorized calls (NumPy baseline; optional JAX/PyTorch later).\nSeparation of concerns: kernel (similarity) vs measure (target distribution) vs design (point sets) vs discrepancy (metrics/comparisons).\nSpecial structure: design kernels and point sets so Gram matrices have exploitable forms (circulant, FFT-ready, etc.), reducing cost from O(n²) to O(n).\nHyperparameters: all kernels expose optional tunable parameters (lengthscale, smoothness, etc.) with clear defaults.\nDocumentation-first: doctests + minimal examples that mirror class notebooks; autodoc to site.\n\n\n\n\n\n\n@dataclass(frozen=True)\nclass Kernel:\n    name: str\n    var: float = 1.0\n    lengthscale: float | Sequence[float] = 1.0\n    periodic: bool = False\n    def gram(self, X: np.ndarray, Y: np.ndarray, diag: bool=False) -&gt; np.ndarray: ...\n    def k(self, x: np.ndarray, y: np.ndarray) -&gt; float: ...\n    @property\n    def is_stationary(self) -&gt; bool: ...\nConventions: X shape (n,d), Y shape (m,d).\nSuggested concrete kernels - SquaredExponential(var, lengthscale) - Matern(nu, lengthscale, var) - ProductSobolev(gamma: Sequence[float], anchored: bool) - Brownian, IntegratedBrownian - PeriodicExponential(lengthscale, period) - QuadraticBernoulli(d) (periodic discrepancy kernel)\n\n\n\nclass Measure(Protocol):\n    name: str\n    def sample(self, n: int, d: int, rng: np.random.Generator) -&gt; np.ndarray: ...\n    def mean_feature(self, kernel: Kernel, X: np.ndarray | None = None) -&gt; np.ndarray:\n        \"\"\"Analytical E_{T~P}[k(T, •)] at X. Must not use MC.\"\"\"\nConcrete measures: UniformUnitCube, Gaussian(mean, cov), Beta, TriangularSymmetric([-1,1]), CustomAnalytical, Empirical(points).\n\n\n\n@dataclass(frozen=True)\nclass Design:\n    X: np.ndarray  # (n,d)\n    name: str = \"\"\n    measure: Measure | None = None\n    special_structure: str | None = None  # e.g. \"lattice\", \"digitalnet\"\n\n\n\nclass Discrepancy(Protocol):\n    name: str\n    def value(self) -&gt; float: ...\n    def squared(self) -&gt; float: ...\nImplementations: - DiscrepancyOneSample(...) - DiscrepancyTwoSample(...) - CenteredDiscrepancy(...) - PrefixDiscrepancy(...)\n\n\n\n\n(same as previous draft)\n\n\n\n\nPublic API: discrepancy_* not mmd.\nKernels: dataclasses with optional hyperparameters; user can override.\nMeasures: analytical expectation required; MC fallback not allowed.\nDesigns: flag special structures so optimized O(n) discrepancy algorithms can be triggered.\n\n\n\n\ndef discrepancy(X: np.ndarray, kernel: Kernel, measure: Measure, unbiased: bool=False) -&gt; float: ...\n\ndef discrepancy_two_sample(X: np.ndarray, Y: np.ndarray, kernel: Kernel, unbiased: bool=False) -&gt; float: ...\n\ndef discrepancy_prefix(X: np.ndarray, kernel: Kernel, measure: Measure) -&gt; np.ndarray: ...\n\ndef centered_discrepancy(X: np.ndarray, kernel: Kernel | None=None, gamma: float | Sequence[float]=1.0) -&gt; float: ...\n\n\n\n\nRank-1 Lattice Rules + Quadratic Bernoulli Kernel: Gram matrix has circulant structure. Discrepancy can be computed using FFT in O(n log n) or reduced to O(n) with further structure.\nDigital Nets (Sobol, Niederreiter): when paired with product Sobolev kernels, matrix-vector products collapse to low-cost evaluations leveraging Walsh/Fourier representations.\nThese optimizations require tagging the design with special_structure=\"lattice\" or \"digitalnet\" and providing specialized implementations in discrepancy/fast.py.\n\n\n\n\n(same as before, plus implementation of optimized routines for structured designs)\n\n\n\n\nAnalytical integrals cross-checked against literature.\nEfficiency benchmarks: O(n) or FFT-based methods compared to O(n²) baseline.\nHyperparameter tuning examples in docs.\n\n\n\n\n\nUse “discrepancy” in APIs and lectures; note equivalence to MMD in background materials.\nDemonstrate periodic/stationary kernels and O(n) discrepancy evaluation with lattice examples.\n\n\n\n\n\nExpand stationary & periodic kernel families (Quadratic Bernoulli, higher-order Bernoulli).\nAdd specialized discrepancy algorithms for digital nets.\nBroaden measures with exact integrals.\n\n\n\n\n\nScaffold base modules in MATH565 (kernel.base, measure.base, discrepancy.one_sample).\n\nPort existing kernels/discrepancies with new naming (discrepancy_*).\n\nImplement analytical integrals for all kernels–measures (no MC fallbacks).\n\nAdd optimized O(n) routines for lattice/digital net point sets.\n\nWrite minimal unit tests + doctests.\n\nDraft PR to QMCPy develop with mirrored layout."
+  },
+  {
+    "objectID": "classlib/classlib/math_565_→_qmcpy_kernels_discrepancy_convergence_plan.html#goals",
+    "href": "classlib/classlib/math_565_→_qmcpy_kernels_discrepancy_convergence_plan.html#goals",
+    "title": "MATH565 → QMCPy: Kernels & Discrepancy Convergence Plan",
+    "section": "",
+    "text": "Keep course code useful for teaching and production-ready enough to upstream into QMCPy.\nUnify kernel & discrepancy abstractions so the same APIs serve: (a) discrepancy metrics, (b) two-sample tests, (c) Gaussian-process (GP) regression / Bayesian cubature.\nProvide a clean growth path for new kernels and target distributions (measures).\nSupport comparisons point set vs measure and point set vs point set.\nAllow efficient O(n) discrepancy evaluation when kernel/point-set structure matches.\nEnsure all kernel–measure integrals are exact/analytical, not estimated by Monte Carlo."
+  },
+  {
+    "objectID": "classlib/classlib/math_565_→_qmcpy_kernels_discrepancy_convergence_plan.html#design-principles",
+    "href": "classlib/classlib/math_565_→_qmcpy_kernels_discrepancy_convergence_plan.html#design-principles",
+    "title": "MATH565 → QMCPy: Kernels & Discrepancy Convergence Plan",
+    "section": "",
+    "text": "Terminology: public API should use discrepancy (historical name) instead of mmd; documentation may reference MMD for clarity.\nSingle source of truth for APIs: define abstract base classes (ABCs) once; keep MATH565 in lockstep with QMCPy’s develop branch.\nStateless kernels (parameters immutable/frozen dataclasses) + lightweight vectorized calls (NumPy baseline; optional JAX/PyTorch later).\nSeparation of concerns: kernel (similarity) vs measure (target distribution) vs design (point sets) vs discrepancy (metrics/comparisons).\nSpecial structure: design kernels and point sets so Gram matrices have exploitable forms (circulant, FFT-ready, etc.), reducing cost from O(n²) to O(n).\nHyperparameters: all kernels expose optional tunable parameters (lengthscale, smoothness, etc.) with clear defaults.\nDocumentation-first: doctests + minimal examples that mirror class notebooks; autodoc to site."
+  },
+  {
+    "objectID": "classlib/classlib/math_565_→_qmcpy_kernels_discrepancy_convergence_plan.html#unifying-abstractions",
+    "href": "classlib/classlib/math_565_→_qmcpy_kernels_discrepancy_convergence_plan.html#unifying-abstractions",
+    "title": "MATH565 → QMCPy: Kernels & Discrepancy Convergence Plan",
+    "section": "",
+    "text": "@dataclass(frozen=True)\nclass Kernel:\n    name: str\n    var: float = 1.0\n    lengthscale: float | Sequence[float] = 1.0\n    periodic: bool = False\n    def gram(self, X: np.ndarray, Y: np.ndarray, diag: bool=False) -&gt; np.ndarray: ...\n    def k(self, x: np.ndarray, y: np.ndarray) -&gt; float: ...\n    @property\n    def is_stationary(self) -&gt; bool: ...\nConventions: X shape (n,d), Y shape (m,d).\nSuggested concrete kernels - SquaredExponential(var, lengthscale) - Matern(nu, lengthscale, var) - ProductSobolev(gamma: Sequence[float], anchored: bool) - Brownian, IntegratedBrownian - PeriodicExponential(lengthscale, period) - QuadraticBernoulli(d) (periodic discrepancy kernel)\n\n\n\nclass Measure(Protocol):\n    name: str\n    def sample(self, n: int, d: int, rng: np.random.Generator) -&gt; np.ndarray: ...\n    def mean_feature(self, kernel: Kernel, X: np.ndarray | None = None) -&gt; np.ndarray:\n        \"\"\"Analytical E_{T~P}[k(T, •)] at X. Must not use MC.\"\"\"\nConcrete measures: UniformUnitCube, Gaussian(mean, cov), Beta, TriangularSymmetric([-1,1]), CustomAnalytical, Empirical(points).\n\n\n\n@dataclass(frozen=True)\nclass Design:\n    X: np.ndarray  # (n,d)\n    name: str = \"\"\n    measure: Measure | None = None\n    special_structure: str | None = None  # e.g. \"lattice\", \"digitalnet\"\n\n\n\nclass Discrepancy(Protocol):\n    name: str\n    def value(self) -&gt; float: ...\n    def squared(self) -&gt; float: ...\nImplementations: - DiscrepancyOneSample(...) - DiscrepancyTwoSample(...) - CenteredDiscrepancy(...) - PrefixDiscrepancy(...)"
+  },
+  {
+    "objectID": "classlib/classlib/math_565_→_qmcpy_kernels_discrepancy_convergence_plan.html#module-layout-target",
+    "href": "classlib/classlib/math_565_→_qmcpy_kernels_discrepancy_convergence_plan.html#module-layout-target",
+    "title": "MATH565 → QMCPy: Kernels & Discrepancy Convergence Plan",
+    "section": "",
+    "text": "(same as previous draft)"
+  },
+  {
+    "objectID": "classlib/classlib/math_565_→_qmcpy_kernels_discrepancy_convergence_plan.html#naming-conventions",
+    "href": "classlib/classlib/math_565_→_qmcpy_kernels_discrepancy_convergence_plan.html#naming-conventions",
+    "title": "MATH565 → QMCPy: Kernels & Discrepancy Convergence Plan",
+    "section": "",
+    "text": "Public API: discrepancy_* not mmd.\nKernels: dataclasses with optional hyperparameters; user can override.\nMeasures: analytical expectation required; MC fallback not allowed.\nDesigns: flag special structures so optimized O(n) discrepancy algorithms can be triggered."
+  },
+  {
+    "objectID": "classlib/classlib/math_565_→_qmcpy_kernels_discrepancy_convergence_plan.html#minimal-target-interfaces",
+    "href": "classlib/classlib/math_565_→_qmcpy_kernels_discrepancy_convergence_plan.html#minimal-target-interfaces",
+    "title": "MATH565 → QMCPy: Kernels & Discrepancy Convergence Plan",
+    "section": "",
+    "text": "def discrepancy(X: np.ndarray, kernel: Kernel, measure: Measure, unbiased: bool=False) -&gt; float: ...\n\ndef discrepancy_two_sample(X: np.ndarray, Y: np.ndarray, kernel: Kernel, unbiased: bool=False) -&gt; float: ...\n\ndef discrepancy_prefix(X: np.ndarray, kernel: Kernel, measure: Measure) -&gt; np.ndarray: ...\n\ndef centered_discrepancy(X: np.ndarray, kernel: Kernel | None=None, gamma: float | Sequence[float]=1.0) -&gt; float: ..."
+  },
+  {
+    "objectID": "classlib/classlib/math_565_→_qmcpy_kernels_discrepancy_convergence_plan.html#examples-of-on-discrepancy",
+    "href": "classlib/classlib/math_565_→_qmcpy_kernels_discrepancy_convergence_plan.html#examples-of-on-discrepancy",
+    "title": "MATH565 → QMCPy: Kernels & Discrepancy Convergence Plan",
+    "section": "",
+    "text": "Rank-1 Lattice Rules + Quadratic Bernoulli Kernel: Gram matrix has circulant structure. Discrepancy can be computed using FFT in O(n log n) or reduced to O(n) with further structure.\nDigital Nets (Sobol, Niederreiter): when paired with product Sobolev kernels, matrix-vector products collapse to low-cost evaluations leveraging Walsh/Fourier representations.\nThese optimizations require tagging the design with special_structure=\"lattice\" or \"digitalnet\" and providing specialized implementations in discrepancy/fast.py."
+  },
+  {
+    "objectID": "classlib/classlib/math_565_→_qmcpy_kernels_discrepancy_convergence_plan.html#migration-plan",
+    "href": "classlib/classlib/math_565_→_qmcpy_kernels_discrepancy_convergence_plan.html#migration-plan",
+    "title": "MATH565 → QMCPy: Kernels & Discrepancy Convergence Plan",
+    "section": "",
+    "text": "(same as before, plus implementation of optimized routines for structured designs)"
+  },
+  {
+    "objectID": "classlib/classlib/math_565_→_qmcpy_kernels_discrepancy_convergence_plan.html#testing-validation",
+    "href": "classlib/classlib/math_565_→_qmcpy_kernels_discrepancy_convergence_plan.html#testing-validation",
+    "title": "MATH565 → QMCPy: Kernels & Discrepancy Convergence Plan",
+    "section": "",
+    "text": "Analytical integrals cross-checked against literature.\nEfficiency benchmarks: O(n) or FFT-based methods compared to O(n²) baseline.\nHyperparameter tuning examples in docs."
+  },
+  {
+    "objectID": "classlib/classlib/math_565_→_qmcpy_kernels_discrepancy_convergence_plan.html#documentation-pedagogy",
+    "href": "classlib/classlib/math_565_→_qmcpy_kernels_discrepancy_convergence_plan.html#documentation-pedagogy",
+    "title": "MATH565 → QMCPy: Kernels & Discrepancy Convergence Plan",
+    "section": "",
+    "text": "Use “discrepancy” in APIs and lectures; note equivalence to MMD in background materials.\nDemonstrate periodic/stationary kernels and O(n) discrepancy evaluation with lattice examples."
+  },
+  {
+    "objectID": "classlib/classlib/math_565_→_qmcpy_kernels_discrepancy_convergence_plan.html#growth-backlog",
+    "href": "classlib/classlib/math_565_→_qmcpy_kernels_discrepancy_convergence_plan.html#growth-backlog",
+    "title": "MATH565 → QMCPy: Kernels & Discrepancy Convergence Plan",
+    "section": "",
+    "text": "Expand stationary & periodic kernel families (Quadratic Bernoulli, higher-order Bernoulli).\nAdd specialized discrepancy algorithms for digital nets.\nBroaden measures with exact integrals."
+  },
+  {
+    "objectID": "classlib/classlib/math_565_→_qmcpy_kernels_discrepancy_convergence_plan.html#tasks",
+    "href": "classlib/classlib/math_565_→_qmcpy_kernels_discrepancy_convergence_plan.html#tasks",
+    "title": "MATH565 → QMCPy: Kernels & Discrepancy Convergence Plan",
+    "section": "",
+    "text": "Scaffold base modules in MATH565 (kernel.base, measure.base, discrepancy.one_sample).\n\nPort existing kernels/discrepancies with new naming (discrepancy_*).\n\nImplement analytical integrals for all kernels–measures (no MC fallbacks).\n\nAdd optimized O(n) routines for lattice/digital net point sets.\n\nWrite minimal unit tests + doctests.\n\nDraft PR to QMCPy develop with mirrored layout."
+  },
+  {
+    "objectID": "classlib/README_InstructorWorkflow.html",
+    "href": "classlib/README_InstructorWorkflow.html",
+    "title": "Instructor Workflow for Using HickernellClassLib with Course Repositories",
+    "section": "",
+    "text": "This document describes the recommended development and synchronization workflow for using HickernellClassLib across multiple Macs and across multiple course repositories (e.g., MATH565Fall2025, MATH476, MATH563).\nIt ensures:\n\nOne canonical version of HickernellClassLib\n\nClean and reproducible submodule versions for students\n\nAbility to develop from any Mac\n\nSmooth interaction with QMCSoftware (develop branch)\n\nAvoids notebooks importing the wrong copy\n\n\n\n\nThe only editable copy of the library is located here on every Mac:\n~/SoftwareRepositories/HickernellClassLib\nAll development edits should occur only in this clone and on the main branch.\nTo sync it:\ncd ~/SoftwareRepositories/HickernellClassLib\ngit pull\nDo not edit the classlib/ folder inside course repos.\n\n\n\n\nOn each Mac, run once:\nconda activate qmcpy\ncd ~/SoftwareRepositories/HickernellClassLib\npip install -e .\nBenefits:\n\nimport classlib loads the canonical version\n\nAll courses see the same version\n\nNo need for messing with sys.path\n\nNo stale imports from submodules\n\nWhenever you update the library for your own benefit:\ngit pull\npip install -e .   # usually unnecessary but safe\n\n\n\n\nEach course repo contains:\n\nclasslib → submodule pointing to HickernellClassLib\n\nqmcpy → submodule pointing to QMCSoftware develop branch\n\n\n\ngit pull\ngit submodule update --init --recursive\n\n\n\nWhen you want students to receive the updated version:\ncd ~/SoftwareRepositories/MATH565Fall2025\ngit submodule update --remote classlib\ngit add classlib\ngit commit -m \"Update classlib submodule to latest HickernellClassLib\"\ngit push\nThis ensures the course uses the exact version you select.\n\n\n\n\n\nCourse repos track the develop branch of QMCSoftware.\nTo update:\ncd ~/SoftwareRepositories/MATH565Fall2025\ngit submodule update --remote qmcpy\ngit add qmcpy\ngit commit -m \"Update qmcpy to latest develop\"\ngit push\n\n\nYour team develops in feature branches and only merges into develop after validation.\nTherefore:\n\nUpdating your own working copy to the latest develop is safe and recommended.\n\nUpdating the course repo should still be intentional—only when you have verified the notebooks still run correctly.\n\nIf you need functionality not yet upstreamed:\n\nTemporarily implement it in HickernellClassLib\n\nOr keep a temporary branch\n\nUpstream later when appropriate\n\n\n\n\n\n\nYou may edit HickernellClassLib from any Mac.\n\n\ncd ~/SoftwareRepositories/HickernellClassLib\ngit add .\ngit commit -m \"Work done\"\ngit push\n\n\n\ncd ~/SoftwareRepositories/HickernellClassLib\ngit pull\n\n\n\ncd ~/SoftwareRepositories/MATH565Fall2025\ngit submodule update --remote classlib\ngit add classlib\ngit commit -m \"Update HickernellClassLib submodule\"\ngit push\n\n\n\n\n\n\nPrevents unsynchronized library versions across Macs\n\nEliminates “wrong library imported” issues in Jupyter\n\nCourse repos remain clean snapshots for each semester\n\nStudents use stable, pinned versions\n\nHickernellClassLib remains a general library across all courses\n\nQMCSoftware develop remains stable but course repo updates remain intentional\n\n\n\n\n\nBefore working on any course:\nconda activate qmcpy\ncd ~/SoftwareRepositories/HickernellClassLib\ngit pull\npip install -e .\n\ncd ~/SoftwareRepositories/MATH565Fall2025\ngit pull\ngit submodule update --init --recursive\nWhen you want students to receive updates:\ncd ~/SoftwareRepositories/MATH565Fall2025\ngit submodule update --remote classlib\ngit add classlib\ngit commit -m \"Update HickernellClassLib version\"\ngit push\nWhen you want students to receive a newer QMCSoftware develop:\ngit submodule update --remote qmcpy\ngit add qmcpy\ngit commit -m \"Update qmcpy to latest develop\"\ngit push"
+  },
+  {
+    "objectID": "classlib/README_InstructorWorkflow.html#canonical-source-of-truth",
+    "href": "classlib/README_InstructorWorkflow.html#canonical-source-of-truth",
+    "title": "Instructor Workflow for Using HickernellClassLib with Course Repositories",
+    "section": "",
+    "text": "The only editable copy of the library is located here on every Mac:\n~/SoftwareRepositories/HickernellClassLib\nAll development edits should occur only in this clone and on the main branch.\nTo sync it:\ncd ~/SoftwareRepositories/HickernellClassLib\ngit pull\nDo not edit the classlib/ folder inside course repos."
+  },
+  {
+    "objectID": "classlib/README_InstructorWorkflow.html#install-hickernellclasslib-editable-into-the-qmcpy-conda-environment",
+    "href": "classlib/README_InstructorWorkflow.html#install-hickernellclasslib-editable-into-the-qmcpy-conda-environment",
+    "title": "Instructor Workflow for Using HickernellClassLib with Course Repositories",
+    "section": "",
+    "text": "On each Mac, run once:\nconda activate qmcpy\ncd ~/SoftwareRepositories/HickernellClassLib\npip install -e .\nBenefits:\n\nimport classlib loads the canonical version\n\nAll courses see the same version\n\nNo need for messing with sys.path\n\nNo stale imports from submodules\n\nWhenever you update the library for your own benefit:\ngit pull\npip install -e .   # usually unnecessary but safe"
+  },
+  {
+    "objectID": "classlib/README_InstructorWorkflow.html#course-repositories-use-submodules",
+    "href": "classlib/README_InstructorWorkflow.html#course-repositories-use-submodules",
+    "title": "Instructor Workflow for Using HickernellClassLib with Course Repositories",
+    "section": "",
+    "text": "Each course repo contains:\n\nclasslib → submodule pointing to HickernellClassLib\n\nqmcpy → submodule pointing to QMCSoftware develop branch\n\n\n\ngit pull\ngit submodule update --init --recursive\n\n\n\nWhen you want students to receive the updated version:\ncd ~/SoftwareRepositories/MATH565Fall2025\ngit submodule update --remote classlib\ngit add classlib\ngit commit -m \"Update classlib submodule to latest HickernellClassLib\"\ngit push\nThis ensures the course uses the exact version you select."
+  },
+  {
+    "objectID": "classlib/README_InstructorWorkflow.html#qmcsoftware-develop-branch",
+    "href": "classlib/README_InstructorWorkflow.html#qmcsoftware-develop-branch",
+    "title": "Instructor Workflow for Using HickernellClassLib with Course Repositories",
+    "section": "",
+    "text": "Course repos track the develop branch of QMCSoftware.\nTo update:\ncd ~/SoftwareRepositories/MATH565Fall2025\ngit submodule update --remote qmcpy\ngit add qmcpy\ngit commit -m \"Update qmcpy to latest develop\"\ngit push\n\n\nYour team develops in feature branches and only merges into develop after validation.\nTherefore:\n\nUpdating your own working copy to the latest develop is safe and recommended.\n\nUpdating the course repo should still be intentional—only when you have verified the notebooks still run correctly.\n\nIf you need functionality not yet upstreamed:\n\nTemporarily implement it in HickernellClassLib\n\nOr keep a temporary branch\n\nUpstream later when appropriate"
+  },
+  {
+    "objectID": "classlib/README_InstructorWorkflow.html#workflow-across-macs",
+    "href": "classlib/README_InstructorWorkflow.html#workflow-across-macs",
+    "title": "Instructor Workflow for Using HickernellClassLib with Course Repositories",
+    "section": "",
+    "text": "You may edit HickernellClassLib from any Mac.\n\n\ncd ~/SoftwareRepositories/HickernellClassLib\ngit add .\ngit commit -m \"Work done\"\ngit push\n\n\n\ncd ~/SoftwareRepositories/HickernellClassLib\ngit pull\n\n\n\ncd ~/SoftwareRepositories/MATH565Fall2025\ngit submodule update --remote classlib\ngit add classlib\ngit commit -m \"Update HickernellClassLib submodule\"\ngit push"
+  },
+  {
+    "objectID": "classlib/README_InstructorWorkflow.html#why-this-model-works",
+    "href": "classlib/README_InstructorWorkflow.html#why-this-model-works",
+    "title": "Instructor Workflow for Using HickernellClassLib with Course Repositories",
+    "section": "",
+    "text": "Prevents unsynchronized library versions across Macs\n\nEliminates “wrong library imported” issues in Jupyter\n\nCourse repos remain clean snapshots for each semester\n\nStudents use stable, pinned versions\n\nHickernellClassLib remains a general library across all courses\n\nQMCSoftware develop remains stable but course repo updates remain intentional"
+  },
+  {
+    "objectID": "classlib/README_InstructorWorkflow.html#daily-instructor-checklist",
+    "href": "classlib/README_InstructorWorkflow.html#daily-instructor-checklist",
+    "title": "Instructor Workflow for Using HickernellClassLib with Course Repositories",
+    "section": "",
+    "text": "Before working on any course:\nconda activate qmcpy\ncd ~/SoftwareRepositories/HickernellClassLib\ngit pull\npip install -e .\n\ncd ~/SoftwareRepositories/MATH565Fall2025\ngit pull\ngit submodule update --init --recursive\nWhen you want students to receive updates:\ncd ~/SoftwareRepositories/MATH565Fall2025\ngit submodule update --remote classlib\ngit add classlib\ngit commit -m \"Update HickernellClassLib version\"\ngit push\nWhen you want students to receive a newer QMCSoftware develop:\ngit submodule update --remote qmcpy\ngit add qmcpy\ngit commit -m \"Update qmcpy to latest develop\"\ngit push"
+  },
+  {
+    "objectID": "slides/index.html",
+    "href": "slides/index.html",
+    "title": "Slides",
+    "section": "",
+    "text": "Below are the slide decks for MATH 476. Dates are approximate and may be adjusted.\n\n\n\nLecture\nTopic\nSlides\n\n\n\n\n1\nIntro & Course Overview\n01-intro"
+  },
+  {
+    "objectID": "pages/index.html",
+    "href": "pages/index.html",
+    "title": "MATH 476 — Statistics",
+    "section": "",
+    "text": "Welcome to MATH 476 — Statistics.\nThis course introduces probability and statistics with an emphasis on modeling, data, and careful reasoning."
+  },
+  {
+    "objectID": "pages/index.html#practical-information",
+    "href": "pages/index.html#practical-information",
+    "title": "MATH 476 — Statistics",
+    "section": "Practical Information",
+    "text": "Practical Information\n\nInstructor: Fred J. Hickernell\n\nMeeting times: T/Th (time and room TBA)\n\nTextbook: Wackerly, Mendenhall & Scheaffer\n\nCourse website: This site"
+  },
+  {
+    "objectID": "pages/resources.html",
+    "href": "pages/resources.html",
+    "title": "Resources",
+    "section": "",
+    "text": "Wackerly, Mendenhall, and Scheaffer, Mathematical Statistics with Applications."
+  },
+  {
+    "objectID": "pages/resources.html#textbook",
+    "href": "pages/resources.html#textbook",
+    "title": "Resources",
+    "section": "",
+    "text": "Wackerly, Mendenhall, and Scheaffer, Mathematical Statistics with Applications."
+  },
+  {
+    "objectID": "pages/resources.html#additional-resources",
+    "href": "pages/resources.html#additional-resources",
+    "title": "Resources",
+    "section": "Additional Resources",
+    "text": "Additional Resources\n\nOffice hours and online discussion information will be added here."
+  }
+]

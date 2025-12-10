@@ -1,6 +1,9 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - pages/**/*.qmd
+    - slides/**/*.qmd
 
 website:
   title: "MATH 476 — Spring 2026"

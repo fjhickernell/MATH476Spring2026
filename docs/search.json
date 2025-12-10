@@ -63,20 +63,6 @@
     "text": "Additional Resources\n\nOffice hours and online discussion information will be added here."
   },
   {
-    "objectID": "pages/homework.html",
-    "href": "pages/homework.html",
-    "title": "Homework",
-    "section": "",
-    "text": "Homework assignments will be posted here as the semester progresses."
-  },
-  {
-    "objectID": "pages/homework.html#homework-1",
-    "href": "pages/homework.html#homework-1",
-    "title": "Homework",
-    "section": "Homework 1",
-    "text": "Homework 1\nTo be announced."
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "MATH 476 — Statistics",
@@ -91,18 +77,18 @@
     "text": "Practical Information\n\nInstructor: Fred J. Hickernell\n\nMeeting times: T/Th (time and room TBA)\n\nTextbook: Wackerly, Mendenhall & Scheaffer\n\nCourse website: This site"
   },
   {
-    "objectID": "pages/index.html",
-    "href": "pages/index.html",
-    "title": "MATH 476 — Statistics",
+    "objectID": "pages/homework.html",
+    "href": "pages/homework.html",
+    "title": "Homework",
     "section": "",
-    "text": "Welcome to MATH 476 — Statistics.\nThis course introduces probability and statistics with an emphasis on modeling, data, and careful reasoning."
+    "text": "Homework assignments will be posted here as the semester progresses."
   },
   {
-    "objectID": "pages/index.html#practical-information",
-    "href": "pages/index.html#practical-information",
-    "title": "MATH 476 — Statistics",
-    "section": "Practical Information",
-    "text": "Practical Information\n\nInstructor: Fred J. Hickernell\n\nMeeting times: T/Th (time and room TBA)\n\nTextbook: Wackerly, Mendenhall & Scheaffer\n\nCourse website: This site"
+    "objectID": "pages/homework.html#homework-1",
+    "href": "pages/homework.html#homework-1",
+    "title": "Homework",
+    "section": "Homework 1",
+    "text": "Homework 1\nTo be announced."
   },
   {
     "objectID": "pages/schedule.html",

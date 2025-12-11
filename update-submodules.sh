@@ -40,7 +40,7 @@ esac
 
 log() {
   local ts
-  ts=$(date '+%Y-%m-%d %H:%M:%S')
+  ts=$(/bin/date '+%Y-%m-%d %H:%M:%S')
   echo "[$ts] $*"
 }
 

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -10,8 +10,8 @@
   <meta name="generator" content="quarto-1.8.26">
 
   <meta name="author" content="Fred J. Hickernell">
-  <meta name="dcterms.date" content="2026-01-13">
-  <title>MATH 476 — Spring 2026 – Introduction &amp; Course Overview</title>
+  <meta name="dcterms.date" content="2025-12-13">
+  <title>MATH 476 — Spring 2026 – MATH 476 — Statistics</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -30,7 +30,8 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-0fde88a82f0356838740f155f1088782.css">
+  <link rel="stylesheet" href="../classlib/classlib/quarto/slides/hickernell-slides.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -122,14 +123,259 @@
       margin-right: 0; 
     }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+  
+  <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+  <script type="text/javascript">
+  window.PlotlyConfig = {MathJaxConfig: 'local'};
+  if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+  if (typeof require !== 'undefined') {
+  require.undef("plotly");
+  requirejs.config({
+      paths: {
+          'plotly': ['https://cdn.plot.ly/plotly-2.35.2.min']
+      }
+  });
+  require(['plotly'], function(Plotly) {
+      window._Plotly = Plotly;
+  });
+  }
+  </script>
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      Macros: {
+
+        // --- Probability / statistics operators ---
+        success: "{\\operatorname{succ}}",
+        sinc:    "{\\operatorname{sinc}}",
+        sech:    "{\\operatorname{sech}}",
+        csch:    "{\\operatorname{csch}}",
+
+        Prob: "{\\mathbb{P}}",
+        Ex:   "{\\mathbb{E}}",
+
+        dist:  "{\\operatorname{dist}}",
+        spn:   "{\\operatorname{span}}",
+        sgn:   "{\\operatorname{sgn}}",
+        rmse:  "{\\operatorname{rmse}}",
+        rank:  "{\\operatorname{rank}}",
+        erfc:  "{\\operatorname{erfc}}",
+        erf:   "{\\operatorname{erf}}",
+        cov:   "{\\operatorname{cov}}",
+        cost:  "{\\operatorname{cost}}",
+        comp:  "{\\operatorname{comp}}",
+        corr:  "{\\operatorname{corr}}",
+        diag:  "{\\operatorname{diag}}",
+        var:   "{\\operatorname{var}}",
+        opt:   "{\\operatorname{opt}}",
+        brandnew: "{\\operatorname{new}}",
+        std:   "{\\operatorname{std}}",
+        kurt:  "{\\operatorname{kurt}}",
+        med:   "{\\operatorname{med}}",
+        vol:   "{\\operatorname{vol}}",
+        bias:  "{\\operatorname{bias}}",
+
+        Var: "{\\operatorname{Var}}",
+        Cov: "{\\operatorname{Cov}}",
+
+        argmax: "{\\mathop{\\operatorname{argmax}}\\limits}",
+        argmin: "{\\mathop{\\operatorname{argmin}}\\limits}",
+
+        sign:  "{\\operatorname{sign}}",
+        spann: "{\\operatorname{span}}",
+        cond:  "{\\operatorname{cond}}",
+        trace: "{\\operatorname{trace}}",
+        Si:    "{\\operatorname{Si}}",
+        col:   "{\\operatorname{col}}",
+        nullspace: "{\\operatorname{null}}",
+        Order: "{\\mathcal{O}}",
+
+        // --- IID / LD ---
+        IIDsim: "{\\overset{\\text{IID}}{\\sim}}",
+        LDsim:  "{\\overset{\\text{LD}}{\\sim}}",
+
+        // --- Sets ---
+        naturals:  "{\\mathbb{N}}",
+        natzero:   "{\\mathbb{N}_0}",
+        integers:  "{\\mathbb{Z}}",
+        rationals: "{\\mathbb{Q}}",
+        reals:     "{\\mathbb{R}}",
+        complex:   "{\\mathbb{C}}",
+
+        // --- Norms, abs, inner products ---
+        abs:  ["{\\left\\lvert #1 \\right\\rvert}", 1],
+        norm: ["{\\left\\lVert #1 \\right\\rVert}", 1],
+        ip:   ["{\\left\\langle #1, #2 \\right\\rangle}", 2],
+
+        // --- Bold vectors ---
+        bvec: ["{\\boldsymbol{#1}}", 1],
+        avec: ["{\\vec{#1}}", 1],
+        vecsym: ["{\\boldsymbol{#1}}", 1],
+
+        vzero: "{\\boldsymbol{0}}",
+        vone:  "{\\boldsymbol{1}}",
+        vinf:  "{\\boldsymbol{\\infty}}",
+
+        // Latin vector names (boldsymbol)
+        va: "{\\boldsymbol{a}}",
+        vA: "{\\boldsymbol{A}}",
+        vb: "{\\boldsymbol{b}}",
+        vB: "{\\boldsymbol{B}}",
+        vc: "{\\boldsymbol{c}}",
+        vC: "{\\boldsymbol{C}}",
+        vd: "{\\boldsymbol{d}}",
+        vD: "{\\boldsymbol{D}}",
+        ve: "{\\boldsymbol{e}}",
+        vf: "{\\boldsymbol{f}}",
+        vF: "{\\boldsymbol{F}}",
+        vg: "{\\boldsymbol{g}}",
+        vG: "{\\boldsymbol{G}}",
+        vh: "{\\boldsymbol{h}}",
+        vH: "{\\boldsymbol{H}}",
+        vi: "{\\boldsymbol{i}}",
+        vj: "{\\boldsymbol{j}}",
+        vk: "{\\boldsymbol{k}}",
+        vK: "{\\boldsymbol{K}}",
+        vl: "{\\boldsymbol{l}}",
+        vell: "{\\boldsymbol{\\ell}}",
+        vL: "{\\boldsymbol{L}}",
+        vm: "{\\boldsymbol{m}}",
+        vp: "{\\boldsymbol{p}}",
+        vq: "{\\boldsymbol{q}}",
+        vr: "{\\boldsymbol{r}}",
+        vs: "{\\boldsymbol{s}}",
+        vS: "{\\boldsymbol{S}}",
+        vt: "{\\boldsymbol{t}}",
+        vT: "{\\boldsymbol{T}}",
+        vu: "{\\boldsymbol{u}}",
+        vU: "{\\boldsymbol{U}}",
+        vv: "{\\boldsymbol{v}}",
+        vV: "{\\boldsymbol{V}}",
+        vw: "{\\boldsymbol{w}}",
+        vW: "{\\boldsymbol{W}}",
+        vx: "{\\boldsymbol{x}}",
+        vX: "{\\boldsymbol{X}}",
+        vy: "{\\boldsymbol{y}}",
+        vY: "{\\boldsymbol{Y}}",
+        vz: "{\\boldsymbol{z}}",
+        vZ: "{\\boldsymbol{Z}}",
+
+        // Greek vector names (boldsymbol)
+        valpha:  "{\\boldsymbol{\\alpha}}",
+        vbeta:   "{\\boldsymbol{\\beta}}",
+        vgamma:  "{\\boldsymbol{\\gamma}}",
+        vGamma:  "{\\boldsymbol{\\Gamma}}",
+        vdelta:  "{\\boldsymbol{\\delta}}",
+        vDelta:  "{\\boldsymbol{\\Delta}}",
+        vphi:    "{\\boldsymbol{\\phi}}",
+        vvphi:   "{\\boldsymbol{\\varphi}}",
+        vPhi:    "{\\boldsymbol{\\Phi}}",
+        vomega:  "{\\boldsymbol{\\omega}}",
+        vkappa:  "{\\boldsymbol{\\kappa}}",
+        vlambda: "{\\boldsymbol{\\lambda}}",
+        vmu:     "{\\boldsymbol{\\mu}}",
+        vnu:     "{\\boldsymbol{\\nu}}",
+        vpsi:    "{\\boldsymbol{\\psi}}",
+        vPsi:    "{\\boldsymbol{\\Psi}}",
+        vepsilon: "{\\boldsymbol{\\epsilon}}",
+        veps:     "{\\boldsymbol{\\varepsilon}}",
+        veta:     "{\\boldsymbol{\\eta}}",
+        vxi:      "{\\boldsymbol{\\xi}}",
+        vtheta:   "{\\boldsymbol{\\theta}}",
+        vtau:     "{\\boldsymbol{\\tau}}",
+        vzeta:    "{\\boldsymbol{\\zeta}}",
+
+        // --- Matrices (mathsf) ---
+        mA: "{\\mathsf{A}}",
+        mB: "{\\mathsf{B}}",
+        mC: "{\\mathsf{C}}",
+        vmC: "{\\boldsymbol{\\mathsf{C}}}",
+        mD: "{\\mathsf{D}}",
+        mF: "{\\mathsf{F}}",
+        mG: "{\\mathsf{G}}",
+        mH: "{\\mathsf{H}}",
+        mI: "{\\mathsf{I}}",
+        mK: "{\\mathsf{K}}",
+        mL: "{\\mathsf{L}}",
+        mM: "{\\mathsf{M}}",
+        mP: "{\\mathsf{P}}",
+        mQ: "{\\mathsf{Q}}",
+        mR: "{\\mathsf{R}}",
+        mS: "{\\mathsf{S}}",
+        mT: "{\\mathsf{T}}",
+        mU: "{\\mathsf{U}}",
+        mV: "{\\mathsf{V}}",
+        mW: "{\\mathsf{W}}",
+        mX: "{\\mathsf{X}}",
+        mY: "{\\mathsf{Y}}",
+        mZ: "{\\mathsf{Z}}",
+        mLambda: "{\\mathsf{\\Lambda}}",
+        mSigma:  "{\\mathsf{\\Sigma}}",
+        mzero:   "{\\mathsf{0}}",
+        mGamma:  "{\\mathsf{\\Gamma}}",
+
+        // --- Calligraphic ---
+        ca: "{\\mathcal{A}}",
+        cb: "{\\mathcal{B}}",
+        cc: "{\\mathcal{C}}",
+        cd: "{\\mathcal{D}}",
+        ce: "{\\mathcal{E}}",
+        cf: "{\\mathcal{F}}",
+        cg: "{\\mathcal{G}}",
+        ch: "{\\mathcal{H}}",
+        ci: "{\\mathcal{I}}",
+        cj: "{\\mathcal{J}}",
+        ck: "{\\mathcal{K}}",
+        cl: "{\\mathcal{L}}",
+        cm: "{\\mathcal{M}}",
+        cn: "{\\mathcal{N}}",
+        cp: "{\\mathcal{P}}",
+        cq: "{\\mathcal{Q}}",
+        calr: "{\\mathcal{R}}",
+        cs: "{\\mathcal{S}}",
+        ct: "{\\mathcal{T}}",
+        cu: "{\\mathcal{U}}",
+        cv: "{\\mathcal{V}}",
+        cw: "{\\mathcal{W}}",
+        cx: "{\\mathcal{X}}",
+        cy: "{\\mathcal{Y}}",
+        cz: "{\\mathcal{Z}}",
+
+        // --- Blackboard bold ---
+        bbE: "{\\mathbb{E}}",
+        bbF: "{\\mathbb{F}}",
+        bbK: "{\\mathbb{K}}",
+        bbV: "{\\mathbb{V}}",
+        bbZ: "{\\mathbb{Z}}",
+        bbone: "{\\boldsymbol{1}}",
+
+        // --- Fraktur ---
+        fc: "{\\mathfrak{c}}",
+        fC: "{\\mathfrak{C}}",
+        fh: "{\\mathfrak{h}}",
+        fu: "{\\mathfrak{u}}",
+
+        // --- Constants ---
+        me:  "{\\mathrm{e}}",
+        mi:  "{\\mathrm{i}}",
+        mpi: "{\\mathrm{\\pi}}",
+
+        // Differential
+        dif: "{\\mathrm{d}}"
+      }
+    }
+  });
+  </script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Introduction &amp; Course Overview</h1>
-  <p class="subtitle">MATH 476 — Spring 2026</p>
+<section id="title-slide" data-background-color="#f5f7fb" data-background-image="../classlib/classlib/quarto/assets/images/normal-scatter.png" data-background-position="top left" data-background-size="55%" class="quarto-title-block center">
+  <h1 class="title">MATH 476 — Statistics</h1>
+  <p class="subtitle">Introduction and Probability</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -139,42 +385,103 @@ Fred J. Hickernell
 </div>
 </div>
 
-  <p class="date">2026-01-13</p>
+  <p class="date">December 13, 2025</p>
 </section>
-<section id="course-information" class="slide level2">
-<h2>Course Information</h2>
+<section id="math-476-statistics" class="slide level2 major">
+<h2>MATH 476 — Statistics</h2>
+<p>Welcome to <strong>MATH 476</strong>.</p>
+<p>This course introduces probability and statistics with an emphasis on modeling and data and not running over the margins.</p>
+</section>
+<section id="basic-probability-notation" class="slide level2 major">
+<h2>Basic Probability Notation</h2>
 <ul>
-<li>Instructor: Fred J. Hickernell<br>
-</li>
-<li>Course: MATH 476 — Statistics<br>
-</li>
-<li>Semester: Spring 2026</li>
+<li>Sample space: <span class="math inline">\(\Omega\)</span></li>
+<li>Event: <span class="math inline">\(A \subseteq \Omega\)</span></li>
+<li>Probability of <span class="math inline">\(A\)</span>: <span class="math inline">\(\Prob(A)\)</span></li>
+<li>Complement: <span class="math inline">\(A^{c}\)</span></li>
+<li>Conditional probability: <span class="math display">\[
+  \Prob(A \mid B) = \frac{\Prob(A \cap B)}{\Prob(B)}, \qquad \Prob(B) &gt; 0
+\]</span></li>
+<li>Expectation <span class="math inline">\(\Ex[Y]=\)</span></li>
+</ul>
+<p><span class="alert">Key idea: probabilities are always between <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span>.</span></p>
+</section>
+<section id="more-probability" class="slide level2">
+<h2>More probability</h2>
+<p>You need to know expectation, mean, etc. with a h2 header</p>
+<p><span class="math display">\[\begin{gather*}
+\var(Y) = \operatorname{var}(Y) \\
+\DeclareMathOperator{\var}{var}
+\var(Y) = \operatorname{var}(Y) \\
+\Ex[Y] = \Ex[f(X)], Y \in \reals \\
+\end{gather*}\]</span></p>
+<h3 id="random-variables">Random variables</h3>
+<p>an h3 header</p>
+</section>
+<section id="section" class="slide level2 headerless">
+<h2></h2>
+<p>and even more on this slide without the header</p>
+</section>
+<section id="example-slide-with-alerts" class="slide level2 major">
+<h2>Example Slide With Alerts</h2>
+<ul>
+<li>Plain text is dark gray.</li>
+<li><span class="alert">Alerted term</span> stands out in blue.</li>
+<li>You can also color math: <span class="alert"><span class="math inline">\(\Pr(A \mid B)\)</span></span></li>
 </ul>
 </section>
-<section id="what-is-statistics" class="slide level2">
-<h2>What is Statistics?</h2>
-<ul>
-<li>Descriptive statistics</li>
-<li>Inferential statistics</li>
-<li>Probability as the foundation</li>
-<li>Modeling real-world variability</li>
-</ul>
+<section id="python-test-slide" class="slide level2 major">
+<h2>Python Test Slide</h2>
+<p>This slide verifies that Python runs inside your Quarto RevealJS slides.</p>
+<div id="983febda" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="intro-01_files/figure-revealjs/cell-2-output-1.png" width="813" height="431"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="course-components" class="slide level2">
-<h2>Course Components</h2>
-<ul>
-<li>Reading from the textbook</li>
-<li>In-class activities and examples</li>
-<li>Homework assignments</li>
-<li>Exams (details in syllabus)</li>
-</ul>
+<section id="interactive-plot-plotly" class="slide level2 major">
+<h2>Interactive Plot (Plotly)</h2>
+<p>This slide tests interactive graphics.</p>
+<div id="b5ef5f85" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div>                            <div id="39c34297-bd7c-4d60-a33c-5d92890d4957" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("39c34297-bd7c-4d60-a33c-5d92890d4957")) {                    Plotly.newPlot(                        "39c34297-bd7c-4d60-a33c-5d92890d4957",                        [{"hovertemplate":"x=%{x}\u003cbr\u003ey=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"","line":{"color":"#636efa","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"","orientation":"v","showlegend":false,"x":[0.0,0.05025125628140704,0.10050251256281408,0.15075376884422112,0.20100502512562815,0.2512562814070352,0.30150753768844224,0.35175879396984927,0.4020100502512563,0.45226130653266333,0.5025125628140704,0.5527638190954774,0.6030150753768845,0.6532663316582915,0.7035175879396985,0.7537688442211056,0.8040201005025126,0.8542713567839196,0.9045226130653267,0.9547738693467337,1.0050251256281408,1.0552763819095479,1.105527638190955,1.155778894472362,1.206030150753769,1.256281407035176,1.306532663316583,1.35678391959799,1.407035175879397,1.4572864321608041,1.5075376884422111,1.5577889447236182,1.6080402010050252,1.6582914572864322,1.7085427135678393,1.7587939698492463,1.8090452261306533,1.8592964824120604,1.9095477386934674,1.9597989949748744,2.0100502512562817,2.0603015075376887,2.1105527638190957,2.1608040201005028,2.21105527638191,2.261306532663317,2.311557788944724,2.361809045226131,2.412060301507538,2.462311557788945,2.512562814070352,2.562814070351759,2.613065326633166,2.663316582914573,2.71356783919598,2.763819095477387,2.814070351758794,2.864321608040201,2.9145728643216082,2.9648241206030153,3.0150753768844223,3.0653266331658293,3.1155778894472363,3.1658291457286434,3.2160804020100504,3.2663316582914574,3.3165829145728645,3.3668341708542715,3.4170854271356785,3.4673366834170856,3.5175879396984926,3.5678391959798996,3.6180904522613067,3.6683417085427137,3.7185929648241207,3.7688442211055277,3.819095477386935,3.869346733668342,3.919597989949749,3.969849246231156,4.020100502512563,4.07035175879397,4.120603015075377,4.170854271356784,4.2211055276381915,4.2713567839195985,4.3216080402010055,4.371859296482413,4.42211055276382,4.472361809045227,4.522613065326634,4.572864321608041,4.623115577889448,4.673366834170855,4.723618090452262,4.773869346733669,4.824120603015076,4.874371859296483,4.92462311557789,4.974874371859297,5.025125628140704,5.075376884422111,5.125628140703518,5.175879396984925,5.226130653266332,5.276381909547739,5.326633165829146,5.376884422110553,5.42713567839196,5.477386934673367,5.527638190954774,5.577889447236181,5.628140703517588,5.678391959798995,5.728643216080402,5.778894472361809,5.8291457286432165,5.8793969849246235,5.9296482412060305,5.9798994974874375,6.030150753768845,6.080402010050252,6.130653266331659,6.180904522613066,6.231155778894473,6.28140703517588,6.331658291457287,6.381909547738694,6.432160804020101,6.482412060301508,6.532663316582915,6.582914572864322,6.633165829145729,6.683417085427136,6.733668341708543,6.78391959798995,6.834170854271357,6.884422110552764,6.934673366834171,6.984924623115578,7.035175879396985,7.085427135678392,7.135678391959799,7.185929648241206,7.236180904522613,7.28643216080402,7.336683417085427,7.386934673366834,7.437185929648241,7.4874371859296485,7.5376884422110555,7.5879396984924625,7.63819095477387,7.688442211055277,7.738693467336684,7.788944723618091,7.839195979899498,7.889447236180905,7.939698492462312,7.989949748743719,8.040201005025127,8.090452261306533,8.14070351758794,8.190954773869347,8.241206030150755,8.291457286432161,8.341708542713569,8.391959798994975,8.442211055276383,8.492462311557789,8.542713567839197,8.592964824120603,8.643216080402011,8.693467336683417,8.743718592964825,8.793969849246231,8.84422110552764,8.894472361809045,8.944723618090453,8.99497487437186,9.045226130653267,9.095477386934673,9.145728643216081,9.195979899497488,9.246231155778895,9.296482412060302,9.34673366834171,9.396984924623116,9.447236180904524,9.49748743718593,9.547738693467338,9.597989949748744,9.648241206030152,9.698492462311558,9.748743718592966,9.798994974874372,9.84924623115578,9.899497487437186,9.949748743718594,10.0],"xaxis":"x","y":[0.0,0.050230109966933716,0.10033340611397856,0.15018339478269715,0.19965422182925707,0.2486209903630291,0.2969600760684489,0.3445494393140628,0.3912689332607891,0.43700060719152695,0.48162900429630934,0.5250414531611955,0.5671283522249922,0.6077834464856485,0.6469040957577351,0.6843915338037505,0.720151117685035,0.7540925667027688,0.7861301903258074,0.8161831045299178,0.84417543600223,0.8700365136953594,0.8937010472475914,0.9151092918186774,0.9342071989250891,0.9509465528939234,0.9652850925909591,0.977186618115543,0.9866210821929372,0.9935646660333952,0.9979998394664454,0.9999154051985663,0.9993065270825165,0.9961747423269507,0.9905279576154928,0.98238042914507,0.9717527266338982,0.9586716813899914,0.9431703185712997,0.9252877738085,0.9050691944009351,0.8825656253351498,0.8578338804137864,0.8309363988201965,0.8019410874808932,0.7709211496238255,0.737954899965305,0.7031255669921767,0.6665210828384021,0.628233861286544,0.5883605644546255,0.5470018587573953,0.5042621607581176,0.4602493735525203,0.4150746143504438,0.36885193394295224,0.32169802876315795,0.27373194626770514,0.22507478438272543,0.17584938577305953,0.12618002770661219,0.07619210829682534,0.0260118299154004,-0.024234119425455888,-0.07441888591686176,-0.12441577021567034,-0.17409854731690655,-0.22334178522866274,-0.2720211616449078,-0.32001377781671964,-0.3671984688295239,-0.41345610950299444,-0.45866991514132416,-0.5027257363745737,-0.5455123473467254,-0.5869217265228664,-0.6268493294065579,-0.6651943524788744,-0.7018599876927554,-0.7367536668801601,-0.7697872954549804,-0.8008774748216894,-0.8299457129282269,-0.8569186224315404,-0.8817281059754842,-0.9043115281133167,-0.9246118734407446,-0.9425778905402865,-0.9581642213735454,-0.9713315157947159,-0.9820465308962222,-0.9902822149356716,-0.9960177756322361,-0.9992387326600395,-0.9999369542060184,-0.9981106774999652,-0.9937645132649188,-0.9869094340766684,-0.9775627466617587,-0.9657480482039339,-0.9514951667693332,-0.9348400860008421,-0.9158248542717212,-0.8944974785278687,-0.8709118030867279,-0.8451273736988324,-0.8172092872151839,-0.7872280272400056,-0.7552592861837863,-0.7213837741658761,-0.6856870152490829,-0.6482591315207142,-0.6091946155651794,-0.5685920919025859,-0.5265540679956123,-0.4831866754532825,-0.43859940208501036,-0.3929048154813903,-0.3462182788195934,-0.29865765961086677,-0.250343032125446,-0.2013963742461582,-0.15194125951605447,-0.1021025451575478,-0.05200605685069962,-0.0017782710664830663,0.048454004242978146,0.09856394979104707,0.1484250551318267,0.19791143805569594,0.2468981623987645,0.29526155346388605,0.34287951025690017,0.38963181374981354,0.43540043039266096,0.4800698101077832,0.5235271780141882,0.5656628191454911,0.6063703554426186,0.6455470143219648,0.6830938881409576,0.7189161839059721,0.7529234625921657,0.7850298674710329,0.8151543408692327,0.8432208288114447,0.8691584730306025,0.8929017898607431,0.9143908355608308,0.9335713576521671,0.9503949318873145,0.9648190845047313,0.9768073994604692,0.9863296103662095,0.9933616769015238,0.9978858455074484,0.9998906942081381,0.9993711614474429,0.9963285588676023,0.9907705679977988,0.9827112208609282,0.9721708645475488,0.959176109846447,0.943759764061515,0.9259607481845431,0.9058239986330541,0.8834003538012378,0.8587464257104278,0.8319244570831351,0.8030021642015042,0.7720525659468906,0.739153799452209,0.7043889228324319,0.6678457054913121,0.6296164065336968,0.589797541842904,0.5484896404111711,0.505796990538399,0.46182737653991096,0.4166918066279926,0.37050423265417287,0.3233812624198489,0.27544186528152204,0.22680707179394227,0.17759966814940648,0.12794388618470057,0.07796508973825698,0.027789458149423574,-0.02245633230115589,-0.07264542820573959,-0.1226511192908991,-0.1723471583175373,-0.22160807981193165,-0.2703095168230594,-0.3183285149065574,-0.3655438425425587,-0.4118362972037624,-0.4570890063009656,-0.5011877222463261,-0.5440211108893698],"yaxis":"y","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"x"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"y"}},"legend":{"tracegroupgap":0},"title":{"text":"Interactive Sine Wave"}},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('39c34297-bd7c-4d60-a33c-5d92890d4957');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                });            </script>        </div>
+</div>
+</div>
 
 
 </section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-
+<p>© Fred J. Hickernell</p>
 </div>
 </div></div>
 
@@ -352,12 +659,12 @@ Fred J. Hickernell
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1050,
+        width: 1400,
 
-        height: 700,
+        height: 800,
 
         // Factor of the display size that should remain empty around the content
-        margin: 0.1,
+        margin: 0,
 
         math: {
           mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',

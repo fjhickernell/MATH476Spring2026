@@ -6,4 +6,4 @@ Below are the slide decks for MATH 476. Dates are approximate and may be adjuste
 
 | Lecture | Topic                    | Slides                     |
 |---------|--------------------------|----------------------------|
-| 1       | Intro & Course Overview  | [01-intro](01-intro.html)  |
+| 1       | Intro & Course Overview  | [01-intro](intro-01.html)  |

@@ -4,19 +4,16 @@ subtitle: "Introduction and Probability"
 author: "Fred J. Hickernell"
 date: last-modified
 date-format: "MMMM D, YYYY"
-format: revealjs
-metadata-files:
-  - ../classlib/classlib/quarto/slides/hickernell-slides.yml
 ---
 
-## MATH 476 — Statistics {.major}
+# MATH 476 — Statistics 
 
 Welcome to **MATH 476**.
 
 \noindent This course introduces probability and statistics with an emphasis on
 modeling and data and not running over the margins.
 
-## Basic Probability Notation {.major}
+# Basic Probability Notation 
 
 - Sample space: $\Omega$
 - Event: $A \subseteq \Omega$
@@ -29,6 +26,7 @@ modeling and data and not running over the margins.
 - Expectation $\Ex[Y]=$
 
 [Key idea: probabilities are always between $0$ and $1$.]{.alert}
+
 
 ## More probability
 
@@ -49,15 +47,14 @@ an h3 header
 
 and even more on this slide without the header
 
-## Example Slide With Alerts {.major}
+# Example Slide With Alerts 
 
 - Plain text is dark gray.
 - [Alerted term]{.alert} stands out in blue.
 - You can also color math: [ $\Pr(A \mid B)$ ]{.alert}
 
----
 
-## Python Test Slide {.major}
+# Python Test Slide 
 
 This slide verifies that Python runs inside your Quarto RevealJS slides.
 
@@ -73,9 +70,7 @@ plt.title("Sine Wave Test")
 plt.show()
 ```
 
----
-
-## Interactive Plot (Plotly) {.major}
+## Interactive Plot (Plotly) 
 
 This slide tests interactive graphics.
 

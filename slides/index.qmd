@@ -1,6 +1,9 @@
 ---
 title: "Slides"
+format: html
+toc: false
 ---
+
 
 Below are the slide decks for MATH 476. Dates are approximate and may be adjusted.
 

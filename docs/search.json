@@ -1,73 +1,59 @@
 [
   {
-    "objectID": "slides/intro-01.html#math-476-statistics",
-    "href": "slides/intro-01.html#math-476-statistics",
-    "title": "MATH 476 — Statistics",
-    "section": "MATH 476 — Statistics",
-    "text": "MATH 476 — Statistics\nWelcome to MATH 476.\nThis course introduces probability and statistics with an emphasis on modeling and data and not running over the margins."
+    "objectID": "slides/vertical-test2.html#a-horizontal",
+    "href": "slides/vertical-test2.html#a-horizontal",
+    "title": "Vertical Test 2",
+    "section": "A (horizontal)",
+    "text": "A (horizontal)\nA1 (vertical)\nHi\nA2 (vertical)\nHi"
   },
   {
-    "objectID": "slides/intro-01.html#basic-probability-notation",
-    "href": "slides/intro-01.html#basic-probability-notation",
-    "title": "MATH 476 — Statistics",
-    "section": "Basic Probability Notation",
-    "text": "Basic Probability Notation\n\nSample space: \\(\\Omega\\)\nEvent: \\(A \\subseteq \\Omega\\)\nProbability of \\(A\\): \\(\\Prob(A)\\)\nComplement: \\(A^{c}\\)\nConditional probability: \\[\n  \\Prob(A \\mid B) = \\frac{\\Prob(A \\cap B)}{\\Prob(B)}, \\qquad \\Prob(B) &gt; 0\n\\]\nExpectation \\(\\Ex[Y]=\\)\n\nKey idea: probabilities are always between \\(0\\) and \\(1\\)."
+    "objectID": "slides/vertical-test2.html#b-horizontal",
+    "href": "slides/vertical-test2.html#b-horizontal",
+    "title": "Vertical Test 2",
+    "section": "B (horizontal)",
+    "text": "B (horizontal)\nB1 (vertical)\nHi"
   },
   {
-    "objectID": "slides/intro-01.html#more-probability",
-    "href": "slides/intro-01.html#more-probability",
-    "title": "MATH 476 — Statistics",
-    "section": "More probability",
-    "text": "More probability\nYou need to know expectation, mean, etc. with a h2 header\n\\[\\begin{gather*}\n\\var(Y) = \\operatorname{var}(Y) \\\\\n\\DeclareMathOperator{\\var}{var}\n\\var(Y) = \\operatorname{var}(Y) \\\\\n\\Ex[Y] = \\Ex[f(X)], Y \\in \\reals \\\\\n\\end{gather*}\\]\nRandom variables\nan h3 header"
+    "objectID": "slides/index.html",
+    "href": "slides/index.html",
+    "title": "Slides",
+    "section": "",
+    "text": "Below are the slide decks for MATH 476. Dates are approximate and may be adjusted.\n\n\n\nLecture\nTopic\nSlides\n\n\n\n\n1\nIntro & Course Overview\n01-intro"
   },
   {
-    "objectID": "slides/intro-01.html#section",
-    "href": "slides/intro-01.html#section",
+    "objectID": "pages/schedule.html",
+    "href": "pages/schedule.html",
+    "title": "Schedule",
+    "section": "",
+    "text": "Date\nLecture\nTopic\nSlides\n\n\n\n\nJan 13\n1\nIntro & Course Overview\nSlides\n\n\nJan 15\n2\nReview of Probability"
+  },
+  {
+    "objectID": "pages/homework.html",
+    "href": "pages/homework.html",
+    "title": "Homework",
+    "section": "",
+    "text": "Homework assignments will be posted here as the semester progresses."
+  },
+  {
+    "objectID": "pages/homework.html#homework-1",
+    "href": "pages/homework.html#homework-1",
+    "title": "Homework",
+    "section": "Homework 1",
+    "text": "Homework 1\nTo be announced."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
     "title": "MATH 476 — Statistics",
     "section": "",
-    "text": "and even more on this slide without the header"
+    "text": "Welcome to MATH 476 — Statistics.\nThis course introduces probability and statistics with an emphasis on modeling, data, and careful reasoning."
   },
   {
-    "objectID": "slides/intro-01.html#example-slide-with-alerts",
-    "href": "slides/intro-01.html#example-slide-with-alerts",
+    "objectID": "index.html#practical-information",
+    "href": "index.html#practical-information",
     "title": "MATH 476 — Statistics",
-    "section": "Example Slide With Alerts",
-    "text": "Example Slide With Alerts\n\nPlain text is dark gray.\nAlerted term stands out in blue.\nYou can also color math: \\(\\Pr(A \\mid B)\\)"
-  },
-  {
-    "objectID": "slides/intro-01.html#python-test-slide",
-    "href": "slides/intro-01.html#python-test-slide",
-    "title": "MATH 476 — Statistics",
-    "section": "Python Test Slide",
-    "text": "Python Test Slide\nThis slide verifies that Python runs inside your Quarto RevealJS slides."
-  },
-  {
-    "objectID": "slides/intro-01.html#interactive-plot-plotly",
-    "href": "slides/intro-01.html#interactive-plot-plotly",
-    "title": "MATH 476 — Statistics",
-    "section": "Interactive Plot (Plotly)",
-    "text": "Interactive Plot (Plotly)\nThis slide tests interactive graphics."
-  },
-  {
-    "objectID": "pages/syllabus.html",
-    "href": "pages/syllabus.html",
-    "title": "Syllabus",
-    "section": "",
-    "text": "This course introduces probability models and statistical methods, including discrete and continuous random variables, estimation, hypothesis testing, and simple regression."
-  },
-  {
-    "objectID": "pages/syllabus.html#course-description",
-    "href": "pages/syllabus.html#course-description",
-    "title": "Syllabus",
-    "section": "",
-    "text": "This course introduces probability models and statistical methods, including discrete and continuous random variables, estimation, hypothesis testing, and simple regression."
-  },
-  {
-    "objectID": "pages/syllabus.html#learning-objectives",
-    "href": "pages/syllabus.html#learning-objectives",
-    "title": "Syllabus",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\n\nUnderstand basic probability concepts.\nWork with discrete and continuous distributions.\nUse sampling distributions to construct estimators and tests.\nInterpret confidence intervals and p-values in context."
+    "section": "Practical Information",
+    "text": "Practical Information\n\nInstructor: Fred J. Hickernell\n\nMeeting times: T/Th (time and room TBA)\n\nTextbook: Wackerly, Mendenhall & Scheaffer\n\nCourse website: This site"
   },
   {
     "objectID": "pages/resources.html",
@@ -91,45 +77,45 @@
     "text": "Additional Resources\n\nOffice hours and online discussion information will be added here."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
+    "objectID": "pages/syllabus.html",
+    "href": "pages/syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "This course introduces probability models and statistical methods, including discrete and continuous random variables, estimation, hypothesis testing, and simple regression."
+  },
+  {
+    "objectID": "pages/syllabus.html#course-description",
+    "href": "pages/syllabus.html#course-description",
+    "title": "Syllabus",
+    "section": "",
+    "text": "This course introduces probability models and statistical methods, including discrete and continuous random variables, estimation, hypothesis testing, and simple regression."
+  },
+  {
+    "objectID": "pages/syllabus.html#learning-objectives",
+    "href": "pages/syllabus.html#learning-objectives",
+    "title": "Syllabus",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\n\nUnderstand basic probability concepts.\nWork with discrete and continuous distributions.\nUse sampling distributions to construct estimators and tests.\nInterpret confidence intervals and p-values in context."
+  },
+  {
+    "objectID": "slides/intro-01.html#more-probability",
+    "href": "slides/intro-01.html#more-probability",
+    "title": "MATH 476 — Statistics",
+    "section": "More probability",
+    "text": "More probability\nYou need to know expectation, mean, etc. with a h2 header\n\\[\\begin{gather*}\n\\var(Y) = \\operatorname{var}(Y) \\\\\n\\DeclareMathOperator{\\var}{var}\n\\var(Y) = \\operatorname{var}(Y) \\\\\n\\Ex[Y] = \\Ex[f(X)], Y \\in \\reals \\\\\n\\end{gather*}\\]\nRandom variables\nan h3 header"
+  },
+  {
+    "objectID": "slides/intro-01.html#section",
+    "href": "slides/intro-01.html#section",
     "title": "MATH 476 — Statistics",
     "section": "",
-    "text": "Welcome to MATH 476 — Statistics.\nThis course introduces probability and statistics with an emphasis on modeling, data, and careful reasoning."
+    "text": "and even more on this slide without the header"
   },
   {
-    "objectID": "index.html#practical-information",
-    "href": "index.html#practical-information",
+    "objectID": "slides/intro-01.html#interactive-plot-plotly",
+    "href": "slides/intro-01.html#interactive-plot-plotly",
     "title": "MATH 476 — Statistics",
-    "section": "Practical Information",
-    "text": "Practical Information\n\nInstructor: Fred J. Hickernell\n\nMeeting times: T/Th (time and room TBA)\n\nTextbook: Wackerly, Mendenhall & Scheaffer\n\nCourse website: This site"
-  },
-  {
-    "objectID": "pages/homework.html",
-    "href": "pages/homework.html",
-    "title": "Homework",
-    "section": "",
-    "text": "Homework assignments will be posted here as the semester progresses."
-  },
-  {
-    "objectID": "pages/homework.html#homework-1",
-    "href": "pages/homework.html#homework-1",
-    "title": "Homework",
-    "section": "Homework 1",
-    "text": "Homework 1\nTo be announced."
-  },
-  {
-    "objectID": "pages/schedule.html",
-    "href": "pages/schedule.html",
-    "title": "Schedule",
-    "section": "",
-    "text": "Date\nLecture\nTopic\nSlides\n\n\n\n\nJan 13\n1\nIntro & Course Overview\nSlides\n\n\nJan 15\n2\nReview of Probability"
-  },
-  {
-    "objectID": "slides/index.html",
-    "href": "slides/index.html",
-    "title": "Slides",
-    "section": "",
-    "text": "Below are the slide decks for MATH 476. Dates are approximate and may be adjusted.\n\n\n\nLecture\nTopic\nSlides\n\n\n\n\n1\nIntro & Course Overview\n01-intro"
+    "section": "Interactive Plot (Plotly)",
+    "text": "Interactive Plot (Plotly)\nThis slide tests interactive graphics."
   }
 ]

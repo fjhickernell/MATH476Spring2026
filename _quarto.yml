@@ -1,3 +1,13 @@
+# _quarto.yml
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-location: left
+    css:
+      - /classlib/classlib/quarto/website/hickernell-website.css
+      
 project:
   type: website
   output-dir: docs
@@ -6,12 +16,28 @@ project:
     - pages/**/*.qmd
     - slides/**/*.qmd
   resources:
-    - classlib/classlib/quarto/slides/hickernell-slides.css
     - classlib/classlib/quarto/slides/hickernell-latex-macros.js
     - classlib/classlib/quarto/assets/images/normal-scatter.png
-
-metadata-files:
-  - classlib/classlib/quarto/website/hickernell-website.yml
+    - classlib/classlib/quarto/slides/hickernell-slides.css
+    - classlib/classlib/quarto/website/hickernell-website.css
 
 website:
   title: "MATH 476 — Spring 2026"
+  navbar:
+    logo: classlib/classlib/quarto/assets/images/normal-scatter.png
+    left:
+      - href: index.qmd
+        text: Home
+      - href: pages/syllabus.qmd
+        text: Syllabus
+      - href: pages/schedule.qmd
+        text: Schedule
+      - href: pages/homework.qmd
+        text: Homework
+      - href: pages/resources.qmd
+        text: Resources
+      - href: slides/index.qmd
+        text: Slides
+  page-footer:
+    left: "© 2026 Fred J. Hickernell"
+    right: "Illinois Institute of Technology"

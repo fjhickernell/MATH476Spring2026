@@ -1,0 +1,7 @@
+#metadata-files:
+#  - ../classlib/classlib/quarto/slides/hickernell-slides.yml
+
+format:
+  revealjs:
+    slide-level: 1
+    center: false

@@ -1,6 +1,9 @@
 ---
 title: "MATH 476 — Statistics"
 subtitle: "Spring 2026"
+metadata-files:
+  - classlib/classlib/quarto/website/hickernell-website.yml
+title-block-banner: false
 ---
 
 Welcome to **MATH 476 — Statistics**.

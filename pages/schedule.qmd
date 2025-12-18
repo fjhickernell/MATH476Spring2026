@@ -4,5 +4,5 @@ title: "Schedule"
 
 | Date   | Lecture | Topic                    | Slides                             |
 |--------|---------|-------------------------|------------------------------------|
-| Jan 13 | 1       | Intro & Course Overview | [Slides](../slides/01-intro.html)  |
+| Jan 13 | 1       | Intro & Course Overview | [Introduction](../slides/intro-01.html)  |
 | Jan 15 | 2       | Review of Probability   |                                    |

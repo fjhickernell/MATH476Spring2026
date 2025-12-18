@@ -5,5 +5,3 @@ format:
   revealjs:
     navigation-mode: grid
     controls: true
-    include-in-header:
-      - ../classlib/classlib/quarto/slides/hickernell-latex-macros.js

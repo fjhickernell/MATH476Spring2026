@@ -1,19 +1,139 @@
 ---
-title: "MATH 476 — Statistics"
+title: "Welcome to MATH 476 Statistics"
 subtitle: "Spring 2026"
 metadata-files:
   - classlib/classlib/quarto/website/hickernell-website.yml
 title-block-banner: false
 ---
 
-Welcome to **MATH 476 — Statistics**.
+## Course Description
 
-This course introduces probability and statistics with an emphasis on
-modeling, data, and careful reasoning.
+This course introduces the core ideas of statistical reasoning and data analysis. We will study how to summarize data, quantify uncertainty, and draw conclusions from samples. Topics include probability foundations, common distributions, estimation and confidence intervals, hypothesis testing, and simple regression. We will emphasize practical interpretation and computation in **Python**.
 
-## Practical Information
+**Enrollment:** Upper-level undergraduate elective
 
-- **Instructor:** Fred J. Hickernell  
-- **Meeting times:** T/Th (time and room TBA)  
-- **Textbook:** Wackerly, Mendenhall & Scheaffer  
-- **Course website:** This site
+<details>
+<summary><strong>Instructor:</strong> Fred J. Hickernell</summary>
+
+* **Office:** Galvin Tower 18C3-1  
+* **Office hours:** By appointment (details will be posted)  
+* **Phone:** 312-567-8983  
+* **Email:** <hickernell@illinoistech.edu>  
+* **Website:** https://www.iit.edu/directory/people/fred-hickernell  
+* **LinkedIn:** https://www.linkedin.com/in/fjhickernell/  
+* **Google Scholar:** https://scholar.google.com/citations?user=dJbMJG8AAAAJ&hl=en  
+
+*Brief bio:* Fred J. Hickernell is professor of applied mathematics. His research focuses on improving the efficiency of computer simulations and developing justifiable stopping criteria. He is a Fellow of the Institute of Mathematical Statistics and the recipient of the 2016 Joseph F. Traub Prize for Achievement in Information-Based Complexity.
+
+</details>
+
+<details>
+<summary><strong>Teaching Assistant:</strong> TBA</summary>
+
+* **Office hours:** TBA  
+* **Email:** TBA  
+
+</details>
+
+<div style="margin-top:1em; margin-bottom:0.4em;">
+<strong>Textbook:</strong> Wackerly, Mendenhall, and Scheaffer (details in the <a href="pages/syllabus.html">Syllabus</a>)
+</div>
+
+<details>
+<summary><strong>Recommended tools</strong></summary>
+
+* Python (Anaconda / Miniconda)
+* Jupyter (Notebook / Lab)
+* VS Code
+* GitHub
+
+</details>
+
+<details>
+<summary><strong>Prerequisites / Requirements</strong></summary>
+
+* Calculus (basic familiarity)
+* Comfort working with algebra and functions
+* Willingness to write and run simple Python code (we’ll build this skill)
+
+</details>
+
+<details>
+<summary><strong>Objectives</strong></summary>
+
+By the end of this course, students will be able to:
+
+- Summarize and visualize data appropriately.
+- Use probability models to reason about randomness.
+- Construct and interpret confidence intervals.
+- Perform and interpret hypothesis tests.
+- Fit and interpret simple regression models.
+- Use Python to support statistical computation and reproducible analysis.
+
+</details>
+
+<details>
+<summary><strong>Where to find it</strong></summary>
+
+| **This course website** | **Canvas** |
+|---|---|
+| <a href="pages/syllabus.html">Syllabus</a> | Grades |
+| <a href="pages/schedule.html">Schedule</a> | Announcements |
+| <a href="pages/homework.html">Homework</a> | Submissions |
+| <a href="pages/resources.html">Resources</a> | Discussions |
+
+</details>
+
+## Course Outline
+
+<details>
+<summary><strong>Foundations</strong></summary>
+
+- Data, variables, and study design  
+- Descriptive statistics  
+- Data visualization  
+
+</details>
+
+<details>
+<summary><strong>Probability</strong></summary>
+
+- Basic probability and counting  
+- Random variables and common distributions  
+- Expectation and variance  
+
+</details>
+
+<details>
+<summary><strong>Inference</strong></summary>
+
+- Sampling distributions and CLT  
+- Confidence intervals  
+- Hypothesis testing  
+
+</details>
+
+<details>
+<summary><strong>Regression</strong></summary>
+
+- Correlation  
+- Simple linear regression  
+- Interpretation and diagnostics (intro level)
+
+</details>
+
+## Assessment
+
+(Weights will match the Syllabus once finalized.)
+
+- **Homework:** TBA  
+- **Midterm(s):** TBA  
+- **Final Exam:** TBA  
+- **Project / Lab component:** TBA  
+
+---
+
+<small>
+**Syllabus prepared by:** Fred Hickernell  
+**Date:** 2025-12-18 to the present
+</small>

@@ -22,15 +22,21 @@ website:
     logo: /classlib/classlib/quarto/assets/images/normal-scatter.png
     left:
       - href: index.qmd
-        text: Home
-      - href: pages/syllabus.qmd
-        text: Syllabus
+        text: Welcome
       - href: pages/schedule.qmd
         text: Schedule
+      - href: pages/notebooks.qmd
+        text: Notebooks
       - href: pages/homework.qmd
         text: Homework
-      - href: pages/resources.qmd
-        text: Resources
+      - href: pages/tests.qmd
+        text: Tests
+      - text: Resources
+        menu:
+          - href: pages/resources.qmd
+            text: Resources
+          - href: pages/policies.qmd
+            text: Policies
   page-footer:
     left: "© 2026 Fred J. Hickernell"
     right: "Illinois Institute of Technology"

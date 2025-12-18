@@ -1,4 +1,5 @@
 # _quarto.yml
+
       
 project:
   type: website
@@ -13,10 +14,12 @@ project:
     - classlib/classlib/quarto/slides/hickernell-slides.css
     - classlib/classlib/quarto/website/hickernell-website.css
 
+# Navigation must live here (cannot be delegated via metadata-files).
+# Styling/layout lives in HickernellClassLib (hickernell-website.yml).
 website:
   title: "MATH 476 — Spring 2026"
   navbar:
-    logo: classlib/classlib/quarto/assets/images/normal-scatter.png
+    logo: /classlib/classlib/quarto/assets/images/normal-scatter.png
     left:
       - href: index.qmd
         text: Home

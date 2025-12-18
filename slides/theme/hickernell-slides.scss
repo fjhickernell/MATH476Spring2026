@@ -37,8 +37,18 @@ body,
   padding: 0 !important;
 }
 
-/* Comfortable, symmetric margins for slide content items */
-.reveal .slides section > * {
+/* Apply margins to real content elements, not Quarto/Reveal wrappers */
+.reveal .slides section p,
+.reveal .slides section ul,
+.reveal .slides section ol,
+.reveal .slides section pre,
+.reveal .slides section blockquote,
+.reveal .slides section table,
+.reveal .slides section h1,
+.reveal .slides section h2,
+.reveal .slides section h3,
+.reveal .slides section h4,
+.reveal .slides section figure {
   margin-left: var(--slide-margin);
   margin-right: var(--slide-margin);
 }
@@ -182,6 +192,7 @@ body,
   display: block !important;
 }
 
+/* Fix H1 slides in vertical stacks (stack parent positioning) */
 .reveal:not(.overview) .slides section.title-slide.slide.level1 {
   top: 0 !important;
   left: 0 !important;
@@ -189,9 +200,16 @@ body,
 }
 
 /* Prevent Reveal from centering H1 slides except the real title */
-.reveal:not(.overview) 
+.reveal:not(.overview)
   .slides section.title-slide.slide.level1:not(#title-slide) {
   margin-left: 0 !important;
   margin-right: 0 !important;
   max-width: 100% !important;
+}
+
+/* Quarto RevealJS: prevent level2 slide content from being horizontally centered */
+.reveal:not(.overview) .slides section.slide.level2 .slide-content {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  max-width: none !important;
 }

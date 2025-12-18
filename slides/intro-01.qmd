@@ -59,6 +59,9 @@ and even more on this slide without the header
 This slide verifies that Python runs inside your Quarto RevealJS slides.
 
 ```{python}
+#| echo: true
+#| warning: false
+#| message: false
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -75,6 +78,9 @@ plt.show()
 This slide tests interactive graphics.
 
 ```{python}
+#| echo: true
+#| warning: false
+#| message: false
 import numpy as np
 import plotly.express as px
 
@@ -83,3 +89,24 @@ y = np.sin(x)
 
 px.line(x=x, y=y, title="Interactive Sine Wave")
 ```
+
+# A small R example
+
+```{r}
+#| echo: true
+#| warning: false
+#| message: false
+
+# Simulate data
+set.seed(123)
+x <- rnorm(100)
+
+# Basic summaries
+mean(x)
+sd(x)
+
+# Simple plot
+hist(x, col = "steelblue", main = "Histogram of x")
+```
+
+That’s it.

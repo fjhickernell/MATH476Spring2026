@@ -1,21 +1,9 @@
+metadata-files:
+  - ../classlib/classlib/quarto/slides/hickernell-slides.yml
+
 format:
   revealjs:
-    slide-level: 2
     navigation-mode: grid
-    center: false
     controls: true
-    width: 1400
-    height: 800
-    margin: 0
-    theme:
-      - simple
-      - default
-      - theme/hickernell-slides.scss
     include-in-header:
-      - ../classlib/classlib/quarto/slides/hickernell-latex-macros.js
-    title-slide-attributes:
-      data-background-image: ../classlib/classlib/quarto/assets/images/normal-scatter.png
-      data-background-size: 55%
-      data-background-position: top left
-      data-background-color: "#f5f7fb"
-    footer: "© 2026 Fred J. Hickernell"
+      - /classlib/classlib/quarto/slides/hickernell-latex-macros.js

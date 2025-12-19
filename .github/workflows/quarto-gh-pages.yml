@@ -11,6 +11,9 @@ permissions:
 jobs:
   build-deploy:
     runs-on: ubuntu-22.04
+    env:
+      RETICULATE_PYTHON: ${{ env.pythonLocation }}/bin/python
+      RETICULATE_USE_MANAGED_VENV: "false"
     steps:
       - uses: actions/checkout@v4
         with:

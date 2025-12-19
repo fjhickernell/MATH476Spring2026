@@ -60,8 +60,6 @@ This slide verifies that Python runs inside your Quarto RevealJS slides.
 
 ```{python}
 #| echo: true
-#| warning: false
-#| message: false
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -73,14 +71,21 @@ plt.title("Sine Wave Test")
 plt.show()
 ```
 
+## Code that does not show
+```{python}
+#| results: asis
+import numpy as np
+import matplotlib.pyplot as plt
+print(rf"$\pi = {np.pi}$")
+```
+
 ## Interactive Plot (Plotly) 
 
 This slide tests interactive graphics.
 
 ```{python}
 #| echo: true
-#| warning: false
-#| message: false
+
 import numpy as np
 import plotly.express as px
 

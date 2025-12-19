@@ -41,4 +41,4 @@ website:
 
 execute:
   env:
-    RETICULATE_PYTHON: /Users/fredhickernell/miniconda3/envs/qmcpy/bin/python
+    RETICULATE_PYTHON: ${HOME}/miniconda3/envs/qmcpy/bin/python

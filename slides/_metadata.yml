@@ -5,3 +5,7 @@ format:
   revealjs:
     navigation-mode: grid
     controls: true
+
+execute:
+  warning: false   # suppress runtime noise in slides
+  message: false   # keep audience-facing output clean

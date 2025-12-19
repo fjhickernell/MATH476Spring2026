@@ -40,3 +40,6 @@ website:
   page-footer:
     left: "© 2026 Fred J. Hickernell"
     right: "Illinois Institute of Technology"
+execute:
+  env:
+    RETICULATE_PYTHON: /Users/fredhickernell/miniconda3/envs/qmcpy/bin/python

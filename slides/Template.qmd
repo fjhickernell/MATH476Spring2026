@@ -1,21 +1,10 @@
 ---
 title: "MATH 476 — Statistics"
-subtitle: "Introduction and Probability"
+subtitle: "Template Slide Deck"
 author: "Fred J. Hickernell"
 date: last-modified
 date-format: "MMMM D, YYYY"
 ---
-
-# Statistics
-
-### Principled
-- Clear assumptions
-- Probability underpinning
-
-### Inference about a population
-- Want to know 
-
-### From Data
 
 # MATH 476 — Statistics 
 

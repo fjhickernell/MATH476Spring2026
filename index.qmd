@@ -36,7 +36,7 @@ This course introduces the core ideas of statistical reasoning and data analysis
 </details>
 
 <div style="margin-top:1em; margin-bottom:0.4em;">
-<strong>Textbook:</strong> Wackerly, Mendenhall, and Scheaffer (details in the <a href="pages/syllabus.html">Syllabus</a>)
+<strong>Textbook:</strong> Wackerly, Mendenhall, and Scheaffer
 </div>
 
 <details>
@@ -50,11 +50,12 @@ This course introduces the core ideas of statistical reasoning and data analysis
 </details>
 
 <details>
-<summary><strong>Prerequisites / Requirements</strong></summary>
+<summary><strong>Prerequisites</strong></summary>
 
-* Calculus (basic familiarity)
-* Comfort working with algebra and functions
-* Willingness to write and run simple Python code (we’ll build this skill)
+* Multivariate calculus
+* Linear algebra
+* Calculus-based probability
+* Comfortable with code
 
 </details>
 
@@ -87,49 +88,69 @@ By the end of this course, students will be able to:
 ## Course Outline
 
 <details>
-<summary><strong>Foundations</strong></summary>
+<summary><strong>Introduction</strong></summary>
 
-- Data, variables, and study design  
-- Descriptive statistics  
-- Data visualization  
+- What is statistical inference?  
+- Review of probability
+  - Random variables and their distributions
+  - Populations and samples
+  - Sample statistics
+
+</details>
+
+
+<details>
+<summary><strong>Estimates of Population Parameters</strong></summary>
+
+- Bias of estimates
+- Confidence intervals
+- Relative efficiency, consistency and sufficiency
+- Minimum variance unbiased estimation
+- Moment Estimators
+- Maximum Likelihood Estimates
 
 </details>
 
 <details>
-<summary><strong>Probability</strong></summary>
+<summary><strong>Hypothesis Testing</strong></summary>
 
-- Basic probability and counting  
-- Random variables and common distributions  
-- Expectation and variance  
-
-</details>
-
-<details>
-<summary><strong>Inference</strong></summary>
-
-- Sampling distributions and CLT  
-- Confidence intervals  
-- Hypothesis testing  
+- Common tests for means and variances
+- Relationship between hypothesis tests and confidence intervals
+- Power of tests
+- Likelihood ratio tests
+- Comparison of more than two means
+- Analysis of categorical data
 
 </details>
 
 <details>
-<summary><strong>Regression</strong></summary>
+<summary><strong>Linear Models and Least Squares</strong></summary>
 
-- Correlation  
-- Simple linear regression  
-- Interpretation and diagnostics (intro level)
+- Linear Model
+- Method of Least Squares
+- Inferences concerning regression coefficients
+- Hypothesis testing and model selection
+- Correlation
+
+</details>
+
+
+<details>
+<summary><strong>Nonparametric Statistics</strong></summary>
+
+- Matched pairs of experiments
+- Comparison of two populations
+- Comparison of more than two populations
 
 </details>
 
 ## Assessment
 
-(Weights will match the Syllabus once finalized.)
+- **Homework:** 15%  
+- **Midterm Tests:** 20%  
+- **Project:** 25%  
+- **Final Exam:** 40%  
 
-- **Homework:** TBA  
-- **Midterm(s):** TBA  
-- **Final Exam:** TBA  
-- **Project / Lab component:** TBA  
 
 ---
 

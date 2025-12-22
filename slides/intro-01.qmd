@@ -1,12 +1,12 @@
 ---
 title: "MATH 476 — Statistics"
-subtitle: "Introduction and Probability"
+subtitle: "Introduction and Probability Review"
 author: "Fred J. Hickernell"
 date: last-modified
 date-format: "MMMM D, YYYY"
 ---
 
-# Statistics
+# Statistics {data-state="goldborder"}
 
 ### Principled
 - Clear assumptions

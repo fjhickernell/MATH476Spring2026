@@ -7,3 +7,7 @@ docs/
 
 
 .Renviron
+
+# Quarto build artifacts
+site_libs/
+_site/

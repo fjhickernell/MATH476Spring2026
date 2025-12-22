@@ -4,7 +4,7 @@
     "href": "slides/intro-01.html#approval-ratings",
     "title": "MATH 476 — Statistics",
     "section": "Approval ratings",
-    "text": "Approval ratings\nThe Gallup Poll tracks the approval ratings of US presidents according to a careful polling methodology\nEach day they telephone \\(n=1500\\) adults and their sampling error for the approval ratings is about \\(4\\%\\)"
+    "text": "Approval ratings\nThe Gallup Poll tracks the approval ratings of US presidents according to a careful polling methodology\nEach day they telephone \\(n=1500\\) adults and their sampling error for the approval ratings is about \\(4\\%\\)\nLet \\(Y \\sim \\operatorname{Ber}(\\mu)\\), i.e., a Bernoulli (coin-flipping) distribution wth probability of success \\(\\mu\\), \\[\\begin{align*}\n\\Pr(Y =y) = \\begin{cases} \\mu, & y=1, \\text{ (yes)}\\\\\n1-\\mu, & y = 0, \\text{ (no)}\n\\end{cases}\n\\end{align*}\\]"
   },
   {
     "objectID": "slides/intro-01.html#more-probability",

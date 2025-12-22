@@ -10,16 +10,27 @@ date-format: "MMMM D, YYYY"
 
 ### Principled
 - Clear assumptions
-- Probability underpinning
+- Probability as a basis
 - Efficient and accurate computation
 
 ### Inference about a population
-- Want to know parameters that describe or relationships among a large number or individuals
-- Should come with a level of uncertainty
+- Want to know parameters that describe a large number or individuals or the relationships among them
+- Should provide a level of uncertainty
 
 ### From Data
 - Carefully sampled
-- May be observations, surveys, experiments, or computer simulations
+- Observations, surveys, experiments, or computer simulations
+
+# Examples
+- Approval ratings
+- Numerical integration (quadrature)
+
+## Approval ratings
+
+The Gallup Poll tracks the [approval ratings of US presidents](https://news.gallup.com/poll/203198/presidential-approval-ratings-donald-trump.aspx) according to a [careful polling methodology](https://www.gallup.com/224855/gallup-poll-work.aspx)
+
+Each day they telephone $n=1500$ adults and their sampling error for the approval ratings is about $4\%$
+
 
 # MATH 476 — Statistics 
 

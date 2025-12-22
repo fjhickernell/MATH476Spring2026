@@ -11,3 +11,6 @@ docs/
 # Quarto build artifacts
 site_libs/
 _site/
+
+# Local dev overrides (do not commit)
+slides/_metadata-dev.yml

@@ -11,11 +11,15 @@ date-format: "MMMM D, YYYY"
 ### Principled
 - Clear assumptions
 - Probability underpinning
+- Efficient and accurate computation
 
 ### Inference about a population
-- Want to know 
+- Want to know parameters that describe or relationships among a large number or individuals
+- Should come with a level of uncertainty
 
 ### From Data
+- Carefully sampled
+- May be observations, surveys, experiments, or computer simulations
 
 # MATH 476 — Statistics 
 

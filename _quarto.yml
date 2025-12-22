@@ -9,7 +9,7 @@ project:
   resources:
     - classlib/classlib/quarto/slides/hickernell-latex-macros.js
     - classlib/classlib/quarto/assets/images/normal-scatter.png
-    - classlib/classlib/quarto/slides/hickernell-slides.css
+    - classlib/classlib/quarto/slides/hickernell-slides.scss
     - classlib/classlib/quarto/website/hickernell-website.css
 
 # Navigation must live here (cannot be delegated via metadata-files).

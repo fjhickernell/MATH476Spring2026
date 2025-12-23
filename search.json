@@ -4,7 +4,7 @@
     "href": "slides/intro-01.html#approval-ratings",
     "title": "MATH 476 — Statistics",
     "section": "Approval ratings",
-    "text": "Approval ratings\nThe Gallup Poll tracks the approval ratings of US presidents according to a careful polling methodology\nEach day they telephone \\(n=1500\\) adults and their sampling error for the approval ratings is about \\(4\\%\\)\nLet \\(Y \\sim \\Bern(\\mu)\\), a Bernoulli (free throw shooting) distribution wth probability of success \\(\\mu\\), \\[\\begin{align*}\n\\Prob(Y =y) &= \\begin{cases} \\mu, & y=1, \\text{ (yes)}\\\\\n1-\\mu, & y = 0, \\text{ (no)}\n\\end{cases} \\\\\n\\barY &:= \\frac 1n (Y_1 + \\cdots + Y_n) \\sim \\Bin(n,\\mu) \\,\n\\appxsim \\, \\Norm\\bigl(\\mu,\\mu(1-\\mu)/n\\bigr)\n\\end{align*}\\]\n⬇ Approval Rating Jupyter 📓"
+    "text": "Approval ratings\nThe Gallup Poll tracks the approval ratings of US presidents according to a careful polling methodology\nEach day they telephone \\(n=1500\\) adults and their sampling error for the approval ratings is about \\(4\\%\\)\nLet \\(Y \\sim \\Bern(\\mu)\\), a Bernoulli (free throw shooting) distribution wth probability of success \\(\\mu\\), \\[\\begin{align*}\n\\Prob(Y =y) &= \\begin{cases} \\mu, & y=1, \\text{ (yes)}\\\\\n1-\\mu, & y = 0, \\text{ (no)}\n\\end{cases} \\\\\n\\intertext{If $Y_1, \\ldots, Y_n \\IIDsim \\Bern(\\mu)$, then}\n&\\frac 1n (Y_1 + \\cdots + Y_n) \\sim \\Bin(n,\\mu)\n\\barY &:= \\frac 1n (Y_1 + \\cdots + Y_n)\n\\appxsim  \\Norm\\bigl(\\mu,\\mu(1-\\mu)/n\\bigr)\n\\end{align*}\\]\n⬇ Approval Rating Jupyter 📓"
   },
   {
     "objectID": "slides/intro-01.html#more-probability",

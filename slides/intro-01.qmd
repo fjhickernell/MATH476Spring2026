@@ -39,7 +39,7 @@ Let $Y \sim \Bern(\mu)$, a [Bernoulli]{.alert} (free throw shooting) distributio
 \end{align*}
 
 
-[⬇ Approval Rating Inference Jupyter Notebook](../classlib/classlib/notebooks/approval_rating_bernoulli_binomial_clt_ci.ipynb){.button download=true}
+[⬇ Approval Rating Jupyter 📓](../classlib/classlib/notebooks/approval_rating_bernoulli_binomial_clt_ci.ipynb){.button download=true}
 
 
 

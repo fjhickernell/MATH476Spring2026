@@ -36,8 +36,10 @@ Let $Y \sim \Bern(\mu)$, a [Bernoulli]{.alert} (free throw shooting) distributio
 \Prob(Y =y) &= \begin{cases} \mu, & y=1, \text{ (yes)}\\
 1-\mu, & y = 0, \text{ (no)}
 \end{cases} \\
-\barY &:= \frac 1n (Y_1 + \cdots + Y_n) \sim \Bin(n,\mu) \, 
-\appxsim \, \Norm\bigl(\mu,\mu(1-\mu)/n\bigr)
+\intertext{If $Y_1, \ldots, Y_n \IIDsim \Bern(\mu)$, then}
+&\frac 1n (Y_1 + \cdots + Y_n) \sim \Bin(n,\mu)
+\barY &:= \frac 1n (Y_1 + \cdots + Y_n)
+\appxsim  \Norm\bigl(\mu,\mu(1-\mu)/n\bigr)
 \end{align*}
 
 

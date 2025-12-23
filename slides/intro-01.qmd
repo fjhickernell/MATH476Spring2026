@@ -33,9 +33,11 @@ Each day they telephone $n=1500$ adults and their sampling error for the approva
 
 Let $Y \sim \Bern(\mu)$, a [Bernoulli]{.alert} (free throw shooting) distribution wth probability  of success $\mu$, 
 \begin{align*}
-\Prob(Y =y) = \begin{cases} \mu, & y=1, \text{ (yes)}\\
+\Prob(Y =y) &= \begin{cases} \mu, & y=1, \text{ (yes)}\\
 1-\mu, & y = 0, \text{ (no)}
-\end{cases}
+\end{cases} \\
+\barY &:= \frac 1n (Y_1 + \cdots + Y_n) \sim \Binom(n,\mu) 
+\appxsim \Norm\bigl(\mu,\mu(1-\mu)/n\bigr)
 \end{align*}
 
 

@@ -39,7 +39,7 @@ Let $Y \sim \Bern(\mu)$, a [Bernoulli]{.alert} (free throw shooting) distributio
 \end{align*}
 If $Y_1, \ldots, Y_n \IIDsim \Bern(\mu)$, then
 \begin{align*}
-&Y_1 + \cdots + Y_n \sim \Bin(n,\mu)
+&Y_1 + \cdots + Y_n \sim \Bin(n,\mu) \\
 \barY &:= \frac 1n (Y_1 + \cdots + Y_n)
 \appxsim  \Norm\bigl(\mu,\mu(1-\mu)/n\bigr)
 \end{align*}

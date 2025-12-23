@@ -39,6 +39,10 @@ Let $Y \sim \Ber(\mu)$, i.e., a [Bernoulli]{.alert} (coin-flipping) distribution
 \end{align*}
 
 
+[Approval Rating Inference Jupyter Notebook](../classlib/classlib/notebooks/approval_rating_bernoulli_binomial_clt_ci.ipynb)
+
+
+
 # MATH 476 — Statistics 
 
 Welcome to **MATH 476**.

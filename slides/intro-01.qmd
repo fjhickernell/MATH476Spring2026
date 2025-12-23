@@ -41,7 +41,7 @@ If $Y_1, \ldots, Y_n \IIDsim \Bern(\mu)$, then
 \begin{align*}
 &Y_1 + \cdots + Y_n \sim \Bin(n,\mu) \\
 \barY &:= \frac 1n (Y_1 + \cdots + Y_n)
-\appxsim  \Norm\bigl(\mu,\mu(1-\mu)/n\bigr)
+\appxsim  \Norm\bigl(\mu,\mu(1-\mu)/n\bigr) \stackrel{\cdot}{\sim} N
 \end{align*}
 
 

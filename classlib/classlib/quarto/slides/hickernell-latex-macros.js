@@ -65,6 +65,7 @@ MathJax.Hub.Config({
       // --- IID / LD ---
       IIDsim: "{\\overset{\\text{IID}}{\\sim}}",
       LDsim:  "{\\overset{\\text{LD}}{\\sim}}",
+      appxsim: "{\\overset{\cdot}{\\sim}}",
 
       // --- Sets ---
       naturals:  "{\\mathbb{N}}",
@@ -226,6 +227,11 @@ MathJax.Hub.Config({
       fC: "{\\mathfrak{C}}",
       fh: "{\\mathfrak{h}}",
       fu: "{\\mathfrak{u}}",
+
+      // --- Bar ---
+      barX: "{\\overbar{X}}",     
+      barY: "{\\overbar{Y}}",
+      barZ: "{\\overbar{Z}}",
 
       // --- Constants ---
       me:  "{\\mathrm{e}}",

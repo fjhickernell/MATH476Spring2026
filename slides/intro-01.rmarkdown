@@ -158,3 +158,4 @@ hist(x, col = "steelblue", main = "Histogram of x")
 ```
 
 That’s it.
+

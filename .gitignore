@@ -19,3 +19,5 @@ slides/_metadata-dev.yml
 slides/_dev-preview.qmd
 slides/hickernell-slides-dev.yml
 devclasslib
+
+slides/_dev-preview.html

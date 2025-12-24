@@ -15,3 +15,7 @@ _site/
 # Local dev overrides (do not commit)
 slides/_metadata-dev.yml
 devclasslib
+
+# dev-only
+slides/_metadata-dev.yml
+devclasslib

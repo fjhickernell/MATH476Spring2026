@@ -19,3 +19,10 @@ devclasslib
 # dev-only
 slides/_metadata-dev.yml
 devclasslib
+
+.quarto/
+
+slides/_dev-preview.qmd
+
+slides/_dev-preview.qmd
+slides/hickernell-slides-dev.yml

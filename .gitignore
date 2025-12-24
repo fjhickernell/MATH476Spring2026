@@ -1,28 +1,21 @@
-/.quarto/
-**/*.quarto_ipynb
+# ---- Quarto / site build ----
+.quarto/
 _site/
-docs/
+site_libs/
 *_files/
+**/*.quarto_ipynb
+
+# ---- Docs output ----
+docs/
+
+# ---- OS / editor ----
 .DS_Store
 
-
+# ---- Local environment ----
 .Renviron
 
-# Quarto build artifacts
-site_libs/
-_site/
-
-# Local dev overrides (do not commit)
+# ---- Dev-only (local preview harness; never commit) ----
 slides/_metadata-dev.yml
-devclasslib
-
-# dev-only
-slides/_metadata-dev.yml
-devclasslib
-
-.quarto/
-
-slides/_dev-preview.qmd
-
 slides/_dev-preview.qmd
 slides/hickernell-slides-dev.yml
+devclasslib

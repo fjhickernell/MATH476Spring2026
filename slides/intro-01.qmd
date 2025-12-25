@@ -31,38 +31,51 @@ The Gallup Poll tracks the [approval ratings of US presidents](https://news.gall
 
 Each day they telephone $n=1500$ adults and their sampling error for the approval ratings is about $4\%$
 
-::: {.fragment}
+::: {.r-stack style="width:100%"}
+<div class="fragment fade-out" data-fragment-index="1"  style="width:100%; margin:0;"  markdown="1">
 Let $Y \sim \Bern(\mu)$, a [Bernoulli]{.alert} (free throw shooting) distribution wth probability  of success $\mu$, 
-\begin{align*}
-\Prob(Y =y) &= \begin{cases} \mu, & y=1, \text{ (yes)}\\
+$$
+\Prob(Y =y) = \begin{cases} \mu, & y=1, \text{ (yes)}\\
 1-\mu, & y = 0, \text{ (no)}
 \end{cases}
-\end{align*} 
+$$
 If $Y_1, \ldots, Y_n \IIDsim \Bern(\mu)$, then
 \begin{align*}
 T &:= Y_1 + \cdots + Y_n \sim \Bin(n,\mu), \quad \Prob(T = y) = \binom{n}{y} \mu^y (1-\mu)^{n-y}\\
 \barY &:= \frac 1n (Y_1 + \cdots + Y_n)
 \appxsim  \Norm\bigl(\mu,\mu(1-\mu)/n\bigr) \quad \text{by the }\class{alert}{\text{Central Limit Theorem}}
 \end{align*}
-:::
-
-## Approval ratings (cont'd)
-
-If $Y_1, \ldots, Y_n \IIDsim \Bern(\mu)$, then
-
-::: {.r-stack style="width:100%"}
-<div class="fragment fade-out" data-fragment-index="1">
-\begin{align*}
-T &:= Y_1 + \cdots + Y_n \sim \Bin(n,\mu), \quad \Prob(T = y) = \binom{n}{y} \mu^y (1-\mu)^{n-y} \text{ for } y \in \{0, \ldots, n\}\\
-\barY &:= \frac 1n (Y_1 + \cdots + Y_n) \appxsim  \Norm\bigl(\mu,\mu(1-\mu)/n\bigr) \quad \text{by the }\class{alert}{\text{Central Limit Theorem}}
-\end{align*}
 </div>
 
-<div class="fragment current-visible" data-fragment-index="1">
+<div class="fragment current-visible" data-fragment-index="1"  style="width:100%; margin:0;"  markdown="1">
+Let $Y \sim \Bern(\mu)$, a [Bernoulli]{.alert} (free throw shooting) distribution wth probability  of success $\mu$, 
+$$
+\Prob(Y =y) = \begin{cases} \mu, & y=1, \text{ (yes)}\\
+1-\mu, & y = 0, \text{ (no)}
+\end{cases}
+$$
+If $Y_1, \ldots, Y_n \IIDsim \Bern(\mu)$, then
 \begin{align*}
 T &:= Y_1 + \cdots + Y_n \sim \Bin(n,\mu), \quad \Prob(T = y) = \binom{n}{y} \mu^y (1-\mu)^{n-y}\\
 \barY &:= \frac 1n (Y_1 + \cdots + Y_n) \appxsim  \Norm\bigl(\mu,\mu(1-\mu)/n\bigr) \appxsim  \Norm\bigl(\mu,\barY(1-\barY)/n\bigr) \quad \text{by the }\class{alert}{\text{Central Limit Theorem}}
 \end{align*}
+</div>
+
+:::
+
+## Approval ratings (cont'd)
+
+If $Y_1, \ldots, Y_n \IIDsim \Bern(\mu)$, then we can construct a [confidence interval]{.alert} that [captures]{.alert} the true approval rating with high probability:
+
+::: {.r-stack style="width:100%"}
+<div class="fragment fade-out" data-fragment-index="1"  style="width:100%; margin:0;"  markdown="1">
+\begin{align*}
+T &:= Y_1 + \cdots + Y_n \sim \Bin(n,\mu), \quad \Prob(T = y) = \binom{n}{y} \mu^y (1-\mu)^{n-y}\\
+\barY &:= \frac 1n (Y_1 + \cdots + Y_n) \appxsim  \Norm\bigl(\mu,\mu(1-\mu)/n\bigr) \appxsim  \Norm\bigl(\mu,\barY(1-\barY)/n\bigr) \quad \text{by the }\class{alert}{\text{Central Limit Theorem}} \\
+95\% & \approx \Prob\Bigl[\mu - 1.96\sqrt{\barY(1-\barY)/n} \le \mu \le \mu + 1.96\sqrt{\barY(1-\barY)/n}\Bigr] \\
+& \le \Prob\Bigl[\barY - 1/\sqrt{n} \le \mu \le \barY + 1/\sqrt{n} \Bigr] \quad \text{since } \sqrt{\barY(1-\barY)} \le 1/2
+\end{align*}
+For $n = 1000$ we get $1/\sqrt{n} \approx 3\%$
 </div>
 :::
 

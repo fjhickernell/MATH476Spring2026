@@ -21,3 +21,5 @@ slides/hickernell-slides-dev.yml
 devclasslib
 
 slides/_dev-preview.html
+
+/.quarto/

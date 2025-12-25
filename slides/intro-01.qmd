@@ -31,19 +31,26 @@ The Gallup Poll tracks the [approval ratings of US presidents](https://news.gall
 
 Each day they telephone $n=1500$ adults and their sampling error for the approval ratings is about $4\%$
 
+::: {.fragment}
 Let $Y \sim \Bern(\mu)$, a [Bernoulli]{.alert} (free throw shooting) distribution wth probability  of success $\mu$, 
 \begin{align*}
 \Prob(Y =y) &= \begin{cases} \mu, & y=1, \text{ (yes)}\\
 1-\mu, & y = 0, \text{ (no)}
 \end{cases}
-\end{align*}
+\end{align*} 
+If $Y_1, \ldots, Y_n \IIDsim \Bern(\mu)$, then
+$$
+T := Y_1 + \cdots + Y_n \sim \Bin(n,\mu), \quad \Prob(T = y) = \binom{n}{y} \mu^y (1-\mu)^{n-y}
+$$
+:::
+
+## {.headerless}
 If $Y_1, \ldots, Y_n \IIDsim \Bern(\mu)$, then
 \begin{align*}
-T&:= Y_1 + \cdots + Y_n \sim \Bin(n,\mu) \\
+T &:= Y_1 + \cdots + Y_n \sim \Bin(n,\mu), \quad \Prob(T = y) = \binom{n}{y} \mu^y (1-\mu)^{n-y}\\
 \barY &:= \frac 1n (Y_1 + \cdots + Y_n)
-\appxsim  \Norm\bigl(\mu,\mu(1-\mu)/n\bigr) TEST
+\appxsim  \Norm\bigl(\mu,\mu(1-\mu)/n\bigr) \quad \text{by the }\class{alert}{\text{Central Limit Theorem}}
 \end{align*}
-
 
 [⬇ Approval Rating Jupyter 📓](../classlib/classlib/notebooks/approval_rating_bernoulli_binomial_clt_ci.ipynb){.button download=true}
 

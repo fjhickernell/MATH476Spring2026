@@ -5,6 +5,8 @@ format:
   revealjs:
     navigation-mode: grid
     controls: true
+    css:
+      - ../classlib/classlib/quarto/slides/fontscale-28.scss
 
 execute:
   warning: false   # suppress runtime noise in slides

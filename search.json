@@ -11,13 +11,6 @@
     "href": "slides/intro-01.html#approval-ratings-contd",
     "title": "MATH 476 — Statistics",
     "section": "Approval ratings (cont’d)",
-    "text": "Approval ratings (cont’d)\nIf \\(Y_1, \\ldots, Y_n \\IIDsim \\Bern(\\mu)\\), then \\[\\begin{align*}\nT &:= Y_1 + \\cdots + Y_n \\sim \\Bin(n,\\mu), \\quad \\Prob(T = y) = \\binom{n}{y} \\mu^y (1-\\mu)^{n-y}\\\\\n\\barY &:= \\frac 1n (Y_1 + \\cdots + Y_n)\n\\appxsim  \\Norm\\bigl(\\mu,\\mu(1-\\mu)/n\\bigr) \\appxsim  \\Norm\\bigl(\\mu,\\barY(1-\\barY)/n\\bigr) \\quad \\text{by the }\\class{alert}{\\text{Central Limit Theorem}} \\\\\n95 \\% &\n\\approx \\Prob\\biggl[\\barY - 1.96 \\sqrt{\\barY(1-\\barY)/n} \\le \\mu \\le \\barY + 1.96 \\sqrt{\\barY(1-\\barY)/n} \\biggr] \\\\\n& \\le  \\Prob\\bigl[\\barY - 1 /\\sqrt{n} \\le \\mu \\le \\barY + 1 /\\sqrt{n}  \\bigr] \\quad \\text{since }\\sqrt{\\barY(1-\\barY)} \\le 1/2\n\\end{align*}\\] Therefore,\n⬇ Approval Rating Jupyter 📓"
-  },
-  {
-    "objectID": "slides/intro-01.html#approval-ratings-contd-1",
-    "href": "slides/intro-01.html#approval-ratings-contd-1",
-    "title": "MATH 476 — Statistics",
-    "section": "Approval ratings (cont’d)",
     "text": "Approval ratings (cont’d)\nIf \\(Y_1, \\ldots, Y_n \\IIDsim \\Bern(\\mu)\\), then\n\n\n\\[\\begin{align*}\nT &:= Y_1 + \\cdots + Y_n \\sim \\Bin(n,\\mu), \\quad \\Prob(T = y) = \\binom{n}{y} \\mu^y (1-\\mu)^{n-y}\\\\\n\\barY &:= \\frac 1n (Y_1 + \\cdots + Y_n)\\\\\n\\barY &\\appxsim  \\Norm\\bigl(\\mu,\\mu(1-\\mu)/n\\bigr) \\quad \\text{by the }\\class{alert}{\\text{Central Limit Theorem}}\n\\end{align*}\\]\n\n\n\\[\\begin{align*}\nT &:= Y_1 + \\cdots + Y_n \\sim \\Bin(n,\\mu), \\quad \\Prob(T = y) = \\binom{n}{y} \\mu^y (1-\\mu)^{n-y}\\\\\n\\barY &:= \\frac 1n (Y_1 + \\cdots + Y_n)\\\\\n\\barY &\\appxsim  \\Norm\\bigl(\\mu,\\mu(1-\\mu)/n\\bigr) \\appxsim  \\Norm\\bigl(\\mu,\\barY(1-\\barY)/n\\bigr) \\quad \\text{by the }\\class{alert}{\\text{Central Limit Theorem}}\n\\end{align*}\\]\n\n\n⬇ Approval Rating Jupyter 📓"
   },
   {

@@ -72,7 +72,7 @@ If $Y_1, \ldots, Y_n \IIDsim \Bern(\mu)$, then we can construct a [confidence in
 \begin{align*}
 T &:= Y_1 + \cdots + Y_n \sim \Bin(n,\mu), \quad \Prob(T = y) = \binom{n}{y} \mu^y (1-\mu)^{n-y}\\
 \barY &:= \frac 1n (Y_1 + \cdots + Y_n) \appxsim  \Norm\bigl(\mu,\mu(1-\mu)/n\bigr) \appxsim  \Norm\bigl(\mu,\barY(1-\barY)/n\bigr) \quad \text{by the }\class{alert}{\text{Central Limit Theorem}} \\
-95\% & \approx \Prob\Bigl[\barY - 1.96\sqrt{\barY(1-\barY)/n} \le \barY \le \mu + 1.96\sqrt{\barY(1-\barY)/n}\Bigr] \\
+95\% & \approx \Prob\Bigl[\barY - 1.96\sqrt{\barY(1-\barY)/n} \le \mu \le \barY + 1.96\sqrt{\barY(1-\barY)/n}\Bigr] \\
 & \le \Prob\Bigl[\barY - 1/\sqrt{n} \le \mu \le \barY + 1/\sqrt{n} \Bigr] \quad \text{since } \sqrt{\barY(1-\barY)} \le 1/2
 \end{align*}
 For $n = 1000$ we get $1/\sqrt{n} \approx 3\%$

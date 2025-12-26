@@ -53,6 +53,7 @@ $$
 \Prob(Y =y) = \begin{cases} \mu, & y=1, \text{ (yes)}\\
 1-\mu, & y = 0, \text{ (no)}
 \end{cases}
+f \LDSim \Norm
 $$
 If $Y_1, \ldots, Y_n \IIDsim \Bern(\mu)$, then
 \begin{align*}

@@ -1,13 +1,20 @@
-metadata-files:
-  - ../classlib/classlib/quarto/slides/hickernell-slides.yml
+metadata-file: ../classlib/classlib/quarto/slides/hickernell-slides.yml
 
 format:
   revealjs:
     navigation-mode: grid
     controls: true
+    html-math-method:
+      method: mathjax
+      url: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js
+    revealjs-config:
+      math:
+        mathjax: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js
+        startup:
+          typeset: false
     css:
       - ../classlib/classlib/quarto/slides/fontscale-28.css
 
 execute:
-  warning: false   # suppress runtime noise in slides
-  message: false   # keep audience-facing output clean
+  warning: false
+  message: false

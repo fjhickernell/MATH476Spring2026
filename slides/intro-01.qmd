@@ -31,8 +31,6 @@ The Gallup Poll tracks the [approval ratings of US presidents](https://news.gall
 
 Each day they telephone $n=1500$ adults and their sampling error for the approval ratings is about $4\%$
 
-::: {.r-stack style="width:100%"}
-<div class="fragment fade-out" data-fragment-index="1"  style="width:100%; margin:0;"  markdown="1">
 Let $Y \sim \Bern(\mu)$, a [Bernoulli]{.alert} (free throw shooting) distribution wth probability  of success $\mu$, 
 $$
 \Prob(Y =y) = \begin{cases} \mu, & y=1, \text{ (yes)}\\
@@ -45,23 +43,6 @@ T &:= Y_1 + \cdots + Y_n \sim \Bin(n,\mu), \quad \Prob(T = y) = \binom{n}{y} \mu
 \barY &:= \frac 1n (Y_1 + \cdots + Y_n)
 \appxsim  \Norm\bigl(\mu,\mu(1-\mu)/n\bigr) \quad \text{by the }\class{alert}{\text{Central Limit Theorem}}
 \end{align*}
-</div>
-
-<div class="fragment current-visible" data-fragment-index="1"  style="width:100%; margin:0;"  markdown="1">
-Let $Y \sim \Bern(\mu)$, a [Bernoulli]{.alert} (free throw shooting) distribution wth probability  of success $\mu$, 
-$$
-\Prob(Y =y) = \begin{cases} \mu, & y=1, \text{ (yes)}\\
-1-\mu, & y = 0, \text{ (no)}
-\end{cases}
-$$
-If $Y_1, \ldots, Y_n \IIDsim \Bern(\mu)$, then
-\begin{align*}
-T &:= Y_1 + \cdots + Y_n \sim \Bin(n,\mu), \quad \Prob(T = y) = \binom{n}{y} \mu^y (1-\mu)^{n-y}\\
-\barY &:= \frac 1n (Y_1 + \cdots + Y_n) \appxsim  \Norm\bigl(\mu,\mu(1-\mu)/n\bigr) \appxsim  \Norm\bigl(\mu,\barY(1-\barY)/n\bigr) \quad \text{by the }\class{alert}{\text{Central Limit Theorem}}
-\end{align*}
-</div>
-
-:::
 
 ## Approval ratings (cont'd)
 
@@ -71,23 +52,28 @@ If $Y_1, \ldots, Y_n \IIDsim \Bern(\mu)$, then we can construct a [confidence in
 <div class="fragment fade-out" data-fragment-index="1"  style="width:100%; margin:0;"  markdown="1">
 \begin{align*}
 T &:= Y_1 + \cdots + Y_n \sim \Bin(n,\mu), \quad \Prob(T = y) = \binom{n}{y} \mu^y (1-\mu)^{n-y}\\
-\barY &:= \frac 1n (Y_1 + \cdots + Y_n) \appxsim  \Norm\bigl(\mu,\mu(1-\mu)/n\bigr) \appxsim  \Norm\bigl(\mu,\barY(1-\barY)/n\bigr) \quad \text{by the }\class{alert}{\text{Central Limit Theorem}} \\
-95\% & \approx \Prob\Bigl[\mu - 1.96\sqrt{\barY(1-\barY)/n} \le \barY \le \mu + 1.96\sqrt{\barY(1-\barY)/n}\Bigr]
+\barY &:= \frac 1n (Y_1 + \cdots + Y_n) \appxsim  \Norm\bigl(\mu,\mu(1-\mu)/n\bigr) \quad \text{by the }\class{alert}{\text{Central Limit Theorem}} \\
+95\% & \approx \Prob\Bigl[\mu - 1.96\sqrt{\mu(1-\mu)/n} \le \class{alert}{\barY} \le \mu + 1.96\sqrt{\mu(1-\mu)/n}\Bigr]
 \end{align*}
 </div>
 
-<div class="fragment current-visible" data-fragment-index="1"  style="width:100%; margin:0;"  markdown="1">
+<div class="fragment current-visible" data-fragment-index="1" style="width:100%; margin:0;">
 \begin{align*}
 T &:= Y_1 + \cdots + Y_n \sim \Bin(n,\mu), \quad \Prob(T = y) = \binom{n}{y} \mu^y (1-\mu)^{n-y}\\
-\barY &:= \frac 1n (Y_1 + \cdots + Y_n) \appxsim  \Norm\bigl(\mu,\mu(1-\mu)/n\bigr) \appxsim  \Norm\bigl(\mu,\barY(1-\barY)/n\bigr) \quad \text{by the }\class{alert}{\text{Central Limit Theorem}} \\
-95\% & \approx \Prob\Bigl[\mu - 1.96\sqrt{\barY(1-\barY)/n} \le \barY \le \mu + 1.96\sqrt{\barY(1-\barY)/n}\Bigr] \\
-& \approx \Prob\Bigl[\barY - 1.96\sqrt{\barY(1-\barY)/n} \le \mu \le \barY + 1.96\sqrt{\barY(1-\barY)/n}\Bigr] \\
-& \le \Prob\Bigl[\barY - 1/\sqrt{n} \le \mu \le \barY + 1/\sqrt{n} \Bigr] \quad \text{since } \sqrt{\barY(1-\barY)} \le 1/2
+\barY &:= \frac 1n (Y_1 + \cdots + Y_n) \appxsim  \Norm\bigl(\mu,\mu(1-\mu)/n\bigr) \quad \text{by the }\class{alert}{\text{Central Limit Theorem}} \\
+95\% & \approx \Prob\Bigl[\mu - 1.96\sqrt{\mu(1-\mu)/n} \le \class{alert}{\barY} \le \mu + 1.96\sqrt{\mu(1-\mu)/n}\Bigr] \\
+& = \Prob\Bigl[\barY - 1.96\sqrt{\mu(1-\mu)/n} \le \class{alert}{\mu} \le \barY + 1.96\sqrt{\mu(1-\mu)/n}\Bigr] \\
+& \approx \Prob\Bigl[\barY - 1.96\sqrt{\barY(1-\barY)/n} \le \class{alert}{\mu} \le \barY + 1.96\sqrt{\barY(1-\barY)/n}\Bigr] \\
+& \le \Prob\Bigl[\barY - 1/\sqrt{n} \le \class{alert}{\mu} \le \barY + 1/\sqrt{n} \Bigr] \quad \text{since } \sqrt{\barY(1-\barY)} \le 1/2
 \end{align*}
-For $n = 1000$ we get $1/\sqrt{n} \approx 3\%$
+<span class="fragment" data-fragment-index="1">
+For $n = 1000$ we get $1/\sqrt{n} \approx 3\%$. <a class="button" style="margin-left:10em;" href="../classlib/classlib/notebooks/approval_rating_bernoulli_binomial_clt_ci.ipynb" download>
+⬇ Approval Rating Jupyter 📓
+</a>
+</span>
 </div>
 :::
-[⬇ Approval Rating Jupyter 📓](../classlib/classlib/notebooks/approval_rating_bernoulli_binomial_clt_ci.ipynb){.button download=true}
+
 
 
 # MATH 476 — Statistics 

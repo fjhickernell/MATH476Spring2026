@@ -33,8 +33,8 @@ Each day they telephone $n=1500$ adults and their sampling error for the approva
 
 Let $Y \sim \Bern(\mu)$, a [Bernoulli]{.alert} (free throw shooting) distribution wth probability  of success $\mu$, 
 $$
-\Prob(Y =y) = \begin{cases} \mu, & y=1, \text{ (yes)}\\
-1-\mu, & y = 0, \text{ (no)}
+\Prob(Y =y) = \begin{cases} \mu, & y=1, \text{ (yes, approve)}\\
+1-\mu, & y = 0, \text{ (no, do not approve)}
 \end{cases}
 $$
 If $Y_1, \ldots, Y_n \IIDsim \Bern(\mu)$, then

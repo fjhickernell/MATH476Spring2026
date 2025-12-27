@@ -35,13 +35,6 @@
     "text": "Code that does not show\n\\(\\pi = 3.141592653589793\\)"
   },
   {
-    "objectID": "slides/intro-01.html#interactive-plot-plotly",
-    "href": "slides/intro-01.html#interactive-plot-plotly",
-    "title": "MATH 476 — Statistics",
-    "section": "Interactive Plot (Plotly)",
-    "text": "Interactive Plot (Plotly)\nThis slide tests interactive graphics.\n\nimport numpy as np\nimport plotly.express as px\n\nx = np.linspace(0, 10, 200)\ny = np.sin(x)\n\npx.line(x=x, y=y, title=\"Interactive Sine Wave\")"
-  },
-  {
     "objectID": "pages/tests.html",
     "href": "pages/tests.html",
     "title": "Tests",

@@ -152,22 +152,6 @@ import matplotlib.pyplot as plt
 print(rf"$\pi = {np.pi}$")
 ```
 
-## Interactive Plot (Plotly) 
-
-This slide tests interactive graphics.
-
-```{python}
-#| echo: true
-
-import numpy as np
-import plotly.express as px
-
-x = np.linspace(0, 10, 200)
-y = np.sin(x)
-
-px.line(x=x, y=y, title="Interactive Sine Wave")
-```
-
 # A small R example
 
 ```{r}

@@ -417,12 +417,24 @@ T &amp;:= Y_1 + \cdots + Y_n \sim \Bin(n,\mu), \quad \Prob(T = y) = \binom{n}{y}
 <section id="approval-ratings-contd" class="slide level2">
 <h2>Approval ratings (cont’d)</h2>
 <p>If <span class="math inline">\(Y_1, \ldots, Y_n \IIDsim \Bern(\mu)\)</span>, then we can construct a <span class="alert">confidence interval</span> that <span class="alert">captures</span> the true approval rating with high probability:</p>
+<div class="r-stack" style="width:100%">
+<div class="fragment fade-out" data-fragment-index="1" style="width:100%; margin:0;" data-markdown="1">
 <p><span class="math display">\[\begin{align*}
 T &amp;:= Y_1 + \cdots + Y_n \sim \Bin(n,\mu), \quad \Prob(T = y) = \binom{n}{y} \mu^y (1-\mu)^{n-y}\\
 \barY &amp;:= \frac 1n (Y_1 + \cdots + Y_n) \appxsim  \Norm\bigl(\mu,\mu(1-\mu)/n\bigr) \appxsim  \Norm\bigl(\mu,\barY(1-\barY)/n\bigr) \quad \text{by the }\class{alert}{\text{Central Limit Theorem}} \\
-95\% &amp; \approx \Prob\Bigl[\barY - 1.96\sqrt{\barY(1-\barY)/n} \le \mu \le \barY + 1.96\sqrt{\barY(1-\barY)/n}\Bigr] \\
+95\% &amp; \approx \Prob\Bigl[\mu - 1.96\sqrt{\barY(1-\barY)/n} \le \barY \le \mu + 1.96\sqrt{\barY(1-\barY)/n}\Bigr]
+\end{align*}\]</span></p>
+</div>
+<div class="fragment current-visible" data-fragment-index="1" style="width:100%; margin:0;" data-markdown="1">
+<p><span class="math display">\[\begin{align*}
+T &amp;:= Y_1 + \cdots + Y_n \sim \Bin(n,\mu), \quad \Prob(T = y) = \binom{n}{y} \mu^y (1-\mu)^{n-y}\\
+\barY &amp;:= \frac 1n (Y_1 + \cdots + Y_n) \appxsim  \Norm\bigl(\mu,\mu(1-\mu)/n\bigr) \appxsim  \Norm\bigl(\mu,\barY(1-\barY)/n\bigr) \quad \text{by the }\class{alert}{\text{Central Limit Theorem}} \\
+95\% &amp; \approx \Prob\Bigl[\mu - 1.96\sqrt{\barY(1-\barY)/n} \le \barY \le \mu + 1.96\sqrt{\barY(1-\barY)/n}\Bigr] \\
+&amp; \approx \Prob\Bigl[\barY - 1.96\sqrt{\barY(1-\barY)/n} \le \mu \le \barY + 1.96\sqrt{\barY(1-\barY)/n}\Bigr] \\
 &amp; \le \Prob\Bigl[\barY - 1/\sqrt{n} \le \mu \le \barY + 1/\sqrt{n} \Bigr] \quad \text{since } \sqrt{\barY(1-\barY)} \le 1/2
 \end{align*}\]</span> For <span class="math inline">\(n = 1000\)</span> we get <span class="math inline">\(1/\sqrt{n} \approx 3\%\)</span></p>
+</div>
+</div>
 <p><a href="../classlib/classlib/notebooks/approval_rating_bernoulli_binomial_clt_ci.ipynb" class="button" download="true">⬇ Approval Rating Jupyter 📓</a></p>
 </section></section>
 <section id="math-476-statistics" class="title-slide slide level1 center">

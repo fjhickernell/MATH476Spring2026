@@ -1,6 +1,5 @@
 ---
 title: "Big Statistics Questions"
-subtitle: "Questions we ask ourselves"
 format:
   html:
     number-sections: false

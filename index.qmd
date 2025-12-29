@@ -8,19 +8,16 @@ title-block-banner: false
 
 ## Course Description
 
-Estimation theory; hypothesis tests; confidence intervals; goodness-of-fit tests; correlation and linear regression; analysis of
-variance; non-parametric methods
+Estimation theory; hypothesis tests; confidence intervals; goodness-of-fit tests; correlation and linear regression; analysis of variance; non-parametric methods
 
 <details>
 <summary><strong>Instructor:</strong> Fred J. Hickernell</summary>
 
-* **Office:** Galvin Tower 18C3-1  
-* **Office hours:** By appointment (details will be posted)  
-* **Phone:** 312-567-8983  
-* **Email:** <hickernell@illinoistech.edu>  
-* **Website:** https://www.iit.edu/directory/people/fred-hickernell  
-* **LinkedIn:** https://www.linkedin.com/in/fjhickernell/  
-* **Google Scholar:** https://scholar.google.com/citations?user=dJbMJG8AAAAJ&hl=en  
+* *Office:* Galvin Tower 18C3-1  
+* *Office hours:* By appointment (details will be posted)  
+* *Phone:* 312-567-8983  
+* *Email:* <hickernell@illinoistech.edu>  
+* [_Website_](https://www.iit.edu/directory/people/fred-hickernell)  [_LinkedIn_](https://www.linkedin.com/in/fjhickernell/)  [_Google Scholar_](https://scholar.google.com/citations?user=dJbMJG8AAAAJ&hl=en)   
 
 *Brief bio:* Fred J. Hickernell is professor of applied mathematics. His research focuses on improving the efficiency of computer simulations and developing justifiable stopping criteria. He is a Fellow of the Institute of Mathematical Statistics and the recipient of the 2016 Joseph F. Traub Prize for Achievement in Information-Based Complexity.
 

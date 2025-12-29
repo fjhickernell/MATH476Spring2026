@@ -8,9 +8,8 @@ title-block-banner: false
 
 ## Course Description
 
-This course introduces the core ideas of statistical reasoning and data analysis. We will study how to summarize data, quantify uncertainty, and draw conclusions from samples. Topics include probability foundations, common distributions, estimation and confidence intervals, hypothesis testing, and simple regression. We will emphasize practical interpretation and computation in **Python**.
-
-**Enrollment:** Upper-level undergraduate elective
+Estimation theory; hypothesis tests; confidence intervals; goodness-of-fit tests; correlation and linear regression; analysis of
+variance; non-parametric methods
 
 <details>
 <summary><strong>Instructor:</strong> Fred J. Hickernell</summary>
@@ -155,6 +154,6 @@ By the end of this course, students will be able to:
 ---
 
 <small>
-**Syllabus prepared by:** Fred Hickernell  
+**prepared by:** Fred Hickernell  
 **Date:** 2025-12-18 to the present
 </small>

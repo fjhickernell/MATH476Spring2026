@@ -23,3 +23,6 @@ devclasslib
 slides/_dev-preview.html
 
 /.quarto/
+
+.DS_Store
+**/.DS_Store

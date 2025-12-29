@@ -1,0 +1,15 @@
+---
+title: "Big Statistics Questions"
+subtitle: "Questions we ask ourselves"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    number-sections: false
+    css:
+      - classlib/classlib/quarto/css/stats-questions.css
+    include-after-body:
+      - classlib/classlib/quarto/js/stats-questions.js
+---
+
+{{< include ../classlib/classlib/quarto/pages/_big-statistics-questions-body.qmd >}}

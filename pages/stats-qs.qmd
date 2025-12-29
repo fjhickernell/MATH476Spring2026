@@ -3,11 +3,12 @@ title: "Big Statistics Questions"
 subtitle: "Questions we ask ourselves"
 format:
   html:
-    toc: true
-    toc-depth: 2
     number-sections: false
-    include-in-header:
-      - classlib/classlib/quarto/js/stats-questions-include.html
 ---
+
+```{=html}
+<link rel="stylesheet" href="/classlib/classlib/quarto/css/stats-questions.css">
+<script defer src="/classlib/classlib/quarto/js/stats-questions.js"></script>
+```
 
 {{< include ../classlib/classlib/quarto/pages/_big-statistics-questions-body.qmd >}}

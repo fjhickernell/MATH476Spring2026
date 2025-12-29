@@ -12,6 +12,8 @@ project:
     - classlib/classlib/quarto/slides/hickernell-slides.scss
     - classlib/classlib/quarto/website/hickernell-website.css
     - classlib/classlib/notebooks/**
+    - classlib/classlib/quarto/js/stats-questions.js
+    - classlib/classlib/quarto/css/stats-questions.css
 
 # Navigation must live here (cannot be delegated via metadata-files).
 # Styling/layout lives in HickernellClassLib (hickernell-website.yml).
@@ -22,6 +24,8 @@ website:
     left:
       - href: index.qmd
         text: Welcome
+      - href: pages/stats-qs.qmd
+        text: Stats Qs
       - href: pages/schedule.qmd
         text: Schedule
       - href: pages/notebooks.qmd

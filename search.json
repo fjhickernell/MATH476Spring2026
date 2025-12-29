@@ -42,53 +42,39 @@
     "text": "Information about midterms/final (and any practice materials) will be posted here."
   },
   {
-    "objectID": "pages/schedule.html",
-    "href": "pages/schedule.html",
-    "title": "Schedule",
+    "objectID": "pages/stats-qs.html",
+    "href": "pages/stats-qs.html",
+    "title": "Big Statistics Questions",
     "section": "",
-    "text": "Date\nLecture\nTopic\nSlides\n\n\n\n\nJan 13\n1\nIntro & Course Overview\nIntroduction\n\n\nJan 15\n2\nReview of Probability"
+    "text": "Filter by course\n\n  \n     MATH 476\n     MATH 563\n     MATH 565\n  \n  \n\n\n\n  Sampling\n  Point Estimation\n\n\n\n\nSampling\n\n  Course(s)\n  Big question\n\n\n\n  476, 563, 565\n  \n    What is the population?\n    American adults? Units from a production line? Students with bachelor's degree?\n  \n\n\n\n  476\n  \n    What can go wrong between intended and actual sampling?\n    \n      Nonresponse and missingness (informal preview)\n      Measurement error\n      Coverage error\n    \n  \n\n\n\n\nPoint Estimation\n\n  Course(s)\n  Big question\n\n\n\n  476, 563\n  \n    What is the estimand?\n    \n      Parameter vs functional of a distribution\n      What does it mean in context?\n      What is random, what is fixed?\n    \n  \n\n\n\n  563\n  \n    What makes an estimator “optimal”?\n    \n      Loss functions and risk\n      Invariance/equivariance (as appropriate)\n      Benchmarks and lower bounds (when assumptions hold)"
   },
   {
-    "objectID": "pages/policies.html",
-    "href": "pages/policies.html",
-    "title": "Policies",
+    "objectID": "pages/resources.html",
+    "href": "pages/resources.html",
+    "title": "Resources",
     "section": "",
-    "text": "Reasonable accommodations will be made for students with documented disabilities. In order to receive accommodations, students must obtain a letter of accommodation from the Center for Disability Resources and make an appointment to speak with me, Fred Hickernell, as soon as possible. The Center for Disability Resources (CDR) is located in 3424 S. State St., room 1C3-2 (on the first floor), telephone 312-567-5744 or disabilities@illinoistech.edu."
+    "text": "Wackerly, Mendenhall, and Scheaffer, Mathematical Statistics with Applications."
   },
   {
-    "objectID": "pages/policies.html#accommodations-for-disabilities",
-    "href": "pages/policies.html#accommodations-for-disabilities",
-    "title": "Policies",
+    "objectID": "pages/resources.html#textbook",
+    "href": "pages/resources.html#textbook",
+    "title": "Resources",
     "section": "",
-    "text": "Reasonable accommodations will be made for students with documented disabilities. In order to receive accommodations, students must obtain a letter of accommodation from the Center for Disability Resources and make an appointment to speak with me, Fred Hickernell, as soon as possible. The Center for Disability Resources (CDR) is located in 3424 S. State St., room 1C3-2 (on the first floor), telephone 312-567-5744 or disabilities@illinoistech.edu."
+    "text": "Wackerly, Mendenhall, and Scheaffer, Mathematical Statistics with Applications."
   },
   {
-    "objectID": "pages/policies.html#sexual-harassment-and-discrimination-information",
-    "href": "pages/policies.html#sexual-harassment-and-discrimination-information",
-    "title": "Policies",
-    "section": "Sexual Harassment and Discrimination Information",
-    "text": "Sexual Harassment and Discrimination Information\nIllinois Tech prohibits all sexual harassment, sexual misconduct, and gender discrimination by any member of our community. This includes harassment among students, staff, or faculty. Sexual harassment of a student by a faculty member or sexual harassment of an employee by a supervisor is particularly serious. Such conduct may easily create an intimidating, hostile, or offensive environment.\nIllinois Tech encourages anyone experiencing sexual harassment or sexual misconduct to speak with the Office of Title IX Compliance for information on support options and the resolution process.\nYou can report sexual harassment electronically at iit.edu/incidentreport, which may be completed anonymously. You may additionally report by contacting the Title IX Coordinator, Virginia Foster at foster@illinoistech.edu. For confidential support, you may reach Illinois Tech’s Confidential Advisor at (773) 907-1062. You can also contact a licensed practitioner in Illinois Tech’s Student Health and Wellness Center at student.health@illinoistech.edu or (312)567-7550."
+    "objectID": "pages/resources.html#additional-resources",
+    "href": "pages/resources.html#additional-resources",
+    "title": "Resources",
+    "section": "Additional Resources",
+    "text": "Additional Resources\n\nOffice hours and online discussion information will be added here."
   },
   {
-    "objectID": "pages/policies.html#academic-integrity-technology-and-ai-usage",
-    "href": "pages/policies.html#academic-integrity-technology-and-ai-usage",
-    "title": "Policies",
-    "section": "Academic Integrity, Technology, and AI Usage",
-    "text": "Academic Integrity, Technology, and AI Usage\nYou are encouraged to use technology, including AI tools like ChatGPT, to explore ideas and complete assignments or projects, as long as you understand the work and can explain it yourself. On tests and the final exam, no technology or AI will be allowed unless I say otherwise. Always use these tools to support your learning, not to replace it, and give credit if they meaningfully contribute to your work.\nStudents are expected to uphold the highest standards of honesty in their academic work, in accordance with Illinois Tech’s Code of Academic Honesty.\n\nPermitted Use\n\nAssignments & Projects: You are encouraged to use technology and AI tools to assist in problem-solving, exploring concepts, and checking work.\nYou must critically evaluate AI-generated content for accuracy, completeness, and clarity.\nYou are responsible for understanding and being able to explain any work produced with technological assistance.\n\n\n\nProhibited Use\n\nTests & Final Exam: No technology, AI tools, or external resources may be used unless explicitly allowed by the instructor.\nSubmitting AI-generated or technological outputs without personal understanding is prohibited and will be treated as a violation.\n\n\n\nCitations & Transparency\nIf you use AI tools, software, or other external resources in a way that significantly shapes your work, you must acknowledge it (e.g., “Approach suggested by ChatGPT”).\n\n\nConsequences\nViolations will be handled according to Illinois Tech’s Code of Academic Honesty."
-  },
-  {
-    "objectID": "pages/homework.html",
-    "href": "pages/homework.html",
-    "title": "Homework",
+    "objectID": "pages/notebooks.html",
+    "href": "pages/notebooks.html",
+    "title": "Notebooks",
     "section": "",
-    "text": "Homework assignments will be posted here as the semester progresses."
-  },
-  {
-    "objectID": "pages/homework.html#homework-1",
-    "href": "pages/homework.html#homework-1",
-    "title": "Homework",
-    "section": "Homework 1",
-    "text": "Homework 1\nTo be announced."
+    "text": "Notebooks and labs will be posted here."
   },
   {
     "objectID": "index.html",
@@ -119,32 +105,53 @@
     "text": "Assessment\n\nHomework: 15%\n\nMidterm Tests: 20%\n\nProject: 25%\n\nFinal Exam: 40%\n\n\n Syllabus prepared by: Fred Hickernell\nDate: 2025-12-18 to the present"
   },
   {
-    "objectID": "pages/notebooks.html",
-    "href": "pages/notebooks.html",
-    "title": "Notebooks",
+    "objectID": "pages/homework.html",
+    "href": "pages/homework.html",
+    "title": "Homework",
     "section": "",
-    "text": "Notebooks and labs will be posted here."
+    "text": "Homework assignments will be posted here as the semester progresses."
   },
   {
-    "objectID": "pages/resources.html",
-    "href": "pages/resources.html",
-    "title": "Resources",
-    "section": "",
-    "text": "Wackerly, Mendenhall, and Scheaffer, Mathematical Statistics with Applications."
+    "objectID": "pages/homework.html#homework-1",
+    "href": "pages/homework.html#homework-1",
+    "title": "Homework",
+    "section": "Homework 1",
+    "text": "Homework 1\nTo be announced."
   },
   {
-    "objectID": "pages/resources.html#textbook",
-    "href": "pages/resources.html#textbook",
-    "title": "Resources",
+    "objectID": "pages/policies.html",
+    "href": "pages/policies.html",
+    "title": "Policies",
     "section": "",
-    "text": "Wackerly, Mendenhall, and Scheaffer, Mathematical Statistics with Applications."
+    "text": "Reasonable accommodations will be made for students with documented disabilities. In order to receive accommodations, students must obtain a letter of accommodation from the Center for Disability Resources and make an appointment to speak with me, Fred Hickernell, as soon as possible. The Center for Disability Resources (CDR) is located in 3424 S. State St., room 1C3-2 (on the first floor), telephone 312-567-5744 or disabilities@illinoistech.edu."
   },
   {
-    "objectID": "pages/resources.html#additional-resources",
-    "href": "pages/resources.html#additional-resources",
-    "title": "Resources",
-    "section": "Additional Resources",
-    "text": "Additional Resources\n\nOffice hours and online discussion information will be added here."
+    "objectID": "pages/policies.html#accommodations-for-disabilities",
+    "href": "pages/policies.html#accommodations-for-disabilities",
+    "title": "Policies",
+    "section": "",
+    "text": "Reasonable accommodations will be made for students with documented disabilities. In order to receive accommodations, students must obtain a letter of accommodation from the Center for Disability Resources and make an appointment to speak with me, Fred Hickernell, as soon as possible. The Center for Disability Resources (CDR) is located in 3424 S. State St., room 1C3-2 (on the first floor), telephone 312-567-5744 or disabilities@illinoistech.edu."
+  },
+  {
+    "objectID": "pages/policies.html#sexual-harassment-and-discrimination-information",
+    "href": "pages/policies.html#sexual-harassment-and-discrimination-information",
+    "title": "Policies",
+    "section": "Sexual Harassment and Discrimination Information",
+    "text": "Sexual Harassment and Discrimination Information\nIllinois Tech prohibits all sexual harassment, sexual misconduct, and gender discrimination by any member of our community. This includes harassment among students, staff, or faculty. Sexual harassment of a student by a faculty member or sexual harassment of an employee by a supervisor is particularly serious. Such conduct may easily create an intimidating, hostile, or offensive environment.\nIllinois Tech encourages anyone experiencing sexual harassment or sexual misconduct to speak with the Office of Title IX Compliance for information on support options and the resolution process.\nYou can report sexual harassment electronically at iit.edu/incidentreport, which may be completed anonymously. You may additionally report by contacting the Title IX Coordinator, Virginia Foster at foster@illinoistech.edu. For confidential support, you may reach Illinois Tech’s Confidential Advisor at (773) 907-1062. You can also contact a licensed practitioner in Illinois Tech’s Student Health and Wellness Center at student.health@illinoistech.edu or (312)567-7550."
+  },
+  {
+    "objectID": "pages/policies.html#academic-integrity-technology-and-ai-usage",
+    "href": "pages/policies.html#academic-integrity-technology-and-ai-usage",
+    "title": "Policies",
+    "section": "Academic Integrity, Technology, and AI Usage",
+    "text": "Academic Integrity, Technology, and AI Usage\nYou are encouraged to use technology, including AI tools like ChatGPT, to explore ideas and complete assignments or projects, as long as you understand the work and can explain it yourself. On tests and the final exam, no technology or AI will be allowed unless I say otherwise. Always use these tools to support your learning, not to replace it, and give credit if they meaningfully contribute to your work.\nStudents are expected to uphold the highest standards of honesty in their academic work, in accordance with Illinois Tech’s Code of Academic Honesty.\n\nPermitted Use\n\nAssignments & Projects: You are encouraged to use technology and AI tools to assist in problem-solving, exploring concepts, and checking work.\nYou must critically evaluate AI-generated content for accuracy, completeness, and clarity.\nYou are responsible for understanding and being able to explain any work produced with technological assistance.\n\n\n\nProhibited Use\n\nTests & Final Exam: No technology, AI tools, or external resources may be used unless explicitly allowed by the instructor.\nSubmitting AI-generated or technological outputs without personal understanding is prohibited and will be treated as a violation.\n\n\n\nCitations & Transparency\nIf you use AI tools, software, or other external resources in a way that significantly shapes your work, you must acknowledge it (e.g., “Approach suggested by ChatGPT”).\n\n\nConsequences\nViolations will be handled according to Illinois Tech’s Code of Academic Honesty."
+  },
+  {
+    "objectID": "pages/schedule.html",
+    "href": "pages/schedule.html",
+    "title": "Schedule",
+    "section": "",
+    "text": "Date\nLecture\nTopic\nSlides\n\n\n\n\nJan 13\n1\nIntro & Course Overview\nIntroduction\n\n\nJan 15\n2\nReview of Probability"
   },
   {
     "objectID": "pages/syllabus.html",

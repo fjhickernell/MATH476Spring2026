@@ -42,12 +42,19 @@ Hickernell speaks Cantonese and enjoys Chinese food. He is married with adult ch
 </div>
 
 <details>
-<summary><strong>Recommended tools</strong></summary>
+<summary><strong>Recommended resources</strong></summary>
 
-* Python (Anaconda / Miniconda)
-* Jupyter (Notebook / Lab)
-* VS Code
-* GitHub
+* [Python](https://www.python.org)
+* [Anaconda / Miniconda](https://www.anaconda.com)
+* [pip (Python package manager)](https://pip.pypa.io/en/stable/)
+* [R](https://www.r-project.org)
+* [RStudio (Posit)](https://posit.co/download/rstudio-desktop/)* [VS Code](https://code.visualstudio.com)
+* [Jupyter](https://docs.jupyter.org/en/latest/)
+* [Github](https://github.com)
+* [LaTeX](https://www.latex-project.org/get/)
+* [Overleaf](https://www.overleaf.com)
+* [qmcpy](https://qmcpy.org)
+* [Course Repository](https://github.com/fjhickernell/MATH476Spring2026)
 
 </details>
 

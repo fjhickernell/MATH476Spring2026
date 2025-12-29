@@ -13,11 +13,10 @@ Estimation theory; hypothesis tests; confidence intervals; goodness-of-fit tests
 <details>
 <summary><strong>Instructor:</strong> Fred J. Hickernell</summary>
 
-<a href="classlib/quarto/assets/images/fredplaidshirtcropped.jpg">
-  <img src="classlib/quarto/assets/images/fredplaidshirtcropped.jpg"
+<a href="{{< meta instructor_photo >}}">
+  <img src="{{< meta instructor_photo >}}"
        alt="Fred J. Hickernell"
-       width="200"
-       style="float:right; margin-left:10px; margin-bottom:6px;">
+       class="instructor-photo">
 </a>
 
 * *Office:* Galvin Tower 18C3-1  
@@ -25,7 +24,9 @@ Estimation theory; hypothesis tests; confidence intervals; goodness-of-fit tests
 * *Phone:* 312-567-8983  
 * *Email:* <hickernell@illinoistech.edu>  
 * [_Website_](https://www.iit.edu/directory/people/fred-hickernell)  &nbsp;&nbsp;&nbsp; 
-[_LinkedIn_](https://www.linkedin.com/in/fjhickernell/)  &nbsp;&nbsp;&nbsp; [_Google Scholar_](https://scholar.google.com/citations?user=dJbMJG8AAAAJ&hl=en)   
+[_LinkedIn_](https://www.linkedin.com/in/fjhickernell/)  &nbsp;&nbsp;&nbsp; 
+[_Google Scholar_](https://scholar.google.com/citations?user=dJbMJG8AAAAJ&hl=en)   &nbsp;&nbsp;&nbsp; 
+[_Math Genealogy Profile_](https://mathgenealogy.org/id.php?id=57571)
 
 *Brief bio:* Fred J. Hickernell is professor of applied mathematics. His research focuses on improving the efficiency of computer simulations and developing justifiable stopping criteria. He has spent most of his career at Hong Kong Baptist University and Illinois Institute of Technology, often in academic administrative roles. He has served on the editorial boards of the Journal of Complexity, Mathematics of Computation, and the SIAM Journal on Numerical Analysis.  He is a Fellow of the Institute of Mathematical Statistics and the recipient of the 2016 Joseph F. Traub Prize for Achievement in Information-Based Complexity. 
 

@@ -15,6 +15,9 @@ project:
     - classlib/classlib/quarto/js/stats-questions.js
     - classlib/classlib/quarto/css/stats-questions.css
 
+metadata:
+  instructor_photo: classlib/classlib/quarto/assets/images/fredplaidshirtcropped.jpg
+
 # Navigation must live here (cannot be delegated via metadata-files).
 # Styling/layout lives in HickernellClassLib (hickernell-website.yml).
 website:

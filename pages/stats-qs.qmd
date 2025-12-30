@@ -1,5 +1,5 @@
 ---
-title: "Big Statistics Questions"
+title: "Big Statistics Questions We Ask"
 format:
   html:
     number-sections: false

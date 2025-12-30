@@ -6,8 +6,8 @@ format:
 ---
 
 ```{=html}
-<link rel="stylesheet" href="/classlib/classlib/quarto/css/stats-questions.css">
-<script defer src="/classlib/classlib/quarto/js/stats-questions.js"></script>
+<link rel="stylesheet" href="{{< meta stats_css >}}">
+<script defer src="{{< meta stats_js >}}"></script>
 ```
 
 {{< include ../classlib/classlib/quarto/pages/_big-statistics-questions-body.qmd >}}

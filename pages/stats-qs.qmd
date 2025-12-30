@@ -10,4 +10,4 @@ format:
 <script defer src="{{< meta stats_js >}}"></script>
 ```
 
-{{< include ../classlib/classlib/quarto/pages/_big-statistics-questions-body.qmd >}}
+{{< include ../classlib/classlib/quarto/pages/shared/big-statistics-questions-body.md >}}

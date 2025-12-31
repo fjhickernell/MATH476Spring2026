@@ -70,8 +70,8 @@ Hickernell speaks Cantonese and enjoys Chinese food. He is married with adult ch
 
 <details>
 <summary><strong>Objectives</strong></summary>
-
 You will learn 
+
 - The concept of statistical inference and the difference between population characteristics and sample estimate;
 - The probabilistic basis for statistical inference and the qualities of a good estimator;
 - How to correctly perform hypothesis tests and construct confidence intervals; 

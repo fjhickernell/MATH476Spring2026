@@ -43,6 +43,15 @@ website:
             text: Resources
           - href: pages/policies.qmd
             text: Policies
+    right:
+       - text: Related
+         menu:
+           - text: MATH 563 — Mathematical Statistics
+             href: https://fjhickernell.github.io/MATH563Spring2026/
+           - text: MATH 565 - Monte Carlo Methods
+             href: https://QMCSoftware.github.io/MATH565Fall2025/
+           - text: QMCPy
+             href: https://qmcpy.github.io/
   page-footer:
     left: "© 2026 Fred J. Hickernell"
     right: "Illinois Institute of Technology"

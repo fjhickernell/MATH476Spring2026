@@ -1,38 +1,31 @@
 [
   {
-    "objectID": "slides/intro-01.html#approval-ratings",
-    "href": "slides/intro-01.html#approval-ratings",
-    "title": "MATH 476 — Statistics",
-    "section": "Approval ratings",
-    "text": "Approval ratings\nThe Gallup Poll tracks the approval ratings of US presidents according to a careful polling methodology\nEach day they telephone \\(n=1500\\) adults and their sampling error for the approval ratings is about \\(4\\%\\)\nLet \\(Y \\sim \\Bern(\\mu)\\), a Bernoulli (free throw shooting) distribution wth probability of success \\(\\mu\\), \\[\n\\Prob(Y =y) = \\begin{cases} \\mu, & y=1, \\text{ (yes, approve)}\\\\\n1-\\mu, & y = 0, \\text{ (no, do not approve)}\n\\end{cases}\n\\] If \\(Y_1, \\ldots, Y_n \\IIDsim \\Bern(\\mu)\\), then \\[\\begin{align*}\nT &:= Y_1 + \\cdots + Y_n \\sim \\Bin(n,\\mu), \\quad \\Prob(T = y) = \\binom{n}{y} \\mu^y (1-\\mu)^{n-y}\\\\\n\\barY &:= \\frac 1n (Y_1 + \\cdots + Y_n)\n\\appxsim  \\Norm\\bigl(\\mu,\\mu(1-\\mu)/n\\bigr) \\quad \\text{by the }\\class{alert}{\\text{Central Limit Theorem}}\n\\end{align*}\\]"
-  },
-  {
-    "objectID": "slides/intro-01.html#approval-ratings-contd",
-    "href": "slides/intro-01.html#approval-ratings-contd",
-    "title": "MATH 476 — Statistics",
-    "section": "Approval ratings (cont’d)",
-    "text": "Approval ratings (cont’d)\nIf \\(Y_1, \\ldots, Y_n \\IIDsim \\Bern(\\mu)\\), then we can construct a confidence interval that captures the true approval rating with high probability:\n\n\n\\[\\begin{align*}\nT &:= Y_1 + \\cdots + Y_n \\sim \\Bin(n,\\mu), \\quad \\Prob(T = y) = \\binom{n}{y} \\mu^y (1-\\mu)^{n-y}\\\\\n\\barY &:= \\frac 1n (Y_1 + \\cdots + Y_n) \\appxsim  \\Norm\\bigl(\\mu,\\mu(1-\\mu)/n\\bigr) \\quad \\text{by the }\\class{alert}{\\text{Central Limit Theorem}} \\\\\n95\\% & \\approx \\Prob\\Bigl[\\mu - 1.96\\sqrt{\\mu(1-\\mu)/n} \\le \\class{alert}{\\barY} \\le \\mu + 1.96\\sqrt{\\mu(1-\\mu)/n}\\Bigr]\n\\end{align*}\\]\n\n\n\\[\\begin{align*}\nT &:= Y_1 + \\cdots + Y_n \\sim \\Bin(n,\\mu), \\quad \\Prob(T = y) = \\binom{n}{y} \\mu^y (1-\\mu)^{n-y}\\\\\n\\barY &:= \\frac 1n (Y_1 + \\cdots + Y_n) \\appxsim  \\Norm\\bigl(\\mu,\\mu(1-\\mu)/n\\bigr) \\quad \\text{by the }\\class{alert}{\\text{Central Limit Theorem}} \\\\\n95\\% & \\approx \\Prob\\Bigl[\\mu - 1.96\\sqrt{\\mu(1-\\mu)/n} \\le \\class{alert}{\\barY} \\le \\mu + 1.96\\sqrt{\\mu(1-\\mu)/n}\\Bigr] \\\\\n& = \\Prob\\Bigl[\\barY - 1.96\\sqrt{\\mu(1-\\mu)/n} \\le \\class{alert}{\\mu} \\le \\barY + 1.96\\sqrt{\\mu(1-\\mu)/n}\\Bigr] \\\\\n& \\approx \\Prob\\Bigl[\\barY - 1.96\\sqrt{\\barY(1-\\barY)/n} \\le \\class{alert}{\\mu} \\le \\barY + 1.96\\sqrt{\\barY(1-\\barY)/n}\\Bigr] \\\\\n& \\le \\Prob\\Bigl[\\barY - 1/\\sqrt{n} \\le \\class{alert}{\\mu} \\le \\barY + 1/\\sqrt{n} \\Bigr] \\quad \\text{since } \\sqrt{\\barY(1-\\barY)} \\le 1/2\n\\end{align*}\\]  For \\(n = 1000\\) we get \\(1/\\sqrt{n} \\approx 3\\%\\).  ⬇ Approval Rating Jupyter 📓"
-  },
-  {
-    "objectID": "slides/intro-01.html#more-probability",
-    "href": "slides/intro-01.html#more-probability",
+    "objectID": "slides/Template.html#more-probability",
+    "href": "slides/Template.html#more-probability",
     "title": "MATH 476 — Statistics",
     "section": "More probability",
     "text": "More probability\nYou need to know expectation, mean, etc. with a h2 header\n\\[\\begin{gather*}\n\\var(Y) = \\operatorname{var}(Y) \\\\\n\\DeclareMathOperator{\\var}{var}\n\\var(Y) = \\operatorname{var}(Y) \\\\\n\\Ex[Y] = \\Ex[f(X)], Y \\in \\reals \\\\\n\\end{gather*}\\]\nRandom variables\nan h3 header"
   },
   {
-    "objectID": "slides/intro-01.html#section",
-    "href": "slides/intro-01.html#section",
+    "objectID": "slides/Template.html#section",
+    "href": "slides/Template.html#section",
     "title": "MATH 476 — Statistics",
     "section": "",
     "text": "and even more on this slide without the header"
   },
   {
-    "objectID": "slides/intro-01.html#code-that-does-not-show",
-    "href": "slides/intro-01.html#code-that-does-not-show",
+    "objectID": "slides/Template.html#code-that-does-not-show",
+    "href": "slides/Template.html#code-that-does-not-show",
     "title": "MATH 476 — Statistics",
     "section": "Code that does not show",
     "text": "Code that does not show\n\\(\\pi = 3.141592653589793\\)"
+  },
+  {
+    "objectID": "slides/Template.html#interactive-plot-plotly",
+    "href": "slides/Template.html#interactive-plot-plotly",
+    "title": "MATH 476 — Statistics",
+    "section": "Interactive Plot (Plotly)",
+    "text": "Interactive Plot (Plotly)\nThis slide tests interactive graphics.\n\nimport numpy as np\nimport plotly.express as px\n\nx = np.linspace(0, 10, 200)\ny = np.sin(x)\n\npx.line(x=x, y=y, title=\"Interactive Sine Wave\")"
   },
   {
     "objectID": "pages/tests.html",
@@ -175,31 +168,38 @@
     "text": "Learning Objectives\n\nUnderstand basic probability concepts.\nWork with discrete and continuous distributions.\nUse sampling distributions to construct estimators and tests.\nInterpret confidence intervals and p-values in context."
   },
   {
-    "objectID": "slides/Template.html#more-probability",
-    "href": "slides/Template.html#more-probability",
+    "objectID": "slides/01-intro.html#approval-ratings",
+    "href": "slides/01-intro.html#approval-ratings",
+    "title": "MATH 476 — Statistics",
+    "section": "Approval ratings",
+    "text": "Approval ratings\nThe Gallup Poll tracks the approval ratings of US presidents according to a careful polling methodology\nEach day they telephone \\(n=1500\\) adults and their sampling error for the approval ratings is about \\(4\\%\\)\nLet \\(Y \\sim \\Bern(\\mu)\\), a Bernoulli (free throw shooting) distribution wth probability of success \\(\\mu\\), \\[\n\\Prob(Y =y) = \\begin{cases} \\mu, & y=1, \\text{ (yes, approve)}\\\\\n1-\\mu, & y = 0, \\text{ (no, do not approve)}\n\\end{cases}\n\\] If \\(Y_1, \\ldots, Y_n \\IIDsim \\Bern(\\mu)\\), then \\[\\begin{align*}\nT &:= Y_1 + \\cdots + Y_n \\sim \\Bin(n,\\mu), \\quad \\Prob(T = y) = \\binom{n}{y} \\mu^y (1-\\mu)^{n-y}\\\\\n\\barY &:= \\frac 1n (Y_1 + \\cdots + Y_n)\n\\appxsim  \\Norm\\bigl(\\mu,\\mu(1-\\mu)/n\\bigr) \\quad \\text{by the }\\class{alert}{\\text{Central Limit Theorem}}\n\\end{align*}\\]"
+  },
+  {
+    "objectID": "slides/01-intro.html#approval-ratings-contd",
+    "href": "slides/01-intro.html#approval-ratings-contd",
+    "title": "MATH 476 — Statistics",
+    "section": "Approval ratings (cont’d)",
+    "text": "Approval ratings (cont’d)\nIf \\(Y_1, \\ldots, Y_n \\IIDsim \\Bern(\\mu)\\), then we can construct a confidence interval that captures the true approval rating with high probability:\n\n\n\\[\\begin{align*}\nT &:= Y_1 + \\cdots + Y_n \\sim \\Bin(n,\\mu), \\quad \\Prob(T = y) = \\binom{n}{y} \\mu^y (1-\\mu)^{n-y}\\\\\n\\barY &:= \\frac 1n (Y_1 + \\cdots + Y_n) \\appxsim  \\Norm\\bigl(\\mu,\\mu(1-\\mu)/n\\bigr) \\quad \\text{by the }\\class{alert}{\\text{Central Limit Theorem}} \\\\\n95\\% & \\approx \\Prob\\Bigl[\\mu - 1.96\\sqrt{\\mu(1-\\mu)/n} \\le \\class{alert}{\\barY} \\le \\mu + 1.96\\sqrt{\\mu(1-\\mu)/n}\\Bigr]\n\\end{align*}\\]\n\n\n\\[\\begin{align*}\nT &:= Y_1 + \\cdots + Y_n \\sim \\Bin(n,\\mu), \\quad \\Prob(T = y) = \\binom{n}{y} \\mu^y (1-\\mu)^{n-y}\\\\\n\\barY &:= \\frac 1n (Y_1 + \\cdots + Y_n) \\appxsim  \\Norm\\bigl(\\mu,\\mu(1-\\mu)/n\\bigr) \\quad \\text{by the }\\class{alert}{\\text{Central Limit Theorem}} \\\\\n95\\% & \\approx \\Prob\\Bigl[\\mu - 1.96\\sqrt{\\mu(1-\\mu)/n} \\le \\class{alert}{\\barY} \\le \\mu + 1.96\\sqrt{\\mu(1-\\mu)/n}\\Bigr] \\\\\n& = \\Prob\\Bigl[\\barY - 1.96\\sqrt{\\mu(1-\\mu)/n} \\le \\class{alert}{\\mu} \\le \\barY + 1.96\\sqrt{\\mu(1-\\mu)/n}\\Bigr] \\\\\n& \\approx \\Prob\\Bigl[\\barY - 1.96\\sqrt{\\barY(1-\\barY)/n} \\le \\class{alert}{\\mu} \\le \\barY + 1.96\\sqrt{\\barY(1-\\barY)/n}\\Bigr] \\\\\n& \\le \\Prob\\Bigl[\\barY - 1/\\sqrt{n} \\le \\class{alert}{\\mu} \\le \\barY + 1/\\sqrt{n} \\Bigr] \\quad \\text{since } \\sqrt{\\barY(1-\\barY)} \\le 1/2\n\\end{align*}\\]  For \\(n = 1000\\) we get \\(1/\\sqrt{n} \\approx 3\\%\\).  ⬇ Approval Rating Jupyter 📓"
+  },
+  {
+    "objectID": "slides/01-intro.html#more-probability",
+    "href": "slides/01-intro.html#more-probability",
     "title": "MATH 476 — Statistics",
     "section": "More probability",
     "text": "More probability\nYou need to know expectation, mean, etc. with a h2 header\n\\[\\begin{gather*}\n\\var(Y) = \\operatorname{var}(Y) \\\\\n\\DeclareMathOperator{\\var}{var}\n\\var(Y) = \\operatorname{var}(Y) \\\\\n\\Ex[Y] = \\Ex[f(X)], Y \\in \\reals \\\\\n\\end{gather*}\\]\nRandom variables\nan h3 header"
   },
   {
-    "objectID": "slides/Template.html#section",
-    "href": "slides/Template.html#section",
+    "objectID": "slides/01-intro.html#section",
+    "href": "slides/01-intro.html#section",
     "title": "MATH 476 — Statistics",
     "section": "",
     "text": "and even more on this slide without the header"
   },
   {
-    "objectID": "slides/Template.html#code-that-does-not-show",
-    "href": "slides/Template.html#code-that-does-not-show",
+    "objectID": "slides/01-intro.html#code-that-does-not-show",
+    "href": "slides/01-intro.html#code-that-does-not-show",
     "title": "MATH 476 — Statistics",
     "section": "Code that does not show",
     "text": "Code that does not show\n\\(\\pi = 3.141592653589793\\)"
-  },
-  {
-    "objectID": "slides/Template.html#interactive-plot-plotly",
-    "href": "slides/Template.html#interactive-plot-plotly",
-    "title": "MATH 476 — Statistics",
-    "section": "Interactive Plot (Plotly)",
-    "text": "Interactive Plot (Plotly)\nThis slide tests interactive graphics.\n\nimport numpy as np\nimport plotly.express as px\n\nx = np.linspace(0, 10, 200)\ny = np.sin(x)\n\npx.line(x=x, y=y, title=\"Interactive Sine Wave\")"
   }
 ]

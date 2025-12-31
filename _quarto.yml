@@ -37,18 +37,14 @@ website:
         text: Homework
       - href: pages/tests.qmd
         text: Tests
-      - text: Resources
-        menu:
-          - href: pages/resources.qmd
-            text: Resources
-          - href: pages/policies.qmd
-            text: Policies
+      - href: pages/policies.qmd
+        text: Policies
     right:
        - text: Related
          menu:
            - text: MATH 563 — Mathematical Statistics
              href: https://fjhickernell.github.io/MATH563Spring2026/
-           - text: MATH 565 - Monte Carlo Methods
+           - text: MATH 565 — Monte Carlo Methods
              href: https://QMCSoftware.github.io/MATH565Fall2025/
            - text: QMCPy
              href: https://qmcpy.github.io/

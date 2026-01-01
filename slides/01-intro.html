@@ -388,20 +388,21 @@ Fred J. Hickernell
 </section>
 <section id="approval-ratings" class="slide level2">
 <h2>Approval ratings</h2>
-<div class="columns">
-<div class="column" style="width:62%;">
 <p>The Gallup Poll tracks the <a href="https://news.gallup.com/poll/203198/presidential-approval-ratings-donald-trump.aspx">approval ratings of US presidents</a> according to a <a href="https://www.gallup.com/224855/gallup-poll-work.aspx">careful polling methodology</a></p>
 <p>Each day they telephone <span class="math inline">\(n=1500\)</span> adults and their sampling error for the approval ratings is about <span class="math inline">\(4\%\)</span></p>
-<p>Let <span class="math inline">\(Y \sim \Bern(\mu)\)</span>, a <span class="alert">Bernoulli</span> (free throw shooting) distribution wth probability of success <span class="math inline">\(\mu\)</span>, <span class="math display">\[
+<p>Let <span class="math inline">\(Y \sim \Bern(\mu)\)</span>, a <span class="alert">Bernoulli</span> (free throw shooting) distribution with probability of success <span class="math inline">\(\mu\)</span>, <span class="math display">\[
 \Prob(Y =y) = \begin{cases} \mu, &amp; y=1, \text{ (yes, approve)}\\
 1-\mu, &amp; y = 0, \text{ (no, do not approve)}
 \end{cases}
-\]</span> If <span class="math inline">\(Y_1, \ldots, Y_n \IIDsim \Bern(\mu)\)</span>, then <span class="math display">\[\begin{align*}
+\]</span></p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>If <span class="math inline">\(Y_1, \ldots, Y_n \IIDsim \Bern(\mu)\)</span>, then <span class="math display">\[\begin{align*}
 T &amp;:= Y_1 + \cdots + Y_n \sim \Bin(n,\mu), \quad \Prob(T = t) = \binom{n}{t} \mu^t (1-\mu)^{n-t}\\
-\barY &amp;:= \frac 1n (Y_1 + \cdots + Y_n)
-\appxsim  \Norm\bigl(\mu,\mu(1-\mu)/n\bigr) \quad \text{by the }\class{alert}{\text{Central Limit Theorem}}
+\barY &amp;:= \frac 1n (Y_1 + \cdots + Y_n) \\
+&amp; \appxsim  \Norm\bigl(\mu,\mu(1-\mu)/n\bigr) \quad \text{by the }\class{alert}{\text{Central Limit Theorem}}
 \end{align*}\]</span></p>
-</div><div class="column" style="width:38%;">
+</div><div class="column" style="width:32%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="../classlib/classlib/notebooks/figures/approval_rating/ybar_histogram_approval.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>

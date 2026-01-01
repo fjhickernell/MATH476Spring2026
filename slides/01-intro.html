@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.26">
 
   <meta name="author" content="Fred J. Hickernell">
-  <meta name="dcterms.date" content="2025-12-31">
+  <meta name="dcterms.date" content="2026-01-01">
   <title>MATH 476 — Spring 2026 – MATH 476 — Statistics</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -355,7 +355,7 @@ Fred J. Hickernell
 </div>
 </div>
 
-  <p class="date">December 31, 2025</p>
+  <p class="date">January 1, 2026</p>
 </section>
 <section>
 <section id="statistics" class="title-slide slide level1 center" data-state="goldborder">
@@ -388,6 +388,8 @@ Fred J. Hickernell
 </section>
 <section id="approval-ratings" class="slide level2">
 <h2>Approval ratings</h2>
+<div class="columns">
+<div class="column" style="width:62%;">
 <p>The Gallup Poll tracks the <a href="https://news.gallup.com/poll/203198/presidential-approval-ratings-donald-trump.aspx">approval ratings of US presidents</a> according to a <a href="https://www.gallup.com/224855/gallup-poll-work.aspx">careful polling methodology</a></p>
 <p>Each day they telephone <span class="math inline">\(n=1500\)</span> adults and their sampling error for the approval ratings is about <span class="math inline">\(4\%\)</span></p>
 <p>Let <span class="math inline">\(Y \sim \Bern(\mu)\)</span>, a <span class="alert">Bernoulli</span> (free throw shooting) distribution wth probability of success <span class="math inline">\(\mu\)</span>, <span class="math display">\[
@@ -399,6 +401,13 @@ T &amp;:= Y_1 + \cdots + Y_n \sim \Bin(n,\mu), \quad \Prob(T = t) = \binom{n}{t}
 \barY &amp;:= \frac 1n (Y_1 + \cdots + Y_n)
 \appxsim  \Norm\bigl(\mu,\mu(1-\mu)/n\bigr) \quad \text{by the }\class{alert}{\text{Central Limit Theorem}}
 \end{align*}\]</span></p>
+</div><div class="column" style="width:38%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../notebooks/figures/approval_rating/ybar_histogram_approval.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div></div>
 </section>
 <section id="approval-ratings-contd" class="slide level2">
 <h2>Approval ratings (cont’d)</h2>

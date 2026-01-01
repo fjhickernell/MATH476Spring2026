@@ -27,33 +27,35 @@ date-format: "MMMM D, YYYY"
 
 ## Approval ratings
 
-:::: {.columns}
-::: {.column width="62%"}
-
 The Gallup Poll tracks the [approval ratings of US presidents](https://news.gallup.com/poll/203198/presidential-approval-ratings-donald-trump.aspx) according to a [careful polling methodology](https://www.gallup.com/224855/gallup-poll-work.aspx)
 
 Each day they telephone $n=1500$ adults and their sampling error for the approval ratings is about $4\%$
 
-Let $Y \sim \Bern(\mu)$, a [Bernoulli]{.alert} (free throw shooting) distribution wth probability of success $\mu$, 
+Let $Y \sim \Bern(\mu)$, a [Bernoulli]{.alert} (free throw shooting) distribution with probability of success $\mu$, 
 $$
 \Prob(Y =y) = \begin{cases} \mu, & y=1, \text{ (yes, approve)}\\
 1-\mu, & y = 0, \text{ (no, do not approve)}
 \end{cases}
 $$
+
+:::: {.columns}
+::: {.column width="60%"}
+
 If $Y_1, \ldots, Y_n \IIDsim \Bern(\mu)$, then
 \begin{align*}
 T &:= Y_1 + \cdots + Y_n \sim \Bin(n,\mu), \quad \Prob(T = t) = \binom{n}{t} \mu^t (1-\mu)^{n-t}\\
-\barY &:= \frac 1n (Y_1 + \cdots + Y_n)
-\appxsim  \Norm\bigl(\mu,\mu(1-\mu)/n\bigr) \quad \text{by the }\class{alert}{\text{Central Limit Theorem}}
+\barY &:= \frac 1n (Y_1 + \cdots + Y_n) \\
+& \appxsim  \Norm\bigl(\mu,\mu(1-\mu)/n\bigr) \quad \text{by the }\class{alert}{\text{Central Limit Theorem}}
 \end{align*}
-
 :::
-::: {.column width="38%"}
+
+::: {.column width="32%"}
 
 ![](/classlib/classlib/notebooks/figures/approval_rating/ybar_histogram_approval.png){fig-align="center" width="100%"}
 :::
 
 ::::
+
 ## Approval ratings (cont'd)
 
 If $Y_1, \ldots, Y_n \IIDsim \Bern(\mu)$, then we can construct a [confidence interval]{.alert} that [captures]{.alert} the true approval rating with high probability:

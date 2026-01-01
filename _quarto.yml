@@ -14,6 +14,7 @@ project:
     - classlib/classlib/notebooks/**
     - classlib/classlib/quarto/js/stats-questions.js
     - classlib/classlib/quarto/css/stats-questions.css
+    - classlib/classlib/notebooks/figures/**
 
 metadata:
   instructor_photo: classlib/classlib/quarto/assets/images/fredplaidshirtcropped.jpg

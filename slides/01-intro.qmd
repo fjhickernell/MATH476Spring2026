@@ -50,9 +50,9 @@ T &:= Y_1 + \cdots + Y_n \sim \Bin(n,\mu), \quad \Prob(T = t) = \binom{n}{t} \mu
 :::
 ::: {.column width="38%"}
 
-![](/notebooks/figures/approval_rating/ybar_histogram_approval.png){fig-align="center" width="100%"}
-
+![](/classlib/classlib/notebooks/figures/approval_rating/ybar_histogram_approval.png){fig-align="center" width="100%"}
 :::
+
 ::::
 ## Approval ratings (cont'd)
 

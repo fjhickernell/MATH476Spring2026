@@ -1,5 +1,7 @@
 metadata-file: ../classlib/classlib/quarto/slides/hickernell-slides.yml
 
+course_website: https://fhickernell.github.io/MATH476Spring2026/
+
 format:
   revealjs:
     navigation-mode: grid

@@ -4,6 +4,8 @@ subtitle: "Introduction and Probability Review"
 author: "Fred J. Hickernell"
 date: last-modified
 date-format: "MMMM D, YYYY"
+reveal-options:
+  disableLayout: false
 ---
 
 # Statistics{data-state="goldborder"}  
@@ -43,7 +45,7 @@ $$
 $$
 
 :::: {.columns}
-::: {.column width="60%"}
+::: {.column width="65%"}
 
 If $Y_1, \ldots, Y_n \IIDsim \Bern(\mu)$, then
 \begin{align*}
@@ -53,7 +55,7 @@ T &:= Y_1 + \cdots + Y_n \sim \Bin(n,\mu), \; \Prob(T = t) = \binom{n}{t} \mu^t 
 \end{align*}
 :::
 
-::: {.column width="32%"}
+::: {.column width="30%"}
 
 ![](/classlib/classlib/notebooks/figures/approval_rating/ybar_histogram_approval.png){fig-align="center" width="100%"}
 :::

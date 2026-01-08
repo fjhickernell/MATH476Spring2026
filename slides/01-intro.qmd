@@ -8,18 +8,18 @@ reveal-options:
   disableLayout: false
 ---
 
-# Statistics{data-state="goldborder"}  
+# Statistics
 
-### Principled
+<div class="h3">Principled</div>
 - Clear assumptions
 - Probability as a basis
 - Efficient and accurate computation
 
-### Inference about a population
+<div class="h3">Inference about a population</div>
 - Want to know parameters that describe a large number or individuals or the relationships among them
 - Should provide a level of uncertainty
 
-### From Data
+<div class="h3">From Data</div> 
 - Carefully sampled
 - Observations, surveys, experiments, or computer simulations
 
@@ -28,6 +28,9 @@ reveal-options:
 See [Big Statistics Questions](/pages/stats-qs.html)
 
 # Examples
+
+Let's look at 
+
 - Approval ratings
 - Numerical integration (quadrature)
 

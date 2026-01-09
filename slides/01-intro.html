@@ -30,7 +30,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-b5902f52838361561ab0e015f3b4c002.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-03675596addc7ab2d016e0e2a9312774.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -435,7 +435,7 @@ T &amp;:= Y_1 + \cdots + Y_n \sim \Bin(n,\mu), \quad \Prob(T = y) = \binom{n}{y}
 \barY &amp;:= \frac 1n (Y_1 + \cdots + Y_n) \appxsim  \Norm\bigl(\mu,\mu(1-\mu)/n\bigr) \quad \text{by the }\class{alert}{\text{Central Limit Theorem}}
 \end{align*}\]</span></p>
 <div class="columns">
-<div class="column" style="width:70%;">
+<div class="column" style="width:75%;">
 <div class="fragment" data-fragment-index="1" style="width:100%; margin:0;" data-markdown="1">
 <p><span class="math display">\[\begin{align*}
 95\% &amp; \approx \Prob\Bigl[\mu - 1.96\sqrt{\mu(1-\mu)/n} \le \class{alert}{\barY} \le \mu + 1.96\sqrt{\mu(1-\mu)/n}\Bigr] \\
@@ -465,22 +465,19 @@ T &amp;:= Y_1 + \cdots + Y_n \sim \Bin(n,\mu), \quad \Prob(T = y) = \binom{n}{y}
 </ul></li>
 </ul>
 </section>
-<section id="life-expectancy-vs-gdp" class="slide level2">
-<h2>Life Expectancy vs GDP</h2>
-<p>Countries differ dramatically in both <span class="alert">life expectancy</span> and <span class="alert">economic output</span>.</p>
-<p>A classic dataset (World Bank / Gapminder) records, for each country,</p>
+<section id="life-expectancy-vs-gross-domestic-product-gdp-per-capita" class="slide level2">
+<h2>Life expectancy vs gross domestic product (GDP) per capita</h2>
+<p>Countries differ dramatically in both <span class="alert">life expectancy</span> and <span class="alert">economic output</span>. A classic dataset (World Bank / Gapminder) records, for each country,</p>
 <ul>
-<li>life expectancy at birth (years)</li>
-<li>GDP per capita (USD, purchasing-power adjusted)</li>
+<li>Life <span class="math inline">\(=\)</span> Life expectancy at birth (years)</li>
+<li>GDP <span class="math inline">\(=\)</span> Gross domestic product per capita (USD, purchasing-power adjusted)</li>
 </ul>
-<p>Each point represents <strong>one country</strong>, not one individual.</p>
-<p>Let - <span class="math inline">\(X =\)</span> GDP per capita - <span class="math inline">\(Y =\)</span> life expectancy</p>
-<p>We are interested in the conditional behavior <span class="math display">\[
-\E(Y \mid X = x)
-\]</span> and how life expectancy changes with national income.</p>
+<p>Each point represents <strong>one country</strong>, not one individual. We are interested in the conditional behavior of how life expectancy changes with national income: <span class="math display">\[
+\Ex(\text{Life} | \text{GDP} = x)
+\]</span></p>
 </section>
 <section id="life-expectancy-vs-gdp-contd" class="slide level2">
-<h2>Life Expectancy vs GDP (cont’d)</h2>
+<h2>Life expectancy vs GDP (cont’d)</h2>
 <p>A scatterplot of life expectancy versus GDP per capita reveals two important statistical features.</p>
 <h3 id="nonlinearity">Nonlinearity</h3>
 <p>Increases in GDP have a <strong>much larger effect</strong> on life expectancy at low income levels than at high income levels.</p>

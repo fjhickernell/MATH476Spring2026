@@ -32,13 +32,15 @@ See [Big Statistics Questions](/pages/stats-qs.html)
 Let's look at 
 
 - Approval ratings
+- Life expectancy explained by gross domestic (GDP) product per capita
 - Numerical integration (quadrature)
 
 ## Approval ratings
 
 The Gallup Poll tracks the [approval ratings of US presidents](https://news.gallup.com/poll/203198/presidential-approval-ratings-donald-trump.aspx) according to a [careful polling methodology](https://www.gallup.com/224855/gallup-poll-work.aspx)
 
-Each day they telephone $n=1500$ adults and their sampling error for the approval ratings is about $4\%$
+- Each day they telephone $n=1500$ adults 
+- Their sampling error for the approval ratings is about $4\%$
 
 Let $Y \sim \Bern(\mu)$, a [Bernoulli]{.alert} (free throw shooting) distribution with probability of success $\mu$, 
 $$
@@ -106,11 +108,12 @@ For $n = 1000$ we get $1/\sqrt{n} \approx 3\%$.
 
 - [Population]{.alert} is US adults
 - [Model]{.alert} 
-  - Is a Bernoulli distribution
+  - Bernoulli distribution
   - Ignores demographic factors
 - [Uncertainty]{.alert} of the estimate of the proportion, $\mu=p$
-  - Provided by a [confidence interval]{.alert}
+  - Provided by a [confidence interval (CI)]{.alert}
   - Facilitated by the [Central Limit Theorem]{.alert}
+  - This is the CI capturing $\mu$, _not_ probabiity of $\mu$ in the CI
 
 ## Life Expectancy vs GDP
 

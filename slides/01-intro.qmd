@@ -101,3 +101,53 @@ For $n = 1000$ we get $1/\sqrt{n} \approx 3\%$.
 :::
 
 :::: 
+
+
+## Life Expectancy vs GDP
+
+Countries differ dramatically in both [life expectancy]{.alert} and
+[economic output]{.alert}.
+
+A classic dataset (World Bank / Gapminder) records, for each country,
+
+- life expectancy at birth (years)
+- GDP per capita (USD, purchasing-power adjusted)
+
+Each point represents **one country**, not one individual.
+
+Let
+- $X =$ GDP per capita
+- $Y =$ life expectancy
+
+We are interested in the conditional behavior
+$$
+\E(Y \mid X = x)
+$$
+and how life expectancy changes with national income.
+
+
+## Life Expectancy vs GDP (cont'd)
+
+A scatterplot of life expectancy versus GDP per capita reveals two
+important statistical features.
+
+### Nonlinearity
+Increases in GDP have a **much larger effect** on life expectancy at low
+income levels than at high income levels.
+
+### Heteroscedasticity
+Countries with low GDP exhibit **much greater variability** in life
+expectancy.
+
+A common transformation is to work with
+$$
+\log(X) = \log(\text{GDP per capita}),
+$$
+leading to an approximately linear relationship
+$$
+\E(Y \mid \log X = x) \approx \alpha + \beta x.
+$$
+
+Interpretation:
+- $\beta$ measures years of life gained per *multiplicative* increase in GDP
+- The log scale naturally reflects **diminishing returns**

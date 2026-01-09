@@ -77,7 +77,7 @@ T &:= Y_1 + \cdots + Y_n \sim \Bin(n,\mu), \quad \Prob(T = y) = \binom{n}{y} \mu
 
 :::: {.columns}
 
-::: {.column width="70%"}
+::: {.column width="75%"}
 
 <div class="fragment" data-fragment-index="1" style="width:100%; margin:0;" markdown="1">
 \begin{align*}
@@ -115,30 +115,21 @@ For $n = 1000$ we get $1/\sqrt{n} \approx 3\%$.
   - Facilitated by the [Central Limit Theorem]{.alert}
   - This is the CI capturing $\mu$, _not_ probabiity of $\mu$ in the CI
 
-## Life Expectancy vs GDP
+## Life expectancy vs gross domestic product (GDP) per capita
 
 Countries differ dramatically in both [life expectancy]{.alert} and
-[economic output]{.alert}.
+[economic output]{.alert}. A classic dataset (World Bank / Gapminder) records, for each country,
 
-A classic dataset (World Bank / Gapminder) records, for each country,
+- Life $=$ Life expectancy at birth (years)
+- GDP $=$ Gross domestic product per capita (USD, purchasing-power adjusted)
 
-- life expectancy at birth (years)
-- GDP per capita (USD, purchasing-power adjusted)
-
-Each point represents **one country**, not one individual.
-
-Let
-- $X =$ GDP per capita
-- $Y =$ life expectancy
-
-We are interested in the conditional behavior
+Each point represents **one country**, not one individual.  We are interested in the conditional behavior of how life expectancy changes with national income:
 $$
-\E(Y \mid X = x)
+\Ex(\text{Life} | \text{GDP} = x)
 $$
-and how life expectancy changes with national income.
 
 
-## Life Expectancy vs GDP (cont'd)
+## Life expectancy vs GDP (cont'd)
 
 A scatterplot of life expectancy versus GDP per capita reveals two
 important statistical features.

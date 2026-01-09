@@ -180,5 +180,19 @@
     "title": "MATH 476 — Statistics",
     "section": "Approval ratings (cont’d)",
     "text": "Approval ratings (cont’d)\nIf \\(Y_1, \\ldots, Y_n \\IIDsim \\Bern(\\mu)\\), then we can construct a confidence interval that captures the true approval rating with high probability: \\[\\begin{align*}\nT &:= Y_1 + \\cdots + Y_n \\sim \\Bin(n,\\mu), \\quad \\Prob(T = y) = \\binom{n}{y} \\mu^y (1-\\mu)^{n-y}\\\\\n\\barY &:= \\frac 1n (Y_1 + \\cdots + Y_n) \\appxsim  \\Norm\\bigl(\\mu,\\mu(1-\\mu)/n\\bigr) \\quad \\text{by the }\\class{alert}{\\text{Central Limit Theorem}}\n\\end{align*}\\]\n\n\n\n\\[\\begin{align*}\n95\\% & \\approx \\Prob\\Bigl[\\mu - 1.96\\sqrt{\\mu(1-\\mu)/n} \\le \\class{alert}{\\barY} \\le \\mu + 1.96\\sqrt{\\mu(1-\\mu)/n}\\Bigr] \\\\\n& = \\Prob\\Bigl[\\barY - 1.96\\sqrt{\\mu(1-\\mu)/n} \\le \\class{alert}{\\mu} \\le \\barY + 1.96\\sqrt{\\mu(1-\\mu)/n}\\Bigr] \\\\\n& \\approx \\Prob\\Bigl[\\barY - 1.96\\sqrt{\\barY(1-\\barY)/n} \\le \\class{alert}{\\mu} \\le \\barY + 1.96\\sqrt{\\barY(1-\\barY)/n}\\Bigr] \\\\\n& \\le \\Prob\\Bigl[\\barY - 1/\\sqrt{n} \\le \\class{alert}{\\mu} \\le \\barY + 1/\\sqrt{n} \\Bigr] \\quad \\text{since } \\sqrt{\\barY(1-\\barY)} \\le 1/2\n\\end{align*}\\] For \\(n = 1000\\) we get \\(1/\\sqrt{n} \\approx 3\\%\\).  ⬇ Approval Rating Jupyter 📓"
+  },
+  {
+    "objectID": "slides/01-intro.html#life-expectancy-vs-gdp",
+    "href": "slides/01-intro.html#life-expectancy-vs-gdp",
+    "title": "MATH 476 — Statistics",
+    "section": "Life Expectancy vs GDP",
+    "text": "Life Expectancy vs GDP\nCountries differ dramatically in both life expectancy and economic output.\nA classic dataset (World Bank / Gapminder) records, for each country,\n\nlife expectancy at birth (years)\nGDP per capita (USD, purchasing-power adjusted)\n\nEach point represents one country, not one individual.\nLet - \\(X =\\) GDP per capita - \\(Y =\\) life expectancy\nWe are interested in the conditional behavior \\[\n\\E(Y \\mid X = x)\n\\] and how life expectancy changes with national income."
+  },
+  {
+    "objectID": "slides/01-intro.html#life-expectancy-vs-gdp-contd",
+    "href": "slides/01-intro.html#life-expectancy-vs-gdp-contd",
+    "title": "MATH 476 — Statistics",
+    "section": "Life Expectancy vs GDP (cont’d)",
+    "text": "Life Expectancy vs GDP (cont’d)\nA scatterplot of life expectancy versus GDP per capita reveals two important statistical features.\nNonlinearity\nIncreases in GDP have a much larger effect on life expectancy at low income levels than at high income levels.\nHeteroscedasticity\nCountries with low GDP exhibit much greater variability in life expectancy.\nA common transformation is to work with \\[\n\\log(X) = \\log(\\text{GDP per capita}),\n\\] leading to an approximately linear relationship \\[\n\\E(Y \\mid \\log X = x) \\approx \\alpha + \\beta x.\n\\]\nInterpretation: - \\(\\beta\\) measures years of life gained per multiplicative increase in GDP - The log scale naturally reflects diminishing returns"
   }
 ]

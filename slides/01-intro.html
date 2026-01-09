@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.26">
 
   <meta name="author" content="Fred J. Hickernell">
-  <meta name="dcterms.date" content="2026-01-08">
+  <meta name="dcterms.date" content="2026-01-09">
   <title>MATH 476 — Spring 2026 – MATH 476 — Statistics</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -361,7 +361,7 @@ Fred J. Hickernell
 </div>
 </div>
 
-  <p class="date">January 8, 2026</p>
+  <p class="date">January 9, 2026</p>
 </section>
 <section id="statistics" class="title-slide slide level1 center">
 <h1>Statistics</h1>
@@ -443,6 +443,34 @@ T &amp;:= Y_1 + \cdots + Y_n \sim \Bin(n,\mu), \quad \Prob(T = y) = \binom{n}{y}
 </div><div class="column" style="width:23%;">
 <p><span class="fragment" data-fragment-index="1"> <img src="../classlib/classlib/notebooks/figures/approval_rating/ci_failure_approval.png" style="width:100%; display:block; margin:0 auto;"> </span></p>
 </div></div>
+</section>
+<section id="life-expectancy-vs-gdp" class="slide level2">
+<h2>Life Expectancy vs GDP</h2>
+<p>Countries differ dramatically in both <span class="alert">life expectancy</span> and <span class="alert">economic output</span>.</p>
+<p>A classic dataset (World Bank / Gapminder) records, for each country,</p>
+<ul>
+<li>life expectancy at birth (years)</li>
+<li>GDP per capita (USD, purchasing-power adjusted)</li>
+</ul>
+<p>Each point represents <strong>one country</strong>, not one individual.</p>
+<p>Let - <span class="math inline">\(X =\)</span> GDP per capita - <span class="math inline">\(Y =\)</span> life expectancy</p>
+<p>We are interested in the conditional behavior <span class="math display">\[
+\E(Y \mid X = x)
+\]</span> and how life expectancy changes with national income.</p>
+</section>
+<section id="life-expectancy-vs-gdp-contd" class="slide level2">
+<h2>Life Expectancy vs GDP (cont’d)</h2>
+<p>A scatterplot of life expectancy versus GDP per capita reveals two important statistical features.</p>
+<h3 id="nonlinearity">Nonlinearity</h3>
+<p>Increases in GDP have a <strong>much larger effect</strong> on life expectancy at low income levels than at high income levels.</p>
+<h3 id="heteroscedasticity">Heteroscedasticity</h3>
+<p>Countries with low GDP exhibit <strong>much greater variability</strong> in life expectancy.</p>
+<p>A common transformation is to work with <span class="math display">\[
+\log(X) = \log(\text{GDP per capita}),
+\]</span> leading to an approximately linear relationship <span class="math display">\[
+\E(Y \mid \log X = x) \approx \alpha + \beta x.
+\]</span></p>
+<p>Interpretation: - <span class="math inline">\(\beta\)</span> measures years of life gained per <em>multiplicative</em> increase in GDP - The log scale naturally reflects <strong>diminishing returns</strong></p>
 
 
 </section></section>

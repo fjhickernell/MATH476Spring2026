@@ -8,7 +8,7 @@ reveal-options:
   disableLayout: false
 ---
 
-# Statistics
+# Statistics{data-state="goldborder"}
 
 <div class="h3">Principled</div>
 - Clear assumptions
@@ -48,7 +48,7 @@ $$
 $$
 
 :::: {.columns}
-::: {.column width="65%"}
+::: {.column width="70%"}
 
 If $Y_1, \ldots, Y_n \IIDsim \Bern(\mu)$, then
 \begin{align*}
@@ -58,7 +58,7 @@ T &:= Y_1 + \cdots + Y_n \sim \Bin(n,\mu), \; \Prob(T = t) = \binom{n}{t} \mu^t 
 \end{align*}
 :::
 
-::: {.column width="30%"}
+::: {.column width="27%"}
 
 ![](/classlib/classlib/notebooks/figures/approval_rating/ybar_histogram_approval.png){fig-align="center" width="100%"}
 :::
@@ -102,6 +102,15 @@ For $n = 1000$ we get $1/\sqrt{n} \approx 3\%$.
 
 :::: 
 
+## Approval ratings (cont'd)
+
+- [Population]{.alert} is US adults
+- [Model]{.alert} 
+  - Is a Bernoulli distribution
+  - Ignores demographic factors
+- [Uncertainty]{.alert} of the estimate of the proportion, $\mu=p$
+  - Provided by a [confidence interval]{.alert}
+  - Facilitated by the [Central Limit Theorem]{.alert}
 
 ## Life Expectancy vs GDP
 

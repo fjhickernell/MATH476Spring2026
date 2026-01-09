@@ -30,7 +30,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-63266b9ad86c7d13acbb24035b286ffa.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-b5902f52838361561ab0e015f3b4c002.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -363,7 +363,7 @@ Fred J. Hickernell
 
   <p class="date">January 9, 2026</p>
 </section>
-<section id="statistics" class="title-slide slide level1 center">
+<section id="statistics" class="title-slide slide level1 center" data-state="goldborder">
 <h1>Statistics</h1>
 <div class="h3">
 Principled
@@ -410,13 +410,13 @@ From Data
 \end{cases}
 \]</span></p>
 <div class="columns">
-<div class="column" style="width:65%;">
+<div class="column" style="width:70%;">
 <p>If <span class="math inline">\(Y_1, \ldots, Y_n \IIDsim \Bern(\mu)\)</span>, then <span class="math display">\[\begin{align*}
 T &amp;:= Y_1 + \cdots + Y_n \sim \Bin(n,\mu), \; \Prob(T = t) = \binom{n}{t} \mu^t (1-\mu)^{n-t}\\
 \barY &amp;:= \frac 1n (Y_1 + \cdots + Y_n) \\
 &amp; \appxsim  \Norm\bigl(\mu,\mu(1-\mu)/n\bigr) \quad \text{by the }\class{alert}{\text{Central Limit Theorem}}
 \end{align*}\]</span></p>
-</div><div class="column" style="width:30%;">
+</div><div class="column" style="width:27%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="../classlib/classlib/notebooks/figures/approval_rating/ybar_histogram_approval.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
@@ -443,6 +443,22 @@ T &amp;:= Y_1 + \cdots + Y_n \sim \Bin(n,\mu), \quad \Prob(T = y) = \binom{n}{y}
 </div><div class="column" style="width:23%;">
 <p><span class="fragment" data-fragment-index="1"> <img src="../classlib/classlib/notebooks/figures/approval_rating/ci_failure_approval.png" style="width:100%; display:block; margin:0 auto;"> </span></p>
 </div></div>
+</section>
+<section id="approval-ratings-contd-1" class="slide level2">
+<h2>Approval ratings (cont’d)</h2>
+<ul>
+<li><span class="alert">Population</span> is US adults</li>
+<li><span class="alert">Model</span>
+<ul>
+<li>Is a Bernoulli distribution</li>
+<li>Ignores demographic factors</li>
+</ul></li>
+<li><span class="alert">Uncertainty</span> of the estimate of the proportion, <span class="math inline">\(\mu=p\)</span>
+<ul>
+<li>Provided by a <span class="alert">confidence interval</span></li>
+<li>Facilitated by the <span class="alert">Central Limit Theorem</span></li>
+</ul></li>
+</ul>
 </section>
 <section id="life-expectancy-vs-gdp" class="slide level2">
 <h2>Life Expectancy vs GDP</h2>

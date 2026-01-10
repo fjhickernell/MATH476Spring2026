@@ -110,7 +110,7 @@ For $n = 1000$ we get $1/\sqrt{n} \approx 3\%$.
 - [Model]{.alert} 
   - Bernoulli distribution
   - Ignores demographic factors
-- [Uncertainty]{.alert} of the estimate of the proportion, $\mu=p$
+- [Uncertainty]{.alert} of the estimate of the proportion, $\mu$
   - Provided by a [confidence interval (CI)]{.alert}
   - Facilitated by the [Central Limit Theorem]{.alert}
   - This is the CI capturing $\mu$, _not_ probabiity of $\mu$ in the CI

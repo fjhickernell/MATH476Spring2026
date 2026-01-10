@@ -189,17 +189,24 @@
     "text": "Approval ratings (cont’d)\n\nPopulation is US adults\nModel\n\nBernoulli distribution\nIgnores demographic factors\n\nUncertainty of the estimate of the proportion, \\(\\mu\\)\n\nProvided by a confidence interval (CI)\nFacilitated by the Central Limit Theorem\nThis is the CI capturing \\(\\mu\\), not probabiity of \\(\\mu\\) in the CI"
   },
   {
-    "objectID": "slides/01-intro.html#life-expectancy-vs-gross-domestic-product-gdp-per-capita",
-    "href": "slides/01-intro.html#life-expectancy-vs-gross-domestic-product-gdp-per-capita",
+    "objectID": "slides/01-intro.html#life-gdp",
+    "href": "slides/01-intro.html#life-gdp",
     "title": "MATH 476 — Statistics",
     "section": "Life expectancy vs gross domestic product (GDP) per capita",
-    "text": "Life expectancy vs gross domestic product (GDP) per capita\nCountries differ dramatically in both life expectancy and economic output. A classic dataset (World Bank / Gapminder) records, for each country,\n\nLife \\(=\\) Life expectancy at birth (years)\nGDP \\(=\\) Gross domestic product per capita (USD, purchasing-power adjusted)\n\nEach point represents one country, not one individual. We are interested in the conditional behavior of how life expectancy changes with national income: \\[\n\\Ex(\\text{Life} | \\text{GDP} = x)\n\\]"
+    "text": "Life expectancy vs gross domestic product (GDP) per capita\nCountries differ dramatically in both life expectancy and economic output. A classic dataset (World Bank / Gapminder) records, for each country,\n\nLife \\(=\\) Life expectancy at birth (years)\nGDP \\(=\\) Gross domestic product per capita (USD, purchasing-power adjusted)\n\nEach point represents one country, not one individual. We are interested in the conditional behavior of life expectancy with given national income:\n\n\n\\[\n\\Ex(\\text{Life} | \\text{GDP} = x)\n\\]"
   },
   {
     "objectID": "slides/01-intro.html#life-expectancy-vs-gdp-contd",
     "href": "slides/01-intro.html#life-expectancy-vs-gdp-contd",
     "title": "MATH 476 — Statistics",
     "section": "Life expectancy vs GDP (cont’d)",
-    "text": "Life expectancy vs GDP (cont’d)\nA scatterplot of life expectancy versus GDP per capita reveals two important statistical features.\nNonlinearity\nIncreases in GDP have a much larger effect on life expectancy at low income levels than at high income levels.\nHeteroscedasticity\nCountries with low GDP exhibit much greater variability in life expectancy.\nA common transformation is to work with \\[\n\\log(X) = \\log(\\text{GDP per capita}),\n\\] leading to an approximately linear relationship \\[\n\\E(Y \\mid \\log X = x) \\approx \\alpha + \\beta x.\n\\]\nInterpretation: - \\(\\beta\\) measures years of life gained per multiplicative increase in GDP - The log scale naturally reflects diminishing returns"
+    "text": "Life expectancy vs GDP (cont’d)\nThe scatterplot of life expectancy versus GDP per capita reveals two important statistical features.\nNonlinearity\nIncreases in GDP have a much larger effect on life expectancy at low income levels than at high income levels\nHeteroscedasticity\nCountries with low GDP exhibit much greater variability in life expectancy\n\n\nTake logarithm to treat this \\[\n\\Ex(\\text{Life}  \\mid \\text{GDP} = x) \\approx \\alpha + \\beta \\log(x)\n\\]\n\n\\(\\beta\\) measures years of life gained per multiplicative increase in GDP\nThe log scale naturally reflects diminishing returns"
+  },
+  {
+    "objectID": "slides/01-intro.html#life-expectancy-vs-gdp-contd-1",
+    "href": "slides/01-intro.html#life-expectancy-vs-gdp-contd-1",
+    "title": "MATH 476 — Statistics",
+    "section": "Life expectancy vs GDP (cont’d)",
+    "text": "Life expectancy vs GDP (cont’d)\n\nPopulation is US adults\nModel\n\nBernoulli distribution\nIgnores demographic factors\n\nUncertainty of the estimate of the proportion, \\(\\mu\\)\n\nProvided by a confidence interval (CI)\nFacilitated by the Central Limit Theorem\nThis is the CI capturing \\(\\mu\\), not probabiity of \\(\\mu\\) in the CI"
   }
 ]

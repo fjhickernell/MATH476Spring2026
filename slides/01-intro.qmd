@@ -32,8 +32,8 @@ See [Big Statistics Questions](/pages/stats-qs.html)
 Let's look at 
 
 - [Approval ratings](#approval-ratings)
-- Life expectancy explained by gross domestic (GDP) product per capita
-- Numerical integration (quadrature)
+- [Life expectancy explained by gross domestic (GDP) product per capita](#life-gdp)
+- [Numerical integration (quadrature)](#trapezoidal)
 
 ## Approval ratings {#approval-ratings}
 
@@ -109,7 +109,7 @@ For $n = 1000$ we get $1/\sqrt{n} \approx 3\%$.
 - [Population]{.alert} is US adults
 - [Model]{.alert} 
   - Bernoulli distribution
-  - Ignores demographic factors
+  - Ignores demographic factors that might explain approvals
 - [Uncertainty]{.alert} of the estimate of the proportion, $\mu$
   - Provided by a [confidence interval (CI)]{.alert}
   - Facilitated by the [Central Limit Theorem]{.alert}
@@ -163,6 +163,10 @@ $$
 
 - $\beta$ measures years of life gained per [multiplicative]{.alert} increase in GDP
 - The log scale naturally reflects [diminishing returns]{.alert}
+
+<a class="button" style="margin-left:2em;" href="../classlib/classlib/notebooks/health_wealth_gapminder_regression.ipynb" download>
+⬇ Health vs. Wealth 📓
+</a>
 :::
 
 ::: {.column width="35%"}
@@ -177,15 +181,51 @@ $$
 
 ## Life expectancy vs GDP (cont'd)
 
-- [Population]{.alert} is US adults
+- [Population]{.alert} is all hypothetical countries
 - [Model]{.alert} 
-  - Bernoulli distribution
-  - Ignores demographic factors
-- [Uncertainty]{.alert} of the estimate of the proportion, $\mu$
-  - Provided by a [confidence interval (CI)]{.alert}
-  - Facilitated by the [Central Limit Theorem]{.alert}
-  - This is the CI capturing $\mu$, _not_ probabiity of $\mu$ in the CI
+  - Linear regression 
+  - Incorporates transformation of the explanatory variable
+- [Uncertainty]{.alert}
+  - $R^2$ measures the proporation of variance in $Y$ captured by the model
+- [Intepretation]{.alert}
+  - This describes relationship, not cause and effect
+  - The variation in the residuals point to other explanatory factors that have been left out of the model
 
 
 
+## Numerical integration {#trapezoidal}
 
+Computational mathematics seems distinct from statistics, but there is an overlap.
+
+Suppose that $f$ is a random function defined in $[0,1]$, in particular, a [Gaussian process]{.alert}, i.e., $f \sim \GP(0,K)$.  This means that for any distinct $x_1, \ldots, x_n \in [0,1]$, the random vector of function values, $\vf := \bigl(f(x_1), \ldots, f(x_n) \bigr)^\top$, has a [multivariate Gaussian distribution]{.alert} with 
+
+- [Mean]{.alert} $\vmu = \Ex(\vf) = \vzero$
+- [Covariance matrix]{.alert} $\mSigma := \Ex(\vf \vf^\top) = \bigl(\Ex[f(x_i)f(x_j)]\bigr)_{i,j=1}^n  = \bigl(K(x_i,x_j)\bigr)_{i,j=1}^n =: \mK$
+
+<div class="fragment" data-fragment-index="1" style="width:100%; margin:0;" markdown="1">
+If this is the Bayesian prior belief about $f$, then the [Bayesian posterior]{.alert} mean of the function conditioned on the data $\vf = \vy$ is
+$$
+\Ex\bigl[f(x) \mid \vf  = \vy\bigr] = \vy^\top \mK^{-1} \vk(x) , \quad 
+\text{where } \vk(x) = \bigl( K(x,x_i) \bigr)_{i=1}^n
+$$
+
+The Bayesian posterior mean integral of $f$ conditioned on the data is
+
+$$
+\Ex\biggl[\int_0^1 f(x) \, \dif x \mid \vf  = \vy\biggr] = \vy^\top \mK^{-1} \int_0^1 \vk(x) \, \dif x
+$$
+
+For $K(t,x) = 2 - \lvert t - x\rvert$ this is the [trapezoidal rule]{.alert}
+</div>
+
+## Numerical integration (cont'd)
+
+- [Population]{.alert} all (continuous) functions
+- [Model]{.alert} 
+  - Stochastic processes
+  - Bayesian inference
+  - Often one would the parameters in $K$ from data
+- [Uncertainty]{.alert}
+  - You may construct Bayesian credible intervals, but they depend on yur confidence in choosing a reasonable $K$
+- [Intepretation]{.alert}
+  - Provides a statistical interpretation of computational mathematics

@@ -38,8 +38,13 @@ website:
         text: Homework
       - href: pages/tests.qmd
         text: Tests
-      - href: pages/policies.qmd
-        text: Policies
+      - text: Resources
+        menu:
+          - href: pages/policies.qmd
+            text: Policies
+          - href: pages/git.qmd
+            text: Accessing repo
+          - text: Interesting articles
     right:
        - text: Related
          menu:

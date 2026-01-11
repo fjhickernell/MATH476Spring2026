@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Resources – MATH 476 — Spring 2026</title>
+<title>Git setup: clone the course repo and keep it updated – MATH 476 — Spring 2026</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -170,8 +205,33 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#textbook" id="toc-textbook" class="nav-link active" data-scroll-target="#textbook">Textbook</a></li>
-  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional Resources</a></li>
+  <li><a href="#important-do-not-push-to-the-course-repository" id="toc-important-do-not-push-to-the-course-repository" class="nav-link active" data-scroll-target="#important-do-not-push-to-the-course-repository">Important: do <strong>not</strong> push to the course repository</a></li>
+  <li><a href="#step-0-prerequisites" id="toc-step-0-prerequisites" class="nav-link" data-scroll-target="#step-0-prerequisites">Step 0: Prerequisites</a></li>
+  <li><a href="#step-1-clone-the-course-repo-with-submodules" id="toc-step-1-clone-the-course-repo-with-submodules" class="nav-link" data-scroll-target="#step-1-clone-the-course-repo-with-submodules">Step 1: Clone the course repo <em>with</em> submodules</a>
+  <ul class="collapse">
+  <li><a href="#option-a-recommended-clone-with-submodules-in-one-step" id="toc-option-a-recommended-clone-with-submodules-in-one-step" class="nav-link" data-scroll-target="#option-a-recommended-clone-with-submodules-in-one-step">Option A (recommended): clone with submodules in one step</a></li>
+  <li><a href="#option-b-clone-first-then-fetch-submodules" id="toc-option-b-clone-first-then-fetch-submodules" class="nav-link" data-scroll-target="#option-b-clone-first-then-fetch-submodules">Option B: clone first, then fetch submodules</a></li>
+  </ul></li>
+  <li><a href="#step-2-verify-you-have-the-submodule-content" id="toc-step-2-verify-you-have-the-submodule-content" class="nav-link" data-scroll-target="#step-2-verify-you-have-the-submodule-content">Step 2: Verify you have the submodule content</a></li>
+  <li><a href="#keeping-your-local-copy-updated-during-the-semester" id="toc-keeping-your-local-copy-updated-during-the-semester" class="nav-link" data-scroll-target="#keeping-your-local-copy-updated-during-the-semester">Keeping your local copy updated during the semester</a></li>
+  <li><a href="#if-you-already-made-local-changes" id="toc-if-you-already-made-local-changes" class="nav-link" data-scroll-target="#if-you-already-made-local-changes">If you already made local changes</a>
+  <ul class="collapse">
+  <li><a href="#if-you-only-changed-files-you-dont-care-about-quick-reset" id="toc-if-you-only-changed-files-you-dont-care-about-quick-reset" class="nav-link" data-scroll-target="#if-you-only-changed-files-you-dont-care-about-quick-reset">If you only changed files you don’t care about (quick reset)</a></li>
+  <li><a href="#if-you-want-to-keep-your-work" id="toc-if-you-want-to-keep-your-work" class="nav-link" data-scroll-target="#if-you-want-to-keep-your-work">If you want to keep your work</a></li>
+  </ul></li>
+  <li><a href="#optional-fork-workflow-push-only-to-your-own-fork" id="toc-optional-fork-workflow-push-only-to-your-own-fork" class="nav-link" data-scroll-target="#optional-fork-workflow-push-only-to-your-own-fork">Optional: fork workflow (push only to your own fork)</a>
+  <ul class="collapse">
+  <li><a href="#one-time-setup-fork-clone" id="toc-one-time-setup-fork-clone" class="nav-link" data-scroll-target="#one-time-setup-fork-clone">One-time setup (fork + clone)</a></li>
+  <li><a href="#getting-updates-from-the-instructor-sync-upstream-your-fork" id="toc-getting-updates-from-the-instructor-sync-upstream-your-fork" class="nav-link" data-scroll-target="#getting-updates-from-the-instructor-sync-upstream-your-fork">Getting updates from the instructor (sync upstream → your fork)</a></li>
+  </ul></li>
+  <li><a href="#common-issues-and-fixes" id="toc-common-issues-and-fixes" class="nav-link" data-scroll-target="#common-issues-and-fixes">Common issues and fixes</a>
+  <ul class="collapse">
+  <li><a href="#fatal-not-a-git-repository" id="toc-fatal-not-a-git-repository" class="nav-link" data-scroll-target="#fatal-not-a-git-repository">“fatal: not a git repository”</a></li>
+  <li><a href="#permission-denied-publickey-ssh" id="toc-permission-denied-publickey-ssh" class="nav-link" data-scroll-target="#permission-denied-publickey-ssh">“Permission denied (publickey)” (SSH)</a></li>
+  <li><a href="#submodule-errors-after-pulling" id="toc-submodule-errors-after-pulling" class="nav-link" data-scroll-target="#submodule-errors-after-pulling">Submodule errors after pulling</a></li>
+  <li><a href="#you-accidentally-cloned-without-submodules" id="toc-you-accidentally-cloned-without-submodules" class="nav-link" data-scroll-target="#you-accidentally-cloned-without-submodules">You accidentally cloned without submodules</a></li>
+  <li><a href="#avoid-updating-submodules-beyond-what-the-instructor-pinned" id="toc-avoid-updating-submodules-beyond-what-the-instructor-pinned" class="nav-link" data-scroll-target="#avoid-updating-submodules-beyond-what-the-instructor-pinned">Avoid updating submodules beyond what the instructor pinned</a></li>
+  </ul></li>
   </ul>
 </nav>
 </nav>
@@ -184,7 +244,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Resources</h1>
+<h1 class="title">Git setup: clone the course repo and keep it updated</h1>
 </div>
 
 
@@ -201,19 +261,145 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="textbook" class="level2">
-<h2 class="anchored" data-anchor-id="textbook">Textbook</h2>
+<p>This course uses a Git repository that includes <strong>submodules</strong> (shared libraries pulled in as separate Git repos). To get everything working, you must clone the repo <strong>and</strong> initialize the submodules.</p>
+<section id="important-do-not-push-to-the-course-repository" class="level2">
+<h2 class="anchored" data-anchor-id="important-do-not-push-to-the-course-repository">Important: do <strong>not</strong> push to the course repository</h2>
+<p>Students should assume the course repository is <strong>read-only</strong>:</p>
 <ul>
-<li>Wackerly, Mendenhall, and Scheaffer, <em>Mathematical Statistics with Applications</em>.</li>
+<li>Do <strong>not</strong> try to push changes to the course repo.</li>
+<li>If you see errors like “permission denied” when pushing, that is expected.</li>
+</ul>
+<p>You will <strong>not</strong> submit homework via Git. Git is used only to:</p>
+<ul>
+<li>Obtain and update course materials</li>
+<li>Experiment with class notebooks
+<ul>
+<li>When experimenting, consider working in copies of notebooks or in a separate directory so updates pull cleanly</li>
+</ul></li>
+</ul>
+<p>If you want an online backup of your personal work, you may optionally use your own private repository or a fork (see below).</p>
+</section>
+<section id="step-0-prerequisites" class="level2">
+<h2 class="anchored" data-anchor-id="step-0-prerequisites">Step 0: Prerequisites</h2>
+<p>You need:</p>
+<ul>
+<li>Git installed</li>
+<li>A way to authenticate with GitHub (either <strong>SSH</strong> or <strong>HTTPS</strong>)</li>
+</ul>
+<p>Your instructor will provide the course repo URL. It looks like one of these:</p>
+<ul>
+<li>SSH: <code>git@github.com:ORG/MATHXXXSpring20YY.git</code></li>
+<li>HTTPS: <code>https://github.com/ORG/MATHXXXSpring20YY.git</code></li>
 </ul>
 </section>
-<section id="additional-resources" class="level2">
-<h2 class="anchored" data-anchor-id="additional-resources">Additional Resources</h2>
-<ul>
-<li>Office hours and online discussion information will be added here.</li>
-</ul>
+<section id="step-1-clone-the-course-repo-with-submodules" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-clone-the-course-repo-with-submodules">Step 1: Clone the course repo <em>with</em> submodules</h2>
+<p>Choose <strong>one</strong> of the following.</p>
+<section id="option-a-recommended-clone-with-submodules-in-one-step" class="level3">
+<h3 class="anchored" data-anchor-id="option-a-recommended-clone-with-submodules-in-one-step">Option A (recommended): clone with submodules in one step</h3>
+<p>Replace <code>REPO_URL</code> with the URL you were given.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone <span class="at">--recurse-submodules</span> REPO_URL</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="option-b-clone-first-then-fetch-submodules" class="level3">
+<h3 class="anchored" data-anchor-id="option-b-clone-first-then-fetch-submodules">Option B: clone first, then fetch submodules</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone REPO_URL</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> MATHXXXSpring20YY</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> submodule update <span class="at">--init</span> <span class="at">--recursive</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="step-2-verify-you-have-the-submodule-content" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-verify-you-have-the-submodule-content">Step 2: Verify you have the submodule content</h2>
+<p>From inside the course repo:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> submodule status</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You should see one or more lines showing submodules and commit hashes. If you see errors or blank output, run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> submodule update <span class="at">--init</span> <span class="at">--recursive</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="keeping-your-local-copy-updated-during-the-semester" class="level2">
+<h2 class="anchored" data-anchor-id="keeping-your-local-copy-updated-during-the-semester">Keeping your local copy updated during the semester</h2>
+<p>Do this whenever your instructor says “pull the latest changes.”</p>
+<p>From inside the course repo:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull <span class="at">--ff-only</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> submodule update <span class="at">--init</span> <span class="at">--recursive</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>That second command is important: it updates submodules to the versions pinned by the course repo.</p>
+</section>
+<section id="if-you-already-made-local-changes" class="level2">
+<h2 class="anchored" data-anchor-id="if-you-already-made-local-changes">If you already made local changes</h2>
+<p>If <code>git pull --ff-only</code> fails, it usually means you have local commits or uncommitted changes.</p>
+<p>Check what changed:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="if-you-only-changed-files-you-dont-care-about-quick-reset" class="level3">
+<h3 class="anchored" data-anchor-id="if-you-only-changed-files-you-dont-care-about-quick-reset">If you only changed files you don’t care about (quick reset)</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--hard</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull <span class="at">--ff-only</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> submodule update <span class="at">--init</span> <span class="at">--recursive</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="if-you-want-to-keep-your-work" class="level3">
+<h3 class="anchored" data-anchor-id="if-you-want-to-keep-your-work">If you want to keep your work</h3>
+<p>Commit your changes first so they are safely recorded locally.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add <span class="at">-A</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"My work"</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull <span class="at">--ff-only</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> submodule update <span class="at">--init</span> <span class="at">--recursive</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If the pull still fails, you may need to resolve a merge conflict (ask for help).</p>
+</section>
+</section>
+<section id="optional-fork-workflow-push-only-to-your-own-fork" class="level2">
+<h2 class="anchored" data-anchor-id="optional-fork-workflow-push-only-to-your-own-fork">Optional: fork workflow (push only to your own fork)</h2>
+<p>Use this only if you want to push your work to GitHub for backup/versioning.</p>
+<section id="one-time-setup-fork-clone" class="level3">
+<h3 class="anchored" data-anchor-id="one-time-setup-fork-clone">One-time setup (fork + clone)</h3>
+<ol type="1">
+<li>Fork the course repo on GitHub into <strong>your own</strong> GitHub account.</li>
+<li>Clone <strong>your fork</strong> (not the instructor repo) with submodules.</li>
+</ol>
+<p>Replace <code>FORK_URL</code> with your fork’s URL:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone <span class="at">--recurse-submodules</span> FORK_URL</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> MATHXXXSpring20YY</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="3" type="1">
+<li>Add the instructor repo as <code>upstream</code> so you can pull course updates.</li>
+</ol>
+<p>Replace <code>UPSTREAM_URL</code> with the instructor repo URL:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add upstream UPSTREAM_URL</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote <span class="at">-v</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="getting-updates-from-the-instructor-sync-upstream-your-fork" class="level3">
+<h3 class="anchored" data-anchor-id="getting-updates-from-the-instructor-sync-upstream-your-fork">Getting updates from the instructor (sync upstream → your fork)</h3>
+<p>From inside your cloned fork:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> fetch upstream</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout main</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge <span class="at">--ff-only</span> upstream/main</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> submodule update <span class="at">--init</span> <span class="at">--recursive</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If the course repo uses a branch other than <code>main</code> (e.g., <code>master</code>), replace <code>main</code> above accordingly.</p>
+</section>
+</section>
+<section id="common-issues-and-fixes" class="level2">
+<h2 class="anchored" data-anchor-id="common-issues-and-fixes">Common issues and fixes</h2>
+<section id="fatal-not-a-git-repository" class="level3">
+<h3 class="anchored" data-anchor-id="fatal-not-a-git-repository">“fatal: not a git repository”</h3>
+<p>You’re not inside the course repo folder. Change into it:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> MATHXXXSpring20YY</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="permission-denied-publickey-ssh" class="level3">
+<h3 class="anchored" data-anchor-id="permission-denied-publickey-ssh">“Permission denied (publickey)” (SSH)</h3>
+<p>You’re using an SSH URL but your SSH key isn’t set up for GitHub. Use the HTTPS URL instead, or configure SSH.</p>
+</section>
+<section id="submodule-errors-after-pulling" class="level3">
+<h3 class="anchored" data-anchor-id="submodule-errors-after-pulling">Submodule errors after pulling</h3>
+<p>Re-run the submodule update:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> submodule update <span class="at">--init</span> <span class="at">--recursive</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="you-accidentally-cloned-without-submodules" class="level3">
+<h3 class="anchored" data-anchor-id="you-accidentally-cloned-without-submodules">You accidentally cloned without submodules</h3>
+<p>From inside the repo:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> submodule update <span class="at">--init</span> <span class="at">--recursive</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="avoid-updating-submodules-beyond-what-the-instructor-pinned" class="level3">
+<h3 class="anchored" data-anchor-id="avoid-updating-submodules-beyond-what-the-instructor-pinned">Avoid updating submodules beyond what the instructor pinned</h3>
+<p>Students should <strong>not</strong> run <code>git submodule update --remote</code> unless explicitly instructed.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

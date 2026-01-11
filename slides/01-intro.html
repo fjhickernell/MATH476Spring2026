@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.26">
 
   <meta name="author" content="Fred J. Hickernell">
-  <meta name="dcterms.date" content="2026-01-10">
+  <meta name="dcterms.date" content="2026-01-11">
   <title>MATH 476 — Spring 2026 – MATH 476 — Statistics</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -219,6 +219,7 @@
           Beta:  "{\\operatorname{Beta}}",
           Weibull:"{\\operatorname{Weibull}}",
           Lognorm:"{\\operatorname{Lognormal}}",
+          GP:     "{\\operatorname{GP}}",
 
           Var: "{\\operatorname{Var}}",
           Cov: "{\\operatorname{Cov}}",
@@ -250,9 +251,17 @@
           norm: ["{\\left\\lVert #1 \\right\\rVert}", 1],
           ip:   ["{\\left\\langle #1, #2 \\right\\rangle}", 2],
 
+
           bvec: ["{\\boldsymbol{#1}}", 1],
           avec: ["{\\vec{#1}}", 1],
           vecsym: ["{\\boldsymbol{#1}}", 1],
+
+          vf:  "{\\boldsymbol{f}}",
+          vk:  "{\\boldsymbol{k}}",
+          vt:  "{\\boldsymbol{t}}",
+          vx:  "{\\boldsymbol{x}}",
+          vy:  "{\\boldsymbol{y}}",
+          vmu: "{\\boldsymbol{\\mu}}",
 
           vzero: "{\\boldsymbol{0}}",
           vone:  "{\\boldsymbol{1}}",
@@ -265,6 +274,8 @@
           me:  "{\\mathrm{e}}",
           mi:  "{\\mathrm{i}}",
           mpi: "{\\mathrm{\\pi}}",
+          mK: "{\\mathsf{K}}",
+          mSigma: "{\\mathsf{\\Sigma}}",
 
           dif: "{\\mathrm{d}}"
         }
@@ -361,7 +372,7 @@ Fred J. Hickernell
 </div>
 </div>
 
-  <p class="date">January 10, 2026</p>
+  <p class="date">January 11, 2026</p>
 </section>
 <section id="statistics" class="title-slide slide level1 center" data-state="goldborder">
 <h1>Statistics</h1>
@@ -397,8 +408,8 @@ From Data
 <p>Let’s look at</p>
 <ul>
 <li><a href="#/approval-ratings">Approval ratings</a></li>
-<li>Life expectancy explained by gross domestic (GDP) product per capita</li>
-<li>Numerical integration (quadrature)</li>
+<li><a href="#/life-gdp">Life expectancy explained by gross domestic (GDP) product per capita</a></li>
+<li><a href="#/trapezoidal">Numerical integration (quadrature)</a></li>
 </ul>
 </section>
 <section id="approval-ratings" class="slide level2">
@@ -455,7 +466,7 @@ T &amp;:= Y_1 + \cdots + Y_n \sim \Bin(n,\mu), \quad \Prob(T = y) = \binom{n}{y}
 <li><span class="alert">Model</span>
 <ul>
 <li>Bernoulli distribution</li>
-<li>Ignores demographic factors</li>
+<li>Ignores demographic factors that might explain approvals</li>
 </ul></li>
 <li><span class="alert">Uncertainty</span> of the estimate of the proportion, <span class="math inline">\(\mu\)</span>
 <ul>
@@ -502,6 +513,7 @@ T &amp;:= Y_1 + \cdots + Y_n \sim \Bin(n,\mu), \quad \Prob(T = y) = \binom{n}{y}
 <li><span class="math inline">\(\beta\)</span> measures years of life gained per <span class="alert">multiplicative</span> increase in GDP</li>
 <li>The log scale naturally reflects <span class="alert">diminishing returns</span></li>
 </ul>
+<p><a class="button" style="margin-left:2em;" href="../classlib/classlib/notebooks/health_wealth_gapminder_regression.ipynb" download=""> ⬇ Health vs.&nbsp;Wealth 📓 </a></p>
 </div><div class="column" style="width:35%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -513,17 +525,60 @@ T &amp;:= Y_1 + \cdots + Y_n \sim \Bin(n,\mu), \quad \Prob(T = y) = \binom{n}{y}
 <section id="life-expectancy-vs-gdp-contd-1" class="slide level2">
 <h2>Life expectancy vs GDP (cont’d)</h2>
 <ul>
-<li><span class="alert">Population</span> is US adults</li>
+<li><span class="alert">Population</span> is all hypothetical countries</li>
 <li><span class="alert">Model</span>
 <ul>
-<li>Bernoulli distribution</li>
-<li>Ignores demographic factors</li>
+<li>Linear regression</li>
+<li>Incorporates transformation of the explanatory variable</li>
 </ul></li>
-<li><span class="alert">Uncertainty</span> of the estimate of the proportion, <span class="math inline">\(\mu\)</span>
+<li><span class="alert">Uncertainty</span>
 <ul>
-<li>Provided by a <span class="alert">confidence interval (CI)</span></li>
-<li>Facilitated by the <span class="alert">Central Limit Theorem</span></li>
-<li>This is the CI capturing <span class="math inline">\(\mu\)</span>, <em>not</em> probabiity of <span class="math inline">\(\mu\)</span> in the CI</li>
+<li><span class="math inline">\(R^2\)</span> measures the proporation of variance in <span class="math inline">\(Y\)</span> captured by the model</li>
+</ul></li>
+<li><span class="alert">Intepretation</span>
+<ul>
+<li>This describes relationship, not cause and effect</li>
+<li>The variation in the residuals point to other explanatory factors that have been left out of the model</li>
+</ul></li>
+</ul>
+</section>
+<section id="trapezoidal" class="slide level2">
+<h2>Numerical integration</h2>
+<p>Computational mathematics seems distinct from statistics, but there is an overlap.</p>
+<p>Suppose that <span class="math inline">\(f\)</span> is a random function defined in <span class="math inline">\([0,1]\)</span>, in particular, a <span class="alert">Gaussian process</span>, i.e., <span class="math inline">\(f \sim \GP(0,K)\)</span>. This means that for any distinct <span class="math inline">\(x_1, \ldots, x_n \in [0,1]\)</span>, the random vector of function values, <span class="math inline">\(\vf := \bigl(f(x_1), \ldots, f(x_n) \bigr)^\top\)</span>, has a <span class="alert">multivariate Gaussian distribution</span> with</p>
+<ul>
+<li><span class="alert">Mean</span> <span class="math inline">\(\vmu = \Ex(\vf) = \vzero\)</span></li>
+<li><span class="alert">Covariance matrix</span> <span class="math inline">\(\mSigma := \Ex(\vf \vf^\top) = \bigl(\Ex[f(x_i)f(x_j)]\bigr)_{i,j=1}^n  = \bigl(K(x_i,x_j)\bigr)_{i,j=1}^n =: \mK\)</span></li>
+</ul>
+<div class="fragment" data-fragment-index="1" style="width:100%; margin:0;" data-markdown="1">
+<p>If this is the Bayesian prior belief about <span class="math inline">\(f\)</span>, then the <span class="alert">Bayesian posterior</span> mean of the function conditioned on the data <span class="math inline">\(\vf = \vy\)</span> is <span class="math display">\[
+\Ex\bigl[f(x) \mid \vf  = \vy\bigr] = \vy^\top \mK^{-1} \vk(x) , \quad
+\text{where } \vk(x) = \bigl( K(x,x_i) \bigr)_{i=1}^n
+\]</span></p>
+<p>The Bayesian posterior mean integral of <span class="math inline">\(f\)</span> conditioned on the data is</p>
+<p><span class="math display">\[
+\Ex\biggl[\int_0^1 f(x) \, \dif x \mid \vf  = \vy\biggr] = \vy^\top \mK^{-1} \int_0^1 \vk(x) \, \dif x
+\]</span></p>
+<p>For <span class="math inline">\(K(t,x) = 2 - \lvert t - x\rvert\)</span> this is the <span class="alert">trapezoidal rule</span></p>
+</div>
+</section>
+<section id="numerical-integration-contd" class="slide level2">
+<h2>Numerical integration (cont’d)</h2>
+<ul>
+<li><span class="alert">Population</span> all (continuous) functions</li>
+<li><span class="alert">Model</span>
+<ul>
+<li>Stochastic processes</li>
+<li>Bayesian inference</li>
+<li>Often one would the parameters in <span class="math inline">\(K\)</span> from data</li>
+</ul></li>
+<li><span class="alert">Uncertainty</span>
+<ul>
+<li>You may construct Bayesian credible intervals, but they depend on yur confidence in choosing a reasonable <span class="math inline">\(K\)</span></li>
+</ul></li>
+<li><span class="alert">Intepretation</span>
+<ul>
+<li>Provides a statistical interpretation of computational mathematics</li>
 </ul></li>
 </ul>
 

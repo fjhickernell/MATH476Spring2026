@@ -70,6 +70,69 @@
     "text": "Notebooks and labs will be posted here."
   },
   {
+    "objectID": "pages/git.html",
+    "href": "pages/git.html",
+    "title": "Git setup: clone the course repo and keep it updated",
+    "section": "",
+    "text": "This course uses a Git repository that includes submodules (shared libraries pulled in as separate Git repos). To get everything working, you must clone the repo and initialize the submodules."
+  },
+  {
+    "objectID": "pages/git.html#important-do-not-push-to-the-course-repository",
+    "href": "pages/git.html#important-do-not-push-to-the-course-repository",
+    "title": "Git setup: clone the course repo and keep it updated",
+    "section": "Important: do not push to the course repository",
+    "text": "Important: do not push to the course repository\nStudents should assume the course repository is read-only:\n\nDo not try to push changes to the course repo.\nIf you see errors like “permission denied” when pushing, that is expected.\n\nYou will not submit homework via Git. Git is used only to:\n\nObtain and update course materials\nExperiment with class notebooks\n\nWhen experimenting, consider working in copies of notebooks or in a separate directory so updates pull cleanly\n\n\nIf you want an online backup of your personal work, you may optionally use your own private repository or a fork (see below)."
+  },
+  {
+    "objectID": "pages/git.html#step-0-prerequisites",
+    "href": "pages/git.html#step-0-prerequisites",
+    "title": "Git setup: clone the course repo and keep it updated",
+    "section": "Step 0: Prerequisites",
+    "text": "Step 0: Prerequisites\nYou need:\n\nGit installed\nA way to authenticate with GitHub (either SSH or HTTPS)\n\nYour instructor will provide the course repo URL. It looks like one of these:\n\nSSH: git@github.com:ORG/MATHXXXSpring20YY.git\nHTTPS: https://github.com/ORG/MATHXXXSpring20YY.git"
+  },
+  {
+    "objectID": "pages/git.html#step-1-clone-the-course-repo-with-submodules",
+    "href": "pages/git.html#step-1-clone-the-course-repo-with-submodules",
+    "title": "Git setup: clone the course repo and keep it updated",
+    "section": "Step 1: Clone the course repo with submodules",
+    "text": "Step 1: Clone the course repo with submodules\nChoose one of the following.\n\nOption A (recommended): clone with submodules in one step\nReplace REPO_URL with the URL you were given.\ngit clone --recurse-submodules REPO_URL\n\n\nOption B: clone first, then fetch submodules\ngit clone REPO_URL\ncd MATHXXXSpring20YY\ngit submodule update --init --recursive"
+  },
+  {
+    "objectID": "pages/git.html#step-2-verify-you-have-the-submodule-content",
+    "href": "pages/git.html#step-2-verify-you-have-the-submodule-content",
+    "title": "Git setup: clone the course repo and keep it updated",
+    "section": "Step 2: Verify you have the submodule content",
+    "text": "Step 2: Verify you have the submodule content\nFrom inside the course repo:\ngit submodule status\nYou should see one or more lines showing submodules and commit hashes. If you see errors or blank output, run:\ngit submodule update --init --recursive"
+  },
+  {
+    "objectID": "pages/git.html#keeping-your-local-copy-updated-during-the-semester",
+    "href": "pages/git.html#keeping-your-local-copy-updated-during-the-semester",
+    "title": "Git setup: clone the course repo and keep it updated",
+    "section": "Keeping your local copy updated during the semester",
+    "text": "Keeping your local copy updated during the semester\nDo this whenever your instructor says “pull the latest changes.”\nFrom inside the course repo:\ngit pull --ff-only\ngit submodule update --init --recursive\nThat second command is important: it updates submodules to the versions pinned by the course repo."
+  },
+  {
+    "objectID": "pages/git.html#if-you-already-made-local-changes",
+    "href": "pages/git.html#if-you-already-made-local-changes",
+    "title": "Git setup: clone the course repo and keep it updated",
+    "section": "If you already made local changes",
+    "text": "If you already made local changes\nIf git pull --ff-only fails, it usually means you have local commits or uncommitted changes.\nCheck what changed:\ngit status\n\nIf you only changed files you don’t care about (quick reset)\ngit reset --hard\ngit pull --ff-only\ngit submodule update --init --recursive\n\n\nIf you want to keep your work\nCommit your changes first so they are safely recorded locally.\ngit add -A\ngit commit -m \"My work\"\ngit pull --ff-only\ngit submodule update --init --recursive\nIf the pull still fails, you may need to resolve a merge conflict (ask for help)."
+  },
+  {
+    "objectID": "pages/git.html#optional-fork-workflow-push-only-to-your-own-fork",
+    "href": "pages/git.html#optional-fork-workflow-push-only-to-your-own-fork",
+    "title": "Git setup: clone the course repo and keep it updated",
+    "section": "Optional: fork workflow (push only to your own fork)",
+    "text": "Optional: fork workflow (push only to your own fork)\nUse this only if you want to push your work to GitHub for backup/versioning.\n\nOne-time setup (fork + clone)\n\nFork the course repo on GitHub into your own GitHub account.\nClone your fork (not the instructor repo) with submodules.\n\nReplace FORK_URL with your fork’s URL:\ngit clone --recurse-submodules FORK_URL\ncd MATHXXXSpring20YY\n\nAdd the instructor repo as upstream so you can pull course updates.\n\nReplace UPSTREAM_URL with the instructor repo URL:\ngit remote add upstream UPSTREAM_URL\ngit remote -v\n\n\nGetting updates from the instructor (sync upstream → your fork)\nFrom inside your cloned fork:\ngit fetch upstream\ngit checkout main\ngit merge --ff-only upstream/main\ngit submodule update --init --recursive\ngit push\nIf the course repo uses a branch other than main (e.g., master), replace main above accordingly."
+  },
+  {
+    "objectID": "pages/git.html#common-issues-and-fixes",
+    "href": "pages/git.html#common-issues-and-fixes",
+    "title": "Git setup: clone the course repo and keep it updated",
+    "section": "Common issues and fixes",
+    "text": "Common issues and fixes\n\n“fatal: not a git repository”\nYou’re not inside the course repo folder. Change into it:\ncd MATHXXXSpring20YY\n\n\n“Permission denied (publickey)” (SSH)\nYou’re using an SSH URL but your SSH key isn’t set up for GitHub. Use the HTTPS URL instead, or configure SSH.\n\n\nSubmodule errors after pulling\nRe-run the submodule update:\ngit submodule update --init --recursive\n\n\nYou accidentally cloned without submodules\nFrom inside the repo:\ngit submodule update --init --recursive\n\n\nAvoid updating submodules beyond what the instructor pinned\nStudents should not run git submodule update --remote unless explicitly instructed."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Welcome to MATH 476 Statistics",
@@ -186,7 +249,7 @@
     "href": "slides/01-intro.html#approval-ratings-contd-1",
     "title": "MATH 476 — Statistics",
     "section": "Approval ratings (cont’d)",
-    "text": "Approval ratings (cont’d)\n\nPopulation is US adults\nModel\n\nBernoulli distribution\nIgnores demographic factors\n\nUncertainty of the estimate of the proportion, \\(\\mu\\)\n\nProvided by a confidence interval (CI)\nFacilitated by the Central Limit Theorem\nThis is the CI capturing \\(\\mu\\), not probabiity of \\(\\mu\\) in the CI"
+    "text": "Approval ratings (cont’d)\n\nPopulation is US adults\nModel\n\nBernoulli distribution\nIgnores demographic factors that might explain approvals\n\nUncertainty of the estimate of the proportion, \\(\\mu\\)\n\nProvided by a confidence interval (CI)\nFacilitated by the Central Limit Theorem\nThis is the CI capturing \\(\\mu\\), not probabiity of \\(\\mu\\) in the CI"
   },
   {
     "objectID": "slides/01-intro.html#life-gdp",
@@ -200,13 +263,27 @@
     "href": "slides/01-intro.html#life-expectancy-vs-gdp-contd",
     "title": "MATH 476 — Statistics",
     "section": "Life expectancy vs GDP (cont’d)",
-    "text": "Life expectancy vs GDP (cont’d)\nThe scatterplot of life expectancy versus GDP per capita reveals two important statistical features.\nNonlinearity\nIncreases in GDP have a much larger effect on life expectancy at low income levels than at high income levels\nHeteroscedasticity\nCountries with low GDP exhibit much greater variability in life expectancy\n\n\nTake logarithm to treat this \\[\n\\Ex(\\text{Life}  \\mid \\text{GDP} = x) \\approx \\alpha + \\beta \\log(x)\n\\]\n\n\\(\\beta\\) measures years of life gained per multiplicative increase in GDP\nThe log scale naturally reflects diminishing returns"
+    "text": "Life expectancy vs GDP (cont’d)\nThe scatterplot of life expectancy versus GDP per capita reveals two important statistical features.\nNonlinearity\nIncreases in GDP have a much larger effect on life expectancy at low income levels than at high income levels\nHeteroscedasticity\nCountries with low GDP exhibit much greater variability in life expectancy\n\n\nTake logarithm to treat this \\[\n\\Ex(\\text{Life}  \\mid \\text{GDP} = x) \\approx \\alpha + \\beta \\log(x)\n\\]\n\n\\(\\beta\\) measures years of life gained per multiplicative increase in GDP\nThe log scale naturally reflects diminishing returns\n\n ⬇ Health vs. Wealth 📓"
   },
   {
     "objectID": "slides/01-intro.html#life-expectancy-vs-gdp-contd-1",
     "href": "slides/01-intro.html#life-expectancy-vs-gdp-contd-1",
     "title": "MATH 476 — Statistics",
     "section": "Life expectancy vs GDP (cont’d)",
-    "text": "Life expectancy vs GDP (cont’d)\n\nPopulation is US adults\nModel\n\nBernoulli distribution\nIgnores demographic factors\n\nUncertainty of the estimate of the proportion, \\(\\mu\\)\n\nProvided by a confidence interval (CI)\nFacilitated by the Central Limit Theorem\nThis is the CI capturing \\(\\mu\\), not probabiity of \\(\\mu\\) in the CI"
+    "text": "Life expectancy vs GDP (cont’d)\n\nPopulation is all hypothetical countries\nModel\n\nLinear regression\nIncorporates transformation of the explanatory variable\n\nUncertainty\n\n\\(R^2\\) measures the proporation of variance in \\(Y\\) captured by the model\n\nIntepretation\n\nThis describes relationship, not cause and effect\nThe variation in the residuals point to other explanatory factors that have been left out of the model"
+  },
+  {
+    "objectID": "slides/01-intro.html#trapezoidal",
+    "href": "slides/01-intro.html#trapezoidal",
+    "title": "MATH 476 — Statistics",
+    "section": "Numerical integration",
+    "text": "Numerical integration\nComputational mathematics seems distinct from statistics, but there is an overlap.\nSuppose that \\(f\\) is a random function defined in \\([0,1]\\), in particular, a Gaussian process, i.e., \\(f \\sim \\GP(0,K)\\). This means that for any distinct \\(x_1, \\ldots, x_n \\in [0,1]\\), the random vector of function values, \\(\\vf := \\bigl(f(x_1), \\ldots, f(x_n) \\bigr)^\\top\\), has a multivariate Gaussian distribution with\n\nMean \\(\\vmu = \\Ex(\\vf) = \\vzero\\)\nCovariance matrix \\(\\mSigma := \\Ex(\\vf \\vf^\\top) = \\bigl(\\Ex[f(x_i)f(x_j)]\\bigr)_{i,j=1}^n  = \\bigl(K(x_i,x_j)\\bigr)_{i,j=1}^n =: \\mK\\)\n\n\nIf this is the Bayesian prior belief about \\(f\\), then the Bayesian posterior mean of the function conditioned on the data \\(\\vf = \\vy\\) is \\[\n\\Ex\\bigl[f(x) \\mid \\vf  = \\vy\\bigr] = \\vy^\\top \\mK^{-1} \\vk(x) , \\quad\n\\text{where } \\vk(x) = \\bigl( K(x,x_i) \\bigr)_{i=1}^n\n\\]\nThe Bayesian posterior mean integral of \\(f\\) conditioned on the data is\n\\[\n\\Ex\\biggl[\\int_0^1 f(x) \\, \\dif x \\mid \\vf  = \\vy\\biggr] = \\vy^\\top \\mK^{-1} \\int_0^1 \\vk(x) \\, \\dif x\n\\]\nFor \\(K(t,x) = 2 - \\lvert t - x\\rvert\\) this is the trapezoidal rule"
+  },
+  {
+    "objectID": "slides/01-intro.html#numerical-integration-contd",
+    "href": "slides/01-intro.html#numerical-integration-contd",
+    "title": "MATH 476 — Statistics",
+    "section": "Numerical integration (cont’d)",
+    "text": "Numerical integration (cont’d)\n\nPopulation all (continuous) functions\nModel\n\nStochastic processes\nBayesian inference\nOften one would the parameters in \\(K\\) from data\n\nUncertainty\n\nYou may construct Bayesian credible intervals, but they depend on yur confidence in choosing a reasonable \\(K\\)\n\nIntepretation\n\nProvides a statistical interpretation of computational mathematics"
   }
 ]

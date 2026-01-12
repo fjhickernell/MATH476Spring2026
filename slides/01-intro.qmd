@@ -16,7 +16,7 @@ reveal-options:
 - Efficient and accurate computation
 
 <div class="h3">Inference about a population</div>
-- Want to know parameters that describe a large number or individuals or the relationships among them
+- Want to know parameters that describe a large number of individuals or the relationships among them
 - Should provide a level of uncertainty
 
 <div class="h3">From Data</div> 

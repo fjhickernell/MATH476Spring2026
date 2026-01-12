@@ -35,7 +35,7 @@ website:
       - href: pages/notebooks.qmd
         text: Notebooks
       - href: pages/homework.qmd
-        text: Homework
+        text: Assignments
       - href: pages/tests.qmd
         text: Tests
       - text: Resources

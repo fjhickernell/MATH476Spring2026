@@ -1,8 +1,5 @@
 ---
 title: "Big Statistics Questions We Ask"
-format:
-  html:
-    number-sections: false
 ---
 
 ```{=html}
@@ -10,4 +7,4 @@ format:
 <script defer src="{{< meta stats_js >}}"></script>
 ```
 
-{{< include ../classlib/classlib/quarto/pages/shared/big-statistics-questions-body.md >}}
+{{< include ../classlib/classlib/quarto/pages/shared/_stats-qs-sections.qmd >}}

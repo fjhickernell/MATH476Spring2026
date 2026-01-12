@@ -161,20 +161,6 @@
     "text": "Assessment\n\nHomework: 15%\n\nMidterm Tests: 25%\n\nProject: 20%\n\nFinal Exam: 40%"
   },
   {
-    "objectID": "classlib/classlib/quarto/pages/shared/bigqs.html#filter",
-    "href": "classlib/classlib/quarto/pages/shared/bigqs.html#filter",
-    "title": "MATH 476 — Spring 2026",
-    "section": "Filter by course",
-    "text": "Filter by course\n\n\n\n&lt;label&gt;&lt;input type=\"checkbox\" checked data-filter=\"476\"&gt; MATH 476 Statistics&lt;/label&gt;\n&lt;label&gt;&lt;input type=\"checkbox\" checked data-filter=\"563\"&gt; MATH 563 Mathematical Statistics&lt;/label&gt;\n&lt;label&gt;&lt;input type=\"checkbox\" checked data-filter=\"565\"&gt; MATH 565 Monte Carlo Methods&lt;/label&gt;\n\n\n\n\n\n\nModeling Sampling Point Estimation"
-  },
-  {
-    "objectID": "classlib/classlib/quarto/pages/shared/bigqs.html#modeling",
-    "href": "classlib/classlib/quarto/pages/shared/bigqs.html#modeling",
-    "title": "MATH 476 — Spring 2026",
-    "section": "Modeling",
-    "text": "Modeling"
-  },
-  {
     "objectID": "pages/homework.html",
     "href": "pages/homework.html",
     "title": "Assignments",

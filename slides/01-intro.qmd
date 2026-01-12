@@ -191,8 +191,6 @@ $$
   - This describes relationship, not cause and effect
   - The variation in the residuals point to other explanatory factors that have been left out of the model
 
-
-
 ## Numerical integration {#trapezoidal}
 
 Computational mathematics seems distinct from statistics, but there is an overlap.

@@ -35,99 +35,113 @@
     "text": "Information about midterms/final (and any practice materials) will be posted here."
   },
   {
-    "objectID": "pages/stats-qs.html",
-    "href": "pages/stats-qs.html",
-    "title": "Big Statistics Questions We Ask",
+    "objectID": "pages/schedule.html",
+    "href": "pages/schedule.html",
+    "title": "Schedule",
     "section": "",
-    "text": "Filter by course\n\n\n  \n     MATH 476 Statistics\n     MATH 563 Mathematical Statistics\n     MATH 565 Monte Carlo Methods\n  \n  \n\n\n\n\nModeling\n\n\n  Course(s)\n  Big question\n\n\n\n  476, 563, 565\n  \n    What is the population?\n    All US adults? All future units from a production line? All students with bachelor's degree? All continuous functions on a given domain?\n  \n\n\n\n  476, 563, 565\n  \n    What features are we interested in?\n    Mean? Variance? Quantiles? Regression function? Entire distribution?\n  \n\n\n\n  476, 563\n  \n    What does the model fail to capture?\n    Explanatory variables? Interactions? Nonlinearities?\n  \n\n\n\n  476, 563\n  \n    Are the distributional assumptions correct?\n    Normality? Skewness? Heavy tails? Independence?\n  \n\n\n\n\nSampling\n\n\n  Course(s)\n  Big question\n\n\n\n  476, 563, 565\n  \n    How do we sample from the population?\n    Independent and identically distributed (IID)? Low discrepancy (LD)? Stratified sampling? Designed experiment?\n  \n\n\n\n  476, 563\n  \n    What can go wrong between intended and actual sampling?\n    Nonresponse and missingness? Measurement error? Coverage error?\n  \n\n\n\n\nPoint Estimation\n\n\n  Course(s)\n  Big question\n\n\n\n  476, 563\n  \n    What is the estimand?\n    \n      Parameter vs functional of a distribution\n      What does it mean in context?\n      What is random, what is fixed?\n    \n  \n\n\n\n  563\n  \n    What makes an estimator “optimal”?\n    \n      Loss functions and risk\n      Invariance/equivariance (as appropriate)\n      Benchmarks and lower bounds (when assumptions hold)"
+    "text": "Classes are held in RE 102\n\n\n\nDate\nLecture\nTopic\nSlides\n\n\n\n\nJan 13\n1\nIntroduction & Course Overview\nIntroduction and Probability Review\n\n\nJan 15\n2\nReview of Probability"
   },
   {
-    "objectID": "pages/resources.html",
-    "href": "pages/resources.html",
-    "title": "Resources",
+    "objectID": "pages/homework.html",
+    "href": "pages/homework.html",
+    "title": "Assignments",
     "section": "",
-    "text": "Wackerly, Mendenhall, and Scheaffer, Mathematical Statistics with Applications."
+    "text": "Unless otherwise stated, you may work on assignments individually or in pairs, and your choice may change from one assignment to the next.\n\nFor each assignment, I will create a group set in Canvas; you will sign up to form your group.\n\nOnly one person per group submits the assignment in Canvas. The submission is automatically shared with all group members.\n\nGrades and feedback are shared with the whole group. By default, all members receive the same grade.\n\nAssignments are due by 11:59 PM on the due date.\n\nEach submission must include all relevant files:\n\nA self-contained, working copy of any code used\nAND\nA PDF version of item 1, including the output, plus any analytic work.\n(You may embed the analytic work as markdown in the code if you wish.)\n\n\n\n\n\n\n\n\n\nAssignment\nDue Date\n\n\n\n\nAssignment 1 — Diagnostic survey (Canvas / Microsoft Forms)\nJanuary 16"
   },
   {
-    "objectID": "pages/resources.html#textbook",
-    "href": "pages/resources.html#textbook",
-    "title": "Resources",
+    "objectID": "pages/homework.html#ground-rules-for-assignments",
+    "href": "pages/homework.html#ground-rules-for-assignments",
+    "title": "Assignments",
     "section": "",
-    "text": "Wackerly, Mendenhall, and Scheaffer, Mathematical Statistics with Applications."
+    "text": "Unless otherwise stated, you may work on assignments individually or in pairs, and your choice may change from one assignment to the next.\n\nFor each assignment, I will create a group set in Canvas; you will sign up to form your group.\n\nOnly one person per group submits the assignment in Canvas. The submission is automatically shared with all group members.\n\nGrades and feedback are shared with the whole group. By default, all members receive the same grade.\n\nAssignments are due by 11:59 PM on the due date.\n\nEach submission must include all relevant files:\n\nA self-contained, working copy of any code used\nAND\nA PDF version of item 1, including the output, plus any analytic work.\n(You may embed the analytic work as markdown in the code if you wish.)\n\n\n\n\n\n\n\n\n\nAssignment\nDue Date\n\n\n\n\nAssignment 1 — Diagnostic survey (Canvas / Microsoft Forms)\nJanuary 16"
   },
   {
-    "objectID": "pages/resources.html#additional-resources",
-    "href": "pages/resources.html#additional-resources",
-    "title": "Resources",
-    "section": "Additional Resources",
-    "text": "Additional Resources\n\nOffice hours and online discussion information will be added here."
-  },
-  {
-    "objectID": "pages/notebooks.html",
-    "href": "pages/notebooks.html",
-    "title": "Jupyter Notebooks",
+    "objectID": "classlib/classlib/quarto/pages/policies.html",
+    "href": "classlib/classlib/quarto/pages/policies.html",
+    "title": "Policies",
     "section": "",
-    "text": "Here you will find Jupyter notebooks used in the course.\nClick the link to download, and then open in JupyterLab on your computer.\n\nApproval Ratings: Bernoulli, Binomial, CLT, and Confidence Intervals\nBayesian Quadrature\nHealth, Wealth, and Life Expectancy (Gapminder)"
+    "text": "Reasonable accommodations will be made for students with documented disabilities. In order to receive accommodations, students must obtain a letter of accommodation from the Center for Disability Resources and make an appointment to speak with me, Fred Hickernell, as soon as possible. The Center for Disability Resources (CDR) is located in 3424 S. State St., room 1C3-2 (on the first floor), telephone 312-567-5744 or disabilities@illinoistech.edu."
   },
   {
-    "objectID": "pages/git.html",
-    "href": "pages/git.html",
+    "objectID": "classlib/classlib/quarto/pages/policies.html#accommodations-for-disabilities",
+    "href": "classlib/classlib/quarto/pages/policies.html#accommodations-for-disabilities",
+    "title": "Policies",
+    "section": "",
+    "text": "Reasonable accommodations will be made for students with documented disabilities. In order to receive accommodations, students must obtain a letter of accommodation from the Center for Disability Resources and make an appointment to speak with me, Fred Hickernell, as soon as possible. The Center for Disability Resources (CDR) is located in 3424 S. State St., room 1C3-2 (on the first floor), telephone 312-567-5744 or disabilities@illinoistech.edu."
+  },
+  {
+    "objectID": "classlib/classlib/quarto/pages/policies.html#sexual-harassment-and-discrimination-information",
+    "href": "classlib/classlib/quarto/pages/policies.html#sexual-harassment-and-discrimination-information",
+    "title": "Policies",
+    "section": "Sexual Harassment and Discrimination Information",
+    "text": "Sexual Harassment and Discrimination Information\nIllinois Tech prohibits all sexual harassment, sexual misconduct, and gender discrimination by any member of our community. This includes harassment among students, staff, or faculty. Sexual harassment of a student by a faculty member or sexual harassment of an employee by a supervisor is particularly serious. Such conduct may easily create an intimidating, hostile, or offensive environment.\nIllinois Tech encourages anyone experiencing sexual harassment or sexual misconduct to speak with the Office of Title IX Compliance for information on support options and the resolution process.\nYou can report sexual harassment electronically at iit.edu/incidentreport, which may be completed anonymously. You may additionally report by contacting the Title IX Coordinator, Virginia Foster at foster@illinoistech.edu. For confidential support, you may reach Illinois Tech’s Confidential Advisor at (773) 907-1062. You can also contact a licensed practitioner in Illinois Tech’s Student Health and Wellness Center at student.health@illinoistech.edu or (312)567-7550."
+  },
+  {
+    "objectID": "classlib/classlib/quarto/pages/policies.html#academic-integrity-technology-and-ai-usage",
+    "href": "classlib/classlib/quarto/pages/policies.html#academic-integrity-technology-and-ai-usage",
+    "title": "Policies",
+    "section": "Academic Integrity, Technology, and AI Usage",
+    "text": "Academic Integrity, Technology, and AI Usage\nYou are encouraged to use technology, including AI tools like ChatGPT, to explore ideas and complete assignments or projects, as long as you understand the work and can explain it yourself. On tests and the final exam, no technology or AI will be allowed unless I say otherwise. Always use these tools to support your learning, not to replace it, and give credit if they meaningfully contribute to your work.\nStudents are expected to uphold the highest standards of honesty in their academic work, in accordance with Illinois Tech’s Code of Academic Honesty.\n\nPermitted Use\n\nAssignments & Projects: You are encouraged to use technology and AI tools to assist in problem-solving, exploring concepts, and checking work.\nYou must critically evaluate AI-generated content for accuracy, completeness, and clarity.\nYou are responsible for understanding and being able to explain any work produced with technological assistance.\n\n\n\nProhibited Use\n\nTests & Final Exam: No technology, AI tools, or external resources may be used unless explicitly allowed by the instructor.\nSubmitting AI-generated or technological outputs without personal understanding is prohibited and will be treated as a violation.\n\n\n\nCitations & Transparency\nIf you use AI tools, software, or other external resources in a way that significantly shapes your work, you must acknowledge it (e.g., “Approach suggested by ChatGPT”).\n\n\nConsequences\nViolations will be handled according to Illinois Tech’s Code of Academic Honesty."
+  },
+  {
+    "objectID": "classlib/classlib/quarto/pages/git-clone-update-with-submodules.html",
+    "href": "classlib/classlib/quarto/pages/git-clone-update-with-submodules.html",
     "title": "Git setup: clone the course repo and keep it updated",
     "section": "",
     "text": "This course uses a Git repository that includes submodules (shared libraries pulled in as separate Git repos). To get everything working, you must clone the repo and initialize the submodules."
   },
   {
-    "objectID": "pages/git.html#important-do-not-push-to-the-course-repository",
-    "href": "pages/git.html#important-do-not-push-to-the-course-repository",
+    "objectID": "classlib/classlib/quarto/pages/git-clone-update-with-submodules.html#important-do-not-push-to-the-course-repository",
+    "href": "classlib/classlib/quarto/pages/git-clone-update-with-submodules.html#important-do-not-push-to-the-course-repository",
     "title": "Git setup: clone the course repo and keep it updated",
     "section": "Important: do not push to the course repository",
     "text": "Important: do not push to the course repository\nStudents should assume the course repository is read-only:\n\nDo not try to push changes to the course repo.\nIf you see errors like “permission denied” when pushing, that is expected.\n\nYou will not submit homework via Git. Git is used only to:\n\nObtain and update course materials\nExperiment with class notebooks\n\nWhen experimenting, consider working in copies of notebooks or in a separate directory so updates pull cleanly\n\n\nIf you want an online backup of your personal work, you may optionally use your own private repository or a fork (see below)."
   },
   {
-    "objectID": "pages/git.html#step-0-prerequisites",
-    "href": "pages/git.html#step-0-prerequisites",
+    "objectID": "classlib/classlib/quarto/pages/git-clone-update-with-submodules.html#step-0-prerequisites",
+    "href": "classlib/classlib/quarto/pages/git-clone-update-with-submodules.html#step-0-prerequisites",
     "title": "Git setup: clone the course repo and keep it updated",
     "section": "Step 0: Prerequisites",
     "text": "Step 0: Prerequisites\nYou need:\n\nGit installed\nA way to authenticate with GitHub (either SSH or HTTPS)\n\nYour instructor will provide the course repo URL. It looks like one of these:\n\nSSH: git@github.com:ORG/MATHXXXSpring20YY.git\nHTTPS: https://github.com/ORG/MATHXXXSpring20YY.git"
   },
   {
-    "objectID": "pages/git.html#step-1-clone-the-course-repo-with-submodules",
-    "href": "pages/git.html#step-1-clone-the-course-repo-with-submodules",
+    "objectID": "classlib/classlib/quarto/pages/git-clone-update-with-submodules.html#step-1-clone-the-course-repo-with-submodules",
+    "href": "classlib/classlib/quarto/pages/git-clone-update-with-submodules.html#step-1-clone-the-course-repo-with-submodules",
     "title": "Git setup: clone the course repo and keep it updated",
     "section": "Step 1: Clone the course repo with submodules",
     "text": "Step 1: Clone the course repo with submodules\nChoose one of the following.\n\nOption A (recommended): clone with submodules in one step\nReplace REPO_URL with the URL you were given.\ngit clone --recurse-submodules REPO_URL\n\n\nOption B: clone first, then fetch submodules\ngit clone REPO_URL\ncd MATHXXXSpring20YY\ngit submodule update --init --recursive"
   },
   {
-    "objectID": "pages/git.html#step-2-verify-you-have-the-submodule-content",
-    "href": "pages/git.html#step-2-verify-you-have-the-submodule-content",
+    "objectID": "classlib/classlib/quarto/pages/git-clone-update-with-submodules.html#step-2-verify-you-have-the-submodule-content",
+    "href": "classlib/classlib/quarto/pages/git-clone-update-with-submodules.html#step-2-verify-you-have-the-submodule-content",
     "title": "Git setup: clone the course repo and keep it updated",
     "section": "Step 2: Verify you have the submodule content",
     "text": "Step 2: Verify you have the submodule content\nFrom inside the course repo:\ngit submodule status\nYou should see one or more lines showing submodules and commit hashes. If you see errors or blank output, run:\ngit submodule update --init --recursive"
   },
   {
-    "objectID": "pages/git.html#keeping-your-local-copy-updated-during-the-semester",
-    "href": "pages/git.html#keeping-your-local-copy-updated-during-the-semester",
+    "objectID": "classlib/classlib/quarto/pages/git-clone-update-with-submodules.html#keeping-your-local-copy-updated-during-the-semester",
+    "href": "classlib/classlib/quarto/pages/git-clone-update-with-submodules.html#keeping-your-local-copy-updated-during-the-semester",
     "title": "Git setup: clone the course repo and keep it updated",
     "section": "Keeping your local copy updated during the semester",
     "text": "Keeping your local copy updated during the semester\nDo this whenever your instructor says “pull the latest changes.”\nFrom inside the course repo:\ngit pull --ff-only\ngit submodule update --init --recursive\nThat second command is important: it updates submodules to the versions pinned by the course repo."
   },
   {
-    "objectID": "pages/git.html#if-you-already-made-local-changes",
-    "href": "pages/git.html#if-you-already-made-local-changes",
+    "objectID": "classlib/classlib/quarto/pages/git-clone-update-with-submodules.html#if-you-already-made-local-changes",
+    "href": "classlib/classlib/quarto/pages/git-clone-update-with-submodules.html#if-you-already-made-local-changes",
     "title": "Git setup: clone the course repo and keep it updated",
     "section": "If you already made local changes",
     "text": "If you already made local changes\nIf git pull --ff-only fails, it usually means you have local commits or uncommitted changes.\nCheck what changed:\ngit status\n\nIf you only changed files you don’t care about (quick reset)\ngit reset --hard\ngit pull --ff-only\ngit submodule update --init --recursive\n\n\nIf you want to keep your work\nCommit your changes first so they are safely recorded locally.\ngit add -A\ngit commit -m \"My work\"\ngit pull --ff-only\ngit submodule update --init --recursive\nIf the pull still fails, you may need to resolve a merge conflict (ask for help)."
   },
   {
-    "objectID": "pages/git.html#optional-fork-workflow-push-only-to-your-own-fork",
-    "href": "pages/git.html#optional-fork-workflow-push-only-to-your-own-fork",
+    "objectID": "classlib/classlib/quarto/pages/git-clone-update-with-submodules.html#optional-fork-workflow-push-only-to-your-own-fork",
+    "href": "classlib/classlib/quarto/pages/git-clone-update-with-submodules.html#optional-fork-workflow-push-only-to-your-own-fork",
     "title": "Git setup: clone the course repo and keep it updated",
     "section": "Optional: fork workflow (push only to your own fork)",
     "text": "Optional: fork workflow (push only to your own fork)\nUse this only if you want to push your work to GitHub for backup/versioning.\n\nOne-time setup (fork + clone)\n\nFork the course repo on GitHub into your own GitHub account.\nClone your fork (not the instructor repo) with submodules.\n\nReplace FORK_URL with your fork’s URL:\ngit clone --recurse-submodules FORK_URL\ncd MATHXXXSpring20YY\n\nAdd the instructor repo as upstream so you can pull course updates.\n\nReplace UPSTREAM_URL with the instructor repo URL:\ngit remote add upstream UPSTREAM_URL\ngit remote -v\n\n\nGetting updates from the instructor (sync upstream → your fork)\nFrom inside your cloned fork:\ngit fetch upstream\ngit checkout main\ngit merge --ff-only upstream/main\ngit submodule update --init --recursive\ngit push\nIf the course repo uses a branch other than main (e.g., master), replace main above accordingly."
   },
   {
-    "objectID": "pages/git.html#common-issues-and-fixes",
-    "href": "pages/git.html#common-issues-and-fixes",
+    "objectID": "classlib/classlib/quarto/pages/git-clone-update-with-submodules.html#common-issues-and-fixes",
+    "href": "classlib/classlib/quarto/pages/git-clone-update-with-submodules.html#common-issues-and-fixes",
     "title": "Git setup: clone the course repo and keep it updated",
     "section": "Common issues and fixes",
     "text": "Common issues and fixes\n\n“fatal: not a git repository”\nYou’re not inside the course repo folder. Change into it:\ncd MATHXXXSpring20YY\n\n\n“Permission denied (publickey)” (SSH)\nYou’re using an SSH URL but your SSH key isn’t set up for GitHub. Use the HTTPS URL instead, or configure SSH.\n\n\nSubmodule errors after pulling\nRe-run the submodule update:\ngit submodule update --init --recursive\n\n\nYou accidentally cloned without submodules\nFrom inside the repo:\ngit submodule update --init --recursive\n\n\nAvoid updating submodules beyond what the instructor pinned\nStudents should not run git submodule update --remote unless explicitly instructed."
@@ -161,53 +175,25 @@
     "text": "Assessment\n\nHomework: 15%\n\nMidterm Tests: 25%\n\nProject: 20%\n\nFinal Exam: 40%"
   },
   {
-    "objectID": "pages/homework.html",
-    "href": "pages/homework.html",
-    "title": "Assignments",
+    "objectID": "classlib/classlib/quarto/pages/interesting-articles-links.html",
+    "href": "classlib/classlib/quarto/pages/interesting-articles-links.html",
+    "title": "Interesting Articles & Links",
     "section": "",
-    "text": "Unless otherwise stated, you may work on assignments individually or in pairs, and your choice may change from one assignment to the next.\n\nFor each assignment, I will create a group set in Canvas; you will sign up to form your group.\n\nOnly one person per group submits the assignment in Canvas. The submission is automatically shared with all group members.\n\nGrades and feedback are shared with the whole group. By default, all members receive the same grade.\n\nAssignments are due by 11:59 PM on the due date.\n\nEach submission must include all relevant files:\n\nA self-contained, working copy of any code used\nAND\nA PDF version of item 1, including the output, plus any analytic work.\n(You may embed the analytic work as markdown in the code if you wish.)\n\n\n\n\n\n\n\n\n\nAssignment\nDue Date\n\n\n\n\nAssignment 1 — Diagnostic survey (Canvas / Microsoft Forms)\nJanuary 16"
+    "text": "This page collects optional articles, essays, videos, and interactive resources that connect probability, statistics, and data science to real applications, historical context, or broader ideas.\n\nqmcpy.org: A Python Library for Quasi-Monte Carlo Methods\n\nA Python library for quasi-Monte Carlo methods, which are used to improve the efficiency of numerical integration and simulation"
   },
   {
-    "objectID": "pages/homework.html#ground-rules-for-assignments",
-    "href": "pages/homework.html#ground-rules-for-assignments",
-    "title": "Assignments",
+    "objectID": "classlib/classlib/quarto/pages/stats-qs.html",
+    "href": "classlib/classlib/quarto/pages/stats-qs.html",
+    "title": "Big Statistics Questions We Ask",
     "section": "",
-    "text": "Unless otherwise stated, you may work on assignments individually or in pairs, and your choice may change from one assignment to the next.\n\nFor each assignment, I will create a group set in Canvas; you will sign up to form your group.\n\nOnly one person per group submits the assignment in Canvas. The submission is automatically shared with all group members.\n\nGrades and feedback are shared with the whole group. By default, all members receive the same grade.\n\nAssignments are due by 11:59 PM on the due date.\n\nEach submission must include all relevant files:\n\nA self-contained, working copy of any code used\nAND\nA PDF version of item 1, including the output, plus any analytic work.\n(You may embed the analytic work as markdown in the code if you wish.)\n\n\n\n\n\n\n\n\n\nAssignment\nDue Date\n\n\n\n\nAssignment 1 — Diagnostic survey (Canvas / Microsoft Forms)\nJanuary 16"
+    "text": "Filter by course\n\n  \n     MATH 476 Statistics\n     MATH 563 Mathematical Statistics\n     MATH 565 Monte Carlo Methods\n  \n  \n\n\n\nModeling\n\n  Course(s)\n  Big question\n\n\n\n  476, 563, 565\n  \n    What is the population?\n    All US adults? All future units from a production line? All students with bachelor's degree? All continuous functions on a given domain?\n  \n\n\n\n  476, 563, 565\n  \n    What features are we interested in?\n    Mean? Variance? Quantiles? Regression function? Entire distribution?\n  \n\n\n\n  476, 563\n  \n    What does the model fail to capture?\n    Explanatory variables? Interactions? Nonlinearities?\n  \n\n\n\n  476, 563\n  \n    Are the distributional assumptions correct?\n    Normality? Skewness? Heavy tails? Independence?\n  \n\n\n\nSampling\n\n  Course(s)\n  Big question\n\n\n\n  476, 563, 565\n  \n    How do we sample from the population?\n    Independent and identically distributed (IID)? Low discrepancy (LD)? Stratified sampling? Designed experiment?\n  \n\n\n\n  476, 563\n  \n    What can go wrong between intended and actual sampling?\n    Nonresponse and missingness? Measurement error? Coverage error?\n  \n\n\n\nPoint Estimation\n\n  Course(s)\n  Big question\n\n\n\n  476, 563\n  \n    What is the estimand?\n    \n      Parameter vs functional of a distribution\n      What does it mean in context?\n      What is random, what is fixed?\n    \n  \n\n\n\n  563\n  \n    What makes an estimator “optimal”?\n    \n      Loss functions and risk\n      Invariance/equivariance (as appropriate)\n      Benchmarks and lower bounds (when assumptions hold)"
   },
   {
-    "objectID": "pages/policies.html",
-    "href": "pages/policies.html",
-    "title": "Policies",
+    "objectID": "pages/notebooks.html",
+    "href": "pages/notebooks.html",
+    "title": "Jupyter Notebooks",
     "section": "",
-    "text": "Reasonable accommodations will be made for students with documented disabilities. In order to receive accommodations, students must obtain a letter of accommodation from the Center for Disability Resources and make an appointment to speak with me, Fred Hickernell, as soon as possible. The Center for Disability Resources (CDR) is located in 3424 S. State St., room 1C3-2 (on the first floor), telephone 312-567-5744 or disabilities@illinoistech.edu."
-  },
-  {
-    "objectID": "pages/policies.html#accommodations-for-disabilities",
-    "href": "pages/policies.html#accommodations-for-disabilities",
-    "title": "Policies",
-    "section": "",
-    "text": "Reasonable accommodations will be made for students with documented disabilities. In order to receive accommodations, students must obtain a letter of accommodation from the Center for Disability Resources and make an appointment to speak with me, Fred Hickernell, as soon as possible. The Center for Disability Resources (CDR) is located in 3424 S. State St., room 1C3-2 (on the first floor), telephone 312-567-5744 or disabilities@illinoistech.edu."
-  },
-  {
-    "objectID": "pages/policies.html#sexual-harassment-and-discrimination-information",
-    "href": "pages/policies.html#sexual-harassment-and-discrimination-information",
-    "title": "Policies",
-    "section": "Sexual Harassment and Discrimination Information",
-    "text": "Sexual Harassment and Discrimination Information\nIllinois Tech prohibits all sexual harassment, sexual misconduct, and gender discrimination by any member of our community. This includes harassment among students, staff, or faculty. Sexual harassment of a student by a faculty member or sexual harassment of an employee by a supervisor is particularly serious. Such conduct may easily create an intimidating, hostile, or offensive environment.\nIllinois Tech encourages anyone experiencing sexual harassment or sexual misconduct to speak with the Office of Title IX Compliance for information on support options and the resolution process.\nYou can report sexual harassment electronically at iit.edu/incidentreport, which may be completed anonymously. You may additionally report by contacting the Title IX Coordinator, Virginia Foster at foster@illinoistech.edu. For confidential support, you may reach Illinois Tech’s Confidential Advisor at (773) 907-1062. You can also contact a licensed practitioner in Illinois Tech’s Student Health and Wellness Center at student.health@illinoistech.edu or (312)567-7550."
-  },
-  {
-    "objectID": "pages/policies.html#academic-integrity-technology-and-ai-usage",
-    "href": "pages/policies.html#academic-integrity-technology-and-ai-usage",
-    "title": "Policies",
-    "section": "Academic Integrity, Technology, and AI Usage",
-    "text": "Academic Integrity, Technology, and AI Usage\nYou are encouraged to use technology, including AI tools like ChatGPT, to explore ideas and complete assignments or projects, as long as you understand the work and can explain it yourself. On tests and the final exam, no technology or AI will be allowed unless I say otherwise. Always use these tools to support your learning, not to replace it, and give credit if they meaningfully contribute to your work.\nStudents are expected to uphold the highest standards of honesty in their academic work, in accordance with Illinois Tech’s Code of Academic Honesty.\n\nPermitted Use\n\nAssignments & Projects: You are encouraged to use technology and AI tools to assist in problem-solving, exploring concepts, and checking work.\nYou must critically evaluate AI-generated content for accuracy, completeness, and clarity.\nYou are responsible for understanding and being able to explain any work produced with technological assistance.\n\n\n\nProhibited Use\n\nTests & Final Exam: No technology, AI tools, or external resources may be used unless explicitly allowed by the instructor.\nSubmitting AI-generated or technological outputs without personal understanding is prohibited and will be treated as a violation.\n\n\n\nCitations & Transparency\nIf you use AI tools, software, or other external resources in a way that significantly shapes your work, you must acknowledge it (e.g., “Approach suggested by ChatGPT”).\n\n\nConsequences\nViolations will be handled according to Illinois Tech’s Code of Academic Honesty."
-  },
-  {
-    "objectID": "pages/schedule.html",
-    "href": "pages/schedule.html",
-    "title": "Schedule",
-    "section": "",
-    "text": "Classes are held in RE 102\n\n\n\nDate\nLecture\nTopic\nSlides\n\n\n\n\nJan 13\n1\nIntroduction & Course Overview\nIntroduction and Probability Review\n\n\nJan 15\n2\nReview of Probability"
+    "text": "Here you will find Jupyter notebooks used in the course.\nClick the link to download, and then open in JupyterLab on your computer.\n\nApproval Ratings: Bernoulli, Binomial, CLT, and Confidence Intervals\nBayesian Quadrature\nHealth, Wealth, and Life Expectancy (Gapminder)"
   },
   {
     "objectID": "pages/syllabus.html",

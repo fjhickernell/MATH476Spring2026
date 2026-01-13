@@ -1,8 +1,0 @@
----
-title: "Git setup: clone the course repo and keep it updated"
-format:
-  html:
-    toc: true
----
-
-{{< include ../classlib/classlib/quarto/pages/shared/git-clone-update-with-submodules.md >}}

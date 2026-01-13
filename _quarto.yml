@@ -28,7 +28,7 @@ website:
     left:
       - href: index.qmd
         text: Welcome
-      - href: pages/stats-qs.qmd
+      - href: classlib/classlib/quarto/pages/stats-qs.qmd
         text: Stats Qs
       - href: pages/schedule.qmd
         text: Schedule
@@ -40,11 +40,12 @@ website:
         text: Tests
       - text: Resources
         menu:
-          - href: pages/policies.qmd
+          - href: classlib/classlib/quarto/pages/policies.qmd
             text: Policies
-          - href: pages/git.qmd
+          - href: classlib/classlib/quarto/pages/git-clone-update-with-submodules.qmd
             text: Accessing repo
-          - text: Interesting articles
+          - text: Interesting articles & links
+            href: classlib/classlib/quarto/pages/interesting-articles-links.qmd
     right:
        - text: Related
          menu:

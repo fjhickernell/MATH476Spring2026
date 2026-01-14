@@ -77,7 +77,7 @@ You will learn
 - The probabilistic basis for statistical inference and the qualities of a good estimator;
 - How to correctly perform hypothesis tests and construct confidence intervals; 
 - How to fit proper linear models; and
-- How to use statistical software—primarily Pyton or R—to facilitate the calculations involved.
+- How to use statistical software—primarily Python or R—to facilitate the calculations involved.
 
 </details>
 

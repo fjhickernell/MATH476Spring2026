@@ -2,7 +2,7 @@
 title: "MATH 476 — Statistics"
 subtitle: |
   <span class="deck-title">Introduction and Probability Review</span><br>
-  <span class="deck-meta">Wackernely et al. Ch. 1–7 (parts)<br> 
+  <span class="deck-meta">Wackerly et al. Ch. 1–7 (parts)<br> 
   Diagnostic Quiz due 1/16 </span>
 author: "Fred J. Hickernell"
 date: last-modified
@@ -216,7 +216,9 @@ $$
 \Ex\biggl[\int_0^1 f(x) \, \dif x \mid \vf  = \vy\biggr] = \vy^\top \mK^{-1} \int_0^1 \vk(x) \, \dif x
 $$
 
-For $K(t,x) = 2 - \lvert t - x\rvert$ this is the [trapezoidal rule]{.alert}
+For $K(t,x) = 2 - \lvert t - x\rvert$ this is the [trapezoidal rule]{.alert}.  <a class="button" style="margin-left:2em;" href="../classlib/classlib/notebooks/Bayesian_quadrature.ipynb" download>
+⬇ Bayesian Quadrature 📓
+</a>
 </div>
 
 ## Numerical integration (cont'd)
@@ -276,24 +278,47 @@ For $K(t,x) = 2 - \lvert t - x\rvert$ this is the [trapezoidal rule]{.alert}
 
 ## Key probability concepts (cont'd)
 
-- $(X,Y)$ are [independent]{.alert} iff $F_{X,Y}(x,y) = F_X(x) F_Y(y)$ or equivalently $\varrho_{X,Y}(x,y) = \varrho_X(x) \varrho_Y(y)$
+- $(X,Y)$ are [independent]{.alert} iff $\begin{cases} F_{X,Y}(x,y) = F_X(x) F_Y(y) & \text{or equivalently} \\ 
+\varrho_{X,Y}(x,y) = \varrho_X(x) \varrho_Y(y) \end{cases}$
 
 - [Covariance]{.alert} $\cov(X,Y) : = \Ex[(X- \mu_X)(Y - \mu_Y)]$
 
 - [Correlation]{.alert} $\displaystyle \corr(X,Y) : = \frac{\cov(X,Y)}{\std(X) \std(Y)}$
 
 - Independence _implies_ zero correlation, but zero correlation _does not imply_ independence
+<div class="fragment" data-fragment-index="1" style="width:100%; margin:0;" markdown="1">
   - E.g., $X = \cos(2 \pi T)$, $Y = \sin(2 \pi T)$, $T \sim \Unif[0,1]$
+  \begin{align*}
+  F_X(x) & = \Prob(X \le x) = \Prob[\cos(2 \pi T) \le x] \\
+  & = 2\Prob[\cos^{-1}(x)/(2\pi) \le T \le 1/2] \quad \text{since $\cos^{-1}$ is a decreasing function} \\
+  & = 2[1/2 - \cos^{-1}(x)/(2\pi)]\quad \text{since $T$ is uniform}\\
+  &  = 1 - \cos^{-1}(x)/\pi = F_Y(x) \quad \text{by symmetry} \\
+  \varrho_X(x) & = F' _X(x) = \frac{1}{\pi\sqrt{1 - x^2}} \\
+  \text{BUT } 
+  F_{X,Y}(-0.8,- 0.8) &= 0 \ne [1 - \cos^{-1}(x)/\pi ]^2 = F_X(0.8) F_Y(0.8)
+  \end{align*}
+</div>
+  
 
 
 ## Important distributions
 
-- [Binomial]{.alert} (free-throw shooting, discrete) $\Bin(n,p)$
+- [Binomial]{.alert} (free-throw shooting, discrete) $\Bin(n,p)$, $\quad$ $\Bern(p) = \Bin(1,p)$
 $$
 \varrho(x) : = \Prob(X=x) = \binom{n}{x} p^x (1-p)^{n-x}, \ x =0, \ldots, n; \quad \Ex(X) = np, \quad \var(X) = np(1-p)
 $$
 
-- [Exponential]{.alert} (taxi waiting, continuous) $\Exp(\lambda)$
+- [Exponential]{.alert} (taxi waiting, continuous) $\Exp(\lambda) = \Exp(1/\mu)$
 $$
 F(x): = 1 - \exp(-\lambda x),\ \varrho(x) : = \exp(-\lambda x), \ x \ge 0; \quad \Ex(X) = 1/\lambda, \quad \var(X) = 1/\lambda^2
+$$
+
+- [Normal (Gaussian)]{.alert} (limiting distribution, continuous) $\Norm(\mu, \sigma^2)$
+$$
+\varrho(x): = \frac{\exp\bigl(-(x-\mu)^2/(2\sigma^2)\bigr)}{\sqrt{2 \pi} \sigma}, \ x \in \reals;\quad \Ex(X) = \mu, \quad \var(X) = \sigma^2
+$$
+
+- [Multivariate Normal (Gaussian)]{.alert} (limiting distribution, continuous) $\Norm(\mu, \sigma^2)$
+$$
+\varrho(\vx): = \frac{\exp\bigl(-(\vx-\vmu)^\top \mSigma^{-1} (\vx-\vmu) /2\bigr)}{(2 \pi)^{d/2} \det(\mSigma)};\quad \Ex(\vX) = \vmu, \quad \cov(\vX) = \mSigma
 $$

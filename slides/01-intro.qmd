@@ -320,5 +320,5 @@ $$
 
 - [Multivariate Normal (Gaussian)]{.alert} (limiting distribution, continuous) $\Norm(\mu, \sigma^2)$
 $$
-\varrho(\vx): = \frac{\exp\bigl(-(\vx-\vmu)^\top \mSigma^{-1} (\vx-\vmu) /2\bigr)}{(2 \pi)^{d/2} \det(\mSigma)};\quad \Ex(\vX) = \vmu, \quad \cov(\vX) = \mSigma
+\varrho(\vx): = \frac{\exp\bigl(-(\vx-\vmu)^\top \mSigma^{-1} (\vx-\vmu) /2\bigr)}{\sqrt{(2 \pi)^{d} \det(\mSigma)}}\quad \Ex(\vX) = \vmu, \quad \cov(\vX) = \mSigma
 $$

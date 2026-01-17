@@ -236,8 +236,9 @@ For $K(t,x) = 2 - \lvert t - x\rvert$ this is the [trapezoidal rule]{.alert}.  <
 # Probability Review
 
 - [Key concepts](#prob-concepts)
-- [Important Distributions](#prob-distrib)
+- [Important distributions](#prob-distrib)
 - [Conditional probability](#conditional-prob)
+- [Central Limit Theorem](#clt)
 
 ## Key probability concepts{#prob-concepts}
 
@@ -301,7 +302,7 @@ For $K(t,x) = 2 - \lvert t - x\rvert$ this is the [trapezoidal rule]{.alert}.  <
   
 
 
-## Important distributions
+## Important distributions{#prob-distrib}
 
 - [Binomial]{.alert} (free-throw shooting, discrete) $\Bin(n,p)$, $\quad$ $\Bern(p) = \Bin(1,p)$
 $$
@@ -322,3 +323,9 @@ $$
 $$
 \varrho(\vx): = \frac{\exp\bigl(-(\vx-\vmu)^\top \mSigma^{-1} (\vx-\vmu) /2\bigr)}{\sqrt{(2 \pi)^{d} \det(\mSigma)}}\quad \Ex(\vX) = \vmu, \quad \cov(\vX) = \mSigma
 $$
+
+## A mixed random variable
+
+## Conditional probability{#conditional-prob}
+
+## Central Limit Theorem{#clt}

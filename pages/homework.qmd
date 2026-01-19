@@ -20,3 +20,4 @@ title: "Assignments"
 | Assignment     | Due Date
 |-------------------------------------|-----------|
 | Assignment 1 — Diagnostic survey (Canvas / Microsoft Forms) | January 16
+ Assignment 2 – Wackerly et al. | January 30

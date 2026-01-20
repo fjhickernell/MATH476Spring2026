@@ -324,7 +324,7 @@ $$
 
 - [Exponential]{.alert} (taxi waiting, continuous) $\Exp(\lambda) = \Exp(1/\mu)$
 $$
-F(x): = 1 - \exp(-\lambda x),\ \varrho(x) : = \exp(-\lambda x), \ x \ge 0; \quad \Ex(X) = 1/\lambda, \quad \var(X) = 1/\lambda^2
+F(x): = 1 - \exp(-\lambda x),\ \varrho(x) : = \lambda \exp(-\lambda x), \ x \ge 0; \quad \Ex(X) = 1/\lambda, \quad \var(X) = 1/\lambda^2
 $$
 
 - [Normal (Gaussian)]{.alert} (limiting distribution, continuous) $\Norm(\mu, \sigma^2)$

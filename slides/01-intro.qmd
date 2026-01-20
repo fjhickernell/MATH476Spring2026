@@ -353,7 +353,7 @@ F(x) &= \begin{cases}
 \\
 \mu & = \Ex(X) = \int_{-\infty}^{\infty} x \, \dif F(x) \qquad   
      \mathlink{https://en.wikipedia.org/wiki/Lebesgue-Stieltjes_integration}{(Lebesgue–Stieltjes integral)}\\
-& = 0 \times p + \int_0^{\infty} x \times (1-p)\exp(-\lambda x) \, \dif x = (1-p)/ \lambda
+& = 0 \times p + \int_0^{\infty} x \times (1-p) \lambda \exp(-\lambda x) \, \dif x = (1-p)/ \lambda
 \\
 \sigma^2 & = \var(X) = \Ex[(X-\mu)^2] = \frac{1-p^2}{\lambda^2}
 \end{align*} 
@@ -390,7 +390,7 @@ measuring how often $A$ occurs within that restricted universe.
 - [Multiplication rule]{.alert}:
 $\Prob(A \cap B)
 =
-\Prob(A \mid B),\Prob(B)$
+\Prob(A \mid B)\,\Prob(B)$
 
 - $A$ and $B$ are [independent]{.alert} if
 $\Prob(A \mid B) = \Prob(A)$ or equivalently 
@@ -404,7 +404,7 @@ $$
 \qquad \Prob(B)>0
 $$
 
-> If you meet an introvert, is she more likely to be a professor or a salesman?
+> If you meet an introvert, is she more likely to be a librarian or a salesman?
 
 ## Conditional Density
 Let $X$ and $Y$ have [joint density]{.alert}

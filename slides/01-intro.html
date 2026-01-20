@@ -775,7 +775,7 @@ F(x) &amp;= \begin{cases}
 \\
 \mu &amp; = \Ex(X) = \int_{-\infty}^{\infty} x \, \dif F(x) \qquad   
    \mathlink{https://en.wikipedia.org/wiki/Lebesgue-Stieltjes_integration}{(Lebesgue–Stieltjes integral)}\\
-&amp; = 0 \times p + \int_0^{\infty} x \times (1-p)\exp(-\lambda x) \, \dif x = (1-p)/ \lambda
+&amp; = 0 \times p + \int_0^{\infty} x \times (1-p) \lambda \exp(-\lambda x) \, \dif x = (1-p)/ \lambda
 \\
 \sigma^2 &amp; = \var(X) = \Ex[(X-\mu)^2] = \frac{1-p^2}{\lambda^2}
 \end{align*}\]</span></li>
@@ -806,7 +806,7 @@ F(x) &amp;= \begin{cases}
 <ul>
 <li><p><span class="alert">Multiplication rule</span>: <span class="math inline">\(\Prob(A \cap B)
 =
-\Prob(A \mid B),\Prob(B)\)</span></p></li>
+\Prob(A \mid B)\,\Prob(B)\)</span></p></li>
 <li><p><span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are <span class="alert">independent</span> if <span class="math inline">\(\Prob(A \mid B) = \Prob(A)\)</span> or equivalently <span class="math inline">\(\Prob(A \cap B)=\Prob(A)\Prob(B)\)</span></p></li>
 </ul>
 <h3 id="bayes-rule">Bayes’ Rule</h3>
@@ -817,7 +817,7 @@ F(x) &amp;= \begin{cases}
 \qquad \Prob(B)&gt;0
 \]</span></p>
 <blockquote>
-<p>If you meet an introvert, is she more likely to be a professor or a salesman?</p>
+<p>If you meet an introvert, is she more likely to be a librarian or a salesman?</p>
 </blockquote>
 </section>
 <section id="conditional-density" class="slide level2">

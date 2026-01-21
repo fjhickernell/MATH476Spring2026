@@ -439,7 +439,7 @@ From Data
 <h2>Approval ratings</h2>
 <p>The Gallup Poll tracks the <a href="https://news.gallup.com/poll/203198/presidential-approval-ratings-donald-trump.aspx">approval ratings of US presidents</a> according to a <a href="https://www.gallup.com/224855/gallup-poll-work.aspx">careful polling methodology</a></p>
 <ul>
-<li>Each day they telephone <span class="math inline">\(n=1500\)</span> adults</li>
+<li>Each week they telephone <span class="math inline">\(n=1500\)</span> adults</li>
 <li>Their sampling error for the approval ratings is about <span class="math inline">\(4\%\)</span></li>
 </ul>
 <p>Let <span class="math inline">\(Y \sim \Bern(\mu)\)</span>, a <span class="alert">Bernoulli</span> (free throw shooting) distribution with probability of success <span class="math inline">\(\mu\)</span>, <span class="math display">\[
@@ -738,7 +738,7 @@ F_X(x) &amp; = \Prob(X \le x) = \Prob[\cos(2 \pi T) \le x] \\
 &amp;  = 1 - \cos^{-1}(x)/\pi = F_Y(x) \quad \text{by symmetry} \\
 \varrho_X(x) &amp; = F' _X(x) = \frac{1}{\pi\sqrt{1 - x^2}} \\
 \text{BUT }
-F_{X,Y}(-0.8,- 0.8) &amp;= 0 \ne [1 - \cos^{-1}(x)/\pi ]^2 = F_X(0.8) F_Y(0.8)
+F_{X,Y}(-0.8,- 0.8) &amp;= 0 \ne [1 - \cos^{-1}(-0.8)/\pi ]^2 = F_X(0.8) F_Y(0.8)
 \end{align*}\]</span></li>
 </ul>
 </div></li>

@@ -237,7 +237,7 @@ For $K(t,x) = 2 - \lvert t - x\rvert$ this is the [trapezoidal rule]{.alert}.  <
 # Class complexion
 
 | Familiarity | Statistics | Probability | Matrix algebra | Multivariate calculus | Computer programming / coding |
-|-------------|------------|-------------|----------------|-----------------------|--------------------------------|
+|-------------|------------|-------------|----------------|-----------------------|-------------------------------|
 | Not at all  | 0 | 0 | 1 | 1 | 0 |
 | A bit       | 4 | 3 | 1 | 4 | 1 |
 | Somewhat    | 10 | 5 | 8 | 7 | 10 |

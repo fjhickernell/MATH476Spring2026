@@ -285,7 +285,7 @@ Fortran	| 1
 - [Cumulative distribution function (CDF)]{.alert} $F$ of random variable $X$ 
   -  $F(x) : =  \Prob(X \le x)$
 
-- [Quartile function]{.alert} $Q$ of a random variable $X$ plays the role of the inverse of the CDF
+- [Quantile function]{.alert} $Q$ of a random variable $X$ plays the role of the inverse of the CDF
   - $Q(p) : = \inf\{x \in \reals : F(x) \ge p\}$
 
 - [Probability mass function (PMF)]{.alert} $\varrho$ of discrete random variable $X$ 
@@ -492,13 +492,13 @@ So
 \begin{multline*}
 -\tvy^\top \tmK^{-1} \tvy + \vy^\top \mK^{-1} \vy \\
 = -\vy^\top[\mK^{-1}+\mK^{-1}\vk(x)\sigma^{-2}(x)\vk^\top(x)\mK^{-1}]\vy -2 \vy^\top\mK^{-1}\vk(x)\sigma^{-2}(x) z + z^2/ \sigma^2(x) \\
-- \vy^\top \mK^{-1} \vy \\
++ \vy^\top \mK^{-1} \vy \\
 = \frac{1}{\sigma^2(x)} \left[ z - \vy^\top \mK^{-1} \vk(x) \right]^2
 \end{multline*}
 
 and $f(x) \mid \vf = \vy \sim \Norm\bigl(\vy^\top \mK^{-1} \vk(x), \sigma^2(x) \bigr)$
 
-Then $\int_0 ^1 f(x)\, \dif x \mid \vf = \vy \sim \Norm\bigl(\vy^\top \mK^{-1} \int_0^1 \vk(x) \, \dif x, \sigma^2(x) \bigr)$
+Then $\int_0 ^1 f(x)\, \dif x \mid \vf = \vy \sim \Norm\bigl(\vy^\top \mK^{-1} \int_0^1 \vk(x) \, \dif x, \int_0^1 \sigma^2(x) \dif x \bigr)$
 
 
 ## Bayesian Inference
@@ -569,7 +569,7 @@ and none of the reverse implications hold in general
 
 - $\Prob(X_n =1) = 1/n = 1 - \Prob(X_n=0)$ and $X=0$ satisfies
 $$
-\Prob(\lvert X_n - X \rvert > \varepsilon  = \Prob(X_n =1) = 1/n \to 0 \text{ as } n \to \infty
+\Prob(\lvert X_n - X \rvert) > \varepsilon  = \Prob(X_n =1) = 1/n \to 0 \text{ as } n \to \infty
 $$
   But $\Prob (X_n =1 \text{ infinitely often}) = 1$ since
 $$

@@ -277,7 +277,7 @@
     "href": "slides/01-intro.html#key-probability-concepts-contd-1",
     "title": "MATH 476 — Statistics",
     "section": "Key probability concepts (cont’d)",
-    "text": "Key probability concepts (cont’d)\n\nExpectation — average value of a random variable, weighted by its probability\n\n\\(\\displaystyle \\Ex[f(X)] : = \\sum_{x} f(x) \\varrho(x)\\) for discrete random variables\n\\(\\displaystyle \\Ex[f(X)] : =  \\int f(x) \\varrho(x) \\; \\dif x\\) for continuous random variables\n\nMean of \\(X\\) is \\(\\mu : = \\Ex(X)\\)\nVariance of \\(X\\) is \\(\\sigma^2 : = \\var(X) := \\Ex[(X - \\mu)^2] = E(X^2) - \\mu^2\\)\nMedian of \\(X\\) is \\(\\med(X) : = Q(1/2)\\)"
+    "text": "Key probability concepts (cont’d)\n\nExpectation — average value of a random variable, weighted by its probability\n\n\\(\\displaystyle \\Ex[f(X)] : = \\sum_{x} f(x) \\varrho(x)\\) for discrete random variables\n\\(\\displaystyle \\Ex[f(X)] : =  \\int f(x) \\varrho(x) \\; \\dif x\\) for continuous random variables\n\nMean of \\(X\\) is \\(\\mu : = \\Ex(X)\\)\nVariance of \\(X\\) is \\(\\sigma^2 : = \\var(X) := \\Ex[(X - \\mu)^2] = E(X^2) - \\mu^2\\)\n\nStandard deviation of \\(X\\) is \\(\\std(X) := \\sigma = \\sqrt{\\var(X)}\\)\n\nMedian of \\(X\\) is \\(\\med(X) : = Q(1/2)\\)"
   },
   {
     "objectID": "slides/01-intro.html#key-probability-concepts-contd-2",

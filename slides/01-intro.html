@@ -745,7 +745,7 @@ T &amp;:= Y_1 + \cdots + Y_n \sim \Bin(n,\mu), \quad \Prob(T = t) = \binom{n}{t}
 <ul>
 <li><span class="math inline">\(F(x) : =  \Prob(X \le x)\)</span></li>
 </ul></li>
-<li><p><span class="alert">Quartile function</span> <span class="math inline">\(Q\)</span> of a random variable <span class="math inline">\(X\)</span> plays the role of the inverse of the CDF</p>
+<li><p><span class="alert">Quantile function</span> <span class="math inline">\(Q\)</span> of a random variable <span class="math inline">\(X\)</span> plays the role of the inverse of the CDF</p>
 <ul>
 <li><span class="math inline">\(Q(p) : = \inf\{x \in \reals : F(x) \ge p\}\)</span></li>
 </ul></li>
@@ -935,11 +935,11 @@ F(x) &amp;= \begin{cases}
 <p><span class="math display">\[\begin{multline*}
 -\tvy^\top \tmK^{-1} \tvy + \vy^\top \mK^{-1} \vy \\
 = -\vy^\top[\mK^{-1}+\mK^{-1}\vk(x)\sigma^{-2}(x)\vk^\top(x)\mK^{-1}]\vy -2 \vy^\top\mK^{-1}\vk(x)\sigma^{-2}(x) z + z^2/ \sigma^2(x) \\
-- \vy^\top \mK^{-1} \vy \\
++ \vy^\top \mK^{-1} \vy \\
 = \frac{1}{\sigma^2(x)} \left[ z - \vy^\top \mK^{-1} \vk(x) \right]^2
 \end{multline*}\]</span></p>
 <p>and <span class="math inline">\(f(x) \mid \vf = \vy \sim \Norm\bigl(\vy^\top \mK^{-1} \vk(x), \sigma^2(x) \bigr)\)</span></p>
-<p>Then <span class="math inline">\(\int_0 ^1 f(x)\, \dif x \mid \vf = \vy \sim \Norm\bigl(\vy^\top \mK^{-1} \int_0^1 \vk(x) \, \dif x, \sigma^2(x) \bigr)\)</span></p>
+<p>Then <span class="math inline">\(\int_0 ^1 f(x)\, \dif x \mid \vf = \vy \sim \Norm\bigl(\vy^\top \mK^{-1} \int_0^1 \vk(x) \, \dif x, \int_0^1 \sigma^2(x) \dif x \bigr)\)</span></p>
 </section>
 <section id="bayesian-inference" class="slide level2">
 <h2>Bayesian Inference</h2>
@@ -996,7 +996,7 @@ X_n \xrightarrow{d} X,
 <ul>
 <li><p><span class="math inline">\(X, X_1, X_2, \ldots \IIDsim \Norm(0,1)\)</span> satisfies <span class="math inline">\(X_n \xrightarrow{d} X\)</span> but not <span class="math inline">\(X_n \xrightarrow{\Prob} X\)</span></p></li>
 <li><p><span class="math inline">\(\Prob(X_n =1) = 1/n = 1 - \Prob(X_n=0)\)</span> and <span class="math inline">\(X=0\)</span> satisfies <span class="math display">\[
-\Prob(\lvert X_n - X \rvert &gt; \varepsilon  = \Prob(X_n =1) = 1/n \to 0 \text{ as } n \to \infty
+\Prob(\lvert X_n - X \rvert) &gt; \varepsilon  = \Prob(X_n =1) = 1/n \to 0 \text{ as } n \to \infty
 \]</span> But <span class="math inline">\(\Prob (X_n =1 \text{ infinitely often}) = 1\)</span> since <span class="math display">\[
 \sum_{n=1}^{\infty} \Prob(X_n=1) = \sum_{n=1}^{\infty} \frac 1n = \infty
 \]</span></p></li>

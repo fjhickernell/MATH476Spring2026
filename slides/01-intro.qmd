@@ -565,16 +565,17 @@ X_n \xrightarrow{d} X,
 $$
 and none of the reverse implications hold in general
 
-- $X, X_1, X_2, \ldots \IIDsim \Norm(0,1)$ satisfies $X_n \xrightarrow{d} X$ but not $X_n \xrightarrow{\Prob} X$
+- $X, X_1, X_2, \ldots \IIDsim \Norm(0,1)$ satisfies $X_n \xrightarrow{d} X$ but not $X_n \ \not\!\xrightarrow{\Prob} X$
 
-- $\Prob(X_n =1) = 1/n = 1 - \Prob(X_n=0)$ and $X=0$ satisfies
+- $X=0$ and $\Prob(X_n =x ) = \begin{cases} 1/n, & x=1 \\ 1-1/n, & x=0 \end{cases} \;$  satisfies
 $$
-\Prob(\lvert X_n - X \rvert) > \varepsilon  = \Prob(X_n =1) = 1/n \to 0 \text{ as } n \to \infty
+\Prob(\lvert X_n - X \rvert > \varepsilon ) = \Prob(X_n =1) = 1/n \to 0 \text{ as } n \to \infty \text{ so } X_n \xrightarrow{\Prob} X
 $$
   But $\Prob (X_n =1 \text{ infinitely often}) = 1$ since
 $$
 \sum_{n=1}^{\infty} \Prob(X_n=1) = \sum_{n=1}^{\infty} \frac 1n = \infty
 $$
+so  $X_n \ \, \not\!\!\xrightarrow{\text{a.s.}} X$
 
 ## Central Limit Theorem{#clt}
 If $X_1, X_2, \ldots \IIDsim$ some distribution with finite moment generating function, $M(t) := \Ex\bigl(\exp(tX)\bigr)$, and $\mu = \Ex(X)$ and $\sigma^2 = \var(X)$, and

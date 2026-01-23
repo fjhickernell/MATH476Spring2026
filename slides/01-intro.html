@@ -994,12 +994,12 @@ X_n \xrightarrow{\Prob} X
 X_n \xrightarrow{d} X,
 \]</span> and none of the reverse implications hold in general</p>
 <ul>
-<li><p><span class="math inline">\(X, X_1, X_2, \ldots \IIDsim \Norm(0,1)\)</span> satisfies <span class="math inline">\(X_n \xrightarrow{d} X\)</span> but not <span class="math inline">\(X_n \xrightarrow{\Prob} X\)</span></p></li>
-<li><p><span class="math inline">\(\Prob(X_n =1) = 1/n = 1 - \Prob(X_n=0)\)</span> and <span class="math inline">\(X=0\)</span> satisfies <span class="math display">\[
-\Prob(\lvert X_n - X \rvert) &gt; \varepsilon  = \Prob(X_n =1) = 1/n \to 0 \text{ as } n \to \infty
+<li><p><span class="math inline">\(X, X_1, X_2, \ldots \IIDsim \Norm(0,1)\)</span> satisfies <span class="math inline">\(X_n \xrightarrow{d} X\)</span> but not <span class="math inline">\(X_n \ \not\!\xrightarrow{\Prob} X\)</span></p></li>
+<li><p><span class="math inline">\(X=0\)</span> and <span class="math inline">\(\Prob(X_n =x ) = \begin{cases} 1/n, &amp; x=1 \\ 1-1/n, &amp; x=0 \end{cases} \;\)</span> satisfies <span class="math display">\[
+\Prob(\lvert X_n - X \rvert &gt; \varepsilon ) = \Prob(X_n =1) = 1/n \to 0 \text{ as } n \to \infty \text{ so } X_n \xrightarrow{\Prob} X
 \]</span> But <span class="math inline">\(\Prob (X_n =1 \text{ infinitely often}) = 1\)</span> since <span class="math display">\[
 \sum_{n=1}^{\infty} \Prob(X_n=1) = \sum_{n=1}^{\infty} \frac 1n = \infty
-\]</span></p></li>
+\]</span> so <span class="math inline">\(X_n \ \, \not\!\!\xrightarrow{\text{a.s.}} X\)</span></p></li>
 </ul>
 </section>
 <section id="clt" class="slide level2">

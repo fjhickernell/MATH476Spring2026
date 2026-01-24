@@ -270,7 +270,7 @@
     "href": "slides/01-intro.html#conditional-exp",
     "title": "MATH 476 — Statistics",
     "section": "Conditional expectation",
-    "text": "Conditional expectation\nConditional expectation of \\(X\\) given event \\(A\\) (with \\(\\Prob(A)&gt;0\\)) is \\[\n\\Ex[X \\mid A]\n=\n\\frac{\\Ex[X \\, \\indic(X \\in A)]}{\\Prob(A)} \\qquad \\text{and so} \\qquad \\Ex[X \\, \\indic(X \\in A)]\n=\n\\Prob(A)\\,\\Ex[X \\mid A]\n\\] The indicator function, \\(\\indic(\\cdot)\\), equals \\(1\\) when the condition inside the parentheses is true and \\(0\\) otherwise.\nConditional expectation of \\(X\\) given \\(Y=y\\) is \\[\n\\Ex[X \\mid Y=y]\n=\n\\int x \\, \\varrho_{X\\mid Y}(x \\mid y)\\,\\dif x\n\\] If \\(g(y)=\\Ex[X \\mid Y=y]\\), then \\(\\Ex[X \\mid Y] = g(Y)\\) is a random variable depending only on \\(Y\\)"
+    "text": "Conditional expectation\nConditional expectation of \\(X\\) given event \\(A\\) (with \\(\\Prob(A)&gt;0\\)) is \\[\n\\Ex[X \\mid A]\n=\n\\frac{\\Ex[X \\, \\indic(X \\in A)]}{\\Prob(A)} \\qquad \\text{and so} \\qquad \\Ex[X \\, \\indic(X \\in A)]\n=\n\\Prob(A)\\,\\Ex[X \\mid A]\n\\] The indicator function, \\(\\indic(\\cdot)\\), equals \\(1\\) if the statement inside the parentheses is true, and \\(0\\) otherwise.\nConditional expectation of \\(X\\) given \\(Y=y\\) is \\[\n\\Ex[X \\mid Y=y]\n=\n\\int x \\, \\varrho_{X\\mid Y}(x \\mid y)\\,\\dif x\n\\] If \\(g(y)=\\Ex[X \\mid Y=y]\\), then \\(\\Ex[X \\mid Y] = g(Y)\\) is a random variable depending only on \\(Y\\)"
   },
   {
     "objectID": "slides/01-intro.html#type-conv",

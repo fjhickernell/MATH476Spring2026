@@ -978,6 +978,91 @@ Y &amp; = \text{random observed data} \\
 \text{likelihood} \times \text{prior density}
 \end{align*}\]</span></p>
 </section>
+<section id="conditional-exp" class="slide level2">
+<h2>Conditional expectation</h2>
+<p>The <strong>conditional expectation</strong> of a random variable <span class="math inline">\(X\)</span> given an event <span class="math inline">\(B\)</span> (with <span class="math inline">\(\Prob(B)&gt;0\)</span>) is the average value of <span class="math inline">\(X\)</span> when we restrict attention to outcomes where <span class="math inline">\(B\)</span> occurs: <span class="math display">\[
+\Ex[X \mid B]
+=
+\frac{\Ex[X \mathbf{1}_B]}{\Prob(B)}.
+\]</span></p>
+<p>Equivalently, <span class="math display">\[
+\Ex[X \mathbf{1}_B]
+=
+\Prob(B)\,\Ex[X \mid B].
+\]</span></p>
+<p>This is directly analogous to conditional probability, except that we are averaging <strong>values</strong> instead of <strong>events</strong>.</p>
+</section>
+<section class="slide level2">
+
+<h3 id="conditional-expectation-given-a-random-variable">Conditional expectation given a random variable</h3>
+<p>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be random variables.</p>
+<p>If <span class="math inline">\((X,Y)\)</span> has a joint density, the conditional expectation of <span class="math inline">\(X\)</span> given <span class="math inline">\(Y=y\)</span> is <span class="math display">\[
+\Ex[X \mid Y=y]
+=
+\int x \, \varrho_{X\mid Y}(x \mid y)\,\dif x.
+\]</span></p>
+<p>Rather than fixing <span class="math inline">\(y\)</span>, we define the conditional expectation given <span class="math inline">\(Y\)</span> as the random variable <span class="math display">\[
+\Ex[X \mid Y]
+=
+g(Y),
+\qquad
+g(y)=\Ex[X \mid Y=y].
+\]</span></p>
+<p>Thus, <span class="math inline">\(\Ex[X\mid Y]\)</span> is itself a <strong>random variable</strong> that depends only on the information contained in <span class="math inline">\(Y\)</span>.</p>
+</section>
+<section class="slide level2">
+
+<h3 id="key-properties-of-conditional-expectation">Key properties of conditional expectation</h3>
+<p>Let <span class="math inline">\(X,Z\)</span> be integrable random variables and let <span class="math inline">\(Y\)</span> be given.</p>
+<p><strong>Linearity</strong> <span class="math display">\[
+\Ex[aX+bZ \mid Y]
+=
+a\,\Ex[X\mid Y] + b\,\Ex[Z\mid Y].
+\]</span></p>
+<p><strong>Taking out what is known</strong><br>
+If <span class="math inline">\(g(Y)\)</span> is any function of <span class="math inline">\(Y\)</span>, then <span class="math display">\[
+\Ex[g(Y)X \mid Y]
+=
+g(Y)\,\Ex[X\mid Y].
+\]</span></p>
+<p><strong>Independence</strong><br>
+If <span class="math inline">\(X\)</span> is independent of <span class="math inline">\(Y\)</span>, then <span class="math display">\[
+\Ex[X \mid Y] = \Ex[X].
+\]</span></p>
+</section>
+<section class="slide level2">
+
+<h3 id="conditioning-on-an-event">Conditioning on an event</h3>
+<p>For any event <span class="math inline">\(A\)</span> with <span class="math inline">\(0&lt;\Prob(A)&lt;1\)</span>, <span class="math display">\[
+\Ex[X]
+=
+\Prob(A)\,\Ex[X \mid A]
++
+\Prob(A^c)\,\Ex[X \mid A^c].
+\]</span></p>
+<p>That is, the overall expectation is a <strong>weighted average</strong> of the expectations on <span class="math inline">\(A\)</span> and on its complement.</p>
+<p>This decomposition is especially useful for bounding expectations by splitting the sample space into “typical” and “atypical” events.</p>
+</section>
+<section class="slide level2">
+
+<h3 id="total-exp">Law of total expectation</h3>
+<p>The <strong>law of total expectation</strong> states that conditioning does not change the overall mean: <span class="math display">\[
+\Ex\!\bigl[\Ex[X \mid Y]\bigr]
+=
+\Ex[X].
+\]</span></p>
+<p>More generally, if <span class="math inline">\(\{A_1,\ldots,A_n\}\)</span> is a partition of the sample space with <span class="math inline">\(\Prob(A_i)&gt;0\)</span>, then <span class="math display">\[
+\Ex[X]
+=
+\sum_{i=1}^n
+\Prob(A_i)\,\Ex[X \mid A_i].
+\]</span></p>
+</section>
+<section class="slide level2">
+
+<h3 id="why-this-matters-preview">Why this matters (preview)</h3>
+<p>Conditional expectation allows us to localize the behavior of a random variable. By splitting the sample space into suitable events, we can derive probability bounds such as <strong>Chebyshev’s inequality</strong> by controlling behavior on each event separately.</p>
+</section>
 <section id="type-conv" class="slide level2">
 <h2>Types of convergence</h2>
 <p>Let <span class="math inline">\(X_1, X_2, \ldots\)</span> be random variables and <span class="math inline">\(X\)</span> another random variable</p>

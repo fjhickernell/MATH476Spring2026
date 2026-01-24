@@ -273,6 +273,13 @@
     "text": "Bayesian Inference\nBayes’ rule for densities\n\\[\n\\varrho_{X\\mid Y}(x\\mid y)\n=\n\\frac{\\varrho_{Y\\mid X}(y\\mid x)\\,\\varrho_X(x)}{\\varrho_Y(y)}\n\\]\nLet \\[\\begin{align*}\nX & = \\text{random unknown parameter} \\\\\nY & = \\text{random observed data} \\\\\n\\varrho_X & = \\text{prior density or belief about the parameter} \\\\\n\\varrho_{Y\\mid X} & = \\text{likelihood} \\\\\n\\varrho_{X\\mid Y} & = \\text{posterior density}\n\\end{align*}\\] Then \\[\\begin{align*}\n\\varrho_{X\\mid Y}( \\text{parameter} \\mid \\text{data})\n& =\n\\frac{\\varrho_{Y\\mid X}(\\text{data}\\mid \\text{parameter} ) \\,\\varrho_X(\\text{parameter})}{\\varrho_Y(\\text{data})}\n\\\\\n\\text{posterior density } &\n\\propto\n\\text{likelihood} \\times \\text{prior density}\n\\end{align*}\\]"
   },
   {
+    "objectID": "slides/01-intro.html#conditional-exp",
+    "href": "slides/01-intro.html#conditional-exp",
+    "title": "MATH 476 — Statistics",
+    "section": "Conditional expectation",
+    "text": "Conditional expectation\nThe conditional expectation of a random variable \\(X\\) given an event \\(B\\) (with \\(\\Prob(B)&gt;0\\)) is the average value of \\(X\\) when we restrict attention to outcomes where \\(B\\) occurs: \\[\n\\Ex[X \\mid B]\n=\n\\frac{\\Ex[X \\mathbf{1}_B]}{\\Prob(B)}.\n\\]\nEquivalently, \\[\n\\Ex[X \\mathbf{1}_B]\n=\n\\Prob(B)\\,\\Ex[X \\mid B].\n\\]\nThis is directly analogous to conditional probability, except that we are averaging values instead of events."
+  },
+  {
     "objectID": "slides/01-intro.html#type-conv",
     "href": "slides/01-intro.html#type-conv",
     "title": "MATH 476 — Statistics",

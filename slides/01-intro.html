@@ -787,8 +787,8 @@ T &amp;:= Y_1 + \cdots + Y_n \sim \Bin(n,\mu), \quad \Prob(T = t) = \binom{n}{t}
 <li><p><span class="alert">Median</span> of <span class="math inline">\(X\)</span> is <span class="math inline">\(\med(X) : = Q(1/2)\)</span></p></li>
 </ul>
 </section>
-<section id="key-probability-concepts-contd" class="slide level2">
-<h2>Key probability concepts (cont’d)</h2>
+<section class="slide level2">
+
 <ul>
 <li><p><span class="math inline">\((X,Y)\)</span> are <span class="alert">independent</span> iff <span class="math inline">\(\begin{cases} F_{X,Y}(x,y) = F_X(x) F_Y(y) &amp; \text{or equivalently} \\
 \varrho_{X,Y}(x,y) = \varrho_X(x) \varrho_Y(y) \end{cases}\)</span></p></li>
@@ -980,35 +980,18 @@ Y &amp; = \text{random observed data} \\
 </section>
 <section id="conditional-exp" class="slide level2">
 <h2>Conditional expectation</h2>
-<p>The <strong>conditional expectation</strong> of a random variable <span class="math inline">\(X\)</span> given an event <span class="math inline">\(B\)</span> (with <span class="math inline">\(\Prob(B)&gt;0\)</span>) is the average value of <span class="math inline">\(X\)</span> when we restrict attention to outcomes where <span class="math inline">\(B\)</span> occurs: <span class="math display">\[
-\Ex[X \mid B]
+<p>Conditional expectation of <span class="alert"><span class="math inline">\(X\)</span> given event <span class="math inline">\(A\)</span></span> (with <span class="math inline">\(\Prob(A)&gt;0\)</span>) is <span class="math display">\[
+\Ex[X \mid A]
 =
-\frac{\Ex[X \mathbf{1}_B]}{\Prob(B)}.
-\]</span></p>
-<p>Equivalently, <span class="math display">\[
-\Ex[X \mathbf{1}_B]
+\frac{\Ex[X \, \indic(X \in A)]}{\Prob(A)} \qquad \text{and so} \qquad \Ex[X \, \indic(X \in A)]
 =
-\Prob(B)\,\Ex[X \mid B].
-\]</span></p>
-<p>This is directly analogous to conditional probability, except that we are averaging <strong>values</strong> instead of <strong>events</strong>.</p>
-</section>
-<section class="slide level2">
-
-<h3 id="conditional-expectation-given-a-random-variable">Conditional expectation given a random variable</h3>
-<p>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be random variables.</p>
-<p>If <span class="math inline">\((X,Y)\)</span> has a joint density, the conditional expectation of <span class="math inline">\(X\)</span> given <span class="math inline">\(Y=y\)</span> is <span class="math display">\[
+\Prob(A)\,\Ex[X \mid A]
+\]</span> The <span class="alert">indicator function</span>, <span class="math inline">\(\indic(\cdot)\)</span>, equals <span class="math inline">\(1\)</span> when the condition inside the parentheses is true and <span class="math inline">\(0\)</span> otherwise.</p>
+<p>Conditional expectation of <span class="alert"><span class="math inline">\(X\)</span> given <span class="math inline">\(Y=y\)</span></span> is <span class="math display">\[
 \Ex[X \mid Y=y]
 =
-\int x \, \varrho_{X\mid Y}(x \mid y)\,\dif x.
-\]</span></p>
-<p>Rather than fixing <span class="math inline">\(y\)</span>, we define the conditional expectation given <span class="math inline">\(Y\)</span> as the random variable <span class="math display">\[
-\Ex[X \mid Y]
-=
-g(Y),
-\qquad
-g(y)=\Ex[X \mid Y=y].
-\]</span></p>
-<p>Thus, <span class="math inline">\(\Ex[X\mid Y]\)</span> is itself a <strong>random variable</strong> that depends only on the information contained in <span class="math inline">\(Y\)</span>.</p>
+\int x \, \varrho_{X\mid Y}(x \mid y)\,\dif x
+\]</span> If <span class="math inline">\(g(y)=\Ex[X \mid Y=y]\)</span>, then <span class="math inline">\(\Ex[X \mid Y] = g(Y)\)</span> is a random variable depending only on <span class="math inline">\(Y\)</span></p>
 </section>
 <section class="slide level2">
 

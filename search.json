@@ -224,13 +224,6 @@
     "text": "Key probability concepts\n\nOutcome — single possible result of a random process, e.g., yes, \\(0.5\\), \\((1,-2)\\)\nSample space – set of all possible outcomes, e.g., \\(\\{\\text{yes}, \\text{no} \\}\\), \\(\\reals\\)\nEvent – set of outcomes (subset of the sample space), e.g., \\([0,\\infty)\\)\nEvent space – collection of all possible events\nProbability – function \\(\\Prob:\\text{event space}\\to[0,1]\\) satisfying\n\n\\(0 \\le \\Prob(\\text{event}) \\le 1\\)\n\\(\\mathbb{P}(\\text{sample space})=1\\)\nIf \\(A \\cap B=\\varnothing\\), then \\(\\Prob(A\\cup B)=\\Prob(A)+\\Prob(B)\\)"
   },
   {
-    "objectID": "slides/01-intro.html#key-probability-concepts-contd",
-    "href": "slides/01-intro.html#key-probability-concepts-contd",
-    "title": "MATH 476 — Statistics",
-    "section": "Key probability concepts (cont’d)",
-    "text": "Key probability concepts (cont’d)\n\n\\((X,Y)\\) are independent iff \\(\\begin{cases} F_{X,Y}(x,y) = F_X(x) F_Y(y) & \\text{or equivalently} \\\\\n\\varrho_{X,Y}(x,y) = \\varrho_X(x) \\varrho_Y(y) \\end{cases}\\)\nCovariance \\(\\cov(X,Y) : = \\Ex[(X- \\mu_X)(Y - \\mu_Y)]\\)\nCorrelation \\(\\displaystyle \\corr(X,Y) : = \\frac{\\cov(X,Y)}{\\std(X) \\std(Y)}\\)\nIndependence \\(\\implies\\) uncorrelated, but uncorrelated \\(\\notimplies\\) independence\n\n\nE.g., \\(\\Prob[(X,Y) = (x,y)] = 1/4\\) for \\((x,y) \\in \\{(\\pm 1, 0), (0, \\pm 1)\\}\\) \\[\\begin{gather*}\n\\text{PMF }\\varrho_X(x) = \\varrho_Y(x) = \\begin{cases}\n\\frac 14 & x =  \\pm 1 \\\\\n\\frac 12 & x = 0\n\\end{cases}\n\\qquad \\Ex(X) = \\Ex(Y) = 0 \\\\\n\\cov(X,Y) = \\Ex(XY) = 0 \\quad \\text{so }\\class{alert}{\\text{uncorrelated}} \\\\\n\\text{BUT } \\varrho_{XY}(x,y) \\ne \\varrho_X(x)\\varrho_Y(y) \\quad \\text{so }\\class{alert}{\\text{dependent}}\n\\end{gather*}\\]"
-  },
-  {
     "objectID": "slides/01-intro.html#prob-distrib",
     "href": "slides/01-intro.html#prob-distrib",
     "title": "MATH 476 — Statistics",
@@ -277,7 +270,7 @@
     "href": "slides/01-intro.html#conditional-exp",
     "title": "MATH 476 — Statistics",
     "section": "Conditional expectation",
-    "text": "Conditional expectation\nThe conditional expectation of a random variable \\(X\\) given an event \\(B\\) (with \\(\\Prob(B)&gt;0\\)) is the average value of \\(X\\) when we restrict attention to outcomes where \\(B\\) occurs: \\[\n\\Ex[X \\mid B]\n=\n\\frac{\\Ex[X \\mathbf{1}_B]}{\\Prob(B)}.\n\\]\nEquivalently, \\[\n\\Ex[X \\mathbf{1}_B]\n=\n\\Prob(B)\\,\\Ex[X \\mid B].\n\\]\nThis is directly analogous to conditional probability, except that we are averaging values instead of events."
+    "text": "Conditional expectation\nConditional expectation of \\(X\\) given event \\(A\\) (with \\(\\Prob(A)&gt;0\\)) is \\[\n\\Ex[X \\mid A]\n=\n\\frac{\\Ex[X \\, \\indic(X \\in A)]}{\\Prob(A)} \\qquad \\text{and so} \\qquad \\Ex[X \\, \\indic(X \\in A)]\n=\n\\Prob(A)\\,\\Ex[X \\mid A]\n\\] The indicator function, \\(\\indic(\\cdot)\\), equals \\(1\\) when the condition inside the parentheses is true and \\(0\\) otherwise.\nConditional expectation of \\(X\\) given \\(Y=y\\) is \\[\n\\Ex[X \\mid Y=y]\n=\n\\int x \\, \\varrho_{X\\mid Y}(x \\mid y)\\,\\dif x\n\\] If \\(g(y)=\\Ex[X \\mid Y=y]\\), then \\(\\Ex[X \\mid Y] = g(Y)\\) is a random variable depending only on \\(Y\\)"
   },
   {
     "objectID": "slides/01-intro.html#type-conv",

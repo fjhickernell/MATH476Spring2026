@@ -533,6 +533,130 @@ Then
 \text{likelihood} \times \text{prior density}
 \end{align*}
 
+## Conditional expectation {#conditional-exp}
+
+The **conditional expectation** of a random variable $X$ given an event $B$
+(with $\Prob(B)>0$) is the average value of $X$ when we restrict attention to
+outcomes where $B$ occurs:
+$$
+\Ex[X \mid B]
+=
+\frac{\Ex[X \mathbf{1}_B]}{\Prob(B)}.
+$$
+
+Equivalently,
+$$
+\Ex[X \mathbf{1}_B]
+=
+\Prob(B)\,\Ex[X \mid B].
+$$
+
+This is directly analogous to conditional probability, except that we are
+averaging **values** instead of **events**.
+
+---
+
+### Conditional expectation given a random variable
+
+Let $X$ and $Y$ be random variables.
+
+If $(X,Y)$ has a joint density, the conditional expectation of $X$ given $Y=y$
+is
+$$
+\Ex[X \mid Y=y]
+=
+\int x \, \varrho_{X\mid Y}(x \mid y)\,\dif x.
+$$
+
+Rather than fixing $y$, we define the conditional expectation given $Y$ as the
+random variable
+$$
+\Ex[X \mid Y]
+=
+g(Y),
+\qquad
+g(y)=\Ex[X \mid Y=y].
+$$
+
+Thus, $\Ex[X\mid Y]$ is itself a **random variable** that depends only on the
+information contained in $Y$.
+
+---
+
+### Key properties of conditional expectation
+
+Let $X,Z$ be integrable random variables and let $Y$ be given.
+
+**Linearity**
+$$
+\Ex[aX+bZ \mid Y]
+=
+a\,\Ex[X\mid Y] + b\,\Ex[Z\mid Y].
+$$
+
+**Taking out what is known**  
+If $g(Y)$ is any function of $Y$, then
+$$
+\Ex[g(Y)X \mid Y]
+=
+g(Y)\,\Ex[X\mid Y].
+$$
+
+**Independence**  
+If $X$ is independent of $Y$, then
+$$
+\Ex[X \mid Y] = \Ex[X].
+$$
+
+---
+
+### Conditioning on an event
+
+For any event $A$ with $0<\Prob(A)<1$,
+$$
+\Ex[X]
+=
+\Prob(A)\,\Ex[X \mid A]
++
+\Prob(A^c)\,\Ex[X \mid A^c].
+$$
+
+That is, the overall expectation is a **weighted average** of the expectations
+on $A$ and on its complement.
+
+This decomposition is especially useful for bounding expectations by splitting
+the sample space into “typical” and “atypical” events.
+
+---
+
+### Law of total expectation {#total-exp}
+
+The **law of total expectation** states that conditioning does not change the
+overall mean:
+$$
+\Ex\!\bigl[\Ex[X \mid Y]\bigr]
+=
+\Ex[X].
+$$
+
+More generally, if $\{A_1,\ldots,A_n\}$ is a partition of the sample space with
+$\Prob(A_i)>0$, then
+$$
+\Ex[X]
+=
+\sum_{i=1}^n
+\Prob(A_i)\,\Ex[X \mid A_i].
+$$
+
+---
+
+### Why this matters (preview)
+
+Conditional expectation allows us to localize the behavior of a random variable.
+By splitting the sample space into suitable events, we can derive probability
+bounds such as **Chebyshev’s inequality** by controlling behavior on each event
+separately.
+
 
 ## Types of convergence{#type-conv}
 

@@ -544,7 +544,7 @@ $$
 =
 \Prob(A)\,\Ex[X \mid A]
 $$
-The [indicator function]{.alert}, $\indic(\cdot)$, equals $1$ when the condition inside the parentheses is true and $0$ otherwise.
+The [indicator function]{.alert}, $\indic(\cdot)$, equals $1$ if the statement inside the parentheses is true, and $0$ otherwise.
 
 Conditional expectation of [$X$ given $Y=y$]{.alert}
 is

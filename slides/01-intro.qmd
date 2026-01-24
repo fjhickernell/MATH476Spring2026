@@ -309,7 +309,7 @@ Fortran	| 1
 
 - [Median]{.alert} of $X$ is $\med(X) : = Q(1/2)$
 
-## Key probability concepts (cont'd)
+---
 
 - $(X,Y)$ are [independent]{.alert} iff $\begin{cases} F_{X,Y}(x,y) = F_X(x) F_Y(y) & \text{or equivalently} \\ 
 \varrho_{X,Y}(x,y) = \varrho_X(x) \varrho_Y(y) \end{cases}$
@@ -535,51 +535,26 @@ Then
 
 ## Conditional expectation {#conditional-exp}
 
-The **conditional expectation** of a random variable $X$ given an event $B$
-(with $\Prob(B)>0$) is the average value of $X$ when we restrict attention to
-outcomes where $B$ occurs:
+Conditional expectation of [$X$ given event $A$]{.alert}
+(with $\Prob(A)>0$) is
 $$
-\Ex[X \mid B]
+\Ex[X \mid A]
 =
-\frac{\Ex[X \mathbf{1}_B]}{\Prob(B)}.
-$$
-
-Equivalently,
-$$
-\Ex[X \mathbf{1}_B]
+\frac{\Ex[X \, \indic(X \in A)]}{\Prob(A)} \qquad \text{and so} \qquad \Ex[X \, \indic(X \in A)]
 =
-\Prob(B)\,\Ex[X \mid B].
+\Prob(A)\,\Ex[X \mid A]
 $$
+The [indicator function]{.alert}, $\indic(\cdot)$, equals $1$ when the condition inside the parentheses is true and $0$ otherwise.
 
-This is directly analogous to conditional probability, except that we are
-averaging **values** instead of **events**.
-
----
-
-### Conditional expectation given a random variable
-
-Let $X$ and $Y$ be random variables.
-
-If $(X,Y)$ has a joint density, the conditional expectation of $X$ given $Y=y$
+Conditional expectation of [$X$ given $Y=y$]{.alert}
 is
 $$
 \Ex[X \mid Y=y]
 =
-\int x \, \varrho_{X\mid Y}(x \mid y)\,\dif x.
+\int x \, \varrho_{X\mid Y}(x \mid y)\,\dif x
 $$
-
-Rather than fixing $y$, we define the conditional expectation given $Y$ as the
-random variable
-$$
-\Ex[X \mid Y]
-=
-g(Y),
-\qquad
-g(y)=\Ex[X \mid Y=y].
-$$
-
-Thus, $\Ex[X\mid Y]$ is itself a **random variable** that depends only on the
-information contained in $Y$.
+If $g(y)=\Ex[X \mid Y=y]$, then $\Ex[X \mid Y] = g(Y)$ is a random variable
+depending only on $Y$
 
 ---
 

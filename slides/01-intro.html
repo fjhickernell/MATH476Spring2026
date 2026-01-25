@@ -439,7 +439,7 @@ From Data
 <li>Observations, surveys, experiments, or computer simulations</li>
 </ul>
 <div class="vspace">
-<p>See <a href="../pages/stats-qs.html">Big Statistics Questions</a></p>
+<p>See <a href="../classlib/classlib/quarto/pages/stats-qs.html">Big Statistics Questions</a></p>
 </div>
 </section>
 
@@ -483,7 +483,7 @@ T &amp;:= Y_1 + \cdots + Y_n \sim \Bin(n,\mu), \; \Prob(T = t) = \binom{n}{t} \m
 <section class="slide level2">
 
 <p>If <span class="math inline">\(Y_1, \ldots, Y_n \IIDsim \Bern(\mu)\)</span>, then we can construct a <span class="alert">confidence interval</span> that <span class="alert">captures</span> the true approval rating with high probability: <span class="math display">\[\begin{align*}
-T &amp;:= Y_1 + \cdots + Y_n \sim \Bin(n,\mu), \quad \Prob(T = t) = \binom{n}{t} \mu^t (1-\mu)^{n-t}\\
+T &amp;:= Y_1 + \cdots + Y_n \sim \Bin(n,\mu), \quad \Prob(T = y) = \binom{n}{t} \mu^t (1-\mu)^{n-t}\\
 \barY &amp;:= \frac 1n (Y_1 + \cdots + Y_n) \appxsim  \Norm\bigl(\mu,\mu(1-\mu)/n\bigr) \quad \text{by the }\class{alert}{\text{Central Limit Theorem}}
 \end{align*}\]</span></p>
 <div class="columns">
@@ -611,7 +611,7 @@ T &amp;:= Y_1 + \cdots + Y_n \sim \Bin(n,\mu), \quad \Prob(T = t) = \binom{n}{t}
 <ul>
 <li>Stochastic processes</li>
 <li>Bayesian inference</li>
-<li>Often one would the parameters in <span class="math inline">\(K\)</span> from data</li>
+<li>Often one would estimate the parameters in <span class="math inline">\(K\)</span> from data</li>
 </ul></li>
 <li><span class="alert">Uncertainty</span>
 <ul>
@@ -782,22 +782,22 @@ T &amp;:= Y_1 + \cdots + Y_n \sim \Bin(n,\mu), \quad \Prob(T = t) = \binom{n}{t}
 <li><span class="math inline">\(\displaystyle \Ex[f(X)] : = \sum_{x} f(x) \varrho(x)\)</span> for discrete random variables</li>
 <li><span class="math inline">\(\displaystyle \Ex[f(X)] : =  \int f(x) \varrho(x) \; \dif x\)</span> for continuous random variables</li>
 </ul></li>
-<li><p><span class="alert">Mean</span> of <span class="math inline">\(X\)</span> is <span class="math inline">\(\mu : = \Ex(X)\)</span></p></li>
+<li><p><span class="alert">Mean</span> of <span class="math inline">\(X\)</span> is <span class="math inline">\(\mu : = \Ex(X) = \Argmin{m\in\reals} \Ex[(X-m)^2]\)</span></p></li>
 <li><p><span class="alert">Variance</span> of <span class="math inline">\(X\)</span> is <span class="math inline">\(\sigma^2 : = \var(X) := \Ex[(X - \mu)^2] = E(X^2) - \mu^2\)</span></p>
 <ul>
 <li><span class="alert">Standard deviation</span> of <span class="math inline">\(X\)</span> is <span class="math inline">\(\std(X) := \sigma = \sqrt{\var(X)}\)</span></li>
 </ul></li>
-<li><p><span class="alert">Median</span> of <span class="math inline">\(X\)</span> is <span class="math inline">\(\med(X) : = Q(1/2)\)</span></p></li>
+<li><p><span class="alert">Median</span> of <span class="math inline">\(X\)</span> is <span class="math inline">\(\med(X) : = Q(1/2) \in
+\Argmin{m\in\reals} \Ex \lvert X-m \rvert\)</span></p></li>
 </ul>
 </section>
 <section class="slide level2">
 
 <ul>
-<li><p><span class="math inline">\((X,Y)\)</span> are <span class="alert">independent</span> iff <span class="math inline">\(\begin{cases} F_{X,Y}(x,y) = F_X(x) F_Y(y) &amp; \text{or equivalently} \\
-\varrho_{X,Y}(x,y) = \varrho_X(x) \varrho_Y(y) \end{cases}\)</span></p></li>
+<li><p><span class="math inline">\((X,Y)\)</span> are <span class="alert">independent</span> iff <span class="math inline">\(F_{X,Y}(x,y) = F_X(x) F_Y(y)\)</span> or equivalently <span class="math inline">\(\varrho_{X,Y}(x,y) = \varrho_X(x) \varrho_Y(y)\)</span></p></li>
 <li><p><span class="alert">Covariance</span> <span class="math inline">\(\cov(X,Y) : = \Ex[(X- \mu_X)(Y - \mu_Y)]\)</span></p></li>
 <li><p><span class="alert">Correlation</span> <span class="math inline">\(\displaystyle \corr(X,Y) : = \frac{\cov(X,Y)}{\std(X) \std(Y)}\)</span></p></li>
-<li><p>Independence <span class="math inline">\(\implies\)</span> uncorrelated, but uncorrelated <span class="math inline">\(\notimplies\)</span> independence</p>
+<li><p>Independence <span class="math inline">\(\implies\)</span> zero correlation, but zero correlation <span class="math inline">\(\notimplies\)</span> independence</p>
 <div class="fragment" data-fragment-index="1" style="width:100%; margin:0;" data-markdown="1">
 <ul>
 <li>E.g., <span class="math inline">\(\Prob[(X,Y) = (x,y)] = 1/4\)</span> for <span class="math inline">\((x,y) \in \{(\pm 1, 0), (0, \pm 1)\}\)</span> <span class="math display">\[\begin{gather*}
@@ -816,17 +816,17 @@ T &amp;:= Y_1 + \cdots + Y_n \sim \Bin(n,\mu), \quad \Prob(T = t) = \binom{n}{t}
 <section id="prob-distrib" class="slide level2">
 <h2>Important distributions</h2>
 <ul>
-<li><p><span class="alert">Binomial</span> (free-throw shooting, discrete) <span class="math inline">\(\Bin(n,p)\)</span>, <span class="math inline">\(\quad\)</span> <span class="math inline">\(\Bern(p) = \Bin(1,p)\)</span> <span class="math display">\[
+<li><p><span class="alert">Binomial</span> (free-throw shooting, discrete) <span class="math inline">\(\Bin(n,p)\)</span> <span class="math display">\[
 \varrho(x) : = \Prob(X=x) = \binom{n}{x} p^x (1-p)^{n-x}, \ x =0, \ldots, n; \quad \Ex(X) = np, \quad \var(X) = np(1-p)
 \]</span></p></li>
-<li><p><span class="alert">Exponential</span> (taxi waiting, continuous) <span class="math inline">\(\Exp(\lambda) = \Exp(1/\mu)\)</span> <span class="math display">\[
+<li><p><span class="alert">Exponential</span> (taxi waiting, continuous) <span class="math inline">\(\Exp(\lambda)\)</span> <span class="math display">\[
 F(x): = 1 - \exp(-\lambda x),\ \varrho(x) : = \lambda \exp(-\lambda x), \ x \ge 0; \quad \Ex(X) = 1/\lambda, \quad \var(X) = 1/\lambda^2
 \]</span></p></li>
 <li><p><span class="alert">Normal (Gaussian)</span> (limiting distribution, continuous) <span class="math inline">\(\Norm(\mu, \sigma^2)\)</span> <span class="math display">\[
 \varrho(x): = \frac{\exp\bigl(-(x-\mu)^2/(2\sigma^2)\bigr)}{\sqrt{2 \pi} \sigma}, \ x \in \reals;\quad \Ex(X) = \mu, \quad \var(X) = \sigma^2
 \]</span></p></li>
-<li><p><span class="alert">Multivariate Normal (Gaussian)</span> (limiting distribution, continuous) <span class="math inline">\(\Norm(\mu, \sigma^2)\)</span> <span class="math display">\[
-\varrho(\vx): = \frac{\exp\bigl(-(\vx-\vmu)^\top \mSigma^{-1} (\vx-\vmu) /2\bigr)}{\sqrt{(2 \pi)^{d} \det(\mSigma)}}\quad \Ex(\vX) = \vmu, \quad \cov(\vX) = \mSigma
+<li><p><span class="alert">Multivariate Normal (Gaussian)</span> (limiting distribution, continuous) <span class="math inline">\(\Norm(\vmu, \mSigma)\)</span> <span class="math display">\[
+\varrho(\vx): = \frac{\exp\bigl(-(\vx-\vmu)^\top \mSigma^{-1} (\vx-\vmu) /2\bigr)}{\sqrt{(2 \pi)^{d} \det(\mSigma)}};\quad \Ex(\vX) = \vmu, \quad \cov(\vX) = \mSigma
 \]</span></p></li>
 </ul>
 </section>
@@ -844,7 +844,7 @@ F(x) &amp;= \begin{cases}
 \\
 \mu &amp; = \Ex(X) = \int_{-\infty}^{\infty} x \, \dif F(x) \qquad   
    \mathlink{https://en.wikipedia.org/wiki/Lebesgue-Stieltjes_integration}{(Lebesgue–Stieltjes integral)}\\
-&amp; = 0 \times p + \int_0^{\infty} x \times (1-p) \lambda \exp(-\lambda x) \, \dif x = (1-p)/ \lambda
+&amp; = 0 \times p + \int_0^{\infty} x \times (1-p)\exp(-\lambda x) \, \dif x = (1-p)/ \lambda
 \\
 \sigma^2 &amp; = \var(X) = \Ex[(X-\mu)^2] = \frac{1-p^2}{\lambda^2}
 \end{align*}\]</span></li>
@@ -875,7 +875,7 @@ F(x) &amp;= \begin{cases}
 <ul>
 <li><p><span class="alert">Multiplication rule</span>: <span class="math inline">\(\Prob(A \cap B)
 =
-\Prob(A \mid B)\,\Prob(B)\)</span></p></li>
+\Prob(A \mid B),\Prob(B)\)</span></p></li>
 <li><p><span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are <span class="alert">independent</span> if <span class="math inline">\(\Prob(A \mid B) = \Prob(A)\)</span> or equivalently <span class="math inline">\(\Prob(A \cap B)=\Prob(A)\Prob(B)\)</span></p></li>
 </ul>
 <h3 id="bayes-rule">Bayes’ Rule</h3>
@@ -959,7 +959,7 @@ F(x) &amp;= \begin{cases}
 </div>
 </section>
 <section id="bayesian-inference" class="slide level2">
-<h2>Bayesian Inference</h2>
+<h2>Bayesian inference</h2>
 <h3 id="bayes-rule-for-densities-1">Bayes’ rule for densities</h3>
 <p><span class="math display">\[
 \varrho_{X\mid Y}(x\mid y)
@@ -1086,8 +1086,8 @@ X_n \convd X,
 </ol>
 <p><span class="math display">\[\begin{align*}
 Z_n: &amp;= \frac{\barX_n - \mu}{\sigma /\sqrt{n}} = \frac{Y_1 + \cdots + Y_n}{\sqrt{n}} \\
-M_{Z_n}(t) &amp;= \Ex[\exp(tZ_n)] = \Ex[\exp(tY_1/\sqrt{n}) \cdots \exp(tY_n/\sqrt{n})] \\
-&amp; =  \{\Ex[\exp(tY_1/\sqrt{n})]\}^n  \qquad \text{by independence} \\
+M_{Z_n}(t) &amp;= \Ex[\exp(tZ_n)] = \Ex[\exp(tY_1/\sqrt{n}) \cdots \exp(tY_n/\sqrt{n})]\\
+&amp; =  \{\Ex[\exp(tY_1/\sqrt{n})]\}^n \qquad \text{by independence} \\
 &amp; = [M_Y(t/\sqrt{n})]^n
 \end{align*}\]</span></p>
 </section>
@@ -1119,8 +1119,8 @@ M_Z(t) &amp; = \Ex[\exp(tZ)] = \int_{-\infty}^{\infty} \frac 1{\sqrt{2 \pi}} \ex
 Z_n \convd N(0,1)
 \]</span> <span class="math inline">\(\square\)</span></p>
 </section>
-<section id="chebyshevs-inequality" class="slide level2">
-<h2>Chebyshev’s Inequality</h2>
+<section id="chebyshev-markov-inequality" class="slide level2">
+<h2>Chebyshev (Markov) Inequality</h2>
 <p><span class="math display">\[
 \Prob\bigl( f(X) \ge r \bigr) \le \frac{\Ex[f(X)]}{r}
 \]</span></p>
@@ -1135,10 +1135,11 @@ Z_n \convd N(0,1)
 &amp;= \Ex\bigl[f(X)/r\bigr] \\
 &amp;= \Ex[f(X)]/r
 \end{align*}\]</span></p>
-<h3 id="important-special-case">Important special case</h3>
-<p><span class="math display">\[
-\Prob\bigl( \lvert X - \mu \rvert^2 \ge r^2 \bigr) \le \frac{\sigma^2}{r^2} \quad \text{where } \mu = \Ex(X), \ \sigma^2 = \var(X)
-\]</span></p>
+<h3 id="important-special-cases">Important special cases</h3>
+<p><span class="math display">\[\begin{gather*}
+\Prob\bigl( \lvert X - \mu \rvert^2 \ge r^2 \bigr) \le \frac{\sigma^2}{r^2} \quad \text{where } \mu = \Ex(X), \ \sigma^2 = \var(X) \\
+\Prob\bigl( \lvert X - \med(X) \rvert \ge r \bigr) \le \frac{\Ex \lvert X - \med(X)\rvert}{r}
+\end{gather*}\]</span></p>
 </section>
 <section id="weak-law-of-large-numbers-via-chebyshev" class="slide level2">
 <h2>Weak Law of Large Numbers (via Chebyshev)</h2>

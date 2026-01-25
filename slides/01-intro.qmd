@@ -27,9 +27,9 @@ reveal-options:
 - Carefully sampled
 - Observations, surveys, experiments, or computer simulations
 
-&nbsp;
-
+:::{.vspace}
 See [Big Statistics Questions](/pages/stats-qs.html)
+:::
 
 # Examples
 
@@ -500,10 +500,10 @@ So
 
 and $f(x) \mid \vf = \vy \sim \Norm\bigl(\vy^\top \mK^{-1} \vk(x), \sigma^2(x) \bigr)$
 
-&nbsp;
+::: {.vspace}
 
 By a similar argument  $\int_0 ^1 f(x)\, \dif x \mid \vf = \vy \sim \Norm\Bigl(\vy^\top \mK^{-1} \int_0^1 \vk(x) \, \dif x, \int_0^1 \int_0^1 K(t,x) \, \dif t \dif x - \int_0^1 \vk^\top(x) \, \dif x \, \mK^{-1} \, \int_0^1 \vk(x) \, \dif x  \Bigr)$
-
+:::
 
 ## Bayesian Inference
 	
@@ -546,7 +546,7 @@ $$
 $$
 The [indicator function]{.alert}, $\indic(\cdot)$, equals $1$ if the statement inside the parentheses is true, and $0$ otherwise.
 
-&nbsp;
+:::{.vspace-lg}
 
 Conditional expectation of [$X$ given $Y=y$]{.alert}
 is
@@ -558,9 +558,13 @@ $$
 If $g(y)=\Ex[X \mid Y=y]$, then $\Ex[X \mid Y] = g(Y)$ is a random variable
 depending only on $Y$
 
-&nbsp;
+:::
+
+:::{.vspace-lg}
 
 If $X$ is [independent]{.alert} of $Y$, then $\Ex[X \mid Y] = \Ex[X]$
+
+:::
 
 ---
 
@@ -654,7 +658,7 @@ so  $X_n \ \, \nconvas X$
 
 ---
 
-## Central Limit Theorem{#clt}
+## Central Limit Theorem{#clt data-state="goldborder"}
 If $X_1, X_2, \ldots \IIDsim$ some distribution with finite moment generating function, $M(t) := \Ex\bigl(\exp(tX)\bigr)$, that exists for $t$ near $0$, and $\mu = \Ex(X)$ and $\sigma^2 = \var(X)$, and
 $$
 \barX_n := \frac 1n \left(X_1 + \cdots + X_n \right),
@@ -703,7 +707,58 @@ Z_n \convd N(0,1)
 $$
 $\square$
 
-## Chebyscev's Inequality
+## Chebyshev's Inequality
 $$
 \Prob\bigl( f(X) \ge r \bigr) \le \frac{\Ex[f(X)]}{r}
+$$
+
+
+### Proof
+\begin{align*}
+\Prob(f(X)\ge r)
+&= \Ex\bigl[\indic\bigl(f(X)\ge r\bigr)\bigr] \\
+&= \Ex\Bigl[\Ex\bigl[\indic\bigl(f(X)\ge r\bigr)\mid X\bigr]\Bigr]
+\qquad \text{(total expectation)} \\
+&\le \Ex\Bigl[\Ex\bigl[f(X)/r \mid X\bigr]\Bigr]
+\qquad \text{since } \indic\bigl(f(X)\ge r\bigr)\le f(X)/r \text{ a.s.} \\
+&= \Ex\bigl[f(X)/r\bigr] \\
+&= \Ex[f(X)]/r
+\end{align*}
+
+### Important special case
+$$
+\Prob\bigl( \lvert X - \mu \rvert^2 \ge r^2 \bigr) \le \frac{\sigma^2}{r^2} \quad \text{where } \mu = \Ex(X), \ \sigma^2 = \var(X)
+$$
+
+
+## Weak Law of Large Numbers (via Chebyshev)
+
+### Theorem (WLLN)
+Let $X_1,X_2,\dots$ be IID with $\Ex[X_1]=\mu$ and $\var(X_1)=\sigma^2<\infty$.
+Define the sample mean $\bar X_n := \frac1n\sum_{i=1}^n X_i$.  Then $\barX_n \convp \mu$.
+
+### Proof
+By Chebyshev's inequality,
+$$
+\Prob\bigl(|\barX_n-\mu|\ge \varepsilon\bigr)
+\le \frac{\Var(\barX_n)}{\varepsilon^2}
+$$
+Using independence,
+$$
+\var(\barX_n)
+=
+\var\!\left(\frac1n\sum_{i=1}^n X_i\right)
+=
+\frac{1}{n^2}\sum_{i=1}^n \Var(X_i)
+=
+\frac{1}{n^2}\cdot n\sigma^2
+=
+\frac{\sigma^2}{n}
+$$
+Therefore,
+$$
+\Prob\bigl(|\barX_n-\mu|\ge \varepsilon\bigr)
+\le
+\frac{\sigma^2}{n\varepsilon^2}
+\to 0 \qquad \square
 $$

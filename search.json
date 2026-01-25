@@ -291,7 +291,7 @@
     "href": "slides/01-intro.html#proof-of-the-central-limit-theorem",
     "title": "MATH 476 — Statistics",
     "section": "Proof of the Central Limit Theorem",
-    "text": "Proof of the Central Limit Theorem\n\nDefine a standardized (mean \\(0\\), variance \\(1\\)) random variable, \\(Y_i := (X_i - \\mu)/\\sigma\\) and note that \\(Y_1, Y_2, \\dots\\) are IID with \\[\\begin{align*}\nZ_n: &= \\frac{\\barX_n - \\mu}{\\sigma /\\sqrt{n}} = \\frac{Y_1 + \\cdots + Y_n}{\\sqrt{n}} \\\\\nM_{Z_n}(t) &= \\Ex[\\exp(tZ_n)] = \\Ex[\\exp(tY_1/\\sqrt{n}) \\cdots \\exp(tY_n/\\sqrt{n})] =  \\{\\Ex[\\exp(tY_1/\\sqrt{n})]\\}^n \\quad \\text{by independence} \\\\\n& = [M_Y(t/\\sqrt{n})]^n\n\\end{align*}\\]"
+    "text": "Proof of the Central Limit Theorem\n\nDefine a standardized (mean \\(0\\), variance \\(1\\)) random variable, \\(Y_i := (X_i - \\mu)/\\sigma\\) and note that \\(Y_1, Y_2, \\dots\\) are IID with\n\n\\[\\begin{align*}\nZ_n: &= \\frac{\\barX_n - \\mu}{\\sigma /\\sqrt{n}} = \\frac{Y_1 + \\cdots + Y_n}{\\sqrt{n}} \\\\\nM_{Z_n}(t) &= \\Ex[\\exp(tZ_n)] = \\Ex[\\exp(tY_1/\\sqrt{n}) \\cdots \\exp(tY_n/\\sqrt{n})] \\\\\n& =  \\{\\Ex[\\exp(tY_1/\\sqrt{n})]\\}^n  \\qquad \\text{by independence} \\\\\n& = [M_Y(t/\\sqrt{n})]^n\n\\end{align*}\\]"
   },
   {
     "objectID": "slides/01-intro.html#chebyshevs-inequality",

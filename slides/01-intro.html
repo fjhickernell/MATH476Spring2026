@@ -1080,12 +1080,14 @@ X_n \convd X,
 <section id="proof-of-the-central-limit-theorem" class="slide level2">
 <h2>Proof of the Central Limit Theorem</h2>
 <ol type="1">
-<li>Define a standardized (mean <span class="math inline">\(0\)</span>, variance <span class="math inline">\(1\)</span>) random variable, <span class="math inline">\(Y_i := (X_i - \mu)/\sigma\)</span> and note that <span class="math inline">\(Y_1, Y_2, \dots\)</span> are IID with <span class="math display">\[\begin{align*}
-Z_n: &amp;= \frac{\barX_n - \mu}{\sigma /\sqrt{n}} = \frac{Y_1 + \cdots + Y_n}{\sqrt{n}} \\
-M_{Z_n}(t) &amp;= \Ex[\exp(tZ_n)] = \Ex[\exp(tY_1/\sqrt{n}) \cdots \exp(tY_n/\sqrt{n})] =  \{\Ex[\exp(tY_1/\sqrt{n})]\}^n \quad \text{by independence} \\
-&amp; = [M_Y(t/\sqrt{n})]^n
-\end{align*}\]</span></li>
+<li>Define a standardized (mean <span class="math inline">\(0\)</span>, variance <span class="math inline">\(1\)</span>) random variable, <span class="math inline">\(Y_i := (X_i - \mu)/\sigma\)</span> and note that <span class="math inline">\(Y_1, Y_2, \dots\)</span> are IID with</li>
 </ol>
+<p><span class="math display">\[\begin{align*}
+Z_n: &amp;= \frac{\barX_n - \mu}{\sigma /\sqrt{n}} = \frac{Y_1 + \cdots + Y_n}{\sqrt{n}} \\
+M_{Z_n}(t) &amp;= \Ex[\exp(tZ_n)] = \Ex[\exp(tY_1/\sqrt{n}) \cdots \exp(tY_n/\sqrt{n})] \\
+&amp; =  \{\Ex[\exp(tY_1/\sqrt{n})]\}^n  \qquad \text{by independence} \\
+&amp; = [M_Y(t/\sqrt{n})]^n
+\end{align*}\]</span></p>
 </section>
 <section class="slide level2">
 

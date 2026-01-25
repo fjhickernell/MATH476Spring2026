@@ -672,9 +672,11 @@ $$
 ## Proof of the Central Limit Theorem
 
 1. Define a standardized (mean $0$, variance $1$) random variable, $Y_i := (X_i - \mu)/\sigma$ and note that $Y_1, Y_2, \dots$ are IID with
+
 \begin{align*}
 Z_n: &= \frac{\barX_n - \mu}{\sigma /\sqrt{n}} = \frac{Y_1 + \cdots + Y_n}{\sqrt{n}} \\
-M_{Z_n}(t) &= \Ex[\exp(tZ_n)] = \Ex[\exp(tY_1/\sqrt{n}) \cdots \exp(tY_n/\sqrt{n})] =  \{\Ex[\exp(tY_1/\sqrt{n})]\}^n \quad \text{by independence} \\
+M_{Z_n}(t) &= \Ex[\exp(tZ_n)] = \Ex[\exp(tY_1/\sqrt{n}) \cdots \exp(tY_n/\sqrt{n})] \\
+& =  \{\Ex[\exp(tY_1/\sqrt{n})]\}^n  \qquad \text{by independence} \\
 & = [M_Y(t/\sqrt{n})]^n
 \end{align*}
 

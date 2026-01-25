@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.27">
 
   <meta name="author" content="Fred J. Hickernell">
-  <meta name="dcterms.date" content="2026-01-24">
+  <meta name="dcterms.date" content="2026-01-25">
   <title>MATH 476 — Spring 2026 – MATH 476 — Statistics</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -410,7 +410,7 @@ Fred J. Hickernell
 </div>
 </div>
 
-  <p class="date">January 24, 2026</p>
+  <p class="date">January 25, 2026</p>
 </section>
 <section id="statistics" class="title-slide slide level1 center" data-state="goldborder">
 <h1>Statistics</h1>
@@ -987,31 +987,14 @@ Y &amp; = \text{random observed data} \\
 =
 \Prob(A)\,\Ex[X \mid A]
 \]</span> The <span class="alert">indicator function</span>, <span class="math inline">\(\indic(\cdot)\)</span>, equals <span class="math inline">\(1\)</span> if the statement inside the parentheses is true, and <span class="math inline">\(0\)</span> otherwise.</p>
+<p>&nbsp;</p>
 <p>Conditional expectation of <span class="alert"><span class="math inline">\(X\)</span> given <span class="math inline">\(Y=y\)</span></span> is <span class="math display">\[
 \Ex[X \mid Y=y]
 =
 \int x \, \varrho_{X\mid Y}(x \mid y)\,\dif x
 \]</span> If <span class="math inline">\(g(y)=\Ex[X \mid Y=y]\)</span>, then <span class="math inline">\(\Ex[X \mid Y] = g(Y)\)</span> is a random variable depending only on <span class="math inline">\(Y\)</span></p>
-</section>
-<section class="slide level2">
-
-<h3 id="key-properties-of-conditional-expectation">Key properties of conditional expectation</h3>
-<p>Let <span class="math inline">\(X,Z\)</span> be integrable random variables and let <span class="math inline">\(Y\)</span> be given.</p>
-<p><strong>Linearity</strong> <span class="math display">\[
-\Ex[aX+bZ \mid Y]
-=
-a\,\Ex[X\mid Y] + b\,\Ex[Z\mid Y].
-\]</span></p>
-<p><strong>Taking out what is known</strong><br>
-If <span class="math inline">\(g(Y)\)</span> is any function of <span class="math inline">\(Y\)</span>, then <span class="math display">\[
-\Ex[g(Y)X \mid Y]
-=
-g(Y)\,\Ex[X\mid Y].
-\]</span></p>
-<p><strong>Independence</strong><br>
-If <span class="math inline">\(X\)</span> is independent of <span class="math inline">\(Y\)</span>, then <span class="math display">\[
-\Ex[X \mid Y] = \Ex[X].
-\]</span></p>
+<p>&nbsp;</p>
+<p>If <span class="math inline">\(X\)</span> is <span class="alert">independent</span> of <span class="math inline">\(Y\)</span>, then <span class="math inline">\(\Ex[X \mid Y] = \Ex[X]\)</span></p>
 </section>
 <section class="slide level2">
 
@@ -1021,18 +1004,7 @@ If <span class="math inline">\(X\)</span> is independent of <span class="math in
 =
 \Prob(A)\,\Ex[X \mid A]
 +
-\Prob(A^c)\,\Ex[X \mid A^c].
-\]</span></p>
-<p>That is, the overall expectation is a <strong>weighted average</strong> of the expectations on <span class="math inline">\(A\)</span> and on its complement.</p>
-<p>This decomposition is especially useful for bounding expectations by splitting the sample space into “typical” and “atypical” events.</p>
-</section>
-<section class="slide level2">
-
-<h3 id="total-exp">Law of total expectation</h3>
-<p>The <strong>law of total expectation</strong> states that conditioning does not change the overall mean: <span class="math display">\[
-\Ex\!\bigl[\Ex[X \mid Y]\bigr]
-=
-\Ex[X].
+\Prob(A^c)\,\Ex[X \mid A^c]
 \]</span></p>
 <p>More generally, if <span class="math inline">\(\{A_1,\ldots,A_n\}\)</span> is a partition of the sample space with <span class="math inline">\(\Prob(A_i)&gt;0\)</span>, then <span class="math display">\[
 \Ex[X]
@@ -1040,11 +1012,20 @@ If <span class="math inline">\(X\)</span> is independent of <span class="math in
 \sum_{i=1}^n
 \Prob(A_i)\,\Ex[X \mid A_i].
 \]</span></p>
-</section>
-<section class="slide level2">
-
-<h3 id="why-this-matters-preview">Why this matters (preview)</h3>
-<p>Conditional expectation allows us to localize the behavior of a random variable. By splitting the sample space into suitable events, we can derive probability bounds such as <strong>Chebyshev’s inequality</strong> by controlling behavior on each event separately.</p>
+<h3 id="law-of-total-expectation">Law of total expectation</h3>
+<p><span class="math display">\[
+\Ex\!\bigl[\Ex[X \mid Y]\bigr]
+=
+\Ex[X]
+\]</span></p>
+<h3 id="law-of-total-variance">Law of total variance</h3>
+<p><span class="math display">\[
+\var(X)
+=
+\Ex\!\bigl[\var(X \mid Y)\bigr]
++
+\var\!\bigl(\Ex[X \mid Y]\bigr)
+\]</span></p>
 </section>
 <section id="type-conv" class="slide level2">
 <h2>Types of convergence</h2>

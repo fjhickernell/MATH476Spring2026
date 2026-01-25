@@ -270,7 +270,7 @@
     "href": "slides/01-intro.html#conditional-exp",
     "title": "MATH 476 — Statistics",
     "section": "Conditional expectation",
-    "text": "Conditional expectation\nConditional expectation of \\(X\\) given event \\(A\\) (with \\(\\Prob(A)&gt;0\\)) is \\[\n\\Ex[X \\mid A]\n=\n\\frac{\\Ex[X \\, \\indic(X \\in A)]}{\\Prob(A)} \\qquad \\text{and so} \\qquad \\Ex[X \\, \\indic(X \\in A)]\n=\n\\Prob(A)\\,\\Ex[X \\mid A]\n\\] The indicator function, \\(\\indic(\\cdot)\\), equals \\(1\\) if the statement inside the parentheses is true, and \\(0\\) otherwise.\n \nConditional expectation of \\(X\\) given \\(Y=y\\) is \\[\n\\Ex[X \\mid Y=y]\n=\n\\int x \\, \\varrho_{X\\mid Y}(x \\mid y)\\,\\dif x\n\\] If \\(g(y)=\\Ex[X \\mid Y=y]\\), then \\(\\Ex[X \\mid Y] = g(Y)\\) is a random variable depending only on \\(Y\\)\n \nIf \\(X\\) is independent of \\(Y\\), then \\(\\Ex[X \\mid Y] = \\Ex[X]\\)"
+    "text": "Conditional expectation\nConditional expectation of \\(X\\) given event \\(A\\) (with \\(\\Prob(A)&gt;0\\)) is \\[\n\\Ex[X \\mid A]\n=\n\\frac{\\Ex[X \\, \\indic(X \\in A)]}{\\Prob(A)} \\qquad \\text{and so} \\qquad \\Ex[X \\, \\indic(X \\in A)]\n=\n\\Prob(A)\\,\\Ex[X \\mid A]\n\\] The indicator function, \\(\\indic(\\cdot)\\), equals \\(1\\) if the statement inside the parentheses is true, and \\(0\\) otherwise.\n\nConditional expectation of \\(X\\) given \\(Y=y\\) is \\[\n\\Ex[X \\mid Y=y]\n=\n\\int x \\, \\varrho_{X\\mid Y}(x \\mid y)\\,\\dif x\n\\] If \\(g(y)=\\Ex[X \\mid Y=y]\\), then \\(\\Ex[X \\mid Y] = g(Y)\\) is a random variable depending only on \\(Y\\)\n\n\nIf \\(X\\) is independent of \\(Y\\), then \\(\\Ex[X \\mid Y] = \\Ex[X]\\)"
   },
   {
     "objectID": "slides/01-intro.html#type-conv",
@@ -294,10 +294,17 @@
     "text": "Proof of the Central Limit Theorem\n\nDefine a standardized (mean \\(0\\), variance \\(1\\)) random variable, \\(Y_i := (X_i - \\mu)/\\sigma\\) and note that \\(Y_1, Y_2, \\dots\\) are IID with \\[\\begin{align*}\nZ_n: &= \\frac{\\barX_n - \\mu}{\\sigma /\\sqrt{n}} = \\frac{Y_1 + \\cdots + Y_n}{\\sqrt{n}} \\\\\nM_{Z_n}(t) &= \\Ex[\\exp(tZ_n)] = \\Ex[\\exp(tY_1/\\sqrt{n}) \\cdots \\exp(tY_n/\\sqrt{n})] =  \\{\\Ex[\\exp(tY_1/\\sqrt{n})]\\}^n \\quad \\text{by independence} \\\\\n& = [M_Y(t/\\sqrt{n})]^n\n\\end{align*}\\]"
   },
   {
-    "objectID": "slides/01-intro.html#chebyscevs-inequality",
-    "href": "slides/01-intro.html#chebyscevs-inequality",
+    "objectID": "slides/01-intro.html#chebyshevs-inequality",
+    "href": "slides/01-intro.html#chebyshevs-inequality",
     "title": "MATH 476 — Statistics",
-    "section": "Chebyscev’s Inequality",
-    "text": "Chebyscev’s Inequality\n\\[\n\\Prob\\bigl( f(X) \\ge r \\bigr) \\le \\frac{\\Ex[f(X)]}{r}\n\\]"
+    "section": "Chebyshev’s Inequality",
+    "text": "Chebyshev’s Inequality\n\\[\n\\Prob\\bigl( f(X) \\ge r \\bigr) \\le \\frac{\\Ex[f(X)]}{r}\n\\]\nProof\n\\[\\begin{align*}\n\\Prob(f(X)\\ge r)\n&= \\Ex\\bigl[\\indic\\bigl(f(X)\\ge r\\bigr)\\bigr] \\\\\n&= \\Ex\\Bigl[\\Ex\\bigl[\\indic\\bigl(f(X)\\ge r\\bigr)\\mid X\\bigr]\\Bigr]\n\\qquad \\text{(total expectation)} \\\\\n&\\le \\Ex\\Bigl[\\Ex\\bigl[f(X)/r \\mid X\\bigr]\\Bigr]\n\\qquad \\text{since } \\indic\\bigl(f(X)\\ge r\\bigr)\\le f(X)/r \\text{ a.s.} \\\\\n&= \\Ex\\bigl[f(X)/r\\bigr] \\\\\n&= \\Ex[f(X)]/r\n\\end{align*}\\]\nImportant special case\n\\[\n\\Prob\\bigl( \\lvert X - \\mu \\rvert^2 \\ge r^2 \\bigr) \\le \\frac{\\sigma^2}{r^2} \\quad \\text{where } \\mu = \\Ex(X), \\ \\sigma^2 = \\var(X)\n\\]"
+  },
+  {
+    "objectID": "slides/01-intro.html#weak-law-of-large-numbers-via-chebyshev",
+    "href": "slides/01-intro.html#weak-law-of-large-numbers-via-chebyshev",
+    "title": "MATH 476 — Statistics",
+    "section": "Weak Law of Large Numbers (via Chebyshev)",
+    "text": "Weak Law of Large Numbers (via Chebyshev)\nTheorem (WLLN)\nLet \\(X_1,X_2,\\dots\\) be IID with \\(\\Ex[X_1]=\\mu\\) and \\(\\var(X_1)=\\sigma^2&lt;\\infty\\). Define the sample mean \\(\\bar X_n := \\frac1n\\sum_{i=1}^n X_i\\). Then \\(\\barX_n \\convp \\mu\\).\nProof\nBy Chebyshev’s inequality, \\[\n\\Prob\\bigl(|\\barX_n-\\mu|\\ge \\varepsilon\\bigr)\n\\le \\frac{\\Var(\\barX_n)}{\\varepsilon^2}\n\\] Using independence, \\[\n\\var(\\barX_n)\n=\n\\var\\!\\left(\\frac1n\\sum_{i=1}^n X_i\\right)\n=\n\\frac{1}{n^2}\\sum_{i=1}^n \\Var(X_i)\n=\n\\frac{1}{n^2}\\cdot n\\sigma^2\n=\n\\frac{\\sigma^2}{n}\n\\] Therefore, \\[\n\\Prob\\bigl(|\\barX_n-\\mu|\\ge \\varepsilon\\bigr)\n\\le\n\\frac{\\sigma^2}{n\\varepsilon^2}\n\\to 0 \\qquad \\square\n\\]"
   }
 ]

@@ -436,8 +436,9 @@ From Data
 <li>Carefully sampled</li>
 <li>Observations, surveys, experiments, or computer simulations</li>
 </ul>
-<p>&nbsp;</p>
+<div class="vspace">
 <p>See <a href="../pages/stats-qs.html">Big Statistics Questions</a></p>
+</div>
 </section>
 
 <section>
@@ -951,8 +952,9 @@ F(x) &amp;= \begin{cases}
 &amp; = \sigma^{-2}(x) [ z - \vy^\top \mK^{-1} \vk(x)]^2
 \end{align*}\]</span></p>
 <p>and <span class="math inline">\(f(x) \mid \vf = \vy \sim \Norm\bigl(\vy^\top \mK^{-1} \vk(x), \sigma^2(x) \bigr)\)</span></p>
-<p>&nbsp;</p>
+<div class="vspace">
 <p>By a similar argument <span class="math inline">\(\int_0 ^1 f(x)\, \dif x \mid \vf = \vy \sim \Norm\Bigl(\vy^\top \mK^{-1} \int_0^1 \vk(x) \, \dif x, \int_0^1 \int_0^1 K(t,x) \, \dif t \dif x - \int_0^1 \vk^\top(x) \, \dif x \, \mK^{-1} \, \int_0^1 \vk(x) \, \dif x  \Bigr)\)</span></p>
+</div>
 </section>
 <section id="bayesian-inference" class="slide level2">
 <h2>Bayesian Inference</h2>
@@ -987,14 +989,16 @@ Y &amp; = \text{random observed data} \\
 =
 \Prob(A)\,\Ex[X \mid A]
 \]</span> The <span class="alert">indicator function</span>, <span class="math inline">\(\indic(\cdot)\)</span>, equals <span class="math inline">\(1\)</span> if the statement inside the parentheses is true, and <span class="math inline">\(0\)</span> otherwise.</p>
-<p>&nbsp;</p>
+<div class="vspace-lg">
 <p>Conditional expectation of <span class="alert"><span class="math inline">\(X\)</span> given <span class="math inline">\(Y=y\)</span></span> is <span class="math display">\[
 \Ex[X \mid Y=y]
 =
 \int x \, \varrho_{X\mid Y}(x \mid y)\,\dif x
 \]</span> If <span class="math inline">\(g(y)=\Ex[X \mid Y=y]\)</span>, then <span class="math inline">\(\Ex[X \mid Y] = g(Y)\)</span> is a random variable depending only on <span class="math inline">\(Y\)</span></p>
-<p>&nbsp;</p>
+</div>
+<div class="vspace-lg">
 <p>If <span class="math inline">\(X\)</span> is <span class="alert">independent</span> of <span class="math inline">\(Y\)</span>, then <span class="math inline">\(\Ex[X \mid Y] = \Ex[X]\)</span></p>
+</div>
 </section>
 <section class="slide level2">
 
@@ -1065,7 +1069,7 @@ X_n \convd X,
 \]</span> so <span class="math inline">\(X_n \ \, \nconvas X\)</span></p></li>
 </ul>
 </section>
-<section id="clt" class="slide level2">
+<section id="clt" class="slide level2" data-state="goldborder">
 <h2>Central Limit Theorem</h2>
 <p>If <span class="math inline">\(X_1, X_2, \ldots \IIDsim\)</span> some distribution with finite moment generating function, <span class="math inline">\(M(t) := \Ex\bigl(\exp(tX)\bigr)\)</span>, that exists for <span class="math inline">\(t\)</span> near <span class="math inline">\(0\)</span>, and <span class="math inline">\(\mu = \Ex(X)\)</span> and <span class="math inline">\(\sigma^2 = \var(X)\)</span>, and <span class="math display">\[
 \barX_n := \frac 1n \left(X_1 + \cdots + X_n \right),
@@ -1111,10 +1115,50 @@ M_Z(t) &amp; = \Ex[\exp(tZ)] = \int_{-\infty}^{\infty} \frac 1{\sqrt{2 \pi}} \ex
 Z_n \convd N(0,1)
 \]</span> <span class="math inline">\(\square\)</span></p>
 </section>
-<section id="chebyscevs-inequality" class="slide level2">
-<h2>Chebyscev’s Inequality</h2>
+<section id="chebyshevs-inequality" class="slide level2">
+<h2>Chebyshev’s Inequality</h2>
 <p><span class="math display">\[
 \Prob\bigl( f(X) \ge r \bigr) \le \frac{\Ex[f(X)]}{r}
+\]</span></p>
+<h3 id="proof">Proof</h3>
+<p><span class="math display">\[\begin{align*}
+\Prob(f(X)\ge r)
+&amp;= \Ex\bigl[\indic\bigl(f(X)\ge r\bigr)\bigr] \\
+&amp;= \Ex\Bigl[\Ex\bigl[\indic\bigl(f(X)\ge r\bigr)\mid X\bigr]\Bigr]
+\qquad \text{(total expectation)} \\
+&amp;\le \Ex\Bigl[\Ex\bigl[f(X)/r \mid X\bigr]\Bigr]
+\qquad \text{since } \indic\bigl(f(X)\ge r\bigr)\le f(X)/r \text{ a.s.} \\
+&amp;= \Ex\bigl[f(X)/r\bigr] \\
+&amp;= \Ex[f(X)]/r
+\end{align*}\]</span></p>
+<h3 id="important-special-case">Important special case</h3>
+<p><span class="math display">\[
+\Prob\bigl( \lvert X - \mu \rvert^2 \ge r^2 \bigr) \le \frac{\sigma^2}{r^2} \quad \text{where } \mu = \Ex(X), \ \sigma^2 = \var(X)
+\]</span></p>
+</section>
+<section id="weak-law-of-large-numbers-via-chebyshev" class="slide level2">
+<h2>Weak Law of Large Numbers (via Chebyshev)</h2>
+<h3 id="theorem-wlln">Theorem (WLLN)</h3>
+<p>Let <span class="math inline">\(X_1,X_2,\dots\)</span> be IID with <span class="math inline">\(\Ex[X_1]=\mu\)</span> and <span class="math inline">\(\var(X_1)=\sigma^2&lt;\infty\)</span>. Define the sample mean <span class="math inline">\(\bar X_n := \frac1n\sum_{i=1}^n X_i\)</span>. Then <span class="math inline">\(\barX_n \convp \mu\)</span>.</p>
+<h3 id="proof-1">Proof</h3>
+<p>By Chebyshev’s inequality, <span class="math display">\[
+\Prob\bigl(|\barX_n-\mu|\ge \varepsilon\bigr)
+\le \frac{\Var(\barX_n)}{\varepsilon^2}
+\]</span> Using independence, <span class="math display">\[
+\var(\barX_n)
+=
+\var\!\left(\frac1n\sum_{i=1}^n X_i\right)
+=
+\frac{1}{n^2}\sum_{i=1}^n \Var(X_i)
+=
+\frac{1}{n^2}\cdot n\sigma^2
+=
+\frac{\sigma^2}{n}
+\]</span> Therefore, <span class="math display">\[
+\Prob\bigl(|\barX_n-\mu|\ge \varepsilon\bigr)
+\le
+\frac{\sigma^2}{n\varepsilon^2}
+\to 0 \qquad \square
 \]</span></p>
 
 

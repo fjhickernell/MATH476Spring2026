@@ -540,11 +540,13 @@ Conditional expectation of [$X$ given event $A$]{.alert}
 $$
 \Ex[X \mid A]
 =
-\frac{\Ex[X \, \indic(X \in A)]}{\Prob(A)} \qquad \text{and so} \qquad \Ex[X \, \indic(X \in A)]
+\frac{\Ex[X \, \indic(X \in A)]}{\Prob(A)} \qquad \text{and so} \qquad \Ex[X \, \indic(X \in A)] 
 =
 \Prob(A)\,\Ex[X \mid A]
 $$
 The [indicator function]{.alert}, $\indic(\cdot)$, equals $1$ if the statement inside the parentheses is true, and $0$ otherwise.
+
+&nbsp;
 
 Conditional expectation of [$X$ given $Y=y$]{.alert}
 is
@@ -556,32 +558,9 @@ $$
 If $g(y)=\Ex[X \mid Y=y]$, then $\Ex[X \mid Y] = g(Y)$ is a random variable
 depending only on $Y$
 
----
+&nbsp;
 
-### Key properties of conditional expectation
-
-Let $X,Z$ be integrable random variables and let $Y$ be given.
-
-**Linearity**
-$$
-\Ex[aX+bZ \mid Y]
-=
-a\,\Ex[X\mid Y] + b\,\Ex[Z\mid Y].
-$$
-
-**Taking out what is known**  
-If $g(Y)$ is any function of $Y$, then
-$$
-\Ex[g(Y)X \mid Y]
-=
-g(Y)\,\Ex[X\mid Y].
-$$
-
-**Independence**  
-If $X$ is independent of $Y$, then
-$$
-\Ex[X \mid Y] = \Ex[X].
-$$
+If $X$ is [independent]{.alert} of $Y$, then $\Ex[X \mid Y] = \Ex[X]$
 
 ---
 
@@ -593,25 +572,7 @@ $$
 =
 \Prob(A)\,\Ex[X \mid A]
 +
-\Prob(A^c)\,\Ex[X \mid A^c].
-$$
-
-That is, the overall expectation is a **weighted average** of the expectations
-on $A$ and on its complement.
-
-This decomposition is especially useful for bounding expectations by splitting
-the sample space into “typical” and “atypical” events.
-
----
-
-### Law of total expectation {#total-exp}
-
-The **law of total expectation** states that conditioning does not change the
-overall mean:
-$$
-\Ex\!\bigl[\Ex[X \mid Y]\bigr]
-=
-\Ex[X].
+\Prob(A^c)\,\Ex[X \mid A^c]
 $$
 
 More generally, if $\{A_1,\ldots,A_n\}$ is a partition of the sample space with
@@ -623,14 +584,23 @@ $$
 \Prob(A_i)\,\Ex[X \mid A_i].
 $$
 
----
+### Law of total expectation 
+$$
+\Ex\!\bigl[\Ex[X \mid Y]\bigr]
+=
+\Ex[X]
+$$
 
-### Why this matters (preview)
+### Law of total variance
 
-Conditional expectation allows us to localize the behavior of a random variable.
-By splitting the sample space into suitable events, we can derive probability
-bounds such as **Chebyshev’s inequality** by controlling behavior on each event
-separately.
+$$
+\var(X)
+=
+\Ex\!\bigl[\var(X \mid Y)\bigr]
++
+\var\!\bigl(\Ex[X \mid Y]\bigr)
+$$
+
 
 
 ## Types of convergence{#type-conv}

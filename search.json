@@ -28,32 +28,137 @@
     "text": "Interactive Plot (Plotly)\nThis slide tests interactive graphics.\n\nimport numpy as np\nimport plotly.express as px\n\nx = np.linspace(0, 10, 200)\ny = np.sin(x)\n\npx.line(x=x, y=y, title=\"Interactive Sine Wave\")"
   },
   {
-    "objectID": "classlib/classlib/quarto/slides/shared/statistics/intro/intro-stats-examples.html",
-    "href": "classlib/classlib/quarto/slides/shared/statistics/intro/intro-stats-examples.html",
-    "title": "Statistics",
-    "section": "",
-    "text": "Principled\n\n\nClear assumptions\nProbability as a basis\nEfficient and accurate computation\n\n\nInference about a population\n\n\nWant to know parameters that describe a large number of individuals or the relationships among them\nShould provide a level of uncertainty\n\n\nFrom Data\n\n\nCarefully sampled\nObservations, surveys, experiments, or computer simulations\n\n\nSee Big Statistics Questions"
-  },
-  {
-    "objectID": "classlib/classlib/quarto/slides/shared/statistics/intro/intro-stats-examples.html#approval-ratings",
-    "href": "classlib/classlib/quarto/slides/shared/statistics/intro/intro-stats-examples.html#approval-ratings",
-    "title": "Statistics",
+    "objectID": "slides/01-intro.html#approval-ratings",
+    "href": "slides/01-intro.html#approval-ratings",
+    "title": "MATH 476 — Statistics",
     "section": "Approval ratings",
-    "text": "Approval ratings\nThe Gallup Poll tracks the approval ratings of US presidents according to a careful polling methodology\n\nEach week they telephone \\(n=1500\\) adults\nTheir sampling error for the approval ratings is about \\(4\\%\\)\n\nLet \\(Y \\sim \\Bern(\\mu)\\), a Bernoulli (free throw shooting) distribution with probability of success \\(\\mu\\), \\[\n\\Prob(Y =y) = \\begin{cases} \\mu, & y=1, \\text{ (yes, approve)}\\\\\n1-\\mu, & y = 0, \\text{ (no, do not approve)}\n\\end{cases}\n\\]\n\n\nIf \\(Y_1, \\ldots, Y_n \\IIDsim \\Bern(\\mu)\\), then \\[\\begin{align*}\nT &:= Y_1 + \\cdots + Y_n \\sim \\Bin(n,\\mu), \\; \\Prob(T = t) = \\binom{n}{t} \\mu^t (1-\\mu)^{n-t}\\\\\n\\barY &:= \\frac 1n (Y_1 + \\cdots + Y_n) \\\\\n& \\appxsim  \\Norm\\bigl(\\mu,\\mu(1-\\mu)/n\\bigr) \\quad \\text{by the }\\class{alert}{\\text{Central Limit Theorem}}\n\\end{align*}\\]\n\n\n\n\n\n\n\n\n\nIf \\(Y_1, \\ldots, Y_n \\IIDsim \\Bern(\\mu)\\), then we can construct a confidence interval that captures the true approval rating with high probability: \\[\\begin{align*}\nT &:= Y_1 + \\cdots + Y_n \\sim \\Bin(n,\\mu), \\quad \\Prob(T = y) = \\binom{n}{t} \\mu^t (1-\\mu)^{n-t}\\\\\n\\barY &:= \\frac 1n (Y_1 + \\cdots + Y_n) \\appxsim  \\Norm\\bigl(\\mu,\\mu(1-\\mu)/n\\bigr) \\quad \\text{by the }\\class{alert}{\\text{Central Limit Theorem}}\n\\end{align*}\\]\n\n\n\n\\[\\begin{align*}\n95\\% & \\approx \\Prob\\Bigl[\\mu - 1.96\\sqrt{\\mu(1-\\mu)/n} \\le \\class{alert}{\\barY} \\le \\mu + 1.96\\sqrt{\\mu(1-\\mu)/n}\\Bigr] \\\\\n& = \\Prob\\Bigl[\\barY - 1.96\\sqrt{\\mu(1-\\mu)/n} \\le \\class{alert}{\\mu} \\le \\barY + 1.96\\sqrt{\\mu(1-\\mu)/n}\\Bigr] \\\\\n& \\approx \\Prob\\Bigl[\\barY - 1.96\\sqrt{\\barY(1-\\barY)/n} \\le \\class{alert}{\\mu} \\le \\barY + 1.96\\sqrt{\\barY(1-\\barY)/n}\\Bigr] \\\\\n& \\le \\Prob\\Bigl[\\barY - 1/\\sqrt{n} \\le \\class{alert}{\\mu} \\le \\barY + 1/\\sqrt{n} \\Bigr] \\quad \\text{since } \\sqrt{\\barY(1-\\barY)} \\le 1/2\n\\end{align*}\\] For \\(n = 1000\\) we get \\(1/\\sqrt{n} \\approx 3\\%\\).  ⬇ Approval Rating Jupyter 📓 \n\n\n  \n\n\n\n\nPopulation is US adults\nModel\n\nBernoulli distribution\nIgnores demographic factors that might explain approvals\n\nUncertainty of the estimate of the proportion, \\(\\mu\\)\n\nProvided by a confidence interval (CI)\nFacilitated by the Central Limit Theorem\nThis is the CI capturing \\(\\mu\\), not probability of \\(\\mu\\) in the CI"
+    "text": "Approval ratings\nThe Gallup Poll tracks the approval ratings of US presidents according to a careful polling methodology\n\nEach week they telephone \\(n=1500\\) adults\nTheir sampling error for the approval ratings is about \\(4\\%\\)\n\nLet \\(Y \\sim \\Bern(\\mu)\\), a Bernoulli (free throw shooting) distribution with probability of success \\(\\mu\\), \\[\n\\Prob(Y =y) = \\begin{cases} \\mu, & y=1, \\text{ (yes, approve)}\\\\\n1-\\mu, & y = 0, \\text{ (no, do not approve)}\n\\end{cases}\n\\]\n\n\nIf \\(Y_1, \\ldots, Y_n \\IIDsim \\Bern(\\mu)\\), then \\[\\begin{align*}\nT &:= Y_1 + \\cdots + Y_n \\sim \\Bin(n,\\mu), \\; \\Prob(T = t) = \\binom{n}{t} \\mu^t (1-\\mu)^{n-t}\\\\\n\\barY &:= \\frac 1n (Y_1 + \\cdots + Y_n) \\\\\n& \\appxsim  \\Norm\\bigl(\\mu,\\mu(1-\\mu)/n\\bigr) \\quad \\text{by the }\\class{alert}{\\text{Central Limit Theorem}}\n\\end{align*}\\]"
   },
   {
-    "objectID": "classlib/classlib/quarto/slides/shared/statistics/intro/intro-stats-examples.html#life-gdp",
-    "href": "classlib/classlib/quarto/slides/shared/statistics/intro/intro-stats-examples.html#life-gdp",
-    "title": "Statistics",
+    "objectID": "slides/01-intro.html#life-gdp",
+    "href": "slides/01-intro.html#life-gdp",
+    "title": "MATH 476 — Statistics",
     "section": "Life expectancy vs gross domestic product (GDP) per capita",
-    "text": "Life expectancy vs gross domestic product (GDP) per capita\nCountries differ dramatically in both life expectancy and economic output. A classic dataset (World Bank / Gapminder) records, for each country,\n\nLife \\(=\\) Life expectancy at birth (years)\nGDP \\(=\\) Gross domestic product per capita (USD, purchasing-power adjusted)\n\nEach point represents one country, not one individual. We are interested in the conditional behavior of life expectancy with given national income:\n\n\n\\[\n\\Ex(\\text{Life} | \\text{GDP} = x)\n\\]\n\n\n\n\n\n\n\n\n\nThe scatterplot of life expectancy versus GDP per capita reveals two important statistical features.\n\nNonlinearity\nIncreases in GDP have a much larger effect on life expectancy at low income levels than at high income levels\n\n\nHeteroscedasticity\nCountries with low GDP exhibit much greater variability in life expectancy\n\n\nTake logarithm to treat this \\[\n\\Ex(\\text{Life}  \\mid \\text{GDP} = x) \\approx \\alpha + \\beta \\log(x)\n\\]\n\n\\(\\beta\\) measures years of life gained per multiplicative increase in GDP\nThe log scale naturally reflects diminishing returns\n\n ⬇ Health vs. Wealth 📓 \n\n\n\n\n\n\n\n\n\n\nPopulation is all hypothetical countries\nModel\n\nLinear regression\nIncorporates transformation of the explanatory variable\n\nUncertainty\n\n\\(R^2\\) measures the proportion of variance in \\(Y\\) captured by the model\n\nInterpretation\n\nThis describes relationship, not cause and effect\nThe variation in the residuals point to other explanatory factors that have been left out of the model"
+    "text": "Life expectancy vs gross domestic product (GDP) per capita\nCountries differ dramatically in both life expectancy and economic output. A classic dataset (World Bank / Gapminder) records, for each country,\n\nLife \\(=\\) Life expectancy at birth (years)\nGDP \\(=\\) Gross domestic product per capita (USD, purchasing-power adjusted)\n\nEach point represents one country, not one individual. We are interested in the conditional behavior of life expectancy with given national income:\n\n\n\\[\n\\Ex(\\text{Life} | \\text{GDP} = x)\n\\]"
   },
   {
-    "objectID": "classlib/classlib/quarto/slides/shared/statistics/intro/intro-stats-examples.html#trapezoidal",
-    "href": "classlib/classlib/quarto/slides/shared/statistics/intro/intro-stats-examples.html#trapezoidal",
-    "title": "Statistics",
+    "objectID": "slides/01-intro.html#trapezoidal",
+    "href": "slides/01-intro.html#trapezoidal",
+    "title": "MATH 476 — Statistics",
     "section": "Numerical integration",
-    "text": "Numerical integration\nComputational mathematics seems distinct from statistics, but there is an overlap.\nSuppose that \\(f\\) is a random function defined in \\([0,1]\\), in particular, a Gaussian process, i.e., \\(f \\sim \\GP(0,K)\\). This means that for any distinct \\(x_1, \\ldots, x_n \\in [0,1]\\), the random vector of function values, \\(\\vf := \\bigl(f(x_1), \\ldots, f(x_n) \\bigr)^\\top\\), has a multivariate Gaussian distribution with\n\nMean \\(\\vmu = \\Ex(\\vf) = \\vzero\\)\nCovariance matrix \\(\\mSigma := \\Ex(\\vf \\vf^\\top) = \\bigl(\\Ex[f(x_i)f(x_j)]\\bigr)_{i,j=1}^n  = \\bigl(K(x_i,x_j)\\bigr)_{i,j=1}^n =: \\mK\\)\n\n\nIf this is the Bayesian prior belief about \\(f\\), then the Bayesian posterior mean of the function conditioned on the data \\(\\vf = \\vy\\) is \\[\n\\Ex\\bigl[f(x) \\mid \\vf  = \\vy\\bigr] = \\vy^\\top \\mK^{-1} \\vk(x) , \\quad\n\\text{where } \\vk(x) = \\bigl( K(x,x_i) \\bigr)_{i=1}^n\n\\]\nThe Bayesian posterior mean integral of \\(f\\) conditioned on the data is\n\\[\n\\Ex\\biggl[\\int_0^1 f(x) \\, \\dif x \\mid \\vf  = \\vy\\biggr] = \\vy^\\top \\mK^{-1} \\int_0^1 \\vk(x) \\, \\dif x\n\\]\nFor \\(K(t,x) = 2 - \\lvert t - x\\rvert\\) this is the trapezoidal rule.  ⬇ Bayesian Quadrature 📓 \n\n\n\nPopulation all (continuous) functions\nModel\n\nStochastic processes\nBayesian inference\nOften one would estimate the parameters in \\(K\\) from data\n\nUncertainty\n\nYou may construct Bayesian credible intervals, but they depend on your confidence in choosing a reasonable \\(K\\)\n\nInterpretation\n\nProvides a statistical interpretation of computational mathematics"
+    "text": "Numerical integration\nComputational mathematics seems distinct from statistics, but there is an overlap.\nSuppose that \\(f\\) is a random function defined in \\([0,1]\\), in particular, a Gaussian process, i.e., \\(f \\sim \\GP(0,K)\\). This means that for any distinct \\(x_1, \\ldots, x_n \\in [0,1]\\), the random vector of function values, \\(\\vf := \\bigl(f(x_1), \\ldots, f(x_n) \\bigr)^\\top\\), has a multivariate Gaussian distribution with\n\nMean \\(\\vmu = \\Ex(\\vf) = \\vzero\\)\nCovariance matrix \\(\\mSigma := \\Ex(\\vf \\vf^\\top) = \\bigl(\\Ex[f(x_i)f(x_j)]\\bigr)_{i,j=1}^n  = \\bigl(K(x_i,x_j)\\bigr)_{i,j=1}^n =: \\mK\\)\n\n\nIf this is the Bayesian prior belief about \\(f\\), then the Bayesian posterior mean of the function conditioned on the data \\(\\vf = \\vy\\) is \\[\n\\Ex\\bigl[f(x) \\mid \\vf  = \\vy\\bigr] = \\vy^\\top \\mK^{-1} \\vk(x) , \\quad\n\\text{where } \\vk(x) = \\bigl( K(x,x_i) \\bigr)_{i=1}^n\n\\]\nThe Bayesian posterior mean integral of \\(f\\) conditioned on the data is\n\\[\n\\Ex\\biggl[\\int_0^1 f(x) \\, \\dif x \\mid \\vf  = \\vy\\biggr] = \\vy^\\top \\mK^{-1} \\int_0^1 \\vk(x) \\, \\dif x\n\\]\nFor \\(K(t,x) = 2 - \\lvert t - x\\rvert\\) this is the trapezoidal rule.  ⬇ Bayesian Quadrature 📓"
+  },
+  {
+    "objectID": "slides/01-intro.html#prob-concepts",
+    "href": "slides/01-intro.html#prob-concepts",
+    "title": "MATH 476 — Statistics",
+    "section": "Key probability concepts",
+    "text": "Key probability concepts\n\nOutcome — single possible result of a random process, e.g., yes, \\(0.5\\), \\((1,-2)\\)\nSample space – set of all possible outcomes, e.g., \\(\\{\\text{yes}, \\text{no} \\}\\), \\(\\reals\\)\nEvent – set of outcomes (subset of the sample space), e.g., \\([0,\\infty)\\)\nEvent space – collection of all possible events\nProbability – function \\(\\Prob:\\text{event space}\\to[0,1]\\) satisfying\n\n\\(0 \\le \\Prob(\\text{event}) \\le 1\\)\n\\(\\mathbb{P}(\\text{sample space})=1\\)\nIf \\(A \\cap B=\\varnothing\\), then \\(\\Prob(A\\cup B)=\\Prob(A)+\\Prob(B)\\)"
+  },
+  {
+    "objectID": "slides/01-intro.html#prob-distrib",
+    "href": "slides/01-intro.html#prob-distrib",
+    "title": "MATH 476 — Statistics",
+    "section": "Important distributions",
+    "text": "Important distributions\n\nBinomial (free-throw shooting, discrete) \\(\\Bin(n,p)\\) \\[\n\\varrho(x) : = \\Prob(X=x) = \\binom{n}{x} p^x (1-p)^{n-x}, \\ x =0, \\ldots, n; \\quad \\Ex(X) = np, \\quad \\var(X) = np(1-p)\n\\]\nExponential (taxi waiting, continuous) \\(\\Exp(\\lambda)\\) \\[\nF(x): = 1 - \\exp(-\\lambda x),\\ \\varrho(x) : = \\lambda \\exp(-\\lambda x), \\ x \\ge 0; \\quad \\Ex(X) = 1/\\lambda, \\quad \\var(X) = 1/\\lambda^2\n\\]\nNormal (Gaussian) (limiting distribution, continuous) \\(\\Norm(\\mu, \\sigma^2)\\) \\[\n\\varrho(x): = \\frac{\\exp\\bigl(-(x-\\mu)^2/(2\\sigma^2)\\bigr)}{\\sqrt{2 \\pi} \\sigma}, \\ x \\in \\reals;\\quad \\Ex(X) = \\mu, \\quad \\var(X) = \\sigma^2\n\\]\nMultivariate Normal (Gaussian) (limiting distribution, continuous) \\(\\Norm(\\vmu, \\mSigma)\\) \\[\n\\varrho(\\vx): = \\frac{\\exp\\bigl(-(\\vx-\\vmu)^\\top \\mSigma^{-1} (\\vx-\\vmu) /2\\bigr)}{\\sqrt{(2 \\pi)^{d} \\det(\\mSigma)}};\\quad \\Ex(\\vX) = \\vmu, \\quad \\cov(\\vX) = \\mSigma\n\\]"
+  },
+  {
+    "objectID": "slides/01-intro.html#a-mixed-partially-discrete-partially-continuous-random-variable",
+    "href": "slides/01-intro.html#a-mixed-partially-discrete-partially-continuous-random-variable",
+    "title": "MATH 476 — Statistics",
+    "section": "A mixed (partially discrete, partially continuous) random variable",
+    "text": "A mixed (partially discrete, partially continuous) random variable\nDiscrete random variables have a PMF. Continuous random variables have a PDF. Some random variables are mixed.\nZero-inflated exponential distribution — \\(X\\) is the waiting time for a taxi\n\nA taxi waiting for you with probability \\(p\\)\nBut if there is none, then you have to wait time \\(1/\\lambda\\) on average \\[\\begin{align*}\nF(x) &= \\begin{cases}\n0, &-\\infty &lt; x &lt; 0 \\\\\n1- (1-p)\\exp(-\\lambda x),  & 0 \\le x &lt; \\infty\n\\end{cases}\n\\\\\n\\mu & = \\Ex(X) = \\int_{-\\infty}^{\\infty} x \\, \\dif F(x) \\qquad   \n   \\mathlink{https://en.wikipedia.org/wiki/Lebesgue-Stieltjes_integration}{(Lebesgue–Stieltjes integral)}\\\\\n& = 0 \\times p + \\int_0^{\\infty} x \\times (1-p)\\exp(-\\lambda x) \\, \\dif x = (1-p)/ \\lambda\n\\\\\n\\sigma^2 & = \\var(X) = \\Ex[(X-\\mu)^2] = \\frac{1-p^2}{\\lambda^2}\n\\end{align*}\\]"
+  },
+  {
+    "objectID": "slides/01-intro.html#lebesguestieltjes-integral-integral-jumps",
+    "href": "slides/01-intro.html#lebesguestieltjes-integral-integral-jumps",
+    "title": "MATH 476 — Statistics",
+    "section": "Lebesgue–Stieltjes Integral = Integral + Jumps",
+    "text": "Lebesgue–Stieltjes Integral = Integral + Jumps\nLet\n\n\\(F\\) be a nondecreasing, right-continuous function on \\(\\mathbb{R}\\)\nwith (possible) discontinuities at \\(-\\infty &lt;  x_1 &lt; \\ldots &lt; x_N &lt; \\infty\\),\n\\(F\\) be differentiable between its jump points with \\(\\varrho(x) = F'(x)\\), and\n\\(f\\) be a suitable function\n\nThe Lebesgue–Stieltjes integral of \\(f\\) with respect to \\(F\\) can be written as \\[\\begin{align*}\n  \\int f(x)\\, dF(x) & = \\int_{-\\infty}^{x_{1}} f(x) \\,\\varrho(x) \\, \\dif x + \\sum_{k=1}^{N-1} \\int_{x_k}^{x_{k+1}} f(x) \\, \\varrho(x) \\, \\dif x + \\int_{x_N}^{\\infty} f(x) \\, \\varrho(x) \\, \\dif x \\\\\n  & \\qquad \\qquad + \\sum_{k=1}^N f(x_k)[F(x_k) - F(x_k^{-})]\n  \\end{align*}\\]\nIntegrate \\(f\\) where \\(F\\) is smooth, and add a weighted sum of \\(f\\) at the jump points of \\(F\\)"
+  },
+  {
+    "objectID": "slides/01-intro.html#conditional-prob",
+    "href": "slides/01-intro.html#conditional-prob",
+    "title": "MATH 476 — Statistics",
+    "section": "Conditional probability",
+    "text": "Conditional probability\nThe conditional probability means restricting attention to outcomes where \\(B\\) occurs, then measure how often \\(A\\) occurs within that restricted universe of \\(A\\) given \\(B\\) (with \\(\\Prob(B)&gt;0\\)): \\[\n\\Prob(A \\mid B)\n=\n\\frac{\\Prob(A \\cap B)}{\\Prob(B)},\n\\] which means restricting attention to outcomes where \\(B\\) occurs, then measuring how often \\(A\\) occurs within that restricted universe.\n\nMultiplication rule: \\(\\Prob(A \\cap B)\n=\n\\Prob(A \\mid B),\\Prob(B)\\)\n\\(A\\) and \\(B\\) are independent if \\(\\Prob(A \\mid B) = \\Prob(A)\\) or equivalently \\(\\Prob(A \\cap B)=\\Prob(A)\\Prob(B)\\)\n\nBayes’ Rule\n\\[\n\\Prob(A \\mid B)\n=\n\\frac{\\Prob(B \\mid A) \\, \\Prob(A)}{\\Prob(B)},\n\\qquad \\Prob(B)&gt;0\n\\]\n\nIf you meet an introvert, is she more likely to be a librarian or a salesman?"
+  },
+  {
+    "objectID": "slides/01-intro.html#bayesian-statistics-to-approximate-and-integrate-functions",
+    "href": "slides/01-intro.html#bayesian-statistics-to-approximate-and-integrate-functions",
+    "title": "MATH 476 — Statistics",
+    "section": "Bayesian statistics to approximate and integrate functions",
+    "text": "Bayesian statistics to approximate and integrate functions\nWe assume that \\(f\\), the function to approximate or integrate, is an instance of a Gaussian process, \\(\\GP(0,K)\\). This means that\n\\[\\begin{gather*}\n\\vf := \\bigl(f(x_1), \\ldots, f(x_n) \\bigr)^\\top \\sim \\Norm(\\vzero, \\mK), \\quad \\text{where }\\mK : = \\bigl(K(x_i,x_j)\\bigr)_{i,j=1}^n \\\\\n\\tvf := \\bigl(f(x_1), \\ldots, f(x_n), f(x) \\bigr)^\\top \\sim \\Norm(\\vzero, \\tmK) \\\\\n\\text{where }\n\\tmK : = \\left(\\begin{array}{c|c}\n\\mK & \\vk(x) \\\\\n\\hline\n\\vk^\\top(x) & K(x,x)\n\\end{array}\n\\right)\n, \\quad \\vk(x) = \\bigl( K(x,x_i) \\bigr)_{i=1}^n\n\\end{gather*}\\] and so the conditional density of \\(f(x)\\) given \\(\\vf = \\vy\\), where \\(\\vy\\) is the observed data, is\n\\[\\begin{align*}\n\\varrho_{f(x) | \\vf}(z,\\vy) = \\frac{\\varrho_{\\tvf}(\\tvy)}{\\varrho_{\\vf}(\\vy)} = \\frac{\\frac{\\exp(-\\tvy^\\top \\tmK^{-1} \\tvy/2)}{\\sqrt{(2 \\pi)^{n+1} \\det(\\tmK)}}}{\\frac{\\exp(-\\vy^\\top \\mK^{-1} \\vy/2)}{\\sqrt{(2 \\pi)^{n} \\det(\\mK)}}}\n= \\frac{\\exp([-\\tvy^\\top \\tmK^{-1} \\tvy + \\vy^\\top \\mK^{-1} \\vy]/2)}{\\sqrt{(2 \\pi) \\det(\\tmK)/\\det(\\mK)}}\n\\end{align*}\\] where \\(\\tvy = (\\vy^\\top, z)^\\top\\)"
+  },
+  {
+    "objectID": "slides/01-intro.html#bayesian-inference",
+    "href": "slides/01-intro.html#bayesian-inference",
+    "title": "MATH 476 — Statistics",
+    "section": "Bayesian inference",
+    "text": "Bayesian inference\nBayes’ rule for densities\n\\[\n\\varrho_{X\\mid Y}(x\\mid y)\n=\n\\frac{\\varrho_{Y\\mid X}(y\\mid x)\\,\\varrho_X(x)}{\\varrho_Y(y)}\n\\]\nLet \\[\\begin{align*}\nX & = \\text{random unknown parameter} \\\\\nY & = \\text{random observed data} \\\\\n\\varrho_X & = \\text{prior density or belief about the parameter} \\\\\n\\varrho_{Y\\mid X} & = \\text{likelihood} \\\\\n\\varrho_{X\\mid Y} & = \\text{posterior density}\n\\end{align*}\\] Then \\[\\begin{align*}\n\\varrho_{X\\mid Y}( \\text{parameter} \\mid \\text{data})\n& =\n\\frac{\\varrho_{Y\\mid X}(\\text{data}\\mid \\text{parameter} ) \\,\\varrho_X(\\text{parameter})}{\\varrho_Y(\\text{data})}\n\\\\\n\\text{posterior density } &\n\\propto\n\\text{likelihood} \\times \\text{prior density}\n\\end{align*}\\]"
+  },
+  {
+    "objectID": "slides/01-intro.html#conditional-exp",
+    "href": "slides/01-intro.html#conditional-exp",
+    "title": "MATH 476 — Statistics",
+    "section": "Conditional expectation",
+    "text": "Conditional expectation\nConditional expectation of \\(X\\) given event \\(A\\) (with \\(\\Prob(A)&gt;0\\)) is \\[\n\\Ex[X \\mid A]\n=\n\\frac{\\Ex[X \\, \\indic(X \\in A)]}{\\Prob(A)} \\qquad \\text{and so} \\qquad \\Ex[X \\, \\indic(X \\in A)]\n=\n\\Prob(A)\\,\\Ex[X \\mid A]\n\\] The indicator function, \\(\\indic(\\cdot)\\), equals \\(1\\) if the statement inside the parentheses is true, and \\(0\\) otherwise.\n\nConditional expectation of \\(X\\) given \\(Y=y\\) is \\[\n\\Ex[X \\mid Y=y]\n=\n\\int x \\, \\varrho_{X\\mid Y}(x \\mid y)\\,\\dif x\n\\] If \\(g(y)=\\Ex[X \\mid Y=y]\\), then \\(\\Ex[X \\mid Y] = g(Y)\\) is a random variable depending only on \\(Y\\)\n\n\nIf \\(X\\) is independent of \\(Y\\), then \\(\\Ex[X \\mid Y] = \\Ex[X]\\)"
+  },
+  {
+    "objectID": "slides/01-intro.html#type-conv",
+    "href": "slides/01-intro.html#type-conv",
+    "title": "MATH 476 — Statistics",
+    "section": "Types of convergence",
+    "text": "Types of convergence\nLet \\(X_1, X_2, \\ldots\\) be random variables and \\(X\\) another random variable\nAlmost Sure Convergence\n\\[\nX_n \\convas X \\iff \\Prob \\left( \\lim_{n \\to \\infty} X_n = X \\right) = 1\n\\] For almost every outcome the sequence \\(X_n\\) converges to \\(X\\)\nConvergence in Probability\n\\[\nX_n \\convp X \\iff \\forall \\varepsilon &gt; 0, \\;\n\\Prob\\big( |X_n - X| &gt; \\varepsilon \\big) \\;\\longrightarrow\\; 0.\n\\] The probability that \\(X_n\\) differs significantly from \\(X\\) goes to zero\nConvergence in Distribution\n\\[\nX_n \\convd X \\iff\n\\lim_{n \\to \\infty} F_{X_n}(x) = F_X(x)\n\\quad \\text{for all continuity points of } F_X\n\\] The distributions of \\(X_n\\) approach the distribution of \\(X\\)"
+  },
+  {
+    "objectID": "slides/01-intro.html#clt",
+    "href": "slides/01-intro.html#clt",
+    "title": "MATH 476 — Statistics",
+    "section": "Central Limit Theorem",
+    "text": "Central Limit Theorem\nIf \\(X_1, X_2, \\ldots \\IIDsim\\) some distribution with finite moment generating function, \\(M(t) := \\Ex\\bigl(\\exp(tX)\\bigr)\\), that exists for \\(t\\) near \\(0\\), and \\(\\mu = \\Ex(X)\\) and \\(\\sigma^2 = \\var(X)\\), and \\[\n\\barX_n := \\frac 1n \\left(X_1 + \\cdots + X_n \\right),\n\\] then \\[\n\\frac{\\barX_n - \\mu}{\\sigma /\\sqrt{n}} \\convd \\Norm(0,1)\n\\] Note that IID means independent and identically distributed"
+  },
+  {
+    "objectID": "slides/01-intro.html#proof-of-the-central-limit-theorem",
+    "href": "slides/01-intro.html#proof-of-the-central-limit-theorem",
+    "title": "MATH 476 — Statistics",
+    "section": "Proof of the Central Limit Theorem",
+    "text": "Proof of the Central Limit Theorem\n\nDefine a standardized (mean \\(0\\), variance \\(1\\)) random variable, \\(Y_i := (X_i - \\mu)/\\sigma\\) and note that \\(Y_1, Y_2, \\dots\\) are IID with\n\n\\[\\begin{align*}\nZ_n: &= \\frac{\\barX_n - \\mu}{\\sigma /\\sqrt{n}} = \\frac{Y_1 + \\cdots + Y_n}{\\sqrt{n}} \\\\\nM_{Z_n}(t) &= \\Ex[\\exp(tZ_n)] = \\Ex[\\exp(tY_1/\\sqrt{n}) \\cdots \\exp(tY_n/\\sqrt{n})]\\\\\n& =  \\{\\Ex[\\exp(tY_1/\\sqrt{n})]\\}^n \\qquad \\text{by independence} \\\\\n& = [M_Y(t/\\sqrt{n})]^n\n\\end{align*}\\]"
+  },
+  {
+    "objectID": "slides/01-intro.html#chebyshev-markov-inequality",
+    "href": "slides/01-intro.html#chebyshev-markov-inequality",
+    "title": "MATH 476 — Statistics",
+    "section": "Chebyshev (Markov) Inequality",
+    "text": "Chebyshev (Markov) Inequality\n\\[\n\\Prob\\bigl( f(X) \\ge r \\bigr) \\le \\frac{\\Ex[f(X)]}{r}\n\\]\nProof\n\\[\\begin{align*}\n\\Prob(f(X)\\ge r)\n&= \\Ex\\bigl[\\indic\\bigl(f(X)\\ge r\\bigr)\\bigr] \\\\\n&= \\Ex\\Bigl[\\Ex\\bigl[\\indic\\bigl(f(X)\\ge r\\bigr)\\mid X\\bigr]\\Bigr]\n\\qquad \\text{(total expectation)} \\\\\n&\\le \\Ex\\Bigl[\\Ex\\bigl[f(X)/r \\mid X\\bigr]\\Bigr]\n\\qquad \\text{since } \\indic\\bigl(f(X)\\ge r\\bigr)\\le f(X)/r \\text{ a.s.} \\\\\n&= \\Ex\\bigl[f(X)/r\\bigr] \\\\\n&= \\Ex[f(X)]/r\n\\end{align*}\\]\nImportant special cases\n\\[\\begin{gather*}\n\\Prob\\bigl( \\lvert X - \\mu \\rvert^2 \\ge r^2 \\bigr) \\le \\frac{\\sigma^2}{r^2} \\quad \\text{where } \\mu = \\Ex(X), \\ \\sigma^2 = \\var(X) \\\\\n\\Prob\\bigl( \\lvert X - \\med(X) \\rvert \\ge r \\bigr) \\le \\frac{\\Ex \\lvert X - \\med(X)\\rvert}{r}\n\\end{gather*}\\]"
+  },
+  {
+    "objectID": "slides/01-intro.html#normal-tails-vs-chebyshev-bounds",
+    "href": "slides/01-intro.html#normal-tails-vs-chebyshev-bounds",
+    "title": "MATH 476 — Statistics",
+    "section": "Normal tails vs Chebyshev bounds",
+    "text": "Normal tails vs Chebyshev bounds\nLet \\(X\\sim \\Norm(0,1)\\) and cmpare \\(\\Prob(|X|&gt;r)\\) with two bounds\n\n\n\n\n\n\n\n\n\n\\(r\\)\n\\(\\Prob(|X|&gt;r)\\) (exact)\n\\(\\Ex|X|/r\\) (Markov)\n\\(\\Ex|X|^2 /r^2\\) (Chebyshev)\n\n\n\n\n1\n0.317311\n0.797885\n1.000000\n\n\n2\n0.0455003\n0.398942\n0.250000\n\n\n3\n0.0026998\n0.265962\n0.111111\n\n\n10\n1.52397e-23\n0.079788\n0.010000\n\n\n100\n0\n0.007979\n0.000100\n\n\n\n\nThe Markov and Chebyshev bounds are much looser, but more general\nCLT bounds for means will resemble the exact"
+  },
+  {
+    "objectID": "slides/01-intro.html#weak-law-of-large-numbers-via-chebyshev",
+    "href": "slides/01-intro.html#weak-law-of-large-numbers-via-chebyshev",
+    "title": "MATH 476 — Statistics",
+    "section": "Weak Law of Large Numbers (via Chebyshev)",
+    "text": "Weak Law of Large Numbers (via Chebyshev)\nTheorem (WLLN)\nLet \\(X_1,X_2,\\dots\\) be IID with \\(\\Ex[X_1]=\\mu\\) and \\(\\var(X_1)=\\sigma^2&lt;\\infty\\). Define the sample mean \\(\\bar X_n := \\frac1n\\sum_{i=1}^n X_i\\). Then \\(\\barX_n \\convp \\mu\\).\nProof\nBy Chebyshev’s inequality, \\[\n\\Prob\\bigl(|\\barX_n-\\mu|\\ge \\varepsilon\\bigr)\n\\le \\frac{\\Var(\\barX_n)}{\\varepsilon^2}\n\\] Using independence, \\[\n\\var(\\barX_n)\n=\n\\var\\!\\left(\\frac1n\\sum_{i=1}^n X_i\\right)\n=\n\\frac{1}{n^2}\\sum_{i=1}^n \\Var(X_i)\n=\n\\frac{1}{n^2}\\cdot n\\sigma^2\n=\n\\frac{\\sigma^2}{n}\n\\] Therefore, \\[\n\\Prob\\bigl(|\\barX_n-\\mu|\\ge \\varepsilon\\bigr)\n\\le\n\\frac{\\sigma^2}{n\\varepsilon^2}\n\\to 0 \\qquad \\square\n\\]"
+  },
+  {
+    "objectID": "classlib/classlib/quarto/slides/shared/statistics/estimation/estimators.html",
+    "href": "classlib/classlib/quarto/slides/shared/statistics/estimation/estimators.html",
+    "title": "Estimators",
+    "section": "",
+    "text": "Given IID data, \\(X_1, \\ldots, X_n\\), we often compute summary statistics\n\nSample Mean \\(\\barX := \\frac{1}{n} \\sum_{i=1}^n X_i\\) to approximate the population mean \\(\\mu := \\E[X_1]\\)\nSample Variance \\(S^2 := \\frac{1}{n-1} \\sum_{i=1}^n (X_i - \\barX)^2\\) to approximate the population variance \\(\\sigma^2 := \\var(X_1)\\)\n\nAnd given IID data, \\((X_1, Y_1), \\ldots, (X_n,Y_n)\\), we often compute summary statistics\n\nSample Covariance \\(S_{XY} := \\frac{1}{n-1} \\sum_{i=1}^n (X_i - \\barX)(Y_i - \\barY)\\) to approximate the population covariance \\(\\cov(X_1,Y_1)\\)\nSample Correlation \\(R_{XY} := \\frac{S_{XY}}{S_X S_Y}\\) to approximate the population correlation \\(\\corr(X_1,Y_1)\\)"
+  },
+  {
+    "objectID": "classlib/classlib/quarto/slides/shared/statistics/estimation/estimators.html#summary-statistics",
+    "href": "classlib/classlib/quarto/slides/shared/statistics/estimation/estimators.html#summary-statistics",
+    "title": "Estimators",
+    "section": "",
+    "text": "Given IID data, \\(X_1, \\ldots, X_n\\), we often compute summary statistics\n\nSample Mean \\(\\barX := \\frac{1}{n} \\sum_{i=1}^n X_i\\) to approximate the population mean \\(\\mu := \\E[X_1]\\)\nSample Variance \\(S^2 := \\frac{1}{n-1} \\sum_{i=1}^n (X_i - \\barX)^2\\) to approximate the population variance \\(\\sigma^2 := \\var(X_1)\\)\n\nAnd given IID data, \\((X_1, Y_1), \\ldots, (X_n,Y_n)\\), we often compute summary statistics\n\nSample Covariance \\(S_{XY} := \\frac{1}{n-1} \\sum_{i=1}^n (X_i - \\barX)(Y_i - \\barY)\\) to approximate the population covariance \\(\\cov(X_1,Y_1)\\)\nSample Correlation \\(R_{XY} := \\frac{S_{XY}}{S_X S_Y}\\) to approximate the population correlation \\(\\corr(X_1,Y_1)\\)"
   },
   {
     "objectID": "classlib/classlib/quarto/slides/shared/probability/probability-review-distrib-part-1.html",
@@ -116,7 +221,7 @@
     "href": "pages/schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Classes are held in RE 102\n\n\n\nDate\nTopic\nSlides\n\n\n\n\n\nTue Jan 13\nIntroductory Examples, Course Overview\nIntroduction and Probability Review\n\n\n\nThu Jan 15\nIntroductory Examples, Review of Probability\n\n\n\n\nFri Jan 16\nDiagnostic Survey Due\n\n\n\n\nTue Jan 20\nReview of Probability\n\n\n\n\nThu Jan 22\n\n\n\n\n\nTue Jan 27\n\n\n\n\n\nThu Jan 29\n\n\n\n\n\nFri Jan 30\nAssignment 2 Due\n\n\n\n\nTue Feb 3\n\n\n\n\n\nThu Feb 5\n\n\n\n\n\nTue Feb 10\n\n\n\n\n\nThu Feb 12\n\n\n\n\n\nFri Feb 13\nAssignment 3 Due\n\n\n\n\nTue Feb 17\n\n\n\n\n\nThu Feb 19\nTest 1\n\n\n\n\nTue Feb 24\n\n\n\n\n\nThu Feb 26\n\n\n\n\n\nTue Mar 3\n\n\n\n\n\nThu Mar 5\n\n\n\n\n\nTue Mar 10\n\n\n\n\n\nThu Mar 12\n\n\n\n\n\nTue Mar 17\nNo Class, Spring Break\n\n\n\n\nThu Mar 19\nNo Class, Spring Break\n\n\n\n\nTue Mar 24\nNo Class, Hickernell attending SIAM UQ 2026\n\n\n\n\nThu Mar 26\n\n\n\n\n\nTue Mar 31\n\n\n\n\n\nThu Apr 2\nTest 2\n\n\n\n\nTue Apr 7\n\n\n\n\n\nThu Apr 9\n\n\n\n\n\nTue Apr 14\n\n\n\n\n\nThu Apr 16\n\n\n\n\n\nTue Apr 21\n\n\n\n\n\nThu Apr 23\n\n\n\n\n\nTue Apr 28\n\n\n\n\n\nThu Apr 30\n\n\n\n\n\nTue May ?\nFinal Exam"
+    "text": "Classes are held in RE 102\n\n\n\nDate\nTopic\nSlides\n\n\n\n\n\nTue Jan 13\nIntroductory Examples, Course Overview\nIntroduction and Probability Review\n\n\n\nThu Jan 15\nIntroductory Examples, Review of Probability\n\n\n\n\nFri Jan 16\nDiagnostic Survey Due\n\n\n\n\nTue Jan 20\nReview of ProbabilityConditional Probability\n\n\n\n\nThu Jan 22\nConditional ProbabilityConvergence\n\n\n\n\nTue Jan 27\nConvergenceCentral Limit TheoremChebyshev’s InequalitySummary Statistics\nEstimation and Confidence Intervals\n\n\n\nThu Jan 29\n\n\n\n\n\nFri Jan 30\nAssignment 2 Due\n\n\n\n\nTue Feb 3\n\n\n\n\n\nThu Feb 5\n\n\n\n\n\nTue Feb 10\n\n\n\n\n\nThu Feb 12\n\n\n\n\n\nFri Feb 13\nAssignment 3 Due\n\n\n\n\nTue Feb 17\n\n\n\n\n\nThu Feb 19\nTest 1\n\n\n\n\nTue Feb 24\n\n\n\n\n\nThu Feb 26\n\n\n\n\n\nTue Mar 3\n\n\n\n\n\nThu Mar 5\n\n\n\n\n\nTue Mar 10\n\n\n\n\n\nThu Mar 12\n\n\n\n\n\nTue Mar 17\nNo Class, Spring Break\n\n\n\n\nThu Mar 19\nNo Class, Spring Break\n\n\n\n\nTue Mar 24\nNo Class, Hickernell attending SIAM UQ 2026\n\n\n\n\nThu Mar 26\n\n\n\n\n\nTue Mar 31\n\n\n\n\n\nThu Apr 2\nTest 2\n\n\n\n\nTue Apr 7\n\n\n\n\n\nThu Apr 9\n\n\n\n\n\nTue Apr 14\n\n\n\n\n\nThu Apr 16\n\n\n\n\n\nTue Apr 21\n\n\n\n\n\nThu Apr 23\n\n\n\n\n\nTue Apr 28\n\n\n\n\n\nThu Apr 30\n\n\n\n\n\nTue May ?\nFinal Exam"
   },
   {
     "objectID": "pages/homework.html",
@@ -343,122 +448,38 @@
     "text": "Lebesgue–Stieltjes Integral = Integral + Jumps\nLet\n\n\\(F\\) be a nondecreasing, right-continuous function on \\(\\mathbb{R}\\)\nwith (possible) discontinuities at \\(-\\infty &lt;  x_1 &lt; \\ldots &lt; x_N &lt; \\infty\\),\n\\(F\\) be differentiable between its jump points with \\(\\varrho(x) = F'(x)\\), and\n\\(f\\) be a suitable function\n\nThe Lebesgue–Stieltjes integral of \\(f\\) with respect to \\(F\\) can be written as \\[\\begin{align*}\n  \\int f(x)\\, dF(x) & = \\int_{-\\infty}^{x_{1}} f(x) \\,\\varrho(x) \\, \\dif x + \\sum_{k=1}^{N-1} \\int_{x_k}^{x_{k+1}} f(x) \\, \\varrho(x) \\, \\dif x + \\int_{x_N}^{\\infty} f(x) \\, \\varrho(x) \\, \\dif x \\\\\n  & \\qquad \\qquad + \\sum_{k=1}^N f(x_k)[F(x_k) - F(x_k^{-})]\n  \\end{align*}\\]\nIntegrate \\(f\\) where \\(F\\) is smooth, and add a weighted sum of \\(f\\) at the jump points of \\(F\\)"
   },
   {
-    "objectID": "slides/01-intro.html#approval-ratings",
-    "href": "slides/01-intro.html#approval-ratings",
-    "title": "MATH 476 — Statistics",
+    "objectID": "classlib/classlib/quarto/slides/shared/statistics/intro/intro-stats-examples.html",
+    "href": "classlib/classlib/quarto/slides/shared/statistics/intro/intro-stats-examples.html",
+    "title": "Statistics",
+    "section": "",
+    "text": "Principled\n\n\nClear assumptions\nProbability as a basis\nEfficient and accurate computation\n\n\nInference about a population\n\n\nWant to know parameters that describe a large number of individuals or the relationships among them\nShould provide a level of uncertainty\n\n\nFrom Data\n\n\nCarefully sampled\nObservations, surveys, experiments, or computer simulations\n\n\nSee Big Statistics Questions"
+  },
+  {
+    "objectID": "classlib/classlib/quarto/slides/shared/statistics/intro/intro-stats-examples.html#approval-ratings",
+    "href": "classlib/classlib/quarto/slides/shared/statistics/intro/intro-stats-examples.html#approval-ratings",
+    "title": "Statistics",
     "section": "Approval ratings",
-    "text": "Approval ratings\nThe Gallup Poll tracks the approval ratings of US presidents according to a careful polling methodology\n\nEach week they telephone \\(n=1500\\) adults\nTheir sampling error for the approval ratings is about \\(4\\%\\)\n\nLet \\(Y \\sim \\Bern(\\mu)\\), a Bernoulli (free throw shooting) distribution with probability of success \\(\\mu\\), \\[\n\\Prob(Y =y) = \\begin{cases} \\mu, & y=1, \\text{ (yes, approve)}\\\\\n1-\\mu, & y = 0, \\text{ (no, do not approve)}\n\\end{cases}\n\\]\n\n\nIf \\(Y_1, \\ldots, Y_n \\IIDsim \\Bern(\\mu)\\), then \\[\\begin{align*}\nT &:= Y_1 + \\cdots + Y_n \\sim \\Bin(n,\\mu), \\; \\Prob(T = t) = \\binom{n}{t} \\mu^t (1-\\mu)^{n-t}\\\\\n\\barY &:= \\frac 1n (Y_1 + \\cdots + Y_n) \\\\\n& \\appxsim  \\Norm\\bigl(\\mu,\\mu(1-\\mu)/n\\bigr) \\quad \\text{by the }\\class{alert}{\\text{Central Limit Theorem}}\n\\end{align*}\\]"
+    "text": "Approval ratings\nThe Gallup Poll tracks the approval ratings of US presidents according to a careful polling methodology\n\nEach week they telephone \\(n=1500\\) adults\nTheir sampling error for the approval ratings is about \\(4\\%\\)\n\nLet \\(Y \\sim \\Bern(\\mu)\\), a Bernoulli (free throw shooting) distribution with probability of success \\(\\mu\\), \\[\n\\Prob(Y =y) = \\begin{cases} \\mu, & y=1, \\text{ (yes, approve)}\\\\\n1-\\mu, & y = 0, \\text{ (no, do not approve)}\n\\end{cases}\n\\]\n\n\nIf \\(Y_1, \\ldots, Y_n \\IIDsim \\Bern(\\mu)\\), then \\[\\begin{align*}\nT &:= Y_1 + \\cdots + Y_n \\sim \\Bin(n,\\mu), \\; \\Prob(T = t) = \\binom{n}{t} \\mu^t (1-\\mu)^{n-t}\\\\\n\\barY &:= \\frac 1n (Y_1 + \\cdots + Y_n) \\\\\n& \\appxsim  \\Norm\\bigl(\\mu,\\mu(1-\\mu)/n\\bigr) \\quad \\text{by the }\\class{alert}{\\text{Central Limit Theorem}}\n\\end{align*}\\]\n\n\n\n\n\n\n\n\n\nIf \\(Y_1, \\ldots, Y_n \\IIDsim \\Bern(\\mu)\\), then we can construct a confidence interval that captures the true approval rating with high probability: \\[\\begin{align*}\nT &:= Y_1 + \\cdots + Y_n \\sim \\Bin(n,\\mu), \\quad \\Prob(T = y) = \\binom{n}{t} \\mu^t (1-\\mu)^{n-t}\\\\\n\\barY &:= \\frac 1n (Y_1 + \\cdots + Y_n) \\appxsim  \\Norm\\bigl(\\mu,\\mu(1-\\mu)/n\\bigr) \\quad \\text{by the }\\class{alert}{\\text{Central Limit Theorem}}\n\\end{align*}\\]\n\n\n\n\\[\\begin{align*}\n95\\% & \\approx \\Prob\\Bigl[\\mu - 1.96\\sqrt{\\mu(1-\\mu)/n} \\le \\class{alert}{\\barY} \\le \\mu + 1.96\\sqrt{\\mu(1-\\mu)/n}\\Bigr] \\\\\n& = \\Prob\\Bigl[\\barY - 1.96\\sqrt{\\mu(1-\\mu)/n} \\le \\class{alert}{\\mu} \\le \\barY + 1.96\\sqrt{\\mu(1-\\mu)/n}\\Bigr] \\\\\n& \\approx \\Prob\\Bigl[\\barY - 1.96\\sqrt{\\barY(1-\\barY)/n} \\le \\class{alert}{\\mu} \\le \\barY + 1.96\\sqrt{\\barY(1-\\barY)/n}\\Bigr] \\\\\n& \\le \\Prob\\Bigl[\\barY - 1/\\sqrt{n} \\le \\class{alert}{\\mu} \\le \\barY + 1/\\sqrt{n} \\Bigr] \\quad \\text{since } \\sqrt{\\barY(1-\\barY)} \\le 1/2\n\\end{align*}\\] For \\(n = 1000\\) we get \\(1/\\sqrt{n} \\approx 3\\%\\).  ⬇ Approval Rating Jupyter 📓 \n\n\n  \n\n\n\n\nPopulation is US adults\nModel\n\nBernoulli distribution\nIgnores demographic factors that might explain approvals\n\nUncertainty of the estimate of the proportion, \\(\\mu\\)\n\nProvided by a confidence interval (CI)\nFacilitated by the Central Limit Theorem\nThis is the CI capturing \\(\\mu\\), not probability of \\(\\mu\\) in the CI"
   },
   {
-    "objectID": "slides/01-intro.html#life-gdp",
-    "href": "slides/01-intro.html#life-gdp",
-    "title": "MATH 476 — Statistics",
+    "objectID": "classlib/classlib/quarto/slides/shared/statistics/intro/intro-stats-examples.html#life-gdp",
+    "href": "classlib/classlib/quarto/slides/shared/statistics/intro/intro-stats-examples.html#life-gdp",
+    "title": "Statistics",
     "section": "Life expectancy vs gross domestic product (GDP) per capita",
-    "text": "Life expectancy vs gross domestic product (GDP) per capita\nCountries differ dramatically in both life expectancy and economic output. A classic dataset (World Bank / Gapminder) records, for each country,\n\nLife \\(=\\) Life expectancy at birth (years)\nGDP \\(=\\) Gross domestic product per capita (USD, purchasing-power adjusted)\n\nEach point represents one country, not one individual. We are interested in the conditional behavior of life expectancy with given national income:\n\n\n\\[\n\\Ex(\\text{Life} | \\text{GDP} = x)\n\\]"
+    "text": "Life expectancy vs gross domestic product (GDP) per capita\nCountries differ dramatically in both life expectancy and economic output. A classic dataset (World Bank / Gapminder) records, for each country,\n\nLife \\(=\\) Life expectancy at birth (years)\nGDP \\(=\\) Gross domestic product per capita (USD, purchasing-power adjusted)\n\nEach point represents one country, not one individual. We are interested in the conditional behavior of life expectancy with given national income:\n\n\n\\[\n\\Ex(\\text{Life} | \\text{GDP} = x)\n\\]\n\n\n\n\n\n\n\n\n\nThe scatterplot of life expectancy versus GDP per capita reveals two important statistical features.\n\nNonlinearity\nIncreases in GDP have a much larger effect on life expectancy at low income levels than at high income levels\n\n\nHeteroscedasticity\nCountries with low GDP exhibit much greater variability in life expectancy\n\n\nTake logarithm to treat this \\[\n\\Ex(\\text{Life}  \\mid \\text{GDP} = x) \\approx \\alpha + \\beta \\log(x)\n\\]\n\n\\(\\beta\\) measures years of life gained per multiplicative increase in GDP\nThe log scale naturally reflects diminishing returns\n\n ⬇ Health vs. Wealth 📓 \n\n\n\n\n\n\n\n\n\n\nPopulation is all hypothetical countries\nModel\n\nLinear regression\nIncorporates transformation of the explanatory variable\n\nUncertainty\n\n\\(R^2\\) measures the proportion of variance in \\(Y\\) captured by the model\n\nInterpretation\n\nThis describes relationship, not cause and effect\nThe variation in the residuals point to other explanatory factors that have been left out of the model"
   },
   {
-    "objectID": "slides/01-intro.html#trapezoidal",
-    "href": "slides/01-intro.html#trapezoidal",
-    "title": "MATH 476 — Statistics",
+    "objectID": "classlib/classlib/quarto/slides/shared/statistics/intro/intro-stats-examples.html#trapezoidal",
+    "href": "classlib/classlib/quarto/slides/shared/statistics/intro/intro-stats-examples.html#trapezoidal",
+    "title": "Statistics",
     "section": "Numerical integration",
-    "text": "Numerical integration\nComputational mathematics seems distinct from statistics, but there is an overlap.\nSuppose that \\(f\\) is a random function defined in \\([0,1]\\), in particular, a Gaussian process, i.e., \\(f \\sim \\GP(0,K)\\). This means that for any distinct \\(x_1, \\ldots, x_n \\in [0,1]\\), the random vector of function values, \\(\\vf := \\bigl(f(x_1), \\ldots, f(x_n) \\bigr)^\\top\\), has a multivariate Gaussian distribution with\n\nMean \\(\\vmu = \\Ex(\\vf) = \\vzero\\)\nCovariance matrix \\(\\mSigma := \\Ex(\\vf \\vf^\\top) = \\bigl(\\Ex[f(x_i)f(x_j)]\\bigr)_{i,j=1}^n  = \\bigl(K(x_i,x_j)\\bigr)_{i,j=1}^n =: \\mK\\)\n\n\nIf this is the Bayesian prior belief about \\(f\\), then the Bayesian posterior mean of the function conditioned on the data \\(\\vf = \\vy\\) is \\[\n\\Ex\\bigl[f(x) \\mid \\vf  = \\vy\\bigr] = \\vy^\\top \\mK^{-1} \\vk(x) , \\quad\n\\text{where } \\vk(x) = \\bigl( K(x,x_i) \\bigr)_{i=1}^n\n\\]\nThe Bayesian posterior mean integral of \\(f\\) conditioned on the data is\n\\[\n\\Ex\\biggl[\\int_0^1 f(x) \\, \\dif x \\mid \\vf  = \\vy\\biggr] = \\vy^\\top \\mK^{-1} \\int_0^1 \\vk(x) \\, \\dif x\n\\]\nFor \\(K(t,x) = 2 - \\lvert t - x\\rvert\\) this is the trapezoidal rule.  ⬇ Bayesian Quadrature 📓"
+    "text": "Numerical integration\nComputational mathematics seems distinct from statistics, but there is an overlap.\nSuppose that \\(f\\) is a random function defined in \\([0,1]\\), in particular, a Gaussian process, i.e., \\(f \\sim \\GP(0,K)\\). This means that for any distinct \\(x_1, \\ldots, x_n \\in [0,1]\\), the random vector of function values, \\(\\vf := \\bigl(f(x_1), \\ldots, f(x_n) \\bigr)^\\top\\), has a multivariate Gaussian distribution with\n\nMean \\(\\vmu = \\Ex(\\vf) = \\vzero\\)\nCovariance matrix \\(\\mSigma := \\Ex(\\vf \\vf^\\top) = \\bigl(\\Ex[f(x_i)f(x_j)]\\bigr)_{i,j=1}^n  = \\bigl(K(x_i,x_j)\\bigr)_{i,j=1}^n =: \\mK\\)\n\n\nIf this is the Bayesian prior belief about \\(f\\), then the Bayesian posterior mean of the function conditioned on the data \\(\\vf = \\vy\\) is \\[\n\\Ex\\bigl[f(x) \\mid \\vf  = \\vy\\bigr] = \\vy^\\top \\mK^{-1} \\vk(x) , \\quad\n\\text{where } \\vk(x) = \\bigl( K(x,x_i) \\bigr)_{i=1}^n\n\\]\nThe Bayesian posterior mean integral of \\(f\\) conditioned on the data is\n\\[\n\\Ex\\biggl[\\int_0^1 f(x) \\, \\dif x \\mid \\vf  = \\vy\\biggr] = \\vy^\\top \\mK^{-1} \\int_0^1 \\vk(x) \\, \\dif x\n\\]\nFor \\(K(t,x) = 2 - \\lvert t - x\\rvert\\) this is the trapezoidal rule.  ⬇ Bayesian Quadrature 📓 \n\n\n\nPopulation all (continuous) functions\nModel\n\nStochastic processes\nBayesian inference\nOften one would estimate the parameters in \\(K\\) from data\n\nUncertainty\n\nYou may construct Bayesian credible intervals, but they depend on your confidence in choosing a reasonable \\(K\\)\n\nInterpretation\n\nProvides a statistical interpretation of computational mathematics"
   },
   {
-    "objectID": "slides/01-intro.html#prob-concepts",
-    "href": "slides/01-intro.html#prob-concepts",
+    "objectID": "slides/02-estimator.html#summary-statistics",
+    "href": "slides/02-estimator.html#summary-statistics",
     "title": "MATH 476 — Statistics",
-    "section": "Key probability concepts",
-    "text": "Key probability concepts\n\nOutcome — single possible result of a random process, e.g., yes, \\(0.5\\), \\((1,-2)\\)\nSample space – set of all possible outcomes, e.g., \\(\\{\\text{yes}, \\text{no} \\}\\), \\(\\reals\\)\nEvent – set of outcomes (subset of the sample space), e.g., \\([0,\\infty)\\)\nEvent space – collection of all possible events\nProbability – function \\(\\Prob:\\text{event space}\\to[0,1]\\) satisfying\n\n\\(0 \\le \\Prob(\\text{event}) \\le 1\\)\n\\(\\mathbb{P}(\\text{sample space})=1\\)\nIf \\(A \\cap B=\\varnothing\\), then \\(\\Prob(A\\cup B)=\\Prob(A)+\\Prob(B)\\)"
-  },
-  {
-    "objectID": "slides/01-intro.html#prob-distrib",
-    "href": "slides/01-intro.html#prob-distrib",
-    "title": "MATH 476 — Statistics",
-    "section": "Important distributions",
-    "text": "Important distributions\n\nBinomial (free-throw shooting, discrete) \\(\\Bin(n,p)\\) \\[\n\\varrho(x) : = \\Prob(X=x) = \\binom{n}{x} p^x (1-p)^{n-x}, \\ x =0, \\ldots, n; \\quad \\Ex(X) = np, \\quad \\var(X) = np(1-p)\n\\]\nExponential (taxi waiting, continuous) \\(\\Exp(\\lambda)\\) \\[\nF(x): = 1 - \\exp(-\\lambda x),\\ \\varrho(x) : = \\lambda \\exp(-\\lambda x), \\ x \\ge 0; \\quad \\Ex(X) = 1/\\lambda, \\quad \\var(X) = 1/\\lambda^2\n\\]\nNormal (Gaussian) (limiting distribution, continuous) \\(\\Norm(\\mu, \\sigma^2)\\) \\[\n\\varrho(x): = \\frac{\\exp\\bigl(-(x-\\mu)^2/(2\\sigma^2)\\bigr)}{\\sqrt{2 \\pi} \\sigma}, \\ x \\in \\reals;\\quad \\Ex(X) = \\mu, \\quad \\var(X) = \\sigma^2\n\\]\nMultivariate Normal (Gaussian) (limiting distribution, continuous) \\(\\Norm(\\vmu, \\mSigma)\\) \\[\n\\varrho(\\vx): = \\frac{\\exp\\bigl(-(\\vx-\\vmu)^\\top \\mSigma^{-1} (\\vx-\\vmu) /2\\bigr)}{\\sqrt{(2 \\pi)^{d} \\det(\\mSigma)}};\\quad \\Ex(\\vX) = \\vmu, \\quad \\cov(\\vX) = \\mSigma\n\\]"
-  },
-  {
-    "objectID": "slides/01-intro.html#a-mixed-partially-discrete-partially-continuous-random-variable",
-    "href": "slides/01-intro.html#a-mixed-partially-discrete-partially-continuous-random-variable",
-    "title": "MATH 476 — Statistics",
-    "section": "A mixed (partially discrete, partially continuous) random variable",
-    "text": "A mixed (partially discrete, partially continuous) random variable\nDiscrete random variables have a PMF. Continuous random variables have a PDF. Some random variables are mixed.\nZero-inflated exponential distribution — \\(X\\) is the waiting time for a taxi\n\nA taxi waiting for you with probability \\(p\\)\nBut if there is none, then you have to wait time \\(1/\\lambda\\) on average \\[\\begin{align*}\nF(x) &= \\begin{cases}\n0, &-\\infty &lt; x &lt; 0 \\\\\n1- (1-p)\\exp(-\\lambda x),  & 0 \\le x &lt; \\infty\n\\end{cases}\n\\\\\n\\mu & = \\Ex(X) = \\int_{-\\infty}^{\\infty} x \\, \\dif F(x) \\qquad   \n   \\mathlink{https://en.wikipedia.org/wiki/Lebesgue-Stieltjes_integration}{(Lebesgue–Stieltjes integral)}\\\\\n& = 0 \\times p + \\int_0^{\\infty} x \\times (1-p)\\exp(-\\lambda x) \\, \\dif x = (1-p)/ \\lambda\n\\\\\n\\sigma^2 & = \\var(X) = \\Ex[(X-\\mu)^2] = \\frac{1-p^2}{\\lambda^2}\n\\end{align*}\\]"
-  },
-  {
-    "objectID": "slides/01-intro.html#lebesguestieltjes-integral-integral-jumps",
-    "href": "slides/01-intro.html#lebesguestieltjes-integral-integral-jumps",
-    "title": "MATH 476 — Statistics",
-    "section": "Lebesgue–Stieltjes Integral = Integral + Jumps",
-    "text": "Lebesgue–Stieltjes Integral = Integral + Jumps\nLet\n\n\\(F\\) be a nondecreasing, right-continuous function on \\(\\mathbb{R}\\)\nwith (possible) discontinuities at \\(-\\infty &lt;  x_1 &lt; \\ldots &lt; x_N &lt; \\infty\\),\n\\(F\\) be differentiable between its jump points with \\(\\varrho(x) = F'(x)\\), and\n\\(f\\) be a suitable function\n\nThe Lebesgue–Stieltjes integral of \\(f\\) with respect to \\(F\\) can be written as \\[\\begin{align*}\n  \\int f(x)\\, dF(x) & = \\int_{-\\infty}^{x_{1}} f(x) \\,\\varrho(x) \\, \\dif x + \\sum_{k=1}^{N-1} \\int_{x_k}^{x_{k+1}} f(x) \\, \\varrho(x) \\, \\dif x + \\int_{x_N}^{\\infty} f(x) \\, \\varrho(x) \\, \\dif x \\\\\n  & \\qquad \\qquad + \\sum_{k=1}^N f(x_k)[F(x_k) - F(x_k^{-})]\n  \\end{align*}\\]\nIntegrate \\(f\\) where \\(F\\) is smooth, and add a weighted sum of \\(f\\) at the jump points of \\(F\\)"
-  },
-  {
-    "objectID": "slides/01-intro.html#conditional-prob",
-    "href": "slides/01-intro.html#conditional-prob",
-    "title": "MATH 476 — Statistics",
-    "section": "Conditional probability",
-    "text": "Conditional probability\nThe conditional probability means restricting attention to outcomes where \\(B\\) occurs, then measure how often \\(A\\) occurs within that restricted universe of \\(A\\) given \\(B\\) (with \\(\\Prob(B)&gt;0\\)): \\[\n\\Prob(A \\mid B)\n=\n\\frac{\\Prob(A \\cap B)}{\\Prob(B)},\n\\] which means restricting attention to outcomes where \\(B\\) occurs, then measuring how often \\(A\\) occurs within that restricted universe.\n\nMultiplication rule: \\(\\Prob(A \\cap B)\n=\n\\Prob(A \\mid B),\\Prob(B)\\)\n\\(A\\) and \\(B\\) are independent if \\(\\Prob(A \\mid B) = \\Prob(A)\\) or equivalently \\(\\Prob(A \\cap B)=\\Prob(A)\\Prob(B)\\)\n\nBayes’ Rule\n\\[\n\\Prob(A \\mid B)\n=\n\\frac{\\Prob(B \\mid A) \\, \\Prob(A)}{\\Prob(B)},\n\\qquad \\Prob(B)&gt;0\n\\]\n\nIf you meet an introvert, is she more likely to be a librarian or a salesman?"
-  },
-  {
-    "objectID": "slides/01-intro.html#bayesian-statistics-to-approximate-and-integrate-functions",
-    "href": "slides/01-intro.html#bayesian-statistics-to-approximate-and-integrate-functions",
-    "title": "MATH 476 — Statistics",
-    "section": "Bayesian statistics to approximate and integrate functions",
-    "text": "Bayesian statistics to approximate and integrate functions\nWe assume that \\(f\\), the function to approximate or integrate, is an instance of a Gaussian process, \\(\\GP(0,K)\\). This means that\n\\[\\begin{gather*}\n\\vf := \\bigl(f(x_1), \\ldots, f(x_n) \\bigr)^\\top \\sim \\Norm(\\vzero, \\mK), \\quad \\text{where }\\mK : = \\bigl(K(x_i,x_j)\\bigr)_{i,j=1}^n \\\\\n\\tvf := \\bigl(f(x_1), \\ldots, f(x_n), f(x) \\bigr)^\\top \\sim \\Norm(\\vzero, \\tmK) \\\\\n\\text{where }\n\\tmK : = \\left(\\begin{array}{c|c}\n\\mK & \\vk(x) \\\\\n\\hline\n\\vk^\\top(x) & K(x,x)\n\\end{array}\n\\right)\n, \\quad \\vk(x) = \\bigl( K(x,x_i) \\bigr)_{i=1}^n\n\\end{gather*}\\] and so the conditional density of \\(f(x)\\) given \\(\\vf = \\vy\\), where \\(\\vy\\) is the observed data, is\n\\[\\begin{align*}\n\\varrho_{f(x) | \\vf}(z,\\vy) = \\frac{\\varrho_{\\tvf}(\\tvy)}{\\varrho_{\\vf}(\\vy)} = \\frac{\\frac{\\exp(-\\tvy^\\top \\tmK^{-1} \\tvy/2)}{\\sqrt{(2 \\pi)^{n+1} \\det(\\tmK)}}}{\\frac{\\exp(-\\vy^\\top \\mK^{-1} \\vy/2)}{\\sqrt{(2 \\pi)^{n} \\det(\\mK)}}}\n= \\frac{\\exp([-\\tvy^\\top \\tmK^{-1} \\tvy + \\vy^\\top \\mK^{-1} \\vy]/2)}{\\sqrt{(2 \\pi) \\det(\\tmK)/\\det(\\mK)}}\n\\end{align*}\\] where \\(\\tvy = (\\vy^\\top, z)^\\top\\)"
-  },
-  {
-    "objectID": "slides/01-intro.html#bayesian-inference",
-    "href": "slides/01-intro.html#bayesian-inference",
-    "title": "MATH 476 — Statistics",
-    "section": "Bayesian inference",
-    "text": "Bayesian inference\nBayes’ rule for densities\n\\[\n\\varrho_{X\\mid Y}(x\\mid y)\n=\n\\frac{\\varrho_{Y\\mid X}(y\\mid x)\\,\\varrho_X(x)}{\\varrho_Y(y)}\n\\]\nLet \\[\\begin{align*}\nX & = \\text{random unknown parameter} \\\\\nY & = \\text{random observed data} \\\\\n\\varrho_X & = \\text{prior density or belief about the parameter} \\\\\n\\varrho_{Y\\mid X} & = \\text{likelihood} \\\\\n\\varrho_{X\\mid Y} & = \\text{posterior density}\n\\end{align*}\\] Then \\[\\begin{align*}\n\\varrho_{X\\mid Y}( \\text{parameter} \\mid \\text{data})\n& =\n\\frac{\\varrho_{Y\\mid X}(\\text{data}\\mid \\text{parameter} ) \\,\\varrho_X(\\text{parameter})}{\\varrho_Y(\\text{data})}\n\\\\\n\\text{posterior density } &\n\\propto\n\\text{likelihood} \\times \\text{prior density}\n\\end{align*}\\]"
-  },
-  {
-    "objectID": "slides/01-intro.html#conditional-exp",
-    "href": "slides/01-intro.html#conditional-exp",
-    "title": "MATH 476 — Statistics",
-    "section": "Conditional expectation",
-    "text": "Conditional expectation\nConditional expectation of \\(X\\) given event \\(A\\) (with \\(\\Prob(A)&gt;0\\)) is \\[\n\\Ex[X \\mid A]\n=\n\\frac{\\Ex[X \\, \\indic(X \\in A)]}{\\Prob(A)} \\qquad \\text{and so} \\qquad \\Ex[X \\, \\indic(X \\in A)]\n=\n\\Prob(A)\\,\\Ex[X \\mid A]\n\\] The indicator function, \\(\\indic(\\cdot)\\), equals \\(1\\) if the statement inside the parentheses is true, and \\(0\\) otherwise.\n\nConditional expectation of \\(X\\) given \\(Y=y\\) is \\[\n\\Ex[X \\mid Y=y]\n=\n\\int x \\, \\varrho_{X\\mid Y}(x \\mid y)\\,\\dif x\n\\] If \\(g(y)=\\Ex[X \\mid Y=y]\\), then \\(\\Ex[X \\mid Y] = g(Y)\\) is a random variable depending only on \\(Y\\)\n\n\nIf \\(X\\) is independent of \\(Y\\), then \\(\\Ex[X \\mid Y] = \\Ex[X]\\)"
-  },
-  {
-    "objectID": "slides/01-intro.html#type-conv",
-    "href": "slides/01-intro.html#type-conv",
-    "title": "MATH 476 — Statistics",
-    "section": "Types of convergence",
-    "text": "Types of convergence\nLet \\(X_1, X_2, \\ldots\\) be random variables and \\(X\\) another random variable\nAlmost Sure Convergence\n\\[\nX_n \\convas X \\iff \\Prob \\left( \\lim_{n \\to \\infty} X_n = X \\right) = 1\n\\] For almost every outcome the sequence \\(X_n\\) converges to \\(X\\)\nConvergence in Probability\n\\[\nX_n \\convp X \\iff \\forall \\varepsilon &gt; 0, \\;\n\\Prob\\big( |X_n - X| &gt; \\varepsilon \\big) \\;\\longrightarrow\\; 0.\n\\] The probability that \\(X_n\\) differs significantly from \\(X\\) goes to zero\nConvergence in Distribution\n\\[\nX_n \\convd X \\iff\n\\lim_{n \\to \\infty} F_{X_n}(x) = F_X(x)\n\\quad \\text{for all continuity points of } F_X\n\\] The distributions of \\(X_n\\) approach the distribution of \\(X\\)"
-  },
-  {
-    "objectID": "slides/01-intro.html#clt",
-    "href": "slides/01-intro.html#clt",
-    "title": "MATH 476 — Statistics",
-    "section": "Central Limit Theorem",
-    "text": "Central Limit Theorem\nIf \\(X_1, X_2, \\ldots \\IIDsim\\) some distribution with finite moment generating function, \\(M(t) := \\Ex\\bigl(\\exp(tX)\\bigr)\\), that exists for \\(t\\) near \\(0\\), and \\(\\mu = \\Ex(X)\\) and \\(\\sigma^2 = \\var(X)\\), and \\[\n\\barX_n := \\frac 1n \\left(X_1 + \\cdots + X_n \\right),\n\\] then \\[\n\\frac{\\barX_n - \\mu}{\\sigma /\\sqrt{n}} \\convd \\Norm(0,1)\n\\] Note that IID means independent and identically distributed"
-  },
-  {
-    "objectID": "slides/01-intro.html#proof-of-the-central-limit-theorem",
-    "href": "slides/01-intro.html#proof-of-the-central-limit-theorem",
-    "title": "MATH 476 — Statistics",
-    "section": "Proof of the Central Limit Theorem",
-    "text": "Proof of the Central Limit Theorem\n\nDefine a standardized (mean \\(0\\), variance \\(1\\)) random variable, \\(Y_i := (X_i - \\mu)/\\sigma\\) and note that \\(Y_1, Y_2, \\dots\\) are IID with\n\n\\[\\begin{align*}\nZ_n: &= \\frac{\\barX_n - \\mu}{\\sigma /\\sqrt{n}} = \\frac{Y_1 + \\cdots + Y_n}{\\sqrt{n}} \\\\\nM_{Z_n}(t) &= \\Ex[\\exp(tZ_n)] = \\Ex[\\exp(tY_1/\\sqrt{n}) \\cdots \\exp(tY_n/\\sqrt{n})]\\\\\n& =  \\{\\Ex[\\exp(tY_1/\\sqrt{n})]\\}^n \\qquad \\text{by independence} \\\\\n& = [M_Y(t/\\sqrt{n})]^n\n\\end{align*}\\]"
-  },
-  {
-    "objectID": "slides/01-intro.html#chebyshev-markov-inequality",
-    "href": "slides/01-intro.html#chebyshev-markov-inequality",
-    "title": "MATH 476 — Statistics",
-    "section": "Chebyshev (Markov) Inequality",
-    "text": "Chebyshev (Markov) Inequality\n\\[\n\\Prob\\bigl( f(X) \\ge r \\bigr) \\le \\frac{\\Ex[f(X)]}{r}\n\\]\nProof\n\\[\\begin{align*}\n\\Prob(f(X)\\ge r)\n&= \\Ex\\bigl[\\indic\\bigl(f(X)\\ge r\\bigr)\\bigr] \\\\\n&= \\Ex\\Bigl[\\Ex\\bigl[\\indic\\bigl(f(X)\\ge r\\bigr)\\mid X\\bigr]\\Bigr]\n\\qquad \\text{(total expectation)} \\\\\n&\\le \\Ex\\Bigl[\\Ex\\bigl[f(X)/r \\mid X\\bigr]\\Bigr]\n\\qquad \\text{since } \\indic\\bigl(f(X)\\ge r\\bigr)\\le f(X)/r \\text{ a.s.} \\\\\n&= \\Ex\\bigl[f(X)/r\\bigr] \\\\\n&= \\Ex[f(X)]/r\n\\end{align*}\\]\nImportant special cases\n\\[\\begin{gather*}\n\\Prob\\bigl( \\lvert X - \\mu \\rvert^2 \\ge r^2 \\bigr) \\le \\frac{\\sigma^2}{r^2} \\quad \\text{where } \\mu = \\Ex(X), \\ \\sigma^2 = \\var(X) \\\\\n\\Prob\\bigl( \\lvert X - \\med(X) \\rvert \\ge r \\bigr) \\le \\frac{\\Ex \\lvert X - \\med(X)\\rvert}{r}\n\\end{gather*}\\]"
-  },
-  {
-    "objectID": "slides/01-intro.html#normal-tails-vs-chebyshev-bounds",
-    "href": "slides/01-intro.html#normal-tails-vs-chebyshev-bounds",
-    "title": "MATH 476 — Statistics",
-    "section": "Normal tails vs Chebyshev bounds",
-    "text": "Normal tails vs Chebyshev bounds\nLet \\(X\\sim \\Norm(0,1)\\) and cmpare \\(\\Prob(|X|&gt;r)\\) with two bounds\n\n\n\n\n\n\n\n\n\n\\(r\\)\n\\(\\Prob(|X|&gt;r)\\) (exact)\n\\(\\Ex|X|/r\\) (Markov)\n\\(\\Ex|X|^2 /r^2\\) (Chebyshev)\n\n\n\n\n1\n0.317311\n0.797885\n1.000000\n\n\n2\n0.0455003\n0.398942\n0.250000\n\n\n3\n0.0026998\n0.265962\n0.111111\n\n\n10\n1.52397e-23\n0.079788\n0.010000\n\n\n100\n0\n0.007979\n0.000100\n\n\n\n\nThe Markov and Chebyshev bounds are much looser, but more general\nCLT bounds for means will resemble the exact"
-  },
-  {
-    "objectID": "slides/01-intro.html#weak-law-of-large-numbers-via-chebyshev",
-    "href": "slides/01-intro.html#weak-law-of-large-numbers-via-chebyshev",
-    "title": "MATH 476 — Statistics",
-    "section": "Weak Law of Large Numbers (via Chebyshev)",
-    "text": "Weak Law of Large Numbers (via Chebyshev)\nTheorem (WLLN)\nLet \\(X_1,X_2,\\dots\\) be IID with \\(\\Ex[X_1]=\\mu\\) and \\(\\var(X_1)=\\sigma^2&lt;\\infty\\). Define the sample mean \\(\\bar X_n := \\frac1n\\sum_{i=1}^n X_i\\). Then \\(\\barX_n \\convp \\mu\\).\nProof\nBy Chebyshev’s inequality, \\[\n\\Prob\\bigl(|\\barX_n-\\mu|\\ge \\varepsilon\\bigr)\n\\le \\frac{\\Var(\\barX_n)}{\\varepsilon^2}\n\\] Using independence, \\[\n\\var(\\barX_n)\n=\n\\var\\!\\left(\\frac1n\\sum_{i=1}^n X_i\\right)\n=\n\\frac{1}{n^2}\\sum_{i=1}^n \\Var(X_i)\n=\n\\frac{1}{n^2}\\cdot n\\sigma^2\n=\n\\frac{\\sigma^2}{n}\n\\] Therefore, \\[\n\\Prob\\bigl(|\\barX_n-\\mu|\\ge \\varepsilon\\bigr)\n\\le\n\\frac{\\sigma^2}{n\\varepsilon^2}\n\\to 0 \\qquad \\square\n\\]"
+    "section": "Summary Statistics",
+    "text": "Summary Statistics\nGiven IID data, \\(X_1, \\ldots, X_n\\), we often compute summary statistics\n\nSample Mean \\(\\barX := \\frac{1}{n} \\sum_{i=1}^n X_i\\) to approximate the population mean \\(\\mu := \\E[X_1]\\)\nSample Variance \\(S^2 := \\frac{1}{n-1} \\sum_{i=1}^n (X_i - \\barX)^2\\) to approximate the population variance \\(\\sigma^2 := \\var(X_1)\\)\n\nAnd given IID data, \\((X_1, Y_1), \\ldots, (X_n,Y_n)\\), we often compute summary statistics\n\nSample Covariance \\(S_{XY} := \\frac{1}{n-1} \\sum_{i=1}^n (X_i - \\barX)(Y_i - \\barY)\\) to approximate the population covariance \\(\\cov(X_1,Y_1)\\)\nSample Correlation \\(R_{XY} := \\frac{S_{XY}}{S_X S_Y}\\) to approximate the population correlation \\(\\corr(X_1,Y_1)\\)"
   }
 ]

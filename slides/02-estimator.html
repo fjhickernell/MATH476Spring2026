@@ -524,9 +524,24 @@ L(\vtheta | x_1, \ldots, x_n) &amp; := \varrho_{X_1, \ldots, X_n | \vtheta}(x_1,
 <li><p><span class="math inline">\(\barX_n \exsim \Norm(\mu,\sigma^2/n)\)</span> if <span class="math inline">\(X \sim \Norm(\mu,\sigma^2)\)</span></p></li>
 <li><p><span class="math inline">\(\barX_n \appxsim \Norm(\mu,\sigma^2/n)\)</span> for arbitrary distributions and large <span class="math inline">\(n\)</span> by the <span class="alert">Central Limit Theorem</span></p></li>
 </ul>
-
-
 </section></section>
+<section id="confidence-intervals" class="title-slide slide level1 center">
+<h1>Confidence Intervals</h1>
+<p>If</p>
+<ul>
+<li><p><span class="math inline">\(\theta\)</span> is a parameter of interest of a distribution, and</p></li>
+<li><p><span class="math inline">\(X_1, \ldots, X_n\)</span> are data that we assume are collected that follow that distribution,</p></li>
+</ul>
+<p>Then we will try to construct <span class="math inline">\(\Theta_L\)</span> and/or <span class="math inline">\(\Theta_U\)</span> depending on that data (and not on <span class="math inline">\(\theta\)</span>) to give us intervals that <span class="alert">capture</span> <span class="math inline">\(\theta\)</span> with high probability <span class="math inline">\(1 - \alpha\)</span></p>
+<ul>
+<li><p><span class="math inline">\(\Prob(\Theta_L \le \theta  \Theta_U) = 1 - \alpha\)</span>, or</p></li>
+<li><p><span class="math inline">\(\Prob(\Theta_L \le \theta) = 1 - \alpha\)</span>, or</p></li>
+<li><p><span class="math inline">\(\Prob(\theta  \Theta_U) = 1 - \alpha\)</span></p></li>
+</ul>
+<p>Here <span class="math inline">\(\alpha\)</span> is our willingness to be wrong</p>
+
+
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

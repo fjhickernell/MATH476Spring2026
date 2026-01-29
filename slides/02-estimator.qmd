@@ -11,3 +11,6 @@ reveal-options:
 ---
 
 {{< include ../classlib/classlib/quarto/slides/shared/statistics/estimation/estimators.qmd >}}
+
+
+{{< include ../classlib/classlib/quarto/slides/shared/statistics/estimation/confidence.qmd >}}

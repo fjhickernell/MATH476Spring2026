@@ -58,6 +58,10 @@ website:
   page-footer:
     left: "© 2026 Fred J. Hickernell · Illinois Institute of Technology"
 
+textbook:
+    short: "Wackerly et al."
+    full: "Wackerly, Mendenhall, and Scheaffer, _Mathematical Statistics with Applications_, 7th Ed."
+
 execute:
   env:
     RETICULATE_PYTHON: ${HOME}/miniconda3/envs/qmcpy/bin/python

@@ -20,4 +20,4 @@ title: "Assignments"
 | Assignment     | Due Date
 |-------------------------------------|-----------|
 | Assignment 1 — Diagnostic survey (Canvas / Microsoft Forms) | January 16
- Assignment 2 – Wackerly et al. 2.74, 3.10, 3.40, 4.88,<br> Find and submit a screenshot, photo or pdf of a statistical claim that you find somewhere in public. Write a paragraph describing what questions you might have about the origin or interpretation of this statistical claim| January 30
+ Assignment 2 – Wackerly et al. 2.74, 3.10, 3.40, 4.88,<br> Find and submit a screenshot, photo or pdf of a statistical claim that you find somewhere in public. Write a paragraph describing what questions you might have about the origin or interpretation of this statistical claim. | January 30

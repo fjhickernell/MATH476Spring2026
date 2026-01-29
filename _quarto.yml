@@ -46,6 +46,8 @@ website:
             text: Accessing repo
           - text: Interesting articles & links
             href: classlib/classlib/quarto/pages/interesting-articles-links.qmd
+          - text: FREE IMS Student Membershp
+            href: https://imstat.org/free-student-membership/
     right:
        - text: Related
          menu:
@@ -58,9 +60,10 @@ website:
   page-footer:
     left: "© 2026 Fred J. Hickernell · Illinois Institute of Technology"
 
-textbook:
-    short: "Wackerly et al."
-    full: "Wackerly, Mendenhall, and Scheaffer, _Mathematical Statistics with Applications_, 7th Ed."
+course:
+  textbook:
+      short: "Wackerly et al."
+      full: "D. D. Wackerly, W. Mendenhall III, & R. L. Scheaffer, _Mathematical Statistics with Applications_, 7th Ed. (2008)"
 
 execute:
   env:

@@ -10,6 +10,10 @@ reveal-options:
   disableLayout: false
 ---
 
+
+{{< include ../classlib/classlib/quarto/slides/shared/general/how_to_learn.qmd >}}
+
+
 {{< include ../classlib/classlib/quarto/slides/shared/statistics/estimation/estimators.qmd >}}
 
 

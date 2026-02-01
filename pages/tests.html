@@ -295,7 +295,7 @@ Feb 12 | Midterm | Chapters 1–4 | [Midterm questions](...)
 </div>
 <section id="archive" class="level3">
 <h3 class="anchored" data-anchor-id="archive">Archive</h3>
-<div id="99bd38f8" class="cell" data-execution_count="1">
+<div id="6e9ee844" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display cell-output-markdown">
 <ul>
 <li><a href="../assets/tests/archive/476/MATH476FinalExamS10Answers.pdf">MATH476FinalExamS10Answers</a></li>
@@ -315,7 +315,7 @@ Feb 12 | Midterm | Chapters 1–4 | [Midterm questions](...)
 </section>
 <section id="archive-from-math-563-related-material" class="level3">
 <h3 class="anchored" data-anchor-id="archive-from-math-563-related-material">Archive from MATH 563 (related material)</h3>
-<div id="872e0004" class="cell" data-execution_count="2">
+<div id="96b06297" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display cell-output-markdown">
 <ul>
 <li><a href="../assets/tests/archive/563/MATH476_563FinalS11Answers.pdf">MATH476 563FinalS11Answers</a></li>
@@ -402,7 +402,7 @@ Feb 12 | Midterm | Chapters 1–4 | [Midterm questions](...)
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/fjhickernell\.github\.io\/MATH476Spring2026\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

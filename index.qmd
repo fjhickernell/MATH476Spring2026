@@ -39,7 +39,7 @@ Hickernell speaks Cantonese and enjoys Chinese food. He is married with adult ch
 </details>
 
 <div style="margin-top:1em; margin-bottom:0.4em;">
-<strong>Textbook:</strong> [{{< meta texts.WMS.full >}}]({{< meta texts.WMS.url >}})
+<strong>Textbook:</strong> [{{< meta texts.wms.full >}}]({{< meta texts.wms.url >}})
 </div>
 
 <details>

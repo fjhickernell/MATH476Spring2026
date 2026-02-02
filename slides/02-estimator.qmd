@@ -2,7 +2,7 @@
 title: "MATH 476 — Statistics"
 subtitle: |
   <span class="deck-title">Estimators and Confidence Intervals</span><br>
-  <span class="deck-meta">{{< meta texts.WMS.short >}} Ch. 8–9
+  <span class="deck-meta">{{< meta texts.wms.short >}} Ch. 8–9
 author: "Fred J. Hickernell"
 date: last-modified
 date-format: "MMMM D, YYYY"

@@ -39,7 +39,7 @@ Hickernell speaks Cantonese and enjoys Chinese food. He is married with adult ch
 </details>
 
 <div style="margin-top:1em; margin-bottom:0.4em;">
-<strong>Textbook:</strong> [{{< meta course.textbook.full >}}](https://www.cengage.com/c/mathematical-statistics-with-applications-7e-wackerly-mendenhall-scheaffer/9780495110811/)
+<strong>Textbook:</strong> [{{< meta texts.WMS.full >}}]({{< meta texts.WMS.url >}})
 </div>
 
 <details>

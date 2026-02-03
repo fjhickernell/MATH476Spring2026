@@ -22,5 +22,5 @@ title: "Assignments"
 | Assignment     | Due Date
 |-------------------------------------|-----------|
 | Assignment 1 — Diagnostic survey (Canvas / Microsoft Forms) | January 16
- Assignment 2 – {{< meta texts.wms.short >}} 2.74, 3.10, 3.40, 4.88,<br> Find and submit a screenshot, photo or pdf of a statistical claim that you find somewhere in public. Write a paragraph describing what questions you might have about the origin or interpretation of this statistical claim. | January 30
- Assignment 3 – {{< meta texts.wms.short >}} 8.6, 8.12, 8.22, 8.32, 8.50 | February 13
+ Assignment 2 — {{< meta texts.wms.short >}} 2.74, 3.10, 3.40, 4.88,<br> Find and submit a screenshot, photo or pdf of a statistical claim that you find somewhere in public. Write a paragraph describing what questions you might have about the origin or interpretation of this statistical claim. | January 30
+ Assignment 3 — {{< meta texts.wms.short >}} 8.6, 8.12, 8.22, 8.32, 8.50 | February 13

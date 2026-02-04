@@ -2,7 +2,7 @@
 title: "MATH 476 — Statistics"
 subtitle: |
   <span class="deck-title">Estimators and Confidence Intervals</span><br>
-  <span class="deck-meta">{{< meta course.textbook.short >}} Ch. 8–9<br>
+  <span class="deck-meta">{{< meta texts.wms.short >}}  Ch. 8–9<br>
   Assignment 3 due 2/13
   </span>
 author: "Fred J. Hickernell"

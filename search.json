@@ -280,6 +280,13 @@
     "text": "Classes are held in RE 102\n\nJanuary\n\n\n\nDate\nTopic\nSlides\n\n\n\n\nTue Jan 13\nIntroductory Examples, Course Overview\nIntroduction and Probability Review\n\n\nThu Jan 15\nIntroductory Examples, Key Probability Concepts, Important Distributions\n\n\n\nFri Jan 16\nDiagnostic Survey Due\n\n\n\nTue Jan 20\nImportant Distributions, Conditional Probability\n\n\n\nThu Jan 22\nConditional Probability, Convergence, Central Limit Theorem\n\n\n\nTue Jan 27\nCentral Limit Theorem, Chebyshev’s Inequality, Summary Statistics\nEstimation and Confidence Intervals\n\n\nThu Jan 29\nSummary Statistics, Maximum Likelihood Estimation, Bias\n\n\n\nFri Jan 30\nAssignment 2 Due\n\n\n\n\n\n\nFebruary\n\n\n\n\n\n\n\n\nDate\nTopic\nSlides\n\n\n\n\nTue Feb 3\n\n\n\n\nThu Feb 5\n\n\n\n\nTue Feb 10\n\n\n\n\nThu Feb 12\n\n\n\n\nFri Feb 13\nAssignment 3 Due\n\n\n\nTue Feb 17\n\n\n\n\nThu Feb 19\nTest 1 on Probability Review\n\n\n\nTue Feb 24\n\n\n\n\nThu Feb 26\n\n\n\n\n\n\n\nMarch\n\n\n\nDate\nTopic\nSlides\n\n\n\n\nTue Mar 3\n\n\n\n\nThu Mar 5\n\n\n\n\nTue Mar 10\n\n\n\n\nThu Mar 12\n\n\n\n\nTue Mar 17\nNo Class, Spring Break\n\n\n\nThu Mar 19\nNo Class, Spring Break\n\n\n\nTue Mar 24\nNo Class, Hickernell attending SIAM UQ 2026\n\n\n\nThu Mar 26\n\n\n\n\nTue Mar 31\n\n\n\n\n\n\n\nApril\n\n\n\n\n\n\n\n\nDate\nTopic\nSlides\n\n\n\n\nThu Apr 2\nTest 2\n\n\n\nTue Apr 7\n\n\n\n\nThu Apr 9\n\n\n\n\nTue Apr 14\n\n\n\n\nThu Apr 16\n\n\n\n\nTue Apr 21\n\n\n\n\nThu Apr 23\n\n\n\n\nTue Apr 28\n\n\n\n\nThu Apr 30\n\n\n\n\n\n\n\nMay\n\n\n\n\n\n\n\n\nDate\nTopic\nSlides\n\n\n\n\n??? May ??\nFinal Exam"
   },
   {
+    "objectID": "pages/project-assessment.html",
+    "href": "pages/project-assessment.html",
+    "title": "Project Assessment",
+    "section": "",
+    "text": "Please provide thoughtful, constructive feedback to help your peers improve their communication skills\n\nPresenter’s name:\nProject title:\nObserver’s name:\n\n\n1. What are the main points of the presentation?\nWhat question was addressed? What was the main claim, result, or conclusion?\n \n \n\n\n\n2. What are the strengths and weaknesses of the article or project?\nStrengths might include clarity, insight, careful analysis, or convincing evidence. Weaknesses might include unclear assumptions, limited scope, missing comparisons, or questionable conclusions.\n \n \n \n\n\n\n3. What did the presenter do well?\nOrganization, pacing, explanation of ideas, visuals, examples, or handling of questions.\n \n \n \n\n\n\n4. How might the presenter have done better?\nWhat specific changes would most improve clarity, correctness, or impact?"
+  },
+  {
     "objectID": "pages/homework.html",
     "href": "pages/homework.html",
     "title": "Assignments",
@@ -439,6 +446,48 @@
     "title": "Jupyter Notebooks",
     "section": "",
     "text": "Here you will find Jupyter notebooks used in the course.\nClick the link to download, and then open in JupyterLab on your computer.\n\nApproval Ratings: Bernoulli, Binomial, CLT, and Confidence Intervals\nBayesian Quadrature\nHealth, Wealth, and Life Expectancy (Gapminder)"
+  },
+  {
+    "objectID": "pages/project.html",
+    "href": "pages/project.html",
+    "title": "Project",
+    "section": "",
+    "text": "You are required to complete a course project. The goal is to practice communicating statistical ideas clearly and critically—like you are reporting to colleagues whether a line of work is worth pursuing."
+  },
+  {
+    "objectID": "pages/project.html#types",
+    "href": "pages/project.html#types",
+    "title": "Project",
+    "section": "Types",
+    "text": "Types\nChoose one of the following project types:\n\nResearch article review\nPick a scholarly research article related to topics in statistical inference (e.g., estimation, testing, likelihood/Bayes, asymptotics, bootstrap, identifiability, robustness, missing data, multiple testing, etc.) _that does not duplicate a topic discussed in class. Your article must be different from your classmates’ choices.\nSimulation or data analysis study\nDesign and carry out a focused study that uses computation to investigate a statistical question. Examples:\n\nAnalyze a data set of interest, but go beyond any existing analysis,\nCompare procedures (power, bias, coverage, MSE) under realistic departures from assumptions,\nIllustrate a theorem/asymptotic approximation with finite-sample behavior,\nReplicate and critique an empirical claim from a paper,\nBuild a small method “pipeline” (e.g., model selection + inference) and evaluate it."
+  },
+  {
+    "objectID": "pages/project.html#submission",
+    "href": "pages/project.html#submission",
+    "title": "Project",
+    "section": "Submission",
+    "text": "Submission\n\nSubmit your project topic using the course topic-submission form &lt;To Be Announced&gt; by Friday, March 6, 2026.\nAfter the topic deadline, check the posted topic list &lt;To Be Announced&gt; to confirm approval.\nPrepare a 15-minute oral presentation (+5 minutes for questions) and a handout for the audience."
+  },
+  {
+    "objectID": "pages/project.html#presentations-and-observations",
+    "href": "pages/project.html#presentations-and-observations",
+    "title": "Project",
+    "section": "Presentations and observations",
+    "text": "Presentations and observations\n\nProject presentations will be scheduled near the end of the semester &lt;To Be Announced&gt;.\nEach student must observe and assess TWO other presentations (using the Project Assessment Form).\nYour project grade is likely to suffer if:\n\nyou are not on time for your presentation or observations,\nyou are not prepared,\nyou do not observe at least two presentations, and/or\nyour observer feedback is not significant."
+  },
+  {
+    "objectID": "pages/project.html#important-to-keep-in-mind",
+    "href": "pages/project.html#important-to-keep-in-mind",
+    "title": "Project",
+    "section": "Important to keep in mind",
+    "text": "Important to keep in mind\nYour presentation should be from the perspective that you are reporting to your colleagues why this article/method/result is or is not worth pursuing further.\n\nYour audience is smart, but not specialized in your exact topic. Provide background, definitions, and motivation.\nBe critical: clearly state strengths and weaknesses, and what assumptions matter.\nYou have access to tools (including AI) that were not commonly available a few years ago—so I will expect more polish and deeper checking.\nI may not be an expert in what you present, but I expect you to be, and I will ask probing questions.\nYour grade will depend on both:\n\nhow clearly you present, and\nhow well you answer questions."
+  },
+  {
+    "objectID": "pages/project.html#guidelines",
+    "href": "pages/project.html#guidelines",
+    "title": "Project",
+    "section": "Guidelines",
+    "text": "Guidelines\n\nArticle review.\n\nChoose a topic not already covered in lecture in essentially the same way.\nPrefer papers with enough technical content to support real discussion (not just an application report).\nYour job is to explain the idea, demonstrate it on a simple example, and assess it.\n\nSimulation/data study.\n\nKeep the scope appropriate: one sharp question is better than many shallow ones.\nPredefine your evaluation metrics (e.g., coverage, power, MSE, false discovery rate).\nUse clear plots/tables and report uncertainty when relevant.\n\n\nGeneral presentation advice:\n\nKeep the big picture in view; don’t get bogged down in algebra.\nChoose one simple example that illustrates the main point.\nLook at your audience while speaking; do not read your notes.\nMotivate your talk: background, prior work, and why anyone should care.\nDiscuss pros/cons and failure modes.\nDon’t use too many slides; about one per minute is usually enough.\nDon’t overload slides; prioritize figures/tables over dense text.\nInclude key formulas/figures directly in your slides rather than making the audience hunt in the paper.\nUse your own words. Do not plagiarize.\nPractice beforehand. Time yourself.\n\nYou will be assessed by your observers and by me using this form:\nProject Assessment Form"
   },
   {
     "objectID": "pages/tests.html",

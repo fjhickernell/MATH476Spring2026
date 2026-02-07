@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.27">
 
   <meta name="author" content="Fred J. Hickernell">
-  <meta name="dcterms.date" content="2026-02-06">
+  <meta name="dcterms.date" content="2026-02-07">
   <title>MATH 476 — Spring 2026 – MATH 476 — Statistics</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -460,7 +460,7 @@ Fred J. Hickernell
 </div>
 </div>
 
-  <p class="date">February 6, 2026</p>
+  <p class="date">February 7, 2026</p>
 </section>
 <section id="how-to-read-these-slides" class="title-slide slide level1 center">
 <h1>How to read these slides</h1>
@@ -969,7 +969,7 @@ F(x) &amp;= \begin{cases}
 <ul>
 <li><p><span class="alert">Multiplication rule</span>: <span class="math inline">\(\Prob(A \cap B)
 =
-\Prob(A \mid B),\Prob(B)\)</span></p></li>
+\Prob(A \mid B) \Prob(B)\)</span></p></li>
 <li><p><span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are <span class="alert">independent</span> if <span class="math inline">\(\Prob(A \mid B) = \Prob(A)\)</span> or equivalently <span class="math inline">\(\Prob(A \cap B)=\Prob(A)\Prob(B)\)</span></p></li>
 </ul>
 <h3 id="bayes-rule">Bayes’ Rule</h3>
@@ -1014,7 +1014,7 @@ F(x) &amp;= \begin{cases}
 , \quad \vk(x) = \bigl( K(x,x_i) \bigr)_{i=1}^n
 \end{gather*}\]</span> and so the conditional density of <span class="math inline">\(f(x)\)</span> given <span class="math inline">\(\vf = \vy\)</span>, where <span class="math inline">\(\vy\)</span> is the observed data, is<br>
 <span class="math display">\[\begin{align*}
-\varrho_{f(x) | \vf}(z,\vy) = \frac{\varrho_{\tvf}(\tvy)}{\varrho_{\vf}(\vy)} = \frac{\frac{\exp(-\tvy^\top \tmK^{-1} \tvy/2)}{\sqrt{(2 \pi)^{n+1} \det(\tmK)}}}{\frac{\exp(-\vy^\top \mK^{-1} \vy/2)}{\sqrt{(2 \pi)^{n} \det(\mK)}}}
+\varrho_{f(x) | \vf}(z | \vy) = \frac{\varrho_{\tvf}(\tvy)}{\varrho_{\vf}(\vy)} = \frac{\frac{\exp(-\tvy^\top \tmK^{-1} \tvy/2)}{\sqrt{(2 \pi)^{n+1} \det(\tmK)}}}{\frac{\exp(-\vy^\top \mK^{-1} \vy/2)}{\sqrt{(2 \pi)^{n} \det(\mK)}}}
 = \frac{\exp([-\tvy^\top \tmK^{-1} \tvy + \vy^\top \mK^{-1} \vy]/2)}{\sqrt{(2 \pi) \det(\tmK)/\det(\mK)}}
 \end{align*}\]</span> where <span class="math inline">\(\tvy = (\vy^\top, z)^\top\)</span></p>
 </section>

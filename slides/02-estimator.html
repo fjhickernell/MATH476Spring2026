@@ -318,8 +318,10 @@
           vinf:  "{\\boldsymbol{\\infty}}",
           
           barD: "{\\overline{D}}",
+          barx: "{\\overline{x}}",
           barX: "{\\overline{X}}",
           barY: "{\\overline{Y}}",
+          bary: "{\\overline{y}}",
           barZ: "{\\overline{Z}}",
 
           me:  "{\\mathrm{e}}",
@@ -669,7 +671,7 @@ c_{\alpha} := Q(1-\alpha),  \quad \text{i.e., } F(c_{\alpha}) \ge 1-\alpha \text
 </ul>
 <p>These <span class="alert">upper critical values</span> are <em>not</em> <span class="math inline">\(\alpha\)</span>-quantiles.</p>
 </div><div class="column" style="width:40%;">
-<div id="9c53c404" class="cell" data-fig-height="3.6" data-fig-width="4.8" data-execution_count="1">
+<div id="350d585e" class="cell" data-fig-height="3.6" data-fig-width="4.8" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -733,7 +735,7 @@ c_{\alpha} := Q(1-\alpha),  \quad \text{i.e., } F(c_{\alpha}) \ge 1-\alpha \text
 &amp;= \Prob \biggl( \frac{2 n \barX_n}{\chi^2_{2n, 1-\alpha/2}} \le \mu \le \frac{2 n \barX_n}{\chi^2_{2n, \alpha/2}} \biggr).
 \end{align*}\]</span></p>
 </div><div class="column" style="width:40%;">
-<div id="8bbd6611" class="cell" data-fig-height="3.4" data-fig-width="4.8" data-execution_count="4">
+<div id="5ea9b919" class="cell" data-fig-height="3.4" data-fig-width="4.8" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -798,7 +800,7 @@ c_{\alpha} := Q(1-\alpha),  \quad \text{i.e., } F(c_{\alpha}) \ge 1-\alpha \text
 </ul></li>
 </ul>
 </div><div class="column" style="width:55%;">
-<div id="cfeae992" class="cell" data-fig-height="3.4" data-fig-width="6.8" data-execution_count="6">
+<div id="de71bc94" class="cell" data-fig-height="3.4" data-fig-width="6.8" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -823,7 +825,7 @@ c_{\alpha} := Q(1-\alpha),  \quad \text{i.e., } F(c_{\alpha}) \ge 1-\alpha \text
 <p>Student’s <span class="math inline">\(t\)</span> CIs are <span class="alert">wider</span> than CLT Normal CIs for small <span class="math inline">\(n\)</span> because <span class="math inline">\(t_{n-1,\alpha/2} &gt; z_{\alpha/2}\)</span></p>
 <p>But they are <span class="alert">exact</span> and thus more accurate for all <span class="math inline">\(n \ge 2\)</span> when the data are Normal</p>
 </div><div class="column" style="width:70%;">
-<div id="bd71fcec" class="cell" data-fig-height="3.4" data-fig-width="6.8" data-execution_count="7">
+<div id="69264eaf" class="cell" data-fig-height="3.4" data-fig-width="6.8" data-execution_count="7">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -974,11 +976,11 @@ z_{\alpha/2}
 </section>
 <section class="slide level2">
 
-<h3 id="exstar-exercises"><span class="math inline">\(\exstar\)</span> Exercises</h3>
+<h3 id="exstar-exercises-regarding-confidence-intervals-for-different-kinds-of-means"><span class="math inline">\(\exstar\)</span> Exercises regarding confidence intervals for different kinds of means</h3>
 <ul>
-<li>Let <span class="math inline">\(X_1,\dots,X_{100}\)</span> and <span class="math inline">\(Y_1,\dots,Y_{100}\)</span> be two samples with sample means <span class="math inline">\(\barX, \barY\)</span> and sample standard deviations <span class="math inline">\(S_X, S_Y\)</span>, respectively</li>
-<li>Let <span class="math inline">\(D_i = X_i - Y_i\)</span> and <span class="math inline">\(S_D\)</span> be the sample standard deviation of the <span class="math inline">\(D_i\)</span></li>
-<li>You observe <span class="math inline">\(\barX = 85, \barY = 75, S_X = 10, S_Y = 12, S_D = 4\)</span></li>
+<li><span class="math inline">\(X_1,\dots,X_{100}\)</span> and <span class="math inline">\(Y_1,\dots,Y_{100}\)</span> are two samples with sample means <span class="math inline">\(\barX, \barY\)</span> and sample standard deviations <span class="math inline">\(S_X, S_Y\)</span>, respectively</li>
+<li><span class="math inline">\(D_i = X_i - Y_i\)</span> and <span class="math inline">\(S_D\)</span> be the sample standard deviation of the <span class="math inline">\(D_i\)</span></li>
+<li>You observe <span class="math inline">\(\barx = 85, \bary = 75, s_X = 10, s_Y = 12, s_D = 4\)</span></li>
 </ul>
 <p>Construct the appropriate 95% confidence intervals for the following scenarios:</p>
 <ol type="1">
@@ -1153,10 +1155,10 @@ Sample mean
 <strong>Original</strong>
 </td>
 <td>
-3.12, 0.66, 2.83, 1.24, 1.31, 2.05, 2.51, 0.08
+1.43, 4.92, 2.84, 2.53, 1.21, 0.48, 1.13, 1.90
 </td>
 <td>
-1.72
+2.06
 </td>
 </tr>
 <tr>
@@ -1164,10 +1166,10 @@ Sample mean
 Bootstrap 1
 </td>
 <td>
-2.83, 0.08, 1.24, 2.83, 0.66, 1.31, 2.05, 1.31
+1.21, 1.43, 2.84, 1.21, 1.43, 0.48, 2.53, 1.43
 </td>
 <td>
-1.54
+1.57
 </td>
 </tr>
 <tr>
@@ -1175,10 +1177,10 @@ Bootstrap 1
 Bootstrap 2
 </td>
 <td>
-2.51, 0.08, 2.05, 1.31, 0.66, 2.83, 2.83, 1.24
+1.90, 1.21, 1.43, 4.92, 1.43, 1.13, 4.92, 1.13
 </td>
 <td>
-1.69
+2.26
 </td>
 </tr>
 <tr>
@@ -1186,10 +1188,10 @@ Bootstrap 2
 Bootstrap 3
 </td>
 <td>
-0.66, 1.24, 0.66, 1.24, 0.66, 0.66, 2.83, 2.51
+0.48, 1.13, 1.90, 2.53, 0.48, 2.53, 1.13, 1.90
 </td>
 <td>
-1.31
+1.51
 </td>
 </tr>
 <tr>
@@ -1197,10 +1199,10 @@ Bootstrap 3
 Bootstrap 4
 </td>
 <td>
-2.51, 1.31, 2.83, 0.66, 2.51, 2.05, 0.08, 0.08
+1.90, 4.92, 1.21, 1.21, 1.43, 0.48, 4.92, 0.48
 </td>
 <td>
-1.50
+2.07
 </td>
 </tr>
 <tr>

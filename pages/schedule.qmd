@@ -27,7 +27,7 @@ Fri Jan 30 | **Assignment 2 Due**
 | Thu Feb 12 | | |
 | Fri Feb 13 | **Assignment 3 Due**
 | Tue Feb 17 | | |
-| Thu Feb 19 | **Test 1** on Probability Review, Estimators, and Confidence Intervals for Means| |
+| Thu Feb 19 | **Test 1** on Probability Review, Estimators, & Confidence Intervals for Means| |
 | Tue Feb 24 | | |
 | Thu Feb 26 | | |
 

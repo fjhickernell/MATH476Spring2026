@@ -3,9 +3,9 @@
 project:
   type: website
   render:
-    - index.qmd
-    - pages/**/*.qmd
-    - slides/**/*.qmd
+    - "*.qmd"
+    - "pages/**/*.qmd"
+    - "!slides/**"
   resources:
     - classlib/classlib/quarto/slides/hickernell-latex-macros.js
     - classlib/classlib/quarto/assets/images/normal-scatter.png

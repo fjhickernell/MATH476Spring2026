@@ -4,7 +4,7 @@ subtitle: |
   <span class="deck-title">Estimators and Confidence Intervals</span><br>
   <span class="deck-meta">{{< meta texts.wms.short >}}  Ch. 8–9<br>
   Assignment 3 due 2/13 <br>
-  Test 1 on 2/19
+  Test 1 on 2/19 on Probability Review, Estimators, & Confidence Intervals for Means
   </span>
 author: "Fred J. Hickernell"
 date: last-modified

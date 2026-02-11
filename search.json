@@ -102,7 +102,7 @@
     "href": "classlib/classlib/quarto/pages/interesting-articles-links.html",
     "title": "Interesting Articles & Links",
     "section": "",
-    "text": "This page collects optional articles, essays, videos, and interactive resources that connect probability, statistics, and data science to real applications, historical context, or broader ideas.\n\nqmcpy.org: A Python Library for Quasi-Monte Carlo Methods\n\nA Python library for quasi-Monte Carlo methods, which are used to improve the efficiency of numerical integration and simulation"
+    "text": "This page collects optional articles, essays, videos, and interactive resources that connect probability, statistics, and data science to real applications, historical context, or broader ideas.\n\nqmcpy.org: A Python Library for Quasi-Monte Carlo Methods\n\nA Python library for quasi-Monte Carlo methods, which are used to improve the efficiency of numerical integration and simulation\n\nRankings of Computer Languages\n\nA ranking of programming languages based on their popularity and usage in the industry\nStatistical questions include: What are the errors in the percentages? What is the significance of a change in rank?"
   },
   {
     "objectID": "classlib/classlib/quarto/pages/git-clone-update-with-submodules.html",

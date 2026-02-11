@@ -454,7 +454,7 @@
 
 <section id="title-slide" data-background-color="#f5f7fb" data-background-image="../classlib/classlib/quarto/assets/images/normal-scatter.png" data-background-position="top left" data-background-size="55%" class="quarto-title-block center">
   <h1 class="title">MATH 476 — Statistics</h1>
-  <p class="subtitle"></p><p><span class="deck-title">Estimators and Confidence Intervals</span><br> <span class="deck-meta">Wackerly et al. Ch. 8–9<br> Assignment 3 due 2/13 <br> Test 1 on 2/19 </span></p><p></p>
+  <p class="subtitle"></p><p><span class="deck-title">Estimators and Confidence Intervals</span><br> <span class="deck-meta">Wackerly et al. Ch. 8–9<br> Assignment 3 due 2/13 <br> Test 1 on 2/19 on Probability Review, Estimators, &amp; Confidence Intervals for Means </span></p><p></p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -671,7 +671,7 @@ c_{\alpha} := Q(1-\alpha),  \quad \text{i.e., } F(c_{\alpha}) \ge 1-\alpha \text
 </ul>
 <p>These <span class="alert">upper critical values</span> are <em>not</em> <span class="math inline">\(\alpha\)</span>-quantiles.</p>
 </div><div class="column" style="width:40%;">
-<div id="1f050cb6" class="cell" data-fig-height="3.6" data-fig-width="4.8" data-execution_count="1">
+<div id="fc75e04a" class="cell" data-fig-height="3.6" data-fig-width="4.8" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -734,7 +734,7 @@ c_{\alpha} := Q(1-\alpha),  \quad \text{i.e., } F(c_{\alpha}) \ge 1-\alpha \text
 &amp;= \Prob \biggl( \frac{2 n \barX_n}{\chi^2_{2n,\,\alpha/2}} \le \mu \le \frac{2 n \barX_n}{\chi^2_{2n,\,1-\alpha/2}} \biggr),
 \end{align*}\]</span></p>
 </div><div class="column" style="width:40%;">
-<div id="5755be06" class="cell" data-fig-height="3.4" data-fig-width="6.8" data-execution_count="4">
+<div id="f2b784d1" class="cell" data-fig-height="3.4" data-fig-width="6.8" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -799,7 +799,7 @@ c_{\alpha} := Q(1-\alpha),  \quad \text{i.e., } F(c_{\alpha}) \ge 1-\alpha \text
 </ul></li>
 </ul>
 </div><div class="column" style="width:55%;">
-<div id="394cf7f4" class="cell" data-fig-height="3.4" data-fig-width="6.8" data-execution_count="6">
+<div id="bc1bc27a" class="cell" data-fig-height="3.4" data-fig-width="6.8" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -824,7 +824,7 @@ c_{\alpha} := Q(1-\alpha),  \quad \text{i.e., } F(c_{\alpha}) \ge 1-\alpha \text
 <p>Student’s <span class="math inline">\(t\)</span> CIs are <span class="alert">wider</span> than CLT Normal CIs for small <span class="math inline">\(n\)</span> because <span class="math inline">\(t_{n-1,\alpha/2} &gt; z_{\alpha/2}\)</span></p>
 <p>But they are <span class="alert">exact</span> and thus more accurate for all <span class="math inline">\(n \ge 2\)</span> when the data are Normal</p>
 </div><div class="column" style="width:70%;">
-<div id="7bb36c9e" class="cell" data-fig-height="3.4" data-fig-width="6.8" data-execution_count="7">
+<div id="e712777b" class="cell" data-fig-height="3.4" data-fig-width="6.8" data-execution_count="7">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1154,10 +1154,10 @@ Sample mean
 <strong>Original</strong>
 </td>
 <td>
-0.63, 0.44, 2.82, 1.52, 1.60, 3.53, 0.88, 4.15
+1.16, 2.26, 0.63, 0.08, 0.98, 1.35, 0.34, 0.12
 </td>
 <td>
-1.95
+0.87
 </td>
 </tr>
 <tr>
@@ -1165,10 +1165,10 @@ Sample mean
 Bootstrap 1
 </td>
 <td>
-0.88, 1.60, 3.53, 1.60, 4.15, 0.88, 1.52, 4.15
+0.08, 0.08, 1.16, 2.26, 0.08, 1.16, 0.08, 0.08
 </td>
 <td>
-2.29
+0.62
 </td>
 </tr>
 <tr>
@@ -1176,10 +1176,10 @@ Bootstrap 1
 Bootstrap 2
 </td>
 <td>
-1.52, 1.60, 1.60, 1.52, 0.88, 0.44, 0.44, 1.52
+0.34, 1.35, 1.16, 1.35, 1.16, 1.16, 0.08, 0.12
 </td>
 <td>
-1.19
+0.84
 </td>
 </tr>
 <tr>
@@ -1187,10 +1187,10 @@ Bootstrap 2
 Bootstrap 3
 </td>
 <td>
-1.52, 0.63, 4.15, 2.82, 3.53, 0.44, 0.88, 4.15
+2.26, 2.26, 0.12, 1.35, 0.12, 0.98, 0.34, 0.98
 </td>
 <td>
-2.27
+1.05
 </td>
 </tr>
 <tr>
@@ -1198,10 +1198,10 @@ Bootstrap 3
 Bootstrap 4
 </td>
 <td>
-1.52, 3.53, 4.15, 3.53, 0.88, 1.52, 1.60, 1.52
+0.34, 1.35, 0.12, 0.08, 1.35, 0.08, 0.34, 0.34
 </td>
 <td>
-2.28
+0.50
 </td>
 </tr>
 <tr>

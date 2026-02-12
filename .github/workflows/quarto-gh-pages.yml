@@ -1,3 +1,4 @@
+cat .github/workflows/quarto-gh-pages.yml 
 name: Publish Quarto site to gh-pages
 
 on:
@@ -25,6 +26,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+          cache: pip
 
       - name: Set RETICULATE_PYTHON
         run: |
@@ -49,9 +51,22 @@ jobs:
         run: |
           R -q -e 'install.packages(c("knitr","rmarkdown","reticulate"), repos="https://cloud.r-project.org")'
 
-      - name: Render
+      - name: Render website (excluding slides)
         run: |
           quarto render
+
+      - name: Render slides subproject
+        run: |
+          cd slides
+          quarto render
+
+      - name: Stage slides into website output
+        run: |
+          rm -rf _site/slides
+          mkdir -p _site/slides
+          rsync -a --delete slides/_site/ _site/slides/
+          echo "Staged slides:"
+          find _site/slides -maxdepth 2 -type f -name '*.html' | sed 's|^|  - |' | head -n 50
 
       - name: Clean Quarto publish worktree
         run: |

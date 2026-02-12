@@ -1,4 +1,3 @@
-cat .github/workflows/quarto-gh-pages.yml 
 name: Publish Quarto site to gh-pages
 
 on:
@@ -80,3 +79,4 @@ jobs:
           render: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+

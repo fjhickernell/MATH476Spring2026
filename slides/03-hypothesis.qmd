@@ -1,0 +1,53 @@
+---
+title: Hypothesis Testing
+subtitle: |
+  <span class="deck-title">Hypothesis Testing</span><br>
+  <span class="deck-meta">{{< meta texts.wms.short >}} Ch. ??<br> 
+  </span>
+author: "Fred J. Hickernell"
+date: last-modified
+date-format: "MMMM D, YYYY"
+reveal-options:
+  disableLayout: false
+---
+
+# Hypothesis Testing Framework
+
+- [Null hypothesis]{.alert} $H_0$ — the default assumption, often representing "no effect" or "status quo"
+- [Alternative hypothesis]{.alert} $H_A$ — what we want to find evidence for
+- [Test statistic]{.alert} $T(\vX)$ — a function of the data used to decide whether to reject $H_0$
+- [Rejection region]{.alert} $\mathcal R$— the set of values of $T(\vX)$ for which we reject $H_0$
+- [$p$-value]{.alert} — (under $H_0$) of a result at least as extreme as observed
+
+We will use ideas from estimation, confidence intervals, and pivots to construct tests
+
+---
+
+
+## Errors
+
+- Type I error: reject $H_0$ when $H_0$ is true
+- Type II error: fail to reject $H_0$ when $H_1$ is true
+
+## Rejection Region
+
+Reject $H_0$ when $T(\vX) \in \mathcal R$
+
+## p-values
+
+$p$-value = probability (under $H_0$) of a result at least as extreme as observed
+
+## Link to Confidence Intervals
+
+Tests and CIs are two views of the same pivot idea
+
+## Likelihood viewpoint (563 emphasis)
+
+- Likelihood $L(\theta \mid \vx)$
+- Likelihood ratio statistic
+
+## Sufficiency link (563 emphasis)
+
+If likelihood depends on data only through $T(\vX)$, then $T(\vX)$ is sufficient.
+
+Tests depend only on sufficient statistics.

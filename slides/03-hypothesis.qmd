@@ -1,5 +1,5 @@
 ---
-title: Hypothesis Testing
+title: "MATH 476 — Statistics"
 subtitle: |
   <span class="deck-title">Hypothesis Testing</span><br>
   <span class="deck-meta">{{< meta texts.wms.short >}} Ch. 10<br> 
@@ -16,7 +16,7 @@ reveal-options:
 - [Null hypothesis]{.alert} $H_0$ — the default assumption, [innocence]{.alert}, often "no effect" or "status quo"
 - [Alternative hypothesis]{.alert} $H_A$ — [guilty]{.alert}, the claim requiring evidence
 
-- [Test statistic]{.alert} $T(\vX)$ — a function (summary) of the data used to assess $H_0$
+- [Test statistic]{.alert} $T(\vX)$ — a function (summary) of the data, $\vX = (X_1, \ldots, X_n)$, used to assess $H_0$
 - [Rejection region]{.alert} $\RR$ — values of $T(\vX)$ for which we reject $H_0$
 
 - [Type I error]{.alert} $\alpha$ — [reasonable doubt]{.alert}, probability of falsely rejecting $H_0$
@@ -40,50 +40,52 @@ X_1,\dots,X_n \IIDsim \Exp(1/\mu),
 \qquad \Ex[X]=\mu.
 $$
 
-Here $X_i$ is the *time between unexpected server failures* (e.g., crashes/outages) for a particular service.
+Here 
 
-The provider claims the **mean time between failures** is $\mu_0 = 200$ hours.
-We want evidence that reliability has **worsened** (failures are happening sooner).
+- $X_i$ is the *time between unexpected server failures* (e.g., crashes/outages) for a particular service
+- The provider claims the *mean time between failures* is $\mu_0 = 200$ hours
+- We want evidence that reliability has *worsened*, i.e. failures are happening more frequently
 
----
+::: {.fragment}
 
-## Step 1: Hypotheses
+### Step 1: Hypotheses
 
-- [Null hypothesis]{.alert}
+- [Null hypothesis]{.alert} (innocence, status quo)
   $$
   H_0: \mu = 200
   $$
 
-- [Alternative hypothesis]{.alert}
+- [Alternative hypothesis]{.alert} (guilty, change)
   $$
   H_A: \mu < 200
   $$
 
----
+::: 
 
-## Step 2: Test Statistic
-
-We use the pivot
-
-$$
-\frac{2n\bar X}{\mu} \sim \chi^2_{2n}.
-$$
-
-Under $H_0$,
-
-$$
-T(\vX) = \frac{2n\bar X}{200} \sim \chi^2_{2n}.
-$$
 
 ---
 
-## Step 3: Significance Level and Rejection Region
+### Step 2: Construct test statistic
 
-Choose
+Use the pivot
+$\displaystyle
+\frac{2n\barX}{\mu} \sim \chi^2_{2n}
+$
+so that under $H_0: \mu = 200$,
 
 $$
-\alpha = 0.05.
+T(\vX) = \frac{2n\barX}{200} \sim \chi^2_{2n}
 $$
+
+---
+
+### Step 3: Choose significance level and construct rejection region
+
+Choose $\alpha = 0.05$ as the maximum tolerable risk of falsely accusing underperformance.
+
+::: {.columns}
+
+::: {.column width="40%"}
 
 Left-tailed test:
 
@@ -98,68 +100,29 @@ $$
 Equivalently, reject when
 
 $$
-\bar X < \frac{200}{2n}\,\chi^2_{2n,\alpha}.
+\barX < \frac{200}{2n}\,\chi^2_{2n,\alpha}.
 $$
 
----
+::: 
 
-## Step 4: Observed Data
 
-Let
-
-$$
-n=10,
-\qquad
-\bar X=176.
-$$
-
-Then
-
-$$
-T_{\text{obs}}=\frac{2(10)(176)}{200}=17.6.
-$$
-
----
-
-## Step 5: p-value
-
-The [$p$-value]{.alert} is
-
-$$
-p=\Prob\big(\chi^2_{20} \le 17.6\big).
-$$
-
-Reject $H_0$ iff $p\le \alpha$.
-
----
-
-## Pretty picture: rejection region under $H_0$
+::: {.column width="60%"}
 
 ```{python}
 #| echo: false
-#| fig-width: 8.0
-#| fig-height: 3.6
+#| fig-width: 6.0
+#| fig-height: 2.3
 
 import numpy as np
 import matplotlib.pyplot as plt
 import scipy.stats as st
-
+from classlib.plots import (
+    annotate_xaxis_marks,
+    shade_under_curve,
+    curve_color,
+    reject_color,
+)
 plt.rcParams["mathtext.fontset"] = "cm"
-
-def annotate_xaxis_marks(ax, xs, labels, *, tick_height=0.08, tick_linewidth=3.0,
-                         text_offset_pts=-28, fontsize=16, ha="center"):
-    ymax = ax.get_ylim()[1]
-    for x, lab in zip(xs, labels):
-        ax.vlines(x, 0, ymax*tick_height, linewidth=tick_linewidth)
-        ax.annotate(
-            lab,
-            xy=(x, 0),
-            xytext=(0, text_offset_pts),
-            textcoords="offset points",
-            ha=ha,
-            va="top",
-            fontsize=fontsize,
-        )
 
 # ---- parameters (edit here) ----
 n = 10
@@ -171,62 +134,95 @@ xbar = 176.0
 df = 2*n
 T_obs = (2*n*xbar)/mu0
 tcrit = st.chi2.ppf(alpha, df)
+ycrit = st.chi2.pdf(tcrit, df)
 
 x = np.linspace(0, st.chi2.ppf(0.999, df), 800)
 pdf = st.chi2.pdf(x, df)
 
 fig, ax = plt.subplots()
-ax.plot(x, pdf, linewidth=3.0)
+curve, = ax.plot(
+    x,
+    pdf,
+    linewidth=3.0,
+    color=curve_color,
+)
 
 # Shade rejection region: T < tcrit
-x_shade = x[x <= tcrit]
-ax.fill_between(x_shade, st.chi2.pdf(x_shade, df), 0, alpha=0.25)
+shade = shade_under_curve(
+    ax,
+    x,
+    pdf,
+    where=(x <= tcrit),
+    alpha=0.3,
+    color=reject_color,
+)
 
-# Critical value and observed statistic
-ax.axvline(tcrit, linewidth=3.0)
-ax.axvline(T_obs, linewidth=3.0, linestyle="--")
+# Critical value 
+ax.vlines(tcrit, 0, ycrit, linewidth=3.0)
 
 ax.set_title(rf"Left-tailed test under $H_0$: $T \sim \chi^2_{{{df}}}$", fontsize=18)
-ax.set_xlabel(r"$t$", fontsize=16)
-ax.set_ylabel(r"$f_{T}(t)$", fontsize=16)
+ax.set_xlabel(r"$t$", fontsize=24)
+ax.set_ylabel(r"$\varrho_{T}(t)$", fontsize=24)
 
 ax.set_ylim(0, max(pdf)*1.15)
 
 annotate_xaxis_marks(
     ax,
-    [tcrit, T_obs],
-    [rf"$\chi^2_{{{df},\,\alpha}}$", r"$T_{\mathrm{obs}}$"],
-    tick_height=0.10,
-    tick_linewidth=3.0,
-    text_offset_pts=-30,
-    fontsize=16,
+    [tcrit],
+    [rf"$\chi^2_{{{df},\,\alpha}}$"],
+    fontsize=24,
 )
 
-ax.text(
-    0.55*tcrit,
-    0.90*max(pdf),
-    r"rejection region",
-    fontsize=16,
-    ha="center",
-)
-ax.text(
-    0.55*tcrit,
-    0.78*max(pdf),
-    rf"$\alpha={alpha}$",
-    fontsize=16,
-    ha="center",
-)
 
+ax.legend(
+    [curve, shade],
+    [rf"$\chi^2_{{{df}}}$ density under $H_0$",
+     rf"rejection region ($\alpha={alpha}$)"],
+    loc="upper right",
+    frameon=False,
+    fontsize=16,
+)
 plt.tight_layout()
 plt.show()
-
-pval = st.chi2.cdf(T_obs, df)
-print(f"df={df}, T_obs={T_obs:.4g}, tcrit={tcrit:.4g}, p-value={pval:.4g}")
 ```
 
---
 
-## Type I and Type II Errors
+::: 
+
+::: 
+---
+
+### Step 4: Observed Data
+
+Let
+
+$$
+n=10,
+\qquad
+\barX=176
+$$
+
+Then
+
+$$
+T_{\text{obs}}=\frac{2(10)(176)}{200}=17.6
+$$
+
+### Step 5: p-value
+
+The [$p$-value]{.alert} is
+
+$$
+p=\Prob\big(\chi^2_{20} \le 17.6\big)  \approx 0.38
+$$
+
+Reject $H_0$ iff $p\le \alpha$
+
+So we do not reject $H_0$ at the $\alpha=0.05$ level
+
+---
+
+### Type I and Type II Errors
 
 - [Type I error]{.alert} $\alpha$:
   $$
@@ -249,7 +245,7 @@ $$
 
 ---
 
-## Big Picture Summary
+### Big Picture Summary
 
 - $H_0$: default reliability claim  
 - $H_A$: evidence of reduced reliability  

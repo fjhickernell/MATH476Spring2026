@@ -7,7 +7,7 @@ subtitle: |
   Test 1 on 2/19 on Probability Review, Estimators, & Confidence Intervals for Means
   </span>
 author: "Fred J. Hickernell"
-date: last-modified
+date: today
 date-format: "MMMM D, YYYY"
 reveal-options:
   disableLayout: false

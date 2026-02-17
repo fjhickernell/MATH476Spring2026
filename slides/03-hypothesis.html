@@ -478,33 +478,38 @@ Fred J. Hickernell
 <section id="hypothesis-testing-framework" class="title-slide slide level1 center">
 <h1>Hypothesis Testing Framework</h1>
 <ul>
-<li><span class="alert">Null hypothesis</span> <span class="math inline">\(H_0\)</span> — the default assumption, often representing “no effect” or “status quo”</li>
-<li><span class="alert">Alternative hypothesis</span> <span class="math inline">\(H_A\)</span> — what we want to find evidence for</li>
-<li><span class="alert">Test statistic</span> <span class="math inline">\(T(\vX)\)</span> — a function of the data used to decide whether to reject <span class="math inline">\(H_0\)</span></li>
-<li><span class="alert">Rejection region</span> <span class="math inline">\(\RR\)</span>— the set of values of <span class="math inline">\(T(\vX)\)</span> for which we reject <span class="math inline">\(H_0\)</span></li>
-<li><span class="alert"><span class="math inline">\(p\)</span>-value</span> — (under <span class="math inline">\(H_0\)</span>) of a result at least as extreme as observed</li>
-<li><span class="alert">Type I error</span> <span class="math inline">\(\alpha\)</span>: probability of rejecting <span class="math inline">\(H_0\)</span> when <span class="math inline">\(H_0\)</span> is true</li>
-<li><span class="alert">Type II error</span> <span class="math inline">\(\beta\)</span>: probability of failing to reject <span class="math inline">\(H_0\)</span> when <span class="math inline">\(H_A\)</span> is true</li>
+<li><p><span class="alert">Null hypothesis</span> <span class="math inline">\(H_0\)</span> — the default assumption, <span class="alert">innocence</span>, often “no effect” or “status quo”</p></li>
+<li><p><span class="alert">Alternative hypothesis</span> <span class="math inline">\(H_A\)</span> — <span class="alert">guilty</span>, the claim requiring evidence</p></li>
+<li><p><span class="alert">Test statistic</span> <span class="math inline">\(T(\vX)\)</span> — a function (summary) of the data used to assess <span class="math inline">\(H_0\)</span></p></li>
+<li><p><span class="alert">Rejection region</span> <span class="math inline">\(\RR\)</span> — values of <span class="math inline">\(T(\vX)\)</span> for which we reject <span class="math inline">\(H_0\)</span></p></li>
+<li><p><span class="alert">Type I error</span> <span class="math inline">\(\alpha\)</span> — <span class="alert">reasonable doubt</span>, probability of falsely rejecting <span class="math inline">\(H_0\)</span></p></li>
+<li><p><span class="alert"><span class="math inline">\(p\)</span>-value</span> — (under <span class="math inline">\(H_0\)</span>) probability of observing a result at least as extreme as the one observed</p></li>
+<li><p><span class="alert">Type II error</span> <span class="math inline">\(\beta\)</span> — probability of failing to reject <span class="math inline">\(H_0\)</span> when <span class="math inline">\(H_A\)</span> is true</p></li>
+<li><p><span class="alert">Power</span> <span class="math inline">\(1-\beta\)</span> — probability of correctly rejecting <span class="math inline">\(H_0\)</span></p></li>
 </ul>
+<blockquote>
+<p>Hypothesis testing is a formal way of deciding whether the data provide enough evidence to overturn a protected default assumption</p>
+</blockquote>
 <p>We will use ideas from estimation, confidence intervals, and pivots to construct tests</p>
 </section>
-<section id="example-manufacturer-claim-mean-lifetime" class="slide level2">
-<h2>Example: Manufacturer Claim (Mean Lifetime)</h2>
+<section id="example-server-reliability-claim-mean-time-between-failures" class="slide level2">
+<h2>Example: Server Reliability Claim (Mean Time Between Failures)</h2>
 <p>Suppose</p>
 <p><span class="math display">\[
 X_1,\dots,X_n \IIDsim \Exp(1/\mu),
-\qquad \E[X]=\mu.
+\qquad \Ex[X]=\mu.
 \]</span></p>
-<p>A manufacturer claims the mean lifetime is 10 hours. We want evidence the product <strong>underperforms</strong>.</p>
+<p>Here <span class="math inline">\(X_i\)</span> is the <em>time between unexpected server failures</em> (e.g., crashes/outages) for a particular service.</p>
+<p>The provider claims the <strong>mean time between failures</strong> is <span class="math inline">\(\mu_0 = 200\)</span> hours. We want evidence that reliability has <strong>worsened</strong> (failures are happening sooner).</p>
 </section>
 <section id="step-1-hypotheses" class="slide level2">
 <h2>Step 1: Hypotheses</h2>
 <ul>
 <li><p><span class="alert">Null hypothesis</span> <span class="math display">\[
-H_0: \mu = 10
+H_0: \mu = 200
 \]</span></p></li>
 <li><p><span class="alert">Alternative hypothesis</span> <span class="math display">\[
-H_A: \mu &lt; 10
+H_A: \mu &lt; 200
 \]</span></p></li>
 </ul>
 </section>
@@ -516,7 +521,7 @@ H_A: \mu &lt; 10
 \]</span></p>
 <p>Under <span class="math inline">\(H_0\)</span>,</p>
 <p><span class="math display">\[
-T(\vX) = \frac{2n\bar X}{10} \sim \chi^2_{2n}.
+T(\vX) = \frac{2n\bar X}{200} \sim \chi^2_{2n}.
 \]</span></p>
 </section>
 <section id="step-3-significance-level-and-rejection-region" class="slide level2">
@@ -535,7 +540,7 @@ T &lt; \chi^2_{2n,\,\alpha}
 \]</span></p>
 <p>Equivalently, reject when</p>
 <p><span class="math display">\[
-\bar X &lt; \frac{10}{2n}\,\chi^2_{2n,\alpha}.
+\bar X &lt; \frac{200}{2n}\,\chi^2_{2n,\alpha}.
 \]</span></p>
 </section>
 <section id="step-4-observed-data" class="slide level2">
@@ -544,11 +549,11 @@ T &lt; \chi^2_{2n,\,\alpha}
 <p><span class="math display">\[
 n=10,
 \qquad
-\bar X=8.8.
+\bar X=176.
 \]</span></p>
 <p>Then</p>
 <p><span class="math display">\[
-T_{\text{obs}}=\frac{2(10)(8.8)}{10}=17.6.
+T_{\text{obs}}=\frac{2(10)(176)}{200}=17.6.
 \]</span></p>
 </section>
 <section id="step-5-p-value" class="slide level2">
@@ -561,7 +566,7 @@ p=\Prob\big(\chi^2_{20} \le 17.6\big).
 </section>
 <section id="pretty-picture-rejection-region-under-h_0" class="slide level2">
 <h2>Pretty picture: rejection region under <span class="math inline">\(H_0\)</span></h2>
-<div id="da96d805" class="cell" data-fig-height="3.6" data-fig-width="8" data-execution_count="1">
+<div id="446d1e76" class="cell" data-fig-height="3.6" data-fig-width="8" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -573,16 +578,19 @@ p=\Prob\big(\chi^2_{20} \le 17.6\big).
 <pre><code>df=20, T_obs=17.6, tcrit=10.85, p-value=0.3863</code></pre>
 </div>
 </div>
+<p>–</p>
 </section>
 <section id="type-i-and-type-ii-errors" class="slide level2">
 <h2>Type I and Type II Errors</h2>
 <ul>
 <li><p><span class="alert">Type I error</span> <span class="math inline">\(\alpha\)</span>: <span class="math display">\[
-\alpha=\Prob(\text{reject }H_0\mid \mu=10).
-\]</span></p></li>
-<li><p><span class="alert">Type II error</span> <span class="math inline">\(\beta\)</span> (for some <span class="math inline">\(\mu_1&lt;10\)</span>): <span class="math display">\[
+\alpha=\Prob(\text{reject }H_0\mid \mu=200).
+\]</span></p>
+<p>Interpretation: We falsely conclude that reliability has worsened when the true mean time between failures is 200 hours.</p></li>
+<li><p><span class="alert">Type II error</span> <span class="math inline">\(\beta\)</span> (for some <span class="math inline">\(\mu_1&lt;200\)</span>): <span class="math display">\[
 \beta(\mu_1)=\Prob(\text{fail to reject }H_0 \mid \mu=\mu_1).
-\]</span></p></li>
+\]</span></p>
+<p>Interpretation: We fail to detect that the system is less reliable than claimed.</p></li>
 </ul>
 <p>Power: <span class="math display">\[
 1-\beta(\mu_1).
@@ -591,37 +599,22 @@ p=\Prob\big(\chi^2_{20} \le 17.6\big).
 <section id="big-picture-summary" class="slide level2">
 <h2>Big Picture Summary</h2>
 <ul>
-<li><span class="math inline">\(H_0\)</span>: default claim<br>
+<li><span class="math inline">\(H_0\)</span>: default reliability claim<br>
 </li>
-<li><span class="math inline">\(H_A\)</span>: what we seek evidence for<br>
+<li><span class="math inline">\(H_A\)</span>: evidence of reduced reliability<br>
 </li>
-<li><span class="math inline">\(T(\vX)\)</span>: data summary<br>
+<li><span class="math inline">\(T(\vX)\)</span>: summary of the observed inter-failure times<br>
 </li>
-<li><span class="math inline">\(\RR\)</span>: where we reject<br>
+<li><span class="math inline">\(\RR\)</span>: values of <span class="math inline">\(T\)</span> that signal reliability has worsened<br>
 </li>
-<li><span class="math inline">\(\alpha\)</span>: probability of Type I error<br>
+<li><span class="math inline">\(\alpha\)</span>: risk of falsely accusing underperformance<br>
 </li>
-<li><span class="math inline">\(p\)</span>-value: strength of evidence<br>
+<li><span class="math inline">\(p\)</span>-value: strength of evidence against the claim<br>
 </li>
-<li><span class="math inline">\(\beta\)</span>: probability of Type II error<br>
+<li><span class="math inline">\(\beta\)</span>: risk of missing a real reliability problem<br>
 </li>
-<li><span class="math inline">\(1-\beta\)</span>: power</li>
+<li><span class="math inline">\(1-\beta\)</span>: probability of detecting reduced reliability</li>
 </ul>
-</section>
-<section id="errors" class="slide level2">
-<h2>Errors</h2>
-<ul>
-<li>Type I error: reject <span class="math inline">\(H_0\)</span> when <span class="math inline">\(H_0\)</span> is true</li>
-<li>Type II error: fail to reject <span class="math inline">\(H_0\)</span> when <span class="math inline">\(H_A\)</span> is true</li>
-</ul>
-</section>
-<section id="rejection-region" class="slide level2">
-<h2>Rejection Region</h2>
-<p>Reject <span class="math inline">\(H_0\)</span> when <span class="math inline">\(T(\vX) \in \mathcal R\)</span></p>
-</section>
-<section id="p-values" class="slide level2">
-<h2>p-values</h2>
-<p><span class="math inline">\(p\)</span>-value = probability (under <span class="math inline">\(H_0\)</span>) of a result at least as extreme as observed</p>
 </section>
 <section id="link-to-confidence-intervals" class="slide level2">
 <h2>Link to Confidence Intervals</h2>

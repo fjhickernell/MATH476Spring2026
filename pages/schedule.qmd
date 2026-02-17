@@ -8,14 +8,14 @@ Classes are held in RE 102
 
 | Date   | Topic                    | Slides                             |
 |--------|---------------------------|-------------------------|
-| Tue Jan 13 | Introductory Examples,  Course Overview | [Introduction and Probability Review](../slides/01-intro.html)  |
+| Tue Jan 13 | Introductory Examples,  Course Overview | [Introduction and Probability Review](../slides/01-intro.html )  |
 | Thu Jan 15 | Introductory Examples, Key Probability Concepts, Important Distributions   |    
 | Fri Jan 16 | **Diagnostic Survey Due**                                |
 | Tue Jan 20 | Important Distributions, Conditional Probability | |
 | Thu Jan 22 | Conditional Probability, Convergence, Central Limit Theorem| |
 | Tue Jan 27 | Central Limit Theorem, Chebyshev's Inequality, Summary Statistics| [Estimation and Confidence Intervals](../slides/02-estimator.html) |
 | Thu Jan 29 | Summary Statistics, Maximum Likelihood Estimation, Bias | |
-Fri Jan 30 | **Assignment 2 Due**
+| Fri Jan 30 | **Assignment 2 Due**
 
 ### February
 
@@ -26,7 +26,7 @@ Fri Jan 30 | **Assignment 2 Due**
 | Tue Feb 10 | Confidence intervals for means | |
 | Thu Feb 12 | Confidence intervals for variances, Bootstrap confidence intervals| |
 | Fri Feb 13 | **Assignment 3 Due**
-| Tue Feb 17 | Introduction to Hypothesis Testing | |
+| Tue Feb 17 | Introduction to Hypothesis Testing | [Hypothesis Testing](../slides/03-hypothesis.html)  |
 | Thu Feb 19 | **Test 1** on Probability Review, Estimators, & Confidence Intervals for Means| |
 | Tue Feb 24 | | |
 | Thu Feb 26 | | |

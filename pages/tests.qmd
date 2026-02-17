@@ -4,6 +4,8 @@ execute:
   echo: false
 ---
 
+### Instructions for Tests and Exams
+
 Unless otherwise noted
 
 - Tests are closed book, but you may use **four** letter-sized sheets of notes (both sides)
@@ -14,7 +16,7 @@ Unless otherwise noted
 - You will be asked to sign an **integrity** statement on the question paper, and you are expected to abide by it
 
 
-## This semester’s tests and exams
+### This semester’s tests and exams
 
 
 Date | Assessment  | PDF

@@ -11,3 +11,5 @@ docs/
 /.quarto/
 
 *.log
+*.aux
+*.out

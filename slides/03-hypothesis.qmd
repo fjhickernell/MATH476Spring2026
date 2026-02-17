@@ -13,28 +13,37 @@ reveal-options:
 
 # Hypothesis Testing Framework
 
-- [Null hypothesis]{.alert} $H_0$ — the default assumption, often representing "no effect" or "status quo"
-- [Alternative hypothesis]{.alert} $H_A$ — what we want to find evidence for
-- [Test statistic]{.alert} $T(\vX)$ — a function of the data used to decide whether to reject $H_0$
-- [Rejection region]{.alert} $\RR$— the set of values of $T(\vX)$ for which we reject $H_0$
-- [$p$-value]{.alert} — (under $H_0$) of a result at least as extreme as observed
-- [Type I error]{.alert} $\alpha$: probability of rejecting $H_0$ when $H_0$ is true
-- [Type II error]{.alert} $\beta$: probability of failing to reject $H_0$ when $H_A$ is true
+- [Null hypothesis]{.alert} $H_0$ — the default assumption, [innocence]{.alert}, often "no effect" or "status quo"
+- [Alternative hypothesis]{.alert} $H_A$ — [guilty]{.alert}, the claim requiring evidence
+
+- [Test statistic]{.alert} $T(\vX)$ — a function (summary) of the data used to assess $H_0$
+- [Rejection region]{.alert} $\RR$ — values of $T(\vX)$ for which we reject $H_0$
+
+- [Type I error]{.alert} $\alpha$ — [reasonable doubt]{.alert}, probability of falsely rejecting $H_0$
+- [$p$-value]{.alert} — (under $H_0$) probability of observing a result at least as extreme as the one observed
+
+- [Type II error]{.alert} $\beta$ — probability of failing to reject $H_0$ when $H_A$ is true
+- [Power]{.alert} $1-\beta$ — probability of correctly rejecting $H_0$
+
+> Hypothesis testing is a formal way of deciding whether the data provide enough evidence to overturn a protected default assumption
 
 We will use ideas from estimation, confidence intervals, and pivots to construct tests
 
 ---
 
-## Example: Manufacturer Claim (Mean Lifetime)
+## Example: Server Reliability Claim (Mean Time Between Failures)
 
 Suppose
 
 $$
 X_1,\dots,X_n \IIDsim \Exp(1/\mu),
-\qquad \E[X]=\mu.
+\qquad \Ex[X]=\mu.
 $$
 
-A manufacturer claims the mean lifetime is 10 hours. We want evidence the product **underperforms**.
+Here $X_i$ is the *time between unexpected server failures* (e.g., crashes/outages) for a particular service.
+
+The provider claims the **mean time between failures** is $\mu_0 = 200$ hours.
+We want evidence that reliability has **worsened** (failures are happening sooner).
 
 ---
 
@@ -42,12 +51,12 @@ A manufacturer claims the mean lifetime is 10 hours. We want evidence the produc
 
 - [Null hypothesis]{.alert}
   $$
-  H_0: \mu = 10
+  H_0: \mu = 200
   $$
 
 - [Alternative hypothesis]{.alert}
   $$
-  H_A: \mu < 10
+  H_A: \mu < 200
   $$
 
 ---
@@ -63,7 +72,7 @@ $$
 Under $H_0$,
 
 $$
-T(\vX) = \frac{2n\bar X}{10} \sim \chi^2_{2n}.
+T(\vX) = \frac{2n\bar X}{200} \sim \chi^2_{2n}.
 $$
 
 ---
@@ -89,7 +98,7 @@ $$
 Equivalently, reject when
 
 $$
-\bar X < \frac{10}{2n}\,\chi^2_{2n,\alpha}.
+\bar X < \frac{200}{2n}\,\chi^2_{2n,\alpha}.
 $$
 
 ---
@@ -101,13 +110,13 @@ Let
 $$
 n=10,
 \qquad
-\bar X=8.8.
+\bar X=176.
 $$
 
 Then
 
 $$
-T_{\text{obs}}=\frac{2(10)(8.8)}{10}=17.6.
+T_{\text{obs}}=\frac{2(10)(176)}{200}=17.6.
 $$
 
 ---
@@ -154,9 +163,9 @@ def annotate_xaxis_marks(ax, xs, labels, *, tick_height=0.08, tick_linewidth=3.0
 
 # ---- parameters (edit here) ----
 n = 10
-mu0 = 10.0
+mu0 = 200.0
 alpha = 0.05
-xbar = 8.8
+xbar = 176.0
 # --------------------------------
 
 df = 2*n
@@ -193,7 +202,6 @@ annotate_xaxis_marks(
     fontsize=16,
 )
 
-# Label the shaded region with alpha
 ax.text(
     0.55*tcrit,
     0.90*max(pdf),
@@ -212,56 +220,47 @@ ax.text(
 plt.tight_layout()
 plt.show()
 
-# Also print p-value numerically
 pval = st.chi2.cdf(T_obs, df)
 print(f"df={df}, T_obs={T_obs:.4g}, tcrit={tcrit:.4g}, p-value={pval:.4g}")
 ```
 
----
+--
 
 ## Type I and Type II Errors
 
 - [Type I error]{.alert} $\alpha$:
   $$
-  \alpha=\Prob(\text{reject }H_0\mid \mu=10).
+  \alpha=\Prob(\text{reject }H_0\mid \mu=200).
   $$
 
-- [Type II error]{.alert} $\beta$ (for some $\mu_1<10$):
+  Interpretation: We falsely conclude that reliability has worsened when the true mean time between failures is 200 hours.
+
+- [Type II error]{.alert} $\beta$ (for some $\mu_1<200$):
   $$
   \beta(\mu_1)=\Prob(\text{fail to reject }H_0 \mid \mu=\mu_1).
   $$
+
+  Interpretation: We fail to detect that the system is less reliable than claimed.
 
 Power:
 $$
 1-\beta(\mu_1).
 $$
 
+---
+
 ## Big Picture Summary
 
-- $H_0$: default claim  
-- $H_A$: what we seek evidence for  
-- $T(\vX)$: data summary  
-- $\RR$: where we reject  
-- $\alpha$: probability of Type I error  
-- $p$-value: strength of evidence  
-- $\beta$: probability of Type II error  
-- $1-\beta$: power  
+- $H_0$: default reliability claim  
+- $H_A$: evidence of reduced reliability  
+- $T(\vX)$: summary of the observed inter-failure times  
+- $\RR$: values of $T$ that signal reliability has worsened  
+- $\alpha$: risk of falsely accusing underperformance  
+- $p$-value: strength of evidence against the claim  
+- $\beta$: risk of missing a real reliability problem  
+- $1-\beta$: probability of detecting reduced reliability
 
 
-
-
-## Errors
-
-- Type I error: reject $H_0$ when $H_0$ is true
-- Type II error: fail to reject $H_0$ when $H_A$ is true
-
-## Rejection Region
-
-Reject $H_0$ when $T(\vX) \in \mathcal R$
-
-## p-values
-
-$p$-value = probability (under $H_0$) of a result at least as extreme as observed
 
 ## Link to Confidence Intervals
 

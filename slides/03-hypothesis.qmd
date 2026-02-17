@@ -2,10 +2,10 @@
 title: Hypothesis Testing
 subtitle: |
   <span class="deck-title">Hypothesis Testing</span><br>
-  <span class="deck-meta">{{< meta texts.wms.short >}} Ch. ??<br> 
+  <span class="deck-meta">{{< meta texts.wms.short >}} Ch. 10<br> 
   </span>
 author: "Fred J. Hickernell"
-date: last-modified
+date: today
 date-format: "MMMM D, YYYY"
 reveal-options:
   disableLayout: false
@@ -16,18 +16,244 @@ reveal-options:
 - [Null hypothesis]{.alert} $H_0$ — the default assumption, often representing "no effect" or "status quo"
 - [Alternative hypothesis]{.alert} $H_A$ — what we want to find evidence for
 - [Test statistic]{.alert} $T(\vX)$ — a function of the data used to decide whether to reject $H_0$
-- [Rejection region]{.alert} $\mathcal R$— the set of values of $T(\vX)$ for which we reject $H_0$
+- [Rejection region]{.alert} $\RR$— the set of values of $T(\vX)$ for which we reject $H_0$
 - [$p$-value]{.alert} — (under $H_0$) of a result at least as extreme as observed
+- [Type I error]{.alert} $\alpha$: probability of rejecting $H_0$ when $H_0$ is true
+- [Type II error]{.alert} $\beta$: probability of failing to reject $H_0$ when $H_A$ is true
 
 We will use ideas from estimation, confidence intervals, and pivots to construct tests
 
 ---
 
+## Example: Manufacturer Claim (Mean Lifetime)
+
+Suppose
+
+$$
+X_1,\dots,X_n \IIDsim \Exp(1/\mu),
+\qquad \E[X]=\mu.
+$$
+
+A manufacturer claims the mean lifetime is 10 hours. We want evidence the product **underperforms**.
+
+---
+
+## Step 1: Hypotheses
+
+- [Null hypothesis]{.alert}
+  $$
+  H_0: \mu = 10
+  $$
+
+- [Alternative hypothesis]{.alert}
+  $$
+  H_A: \mu < 10
+  $$
+
+---
+
+## Step 2: Test Statistic
+
+We use the pivot
+
+$$
+\frac{2n\bar X}{\mu} \sim \chi^2_{2n}.
+$$
+
+Under $H_0$,
+
+$$
+T(\vX) = \frac{2n\bar X}{10} \sim \chi^2_{2n}.
+$$
+
+---
+
+## Step 3: Significance Level and Rejection Region
+
+Choose
+
+$$
+\alpha = 0.05.
+$$
+
+Left-tailed test:
+
+$$
+\RR
+=
+\left\{
+T < \chi^2_{2n,\,\alpha}
+\right\}.
+$$
+
+Equivalently, reject when
+
+$$
+\bar X < \frac{10}{2n}\,\chi^2_{2n,\alpha}.
+$$
+
+---
+
+## Step 4: Observed Data
+
+Let
+
+$$
+n=10,
+\qquad
+\bar X=8.8.
+$$
+
+Then
+
+$$
+T_{\text{obs}}=\frac{2(10)(8.8)}{10}=17.6.
+$$
+
+---
+
+## Step 5: p-value
+
+The [$p$-value]{.alert} is
+
+$$
+p=\Prob\big(\chi^2_{20} \le 17.6\big).
+$$
+
+Reject $H_0$ iff $p\le \alpha$.
+
+---
+
+## Pretty picture: rejection region under $H_0$
+
+```{python}
+#| echo: false
+#| fig-width: 8.0
+#| fig-height: 3.6
+
+import numpy as np
+import matplotlib.pyplot as plt
+import scipy.stats as st
+
+plt.rcParams["mathtext.fontset"] = "cm"
+
+def annotate_xaxis_marks(ax, xs, labels, *, tick_height=0.08, tick_linewidth=3.0,
+                         text_offset_pts=-28, fontsize=16, ha="center"):
+    ymax = ax.get_ylim()[1]
+    for x, lab in zip(xs, labels):
+        ax.vlines(x, 0, ymax*tick_height, linewidth=tick_linewidth)
+        ax.annotate(
+            lab,
+            xy=(x, 0),
+            xytext=(0, text_offset_pts),
+            textcoords="offset points",
+            ha=ha,
+            va="top",
+            fontsize=fontsize,
+        )
+
+# ---- parameters (edit here) ----
+n = 10
+mu0 = 10.0
+alpha = 0.05
+xbar = 8.8
+# --------------------------------
+
+df = 2*n
+T_obs = (2*n*xbar)/mu0
+tcrit = st.chi2.ppf(alpha, df)
+
+x = np.linspace(0, st.chi2.ppf(0.999, df), 800)
+pdf = st.chi2.pdf(x, df)
+
+fig, ax = plt.subplots()
+ax.plot(x, pdf, linewidth=3.0)
+
+# Shade rejection region: T < tcrit
+x_shade = x[x <= tcrit]
+ax.fill_between(x_shade, st.chi2.pdf(x_shade, df), 0, alpha=0.25)
+
+# Critical value and observed statistic
+ax.axvline(tcrit, linewidth=3.0)
+ax.axvline(T_obs, linewidth=3.0, linestyle="--")
+
+ax.set_title(rf"Left-tailed test under $H_0$: $T \sim \chi^2_{{{df}}}$", fontsize=18)
+ax.set_xlabel(r"$t$", fontsize=16)
+ax.set_ylabel(r"$f_{T}(t)$", fontsize=16)
+
+ax.set_ylim(0, max(pdf)*1.15)
+
+annotate_xaxis_marks(
+    ax,
+    [tcrit, T_obs],
+    [rf"$\chi^2_{{{df},\,\alpha}}$", r"$T_{\mathrm{obs}}$"],
+    tick_height=0.10,
+    tick_linewidth=3.0,
+    text_offset_pts=-30,
+    fontsize=16,
+)
+
+# Label the shaded region with alpha
+ax.text(
+    0.55*tcrit,
+    0.90*max(pdf),
+    r"rejection region",
+    fontsize=16,
+    ha="center",
+)
+ax.text(
+    0.55*tcrit,
+    0.78*max(pdf),
+    rf"$\alpha={alpha}$",
+    fontsize=16,
+    ha="center",
+)
+
+plt.tight_layout()
+plt.show()
+
+# Also print p-value numerically
+pval = st.chi2.cdf(T_obs, df)
+print(f"df={df}, T_obs={T_obs:.4g}, tcrit={tcrit:.4g}, p-value={pval:.4g}")
+```
+
+---
+
+## Type I and Type II Errors
+
+- [Type I error]{.alert} $\alpha$:
+  $$
+  \alpha=\Prob(\text{reject }H_0\mid \mu=10).
+  $$
+
+- [Type II error]{.alert} $\beta$ (for some $\mu_1<10$):
+  $$
+  \beta(\mu_1)=\Prob(\text{fail to reject }H_0 \mid \mu=\mu_1).
+  $$
+
+Power:
+$$
+1-\beta(\mu_1).
+$$
+
+## Big Picture Summary
+
+- $H_0$: default claim  
+- $H_A$: what we seek evidence for  
+- $T(\vX)$: data summary  
+- $\RR$: where we reject  
+- $\alpha$: probability of Type I error  
+- $p$-value: strength of evidence  
+- $\beta$: probability of Type II error  
+- $1-\beta$: power  
+
+
+
 
 ## Errors
 
 - Type I error: reject $H_0$ when $H_0$ is true
-- Type II error: fail to reject $H_0$ when $H_1$ is true
+- Type II error: fail to reject $H_0$ when $H_A$ is true
 
 ## Rejection Region
 

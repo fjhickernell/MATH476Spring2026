@@ -22,45 +22,4 @@ reveal-options:
 
 {{< include ../classlib/classlib/quarto/slides/shared/statistics/estimation/confidence.qmd >}}
 
-# Do we have the right estimators to summarize our data and construct confidence intervals?
-
-- [Sufficiency](#sufficiency)
-
-
-## Sufficiency {#sufficiency}
-
-Let $X_1,\dots,X_n$ have joint PMF/PDF $\varrho(\vx \mid \vtheta)$.
-
-&nbsp;
-
-A statistic $T(\vX)$ is [sufficient]{.alert} for $\vtheta$ if
-
-the conditional distribution of $\vX$ given $T(\vX)$
-
-does **NOT** depend on $\vtheta$.
-
-&nbsp;
-
-Interpretation:
-
-> Once $T$ is known, the sample contains no additional information about $\vtheta$
-
-## Factorization Theorem
-
-$T(\vX)$ is [sufficient]{.alert} for $\vtheta$ iff
-
-$$
-\varrho(\vx \mid \vtheta)
-=
-g(T(\vx), \vtheta)\, h(\vx)
-$$
-
-where
-
--   $g$ depends on data only through $T$
--   $h$ does not depend on $\vtheta$
-
-This is the fundamental practical tool for proving sufficiency
-
-
 

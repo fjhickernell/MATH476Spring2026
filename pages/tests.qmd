@@ -21,7 +21,7 @@ Unless otherwise noted
 
 Date | Assessment  | PDF
 ---|---|---|---
-Thu Feb 19 | Test 1 | [Test 1 Questions and Answers](...)
+| Thu Feb 19 | Test 1 | [Test 1 Questions]((assets/tests/current/MATH476Test1Spring2026Answers.pdf))
 | Thu Apr 2 | Test 2 | [Test 2 Questions and Answers](...)
 | Tue May ? | Final Exam  | [Final Exam Questions and Answers](...)
 

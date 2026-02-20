@@ -498,7 +498,7 @@ Fred J. Hickernell
 <p>Suppose</p>
 <p><span class="math display">\[
 X_1,\dots,X_n \IIDsim \Exp(1/\mu),
-\qquad \Ex[X]=\mu.
+\qquad \Ex(X)=\mu.
 \]</span></p>
 <p>Here</p>
 <ul>
@@ -538,15 +538,15 @@ T(\vX) = \frac{2n\barX}{200} \sim \chi^2_{2n}
 \RR
 =
 \left\{
-T &lt; \chi^2_{2n,\,\alpha}
+T &lt; \chi^2_{2n,1-\alpha}
 \right\}.
 \]</span></p>
 <p>Equivalently, reject when</p>
 <p><span class="math display">\[
-\barX &lt; \frac{200}{2n}\,\chi^2_{2n,\alpha}.
+\barX &lt; \frac{200}{2n}\,\chi^2_{2n,1-\alpha}.
 \]</span></p>
 </div><div class="column" style="width:60%;">
-<div id="de4a64d7" class="cell" data-fig-height="2.3" data-fig-width="6" data-execution_count="1">
+<div id="7c6d12bb" class="cell" data-fig-height="2.3" data-fig-width="6" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -582,18 +582,58 @@ p=\Prob\big(\chi^2_{20} \le 17.6\big)  \approx 0.38
 
 <h3 id="type-i-and-type-ii-errors">Type I and Type II Errors</h3>
 <ul>
-<li><p><span class="alert">Type I error</span> <span class="math inline">\(\alpha\)</span>: <span class="math display">\[
-\alpha=\Prob(\text{reject }H_0\mid \mu=200).
-\]</span></p>
-<p>Interpretation: We falsely conclude that reliability has worsened when the true mean time between failures is 200 hours.</p></li>
-<li><p><span class="alert">Type II error</span> <span class="math inline">\(\beta\)</span> (for some <span class="math inline">\(\mu_1&lt;200\)</span>): <span class="math display">\[
-\beta(\mu_1)=\Prob(\text{fail to reject }H_0 \mid \mu=\mu_1).
-\]</span></p>
-<p>Interpretation: We fail to detect that the system is less reliable than claimed.</p></li>
+<li><p><span class="alert">Type I error</span> <span class="math inline">\(\alpha\)</span>:<br>
+Falsely conclude that reliability has worsened when the true mean time between failures is 200 hours <span class="math display">\[
+\alpha
+=
+\Prob(\text{reject }H_0\mid \mu=200)
+\]</span></p></li>
+<li><p><span class="alert">Type II error</span> <span class="math inline">\(\beta(\mu_1)\)</span> (for some <span class="math inline">\(\mu_1&lt;200\)</span>):<br>
+Fail to detect that the system is less reliable than claimed <span class="math display">\[
+\beta(\mu_1)
+=
+\Prob(\text{fail to reject }H_0 | \mu = \mu_1)
+\]</span></p></li>
+<li><p><span class="alert">Power function</span> <span class="math inline">\(\power(\mu_1)\)</span> The probability of correctly detecting reduced reliability (for some <span class="math inline">\(\mu_1&lt;200\)</span>) <span class="math display">\[
+\power(\mu_1)
+=
+\Prob(\text{reject }H_0 | \mu = \mu_1)
+=
+1-\beta(\mu_1)
+\]</span></p></li>
 </ul>
-<p>Power: <span class="math display">\[
-1-\beta(\mu_1).
+</section>
+<section class="slide level2">
+
+<h3 id="power-for-the-server-reliability-test">Power for the Server Reliability Test</h3>
+<p>From Step 3, we reject <span class="math inline">\(H_0\)</span> when <span class="math display">\[
+T=\frac{2n\barX}{200} &lt; \chi^2_{2n,1-\alpha}
 \]</span></p>
+<p>If the true mean is actually <span class="math inline">\(\mu_1\)</span>, then <span class="math display">\[
+\frac{200 T }{\mu_1} = \frac{2n\barX}{\mu_1} \sim\chi^2_{2n}
+\]</span></p>
+<p>Therefore the <span class="alert">power function</span> is <span class="math display">\[\begin{align*}
+\power(\mu_1)
+&amp; =
+\Prob(T&lt; \chi^2_{2n,1-\alpha} \mid \mu = \mu_1)
+=
+\Prob \!\left (\frac{200 T }{\mu_1}&lt; \frac{200 \chi^2_{2n,1-\alpha}}{\mu_1} \mid \mu = \mu_1 \right) \\
+&amp; =
+F_{\chi^2_{2n}}\!\left(\frac{200 \chi^2_{2n,1-\alpha}}{\mu_1}\right) \qquad \text{increases as $\mu_1$ decreases}
+\end{align*}\]</span></p>
+</section>
+<section class="slide level2">
+
+<h3 id="power-curve">Power Curve</h3>
+<div id="7479bc36" class="cell" data-fig-height="3.2" data-fig-width="6.2" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="03-hypothesis_files/figure-revealjs/cell-3-output-1.png" width="949" height="471"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 

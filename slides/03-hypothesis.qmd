@@ -1,5 +1,5 @@
 ---
-title: {{< meta course_title >}}
+title: "{{< meta course_title >}}"
 subtitle: |
   <span class="deck-title">{{< meta decks.d03.title >}}</span><br> 
   <span class="deck-meta">{{< meta texts.wms.short >}} Ch. 10<br> 

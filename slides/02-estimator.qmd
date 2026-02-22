@@ -1,6 +1,7 @@
 ---
+title: {{< meta course_title >}}
 subtitle: |
-  <span class="deck-title">Estimators and Confidence Intervals</span><br>
+  <span class="deck-title">{{< meta decks.d02.title >}}</span><br>
   <span class="deck-meta">{{< meta texts.wms.short >}}  Ch. 8–9<br>
   Assignment 3 due 2/13 <br>
   Test 1 on 2/19 on Probability Review, Estimators, & Confidence Intervals for Means
@@ -16,13 +17,13 @@ subtitle: |
 
 {{< include ../classlib/classlib/quarto/slides/shared/statistics/estimation/confidence.qmd >}}
 
-
-{{< nextdeck "03-hypothesis.html" "Hypothesis Testing" >}}
-
 ::: {.text-end}
-
-[Continue to Hypothesis Testing →](03-hypothesis.html)
-
+```{=html}
+<div class="deck-nav">
+  <a class="deck-prev" href="{{< meta decks.d01.file >}}">← {{< meta decks.d01.title >}}</a>
+  <a class="deck-next" href="{{< meta decks.d03.file >}}">{{< meta decks.d03.title >}} →</a>
+</div>
+```
 :::
 
 

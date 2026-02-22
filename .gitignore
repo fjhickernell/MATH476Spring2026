@@ -13,3 +13,6 @@ docs/
 *.log
 *.aux
 *.out
+
+# Quarto watch logs
+.quarto-watch-logs/

@@ -30,7 +30,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="03-hypothesis_files/libs/revealjs/dist/theme/quarto-01a253baf228f18ac7c27718706c6393.css">
+  <link rel="stylesheet" href="03-hypothesis_files/libs/revealjs/dist/theme/quarto-f40efc9c2addd22605eff515b14f1811.css">
   <link href="03-hypothesis_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="03-hypothesis_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="03-hypothesis_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -517,13 +517,8 @@ X_1,\dots,X_n \IIDsim \Exp(1/\mu),
 <section class="slide level2">
 
 <h3 id="step-2-construct-test-statistic">Step 2: Construct test statistic</h3>
-<p>Use the pivot <span class="math inline">\(\displaystyle
-\frac{2n\barX}{\mu} \sim \chi^2_{2n}\)</span></p>
-<p>so that under <span class="math inline">\(H_0: \mu = 200\)</span> <span class="math display">\[
-T(\vX) = \frac{2n\barX}{200} \sim \chi^2_{2n}\]</span></p>
-</section>
-<section class="slide level2">
-
+<p><span class="math display">\[\text{Use the pivot } \frac{2n\barX}{\mu} \sim \chi^2_{2n}, \qquad \text{so that under } H_0: \mu = 200, \quad T(\vX) = \frac{2n\barX}{200} \sim \chi^2_{2n}\]</span></p>
+<div class="fragment">
 <h3 id="step-3-choose-significance-level-and-construct-rejection-region">Step 3: Choose significance level and construct rejection region</h3>
 <p>Choose <span class="math inline">\(\alpha = 0.05\)</span> as the maximum tolerable risk of falsely accusing underperformance</p>
 <div class="columns">
@@ -539,7 +534,7 @@ T &lt; \chi^2_{2n,1-\alpha}
 <p>Equivalently, reject when</p>
 <p><span class="math display">\[\barX &lt; \frac{200}{2n}\,\chi^2_{2n,1-\alpha}\]</span></p>
 </div><div class="column" style="width:60%;">
-<div id="752e5c59" class="cell" data-fig-height="2.3" data-fig-width="6" data-execution_count="7">
+<div id="cacc008d" class="cell" data-fig-height="2.3" data-fig-width="6" data-execution_count="7">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -549,6 +544,7 @@ T &lt; \chi^2_{2n,1-\alpha}
 </div>
 </div>
 </div></div>
+</div>
 </section>
 <section class="slide level2">
 
@@ -556,7 +552,8 @@ T &lt; \chi^2_{2n,1-\alpha}
 <p>Let</p>
 <p><span class="math display">\[n=10,\qquad \barX=176\]</span></p>
 <p>Then <span class="math display">\[T_{\text{obs}}=\frac{2(10)(176)}{200}=17.60\]</span></p>
-<h3 id="step-5-p-value">Step 5: p-value</h3>
+<div class="fragment">
+<h3 id="step-5-p-value-and-decision">Step 5: <span class="math inline">\(p\)</span>-value and decision</h3>
 <p>The <span class="alert"><span class="math inline">\(p\)</span>-value</span> is</p>
 <p><span class="math display">\[p=\Prob\big(\chi^2_{20} \le 17.60\big)  \approx 0.39\]</span></p>
 Reject <span class="math inline">\(H_0\)</span> iff <span class="math inline">\(p\le \alpha\)</span>
@@ -564,6 +561,7 @@ Reject <span class="math inline">\(H_0\)</span> iff <span class="math inline">\(
 
 </div>
 <p>So we do NOT reject <span class="math inline">\(H_0\)</span> at the <span class="math inline">\(\alpha=0.05\)</span> level</p>
+</div>
 </section>
 <section class="slide level2">
 
@@ -591,21 +589,21 @@ Reject <span class="math inline">\(H_0\)</span> iff <span class="math inline">\(
 </section>
 <section class="slide level2">
 
-<h3 id="power-for-the-server-reliability-test">Power for the Server Reliability Test</h3>
+<h3 id="power-for-the-server-reliability-test">Power for the Server Reliability test</h3>
 <p>From Step 3, we reject <span class="math inline">\(H_0\)</span> when</p>
 <p><span class="math display">\[T=\frac{2n\barX}{200} &lt; \chi^2_{2n,1-\alpha}\]</span></p>
 <p>If the true mean is actually <span class="math inline">\(\mu_1\)</span>, then <span class="math display">\[\frac{200 T }{\mu_1} = \frac{2n\barX}{\mu_1} \sim\chi^2_{2n}\]</span></p>
 <p>Therefore the <span class="alert">power function</span> is <span class="math display">\[\begin{align*}
 \power(\mu_1)
 &amp;= \Prob\!\left(T &lt; \chi^2_{2n,\,1-\alpha}\mid \mu=\mu_1\right)
-= \Prob\!\left(\frac{200\,T}{\mu_1} &lt; \frac{200\,\chi^2_{2n,\,1-\alpha}}{\mu_1} \,\middle|\, \mu=\mu_1\right)\\
-&amp;= F_{\chi^2_{2n}}\!\left(\frac{200\,\chi^2_{2n,\,1-\alpha}}{\mu_1}\right)\qquad \text{increases as $\mu_1$ decreases.}
+= \Prob\!\left(\frac{200\,T}{\mu_1} \sim \chi^2_{2n} &lt; \frac{200\,\chi^2_{2n,\,1-\alpha}}{\mu_1} \,\middle|\, \mu=\mu_1\right)\\
+&amp;\qquad \qquad \text{increases as $\mu_1$ decreases.}
 \end{align*}\]</span></p>
 </section>
 <section class="slide level2">
 
 <h3 id="power-curve">Power Curve</h3>
-<div id="28ac2b6c" class="cell" data-fig-height="3.2" data-fig-width="6.2" data-execution_count="13">
+<div id="eddf680b" class="cell" data-fig-height="3.2" data-fig-width="6.2" data-execution_count="13">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -614,14 +612,18 @@ Reject <span class="math inline">\(H_0\)</span> iff <span class="math inline">\(
 </div>
 </div>
 </div>
+<div class="key-point">
+<p><strong>Do not</strong> use the power curve to decide whether to reject after seeing the data</p>
+<p>Power is about the test procedure, not about the observed data</p>
+</div>
 </section>
 <section id="two-kinds-of-error" class="slide level2">
 <h2>Two kinds of error</h2>
-<p><span class="math display">\[
+<p><span class="math display">\[\begin{gather*}
 H_0 \text{ null hypothesis (default, innocence) in terms of } \theta
-\qquad
+\\
 H_A \text{ alternative hypothesis (evidence, guilt) in terms of } \theta
-\]</span></p>
+\end{gather*}\]</span></p>
 <p><span class="math inline">\(H_0\)</span> and <span class="math inline">\(H_A\)</span> are mutually exclusive</p>
 <h3 id="truth-vs-decision">Truth vs Decision</h3>
 <table class="caption-top">
@@ -869,16 +871,6 @@ H_A \text{ alternative hypothesis (evidence, guilt) in terms of } \theta
 <li>Test the <em>least favorable</em> value</li>
 </ul>
 </div></div>
-</section>
-<section id="likelihood-viewpoint-563-emphasis" class="slide level2">
-<h2>Likelihood viewpoint (563 emphasis)</h2>
-<ul>
-<li>Likelihood <span class="math inline">\(L(\theta \mid \vx)\)</span></li>
-<li>Likelihood ratio statistic</li>
-<li>Neyman-Pearson lemma and uniformly most powerful tests</li>
-<li>what else?</li>
-<li>we do need to talk about different hypotheses, e.g., one-sided vs two-sided, simple vs composite, etc.</li>
-</ul>
 <div class="deck-nav">
   <a class="deck-prev" href="02-estimator.html">← Estimators and Confidence Intervals</a>
   <span class="deck-next deck-disabled"></span>

@@ -26,9 +26,9 @@ Classes are held in RE 102
 | Tue Feb 10 | Confidence intervals for means | |
 | Thu Feb 12 | Confidence intervals for variances, Bootstrap confidence intervals| |
 | Fri Feb 13 | **Assignment 3 Due**
-| Tue Feb 17 | Introduction to Hypothesis Testing | [Hypothesis Testing](../slides/03-hypothesis.html)  |
+| Tue Feb 17 | Introduction to hypothesis testing | [Hypothesis Testing](../slides/03-hypothesis.html)  |
 | Thu Feb 19 | **Test 1** on Probability Review, Estimators, & Confidence Intervals for Means| |
-| Tue Feb 24 | | |
+| Tue Feb 24 | Hypothesis testing framework and examples | |
 | Thu Feb 26 | | |
 
 ### March

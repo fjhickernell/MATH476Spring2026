@@ -7,15 +7,9 @@ project:
     - "pages/**/*.qmd"
     - "!slides/**"
   resources:
-    - classlib/classlib/quarto/slides/hickernell-latex-macros.js
-    - classlib/classlib/quarto/assets/images/normal-scatter.png
-    - classlib/classlib/quarto/slides/hickernell-slides.scss
-    - classlib/classlib/quarto/website/hickernell-website.css
+    - classlib/classlib/quarto/**
     - classlib/classlib/notebooks/**
-    - classlib/classlib/quarto/js/stats-questions.js
-    - classlib/classlib/quarto/css/stats-questions.css
-    - classlib/classlib/notebooks/figures/**
-    - assets/tests/**
+    - assets/**
 
 profiles:
   publish:
@@ -41,7 +35,7 @@ metadata-files:
 website:
   title: "MATH 476 — Spring 2026"
   navbar:
-    logo: /classlib/classlib/quarto/assets/images/normal-scatter.png
+    logo: classlib/classlib/quarto/assets/images/normal-scatter.png
     left:
       - href: index.qmd
         text: Welcome
@@ -83,5 +77,6 @@ course_repo: "https://github.com/fjhickernell/MATH476Spring2026"
 course_repo_label: "MATH476Spring2026 on GitHub"
 
 execute:
+  kernel: qmcpy
   env:
     RETICULATE_PYTHON: /opt/miniconda3/envs/qmcpy/bin/python

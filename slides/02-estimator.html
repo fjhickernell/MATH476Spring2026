@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.27">
 
   <meta name="author" content="Fred J. Hickernell">
-  <meta name="dcterms.date" content="2026-03-03">
+  <meta name="dcterms.date" content="2026-03-04">
   <title>MATH 476 — Statistics</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -202,6 +202,7 @@
           dist:  "{\\operatorname{dist}}",
           spn:   "{\\operatorname{span}}",
           sgn:   "{\\operatorname{sgn}}",
+          releff: "{\\operatorname{rel-eff}}",
           mse:   "{\\operatorname{mse}}",
           rmse:  "{\\operatorname{rmse}}",
           rank:  "{\\operatorname{rank}}",
@@ -476,7 +477,7 @@ Fred J. Hickernell
 </div>
 </div>
 
-  <p class="date">March 3, 2026</p>
+  <p class="date">March 4, 2026</p>
 </section>
 <section id="how-to-learn-this-subject" class="title-slide slide level1 center">
 <h1>How to Learn This Subject</h1>
@@ -644,7 +645,7 @@ L(\vtheta  \mid  \vx) := \varrho_{\vX  \mid  \vtheta}(\vx); \qquad L(\vtheta  \m
 <p><span class="math inline">\(\exstar\)</span> Is the MLE <span class="math inline">\(\theta\)</span> of <span class="math inline">\(\theta\)</span> for <span class="math inline">\(X \sim \Unif(0,\theta)\)</span> unbiased? Can you modify it to be unbiased?</p>
 </section>
 <section id="consistency" class="slide level2">
-<h2>Consistency of estimators</h2>
+<h2>Consistency</h2>
 <p><span class="small">(CB §10.1; WMS §9.3)</span></p>
 <p>Let <span class="math inline">\(\Theta_n\)</span> be an estimate <span class="math inline">\(\theta\)</span> based on a sample of size <span class="math inline">\(n\)</span>. This estimator is <span class="alert">consistent</span> if <span class="math display">\[
 \Theta_n \pto \theta \quad \text{as } n \to \infty
@@ -653,6 +654,27 @@ L(\vtheta  \mid  \vx) := \varrho_{\vX  \mid  \vtheta}(\vx); \qquad L(\vtheta  \m
 <div class="key-point">
 <p>The sample mean is a consistent estimator of the population mean if the variance of the data is finite</p>
 </div>
+</section>
+<section id="efficiency" class="slide level2">
+<h2>Efficiency</h2>
+<p>Let <span class="math inline">\(T_1(\vX)\)</span> and <span class="math inline">\(T_2(\vX)\)</span> be estimators of <span class="math inline">\(\theta\)</span></p>
+<div class="key-point">
+<p>Among unbiased estimators, <span class="math inline">\(T_1\)</span> is <em>more efficient</em> than <span class="math inline">\(T_2\)</span> if <span class="math inline">\(\var(T_1) &lt; \var(T_2)\)</span></p>
+</div>
+<p>The <span class="alert">relative efficiency</span> of <span class="math inline">\(T_1\)</span> to <span class="math inline">\(T_2\)</span> is</p>
+<p><span class="math display">\[
+\releff(T_1,T_2)
+=
+\frac{\var(T_2)}{\var(T_1)}
+\]</span></p>
+<ul>
+<li>If <span class="math inline">\(\releff(T_1,T_2) &gt; 1\)</span>, then <span class="math inline">\(T_1\)</span> is more efficient.</li>
+<li>If <span class="math inline">\(\releff(T_1,T_2) = 1\)</span>, the estimators are equally efficient.</li>
+</ul>
+<p>Efficiency is defined using variance when estimators are <em>unbiased</em>, instead define relative efficiency using <span class="alert">mean squared error</span></p>
+<p><span class="math display">\[
+\mse(T) = \var(T) + \bigl[\bias(T)\bigr]^2
+\]</span></p>
 </section></section>
 <section>
 <section id="confidence-intervals" class="title-slide slide level1 center">
@@ -715,7 +737,7 @@ c_{\alpha} := Q(1-\alpha),  \quad \text{i.e., } F(c_{\alpha}) \ge 1-\alpha \text
 </ul>
 <p>These <span class="alert">upper critical values</span> are <em>not</em> <span class="math inline">\(\alpha\)</span>-quantiles.</p>
 </div><div class="column" style="width:40%;">
-<div id="c78dbeb8" class="cell" data-fig-height="3.6" data-fig-width="4.8" data-execution_count="1">
+<div id="1be32661" class="cell" data-fig-height="3.6" data-fig-width="4.8" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -757,7 +779,7 @@ c_{\alpha} := Q(1-\alpha),  \quad \text{i.e., } F(c_{\alpha}) \ge 1-\alpha \text
 <p><em>Example</em>: You observe <span class="math inline">\(\barX_n = 12.0\)</span> minutes for taxis to arrive.You construct a 95% confidence interval for the mean arrival time, <span class="math inline">\(\mu\)</span>, assuming that the arrival times are distributed <span class="math inline">\(\Exp(1/\mu)\)</span>. Recall that <span class="math inline">\(\mu = \sigma = 1/\lambda\)</span>.</p>
 <div class="columns">
 <div class="column" style="width:58%;">
-<div id="e4200c4f" class="cell" data-dpi="220" data-fig-height="4.6" data-fig-width="9" data-execution_count="3">
+<div id="bba39d73" class="cell" data-dpi="220" data-fig-height="4.6" data-fig-width="9" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -767,7 +789,7 @@ c_{\alpha} := Q(1-\alpha),  \quad \text{i.e., } F(c_{\alpha}) \ge 1-\alpha \text
 </div>
 </div>
 </div><div class="column" style="width:42%;">
-<div id="07e78c22" class="cell" data-dpi="220" data-fig-height="4.6" data-fig-width="6.5" data-execution_count="4">
+<div id="1421af3c" class="cell" data-dpi="220" data-fig-height="4.6" data-fig-width="6.5" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -800,7 +822,7 @@ c_{\alpha} := Q(1-\alpha),  \quad \text{i.e., } F(c_{\alpha}) \ge 1-\alpha \text
 &amp;= \Prob \biggl( \frac{2 n \barX_n}{\chi^2_{2n,\,\alpha/2}} \le \mu \le \frac{2 n \barX_n}{\chi^2_{2n,\,1-\alpha/2}} \biggr),
 \end{align*}\]</span></p>
 </div><div class="column" style="width:40%;">
-<div id="6e62bc8d" class="cell" data-fig-height="3.4" data-fig-width="6.8" data-execution_count="6">
+<div id="ac67f711" class="cell" data-fig-height="3.4" data-fig-width="6.8" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -814,7 +836,7 @@ c_{\alpha} := Q(1-\alpha),  \quad \text{i.e., } F(c_{\alpha}) \ge 1-\alpha \text
 <section class="slide level2">
 
 <h3 id="exact-vs-clt-sampling-distribution-of-overlinex-when-x_i-sim-exp1mu">Exact vs CLT sampling distribution of <span class="math inline">\(\overline{X}\)</span>, when <span class="math inline">\(X_i \sim \Exp(1/\mu)\)</span></h3>
-<div id="c6ae0956" class="cell" data-fig-height="3.4" data-fig-width="6.8" data-execution_count="7">
+<div id="2e61d70d" class="cell" data-fig-height="3.4" data-fig-width="6.8" data-execution_count="7">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -829,7 +851,7 @@ c_{\alpha} := Q(1-\alpha),  \quad \text{i.e., } F(c_{\alpha}) \ge 1-\alpha \text
 <h3 id="exact-vs-clt-confidence-intervals-for-mu-when-x_i-sim-exp1mu-two-sample-sizes">Exact vs CLT confidence intervals for <span class="math inline">\(\mu\)</span>, when <span class="math inline">\(X_i \sim \Exp(1/\mu)\)</span> (two sample sizes)</h3>
 <div class="columns">
 <div class="column" style="width:65%;">
-<div id="5c8d2199" class="cell" data-fig-height="3.4" data-fig-width="6.8" data-execution_count="8">
+<div id="88779e0e" class="cell" data-fig-height="3.4" data-fig-width="6.8" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -867,7 +889,7 @@ c_{\alpha} := Q(1-\alpha),  \quad \text{i.e., } F(c_{\alpha}) \ge 1-\alpha \text
 <p>Student’s <span class="math inline">\(t\)</span> CIs are <span class="alert">wider</span> than CLT Normal CIs for small <span class="math inline">\(n\)</span> because <span class="math inline">\(t_{n-1,\alpha/2} &gt; z_{\alpha/2}\)</span></p>
 <p>But they are <span class="alert">exact</span> and thus more accurate for all <span class="math inline">\(n \ge 2\)</span> when the data are Normal</p>
 </div><div class="column" style="width:70%;">
-<div id="3aaa8024" class="cell" data-fig-height="3.4" data-fig-width="6.8" data-execution_count="9">
+<div id="60038482" class="cell" data-fig-height="3.4" data-fig-width="6.8" data-execution_count="9">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1226,10 +1248,10 @@ Sample mean
 <strong>Original</strong>
 </td>
 <td>
-2.84, 3.93, 3.29, 0.71, 4.69, 0.07, 1.81, 0.79
+1.66, 2.69, 1.42, 0.82, 4.95, 0.12, 4.05, 3.67
 </td>
 <td>
-2.27
+2.42
 </td>
 </tr>
 <tr>
@@ -1237,10 +1259,10 @@ Sample mean
 Bootstrap 1
 </td>
 <td>
-2.84, 4.69, 1.81, 0.71, 3.93, 0.07, 3.29, 4.69
+4.95, 3.67, 4.05, 0.12, 1.66, 0.82, 1.42, 3.67
 </td>
 <td>
-2.75
+2.54
 </td>
 </tr>
 <tr>
@@ -1248,10 +1270,10 @@ Bootstrap 1
 Bootstrap 2
 </td>
 <td>
-2.84, 0.79, 3.29, 4.69, 4.69, 0.07, 4.69, 3.29
+0.12, 0.82, 4.95, 1.66, 4.05, 2.69, 1.42, 0.82
 </td>
 <td>
-3.04
+2.07
 </td>
 </tr>
 <tr>
@@ -1259,10 +1281,10 @@ Bootstrap 2
 Bootstrap 3
 </td>
 <td>
-1.81, 3.93, 4.69, 4.69, 3.93, 0.79, 0.71, 0.79
+1.66, 0.82, 2.69, 1.42, 0.12, 0.12, 4.05, 4.05
 </td>
 <td>
-2.67
+1.87
 </td>
 </tr>
 <tr>
@@ -1270,10 +1292,10 @@ Bootstrap 3
 Bootstrap 4
 </td>
 <td>
-2.84, 0.71, 0.71, 0.07, 3.29, 0.71, 0.79, 1.81
+2.69, 1.42, 2.69, 4.95, 4.05, 1.66, 4.95, 1.42
 </td>
 <td>
-1.37
+2.98
 </td>
 </tr>
 <tr>
@@ -1586,7 +1608,7 @@ Bootstrap 4
 </section>
 <section id="manufacturing-example-parameterized" class="slide level2">
 <h2>Manufacturing example (parameterized)</h2>
-<div id="0ce41d73" class="cell" data-message="false" data-execution_count="12">
+<div id="0f5db4e8" class="cell" data-message="false" data-execution_count="12">
 <div class="cell-output cell-output-display cell-output-markdown">
 <ul>
 <li><span class="math inline">\(n=25\)</span>, <span class="math inline">\(\barx=10.0200\)</span>, <span class="math inline">\(s=0.2000\)</span></li>
@@ -1605,7 +1627,7 @@ Bootstrap 4
 </section>
 <section class="slide level2">
 
-<div id="1bbc611c" class="cell" data-message="false" data-execution_count="13">
+<div id="0ebb7c05" class="cell" data-message="false" data-execution_count="13">
 <div class="cell-output cell-output-display">
 <div>
 <figure>

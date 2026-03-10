@@ -1,0 +1,10 @@
+---
+title: "{{< meta course_title >}}"
+deck_short_title: "{{< meta decks.d04.short_title >}}"
+subtitle: |
+  <span class="deck-title">{{< meta decks.d04.title >}}</span><br> 
+  <span class="deck-meta">{{< meta texts.wms.short >}} Ch. 11, 13<br> 
+  </span>
+---
+
+{{< include ../classlib/classlib/quarto/slides/shared/statistics/linear/linear_frame.qmd >}}

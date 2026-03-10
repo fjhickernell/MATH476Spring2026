@@ -19,7 +19,7 @@ subtitle: |
   <span class="deck-title">{{< meta decks.d02.title >}}</span><br>
   <span class="deck-meta">{{< meta texts.wms.short >}}  Ch. 8–9<br>
   Assignment 3 due 2/13 <br>
-  Test 1 on 2/19 on <br> &emsp; &emsp; &emsp; Probability Review, Estimators, & Confidence Intervals for Means
+  Test 1 on 2/19 on <br> <span class="indent">Probability Review, Estimators, & Confidence Intervals for Means</span>
   </span>
 ---
 

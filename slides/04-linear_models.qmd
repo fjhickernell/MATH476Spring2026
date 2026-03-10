@@ -8,3 +8,12 @@ subtitle: |
 ---
 
 {{< include ../classlib/classlib/quarto/slides/shared/statistics/linear/linear_frame.qmd >}}
+
+
+&nbsp;
+
+```{=html}
+<div class="deck-nav">
+  <a class="deck-prev" href="{{< meta decks.d03.file >}}">← {{< meta decks.d03.title >}}</a>
+</div>
+```

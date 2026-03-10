@@ -30,7 +30,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="03-hypothesis_files/libs/revealjs/dist/theme/quarto-f40efc9c2addd22605eff515b14f1811.css">
+  <link rel="stylesheet" href="03-hypothesis_files/libs/revealjs/dist/theme/quarto-7b2095d918c9b18d21d0be30fef987fa.css">
   <link href="03-hypothesis_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="03-hypothesis_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="03-hypothesis_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -554,7 +554,7 @@ X_1,\dots,X_n \IIDsim \Exp(1/\mu),
 <p>No data has been observed yet</p>
 </div>
 </div><div class="column" style="width:60%;">
-<div id="e7440b2e" class="cell" data-fig-height="2.3" data-fig-width="6" data-execution_count="8">
+<div id="e6c9e25f" class="cell" data-fig-height="2.3" data-fig-width="6" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -623,7 +623,7 @@ Reject <span class="math inline">\(H_0\)</span> iff <span class="math inline">\(
 <section class="slide level2">
 
 <h3 id="power-curves">Power Curves</h3>
-<div id="02b5c5b6" class="cell" data-fig-height="3.2" data-fig-width="6.2" data-execution_count="14">
+<div id="0f265c83" class="cell" data-fig-height="3.2" data-fig-width="6.2" data-execution_count="14">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1050,7 +1050,7 @@ flowchart LR
 </section>
 <section id="power-curves-for-the-two-sided-clt-test" class="slide level2">
 <h2>Power curves for the two-sided CLT test</h2>
-<div id="66333584" class="cell" data-message="false" data-execution_count="15">
+<div id="3b65be5e" class="cell" data-message="false" data-execution_count="15">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1085,7 +1085,7 @@ T_n(\vX) \sim t_{n-1}(\delta) \text{ for } \delta = \frac{\mu_1 - \mu_0}{\sigma/
 </section>
 <section id="power-curves-for-the-one-sided-t-test" class="slide level2">
 <h2>Power curves for the one-sided <span class="math inline">\(t\)</span>-test</h2>
-<div id="5508d87c" class="cell" data-message="false" data-execution_count="16">
+<div id="4d0b9f32" class="cell" data-message="false" data-execution_count="16">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1122,7 +1122,7 @@ T_n(\vX) &gt; \chi^2_{n-1,\alpha}\mid \sigma = \sigma_1
 </section>
 <section id="power-curves-for-the-one-sided-chi2-test" class="slide level2">
 <h2>Power curves for the one-sided <span class="math inline">\(\chi^2\)</span> test</h2>
-<div id="3eede6e2" class="cell" data-message="false" data-execution_count="17">
+<div id="dfbc6010" class="cell" data-message="false" data-execution_count="17">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1206,7 +1206,7 @@ H_0:\mu=\mu_0
 \qquad
 H_A:\mu=\mu_A \quad \text{with } \mu_A &gt; \mu_0
 \]</span></p>
-<p>Assume <span class="math inline">\(X_1,\dots,X_n \sim \Norm(\mu,\sigma^2)\)</span>. The <span class="alert">likelihood ratio</span> test statistic based on this data, <span class="math inline">\(\vX = (X_1,\dots,X_n)\)</span>, is</p>
+<p>Suppose <span class="math inline">\(X_1,\dots,X_n \IIDsim \Norm(\mu,\sigma^2)\)</span>. The <span class="alert">likelihood ratio</span> test statistic based on this data, <span class="math inline">\(\vX = (X_1,\dots,X_n)\)</span>, is</p>
 <p><span class="math display">\[
 \Lambda
 =
@@ -1273,7 +1273,7 @@ H_0:\mu=\mu_0
 \qquad
 H_A:\mu\ne \mu_0
 \]</span></p>
-<p>Assume <span class="math inline">\(X_1,\dots,X_n \IIDsim \Norm(\mu,\sigma^2)\)</span>. The <span class="alert">likelihood ratio</span> test statistic is</p>
+<p>Suppose <span class="math inline">\(X_1,\dots,X_n \IIDsim \Norm(\mu,\sigma^2)\)</span>. The <span class="alert">likelihood ratio</span> test statistic is</p>
 <p><span class="math display">\[
 \Lambda(\vX)
 =
@@ -1322,10 +1322,10 @@ H_0:\mu=\mu_0
 \qquad \text{vs} \qquad
 H_A:\mu\ne\mu_0
 \]</span></p>
-<p>Suppose <span class="math inline">\(X_1,\dots,X_n \sim \Norm(\mu,\sigma^2)\)</span></p>
+<p>Suppose <span class="math inline">\(X_1,\dots,X_n \IIDsim \Norm(\mu,\sigma^2)\)</span></p>
 <p>Parameter vector: <span class="math inline">\(\theta=(\mu,\sigma^2),
 \qquad
-\sigma^2 \text{ is a [nuisance parameter]{.alert}}\)</span> $</p>
+\sigma^2\)</span> is a <span class="alert">nuisance parameter</span></p>
 <h3 id="step-1-unrestricted-mle">Step 1: Unrestricted MLE</h3>
 <p>Log-likelihood: <span class="math display">\[
 \ell(\mu,\sigma^2)
@@ -1441,10 +1441,6 @@ H_A:\mu\ne\mu_0
 <li><p>Has large-sample theory (Wilks)</p></li>
 </ul>
 <p>&nbsp;</p>
-<div class="deck-nav">
-  <a class="deck-prev" href="02-estimator.html">← Estimators and Confidence Intervals</a>
-  <a class="deck-next" href="04-linear_models.html">Linear Models →</a>
-</div>
 
 </section></section>
     </div>
@@ -1784,6 +1780,13 @@ H_A:\mu\ne\mu_0
     })();
     </script>
 
+    <div class="deck-nav-prevwrap">
+      <a class="deck-nav-prev" href="#" aria-label="Previous deck" title="Previous deck">«</a>
+    </div>
+
+    <div class="deck-nav-nextwrap">
+      <a class="deck-nav-next" href="#" aria-label="Next deck" title="Next deck">»</a>
+    </div>
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
@@ -1952,6 +1955,15 @@ H_A:\mu\ne\mu_0
         }
       });
       </script>
+    <script src="../classlib/classlib/quarto/slides/deck-nav-arrows.js"></script>
+    <script id="deck-nav-meta" type="application/json">
+    {
+      "deck_prev_file": "02-estimator.html",
+      "deck_prev_title": "Estimators and Confidence Intervals",
+      "deck_next_file": "04-linear_models.html",
+      "deck_next_title": "Linear Models"
+    }
+    </script>
     
 
 </body></html>

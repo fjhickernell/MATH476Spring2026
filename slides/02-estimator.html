@@ -320,8 +320,8 @@
           mX: "{\\mathsf{X}}",
           mP: "{\\mathsf{P}}",
           mI: "{\\mathsf{I}}",
-          m0: "{\\mathsf{0}}",
-          m1: "{\\mathsf{1}}",
+          mzero: "{\\mathsf{0}}",
+          mone: "{\\mathsf{1}}",
 
           htheta: "{\\widehat{\\theta}}",
           hTheta: "{\\widehat{\\Theta}}",
@@ -755,7 +755,7 @@ c_{\alpha} := Q(1-\alpha),  \quad \text{i.e., } F(c_{\alpha}) \ge 1-\alpha \text
 </ul>
 <p>These <span class="alert">upper critical values</span> are <em>not</em> <span class="math inline">\(\alpha\)</span>-quantiles.</p>
 </div><div class="column" style="width:40%;">
-<div id="e3672c7f" class="cell" data-fig-height="3.6" data-fig-width="4.8" data-execution_count="1">
+<div id="81a6a05e" class="cell" data-fig-height="3.6" data-fig-width="4.8" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -797,7 +797,7 @@ c_{\alpha} := Q(1-\alpha),  \quad \text{i.e., } F(c_{\alpha}) \ge 1-\alpha \text
 <p><em>Example</em>: You observe <span class="math inline">\(\barX_n = 12.0\)</span> minutes for taxis to arrive.You construct a 95% confidence interval for the mean arrival time, <span class="math inline">\(\mu\)</span>, assuming that the arrival times are distributed <span class="math inline">\(\Exp(1/\mu)\)</span>. Recall that <span class="math inline">\(\mu = \sigma = 1/\lambda\)</span>.</p>
 <div class="columns">
 <div class="column" style="width:58%;">
-<div id="8624df60" class="cell" data-dpi="220" data-fig-height="4.6" data-fig-width="9" data-execution_count="3">
+<div id="b6796014" class="cell" data-dpi="220" data-fig-height="4.6" data-fig-width="9" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -807,7 +807,7 @@ c_{\alpha} := Q(1-\alpha),  \quad \text{i.e., } F(c_{\alpha}) \ge 1-\alpha \text
 </div>
 </div>
 </div><div class="column" style="width:42%;">
-<div id="00d63f56" class="cell" data-dpi="220" data-fig-height="4.6" data-fig-width="6.5" data-execution_count="4">
+<div id="de493037" class="cell" data-dpi="220" data-fig-height="4.6" data-fig-width="6.5" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -840,7 +840,7 @@ c_{\alpha} := Q(1-\alpha),  \quad \text{i.e., } F(c_{\alpha}) \ge 1-\alpha \text
 &amp;= \Prob \biggl( \frac{2 n \barX_n}{\chi^2_{2n,\,\alpha/2}} \le \mu \le \frac{2 n \barX_n}{\chi^2_{2n,\,1-\alpha/2}} \biggr),
 \end{align*}\]</span></p>
 </div><div class="column" style="width:40%;">
-<div id="295628a5" class="cell" data-fig-height="3.4" data-fig-width="6.8" data-execution_count="6">
+<div id="7ea07434" class="cell" data-fig-height="3.4" data-fig-width="6.8" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -854,7 +854,7 @@ c_{\alpha} := Q(1-\alpha),  \quad \text{i.e., } F(c_{\alpha}) \ge 1-\alpha \text
 <section class="slide level2">
 
 <h3 id="exact-vs-clt-sampling-distribution-of-overlinex-when-x_i-sim-exp1mu">Exact vs CLT sampling distribution of <span class="math inline">\(\overline{X}\)</span>, when <span class="math inline">\(X_i \sim \Exp(1/\mu)\)</span></h3>
-<div id="d1c5f755" class="cell" data-fig-height="3.4" data-fig-width="6.8" data-execution_count="7">
+<div id="4682faad" class="cell" data-fig-height="3.4" data-fig-width="6.8" data-execution_count="7">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -869,7 +869,7 @@ c_{\alpha} := Q(1-\alpha),  \quad \text{i.e., } F(c_{\alpha}) \ge 1-\alpha \text
 <h3 id="exact-vs-clt-confidence-intervals-for-mu-when-x_i-sim-exp1mu-two-sample-sizes">Exact vs CLT confidence intervals for <span class="math inline">\(\mu\)</span>, when <span class="math inline">\(X_i \sim \Exp(1/\mu)\)</span> (two sample sizes)</h3>
 <div class="columns">
 <div class="column" style="width:65%;">
-<div id="578cc07b" class="cell" data-fig-height="3.4" data-fig-width="6.8" data-execution_count="8">
+<div id="958eb238" class="cell" data-fig-height="3.4" data-fig-width="6.8" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -907,7 +907,7 @@ c_{\alpha} := Q(1-\alpha),  \quad \text{i.e., } F(c_{\alpha}) \ge 1-\alpha \text
 <p>Student’s <span class="math inline">\(t\)</span> CIs are <span class="alert">wider</span> than CLT Normal CIs for small <span class="math inline">\(n\)</span> because <span class="math inline">\(t_{n-1,\alpha/2} &gt; z_{\alpha/2}\)</span></p>
 <p>But they are <span class="alert">exact</span> and thus more accurate for all <span class="math inline">\(n \ge 2\)</span> when the data are Normal</p>
 </div><div class="column" style="width:70%;">
-<div id="68bd3254" class="cell" data-fig-height="3.4" data-fig-width="6.8" data-execution_count="9">
+<div id="a445e66c" class="cell" data-fig-height="3.4" data-fig-width="6.8" data-execution_count="9">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1266,10 +1266,10 @@ Sample mean
 <strong>Original</strong>
 </td>
 <td>
-2.45, 1.93, 4.80, 0.73, 0.40, 1.08, 5.35, 0.82
+4.60, 4.17, 0.18, 1.77, 2.62, 0.17, 3.14, 1.53
 </td>
 <td>
-2.19
+2.27
 </td>
 </tr>
 <tr>
@@ -1277,10 +1277,10 @@ Sample mean
 Bootstrap 1
 </td>
 <td>
-4.80, 0.82, 5.35, 5.35, 5.35, 1.08, 4.80, 2.45
+1.53, 3.14, 0.17, 1.77, 4.17, 2.62, 3.14, 4.17
 </td>
 <td>
-3.75
+2.59
 </td>
 </tr>
 <tr>
@@ -1288,10 +1288,10 @@ Bootstrap 1
 Bootstrap 2
 </td>
 <td>
-1.93, 4.80, 5.35, 0.40, 1.08, 1.08, 0.40, 2.45
+3.14, 2.62, 4.17, 4.17, 1.53, 4.17, 0.17, 0.17
 </td>
 <td>
-2.18
+2.52
 </td>
 </tr>
 <tr>
@@ -1299,10 +1299,10 @@ Bootstrap 2
 Bootstrap 3
 </td>
 <td>
-5.35, 0.73, 1.93, 1.08, 1.93, 2.45, 0.73, 0.73
+3.14, 4.17, 1.77, 0.17, 1.53, 0.17, 0.18, 1.77
 </td>
 <td>
-1.87
+1.61
 </td>
 </tr>
 <tr>
@@ -1310,10 +1310,10 @@ Bootstrap 3
 Bootstrap 4
 </td>
 <td>
-0.82, 0.73, 2.45, 0.73, 0.82, 1.08, 0.82, 0.82
+3.14, 3.14, 0.18, 1.77, 4.17, 2.62, 0.17, 2.62
 </td>
 <td>
-1.03
+2.22
 </td>
 </tr>
 <tr>
@@ -1626,7 +1626,7 @@ Bootstrap 4
 </section>
 <section id="manufacturing-example-parameterized" class="slide level2">
 <h2>Manufacturing example (parameterized)</h2>
-<div id="9a547cf3" class="cell" data-message="false" data-execution_count="12">
+<div id="85f172fd" class="cell" data-message="false" data-execution_count="12">
 <div class="cell-output cell-output-display cell-output-markdown">
 <ul>
 <li><span class="math inline">\(n=25\)</span>, <span class="math inline">\(\barx=10.0200\)</span>, <span class="math inline">\(s=0.2000\)</span></li>
@@ -1645,7 +1645,7 @@ Bootstrap 4
 </section>
 <section class="slide level2">
 
-<div id="b1077861" class="cell" data-message="false" data-execution_count="13">
+<div id="18336322" class="cell" data-message="false" data-execution_count="13">
 <div class="cell-output cell-output-display">
 <div>
 <figure>

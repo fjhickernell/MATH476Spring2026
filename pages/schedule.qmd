@@ -7,7 +7,7 @@ Classes are held in RE 102
 ### January
 
 | Week | Date   | Topic                    | Slides                             |
-|--|--------|---------------------------|-------------------------|
+|-|--------|---------------------------|-------------------------|
 | 1 | Tue Jan 13 | Introductory Examples,  Course Overview | [Introduction and Probability Review](../slides/01-intro.html )  |
 || Thu Jan 15 | Introductory Examples, Key Probability Concepts, Important Distributions   |    
 ||  Fri Jan 16 | **Diagnostic Survey Due**                                |
@@ -20,7 +20,7 @@ Classes are held in RE 102
 ### February
 
 Week | Date   | Topic                    | Slides                             |
-|--|--------|---------------------------|-------------------------|
+|-|--------|---------------------------|-------------------------|
 | 4 | Tue Feb 3 | Distributions of estimators | |
 |  | Thu Feb 5 | Confidence intervals | |
 | 5 | Tue Feb 10 | Confidence intervals for means | |
@@ -34,37 +34,37 @@ Week | Date   | Topic                    | Slides                             |
 ### March
 
 | Week | Date   | Topic                    | Slides                             |
-|--|--------|---------------------------|-------------------------|
+|-|--------|---------------------------|-------------------------|
 | 8 |  Tue Mar 3 |Hypothesis testing examples, likelihood ratio tests  | |
-| Thu Mar 5 | Likelihood ratio tests | |
-| Fri Mar 6 | **Project Submission Due** | |
+| | Thu Mar 5 | Likelihood ratio tests | |
+| | Fri Mar 6 | **Project Submission Due** | |
 | 9 |  Tue Mar 10 | Linear models| [Linear Models](../slides/04-linear_models.html)| |
-| Thu Mar 12 | Ordinary least squares | |
-| Fri Mar 13 | **Assignment 4 Due** | |
-| Tue Mar 17 | **No Class, Spring Break** | |
-| Thu Mar 19 | **No Class, Spring Break** | |
+| | Thu Mar 12 | Ordinary least squares | |
+| | Fri Mar 13 | **Assignment 4 Due** | |
+| | Tue Mar 17 | **No Class, Spring Break** | |
+| | Thu Mar 19 | **No Class, Spring Break** | |
 | 10 | Tue Mar 24 | | |
-| Thu Mar 26 | | |
+| | Thu Mar 26 | | |
 | 11 | Tue Mar 31 | | |
 
 ### April
 
 | Week | Date   | Topic                    | Slides                             |
-|--------|---------------------------|-------------------------|
-| Thu Apr 2 | **Test 2** on Confidence Intervals for Variance, Hypothesis Testing, and Ordinary Least Squares | |
+| - | --------|---------------------------|-------------------------|
+| | Thu Apr 2 | **Test 2** on Confidence Intervals for Variance, Hypothesis Testing, and Ordinary Least Squares | |
 | 12 | Tue Apr 7 | | |
-| Thu Apr 9 | | |
+| | Thu Apr 9 | | |
 | 13 | Tue Apr 14 | | |
-| Thu Apr 16 | | |
+| | Thu Apr 16 | | |
 | 14 | Mon Apr 20 | **Project Presentation** in Galvin Tower 14th Floor West Side Conference Room | |
-| Tue Apr 21 | **Project Presentation** in Galvin Tower 14th Floor West Side Conference Room | |
-| Wed Apr 22 | **Project Presentation** in Galvin Tower 14th Floor West Side Conference Room | |
-| Thu Apr 23 | | |
+| | Tue Apr 21 | **Project Presentation** in Galvin Tower 14th Floor West Side Conference Room | |
+| | Wed Apr 22 | **Project Presentation** in Galvin Tower 14th Floor West Side Conference Room | |
+| | Thu Apr 23 | | |
 | 15 | Tue Apr 28 | | |
-| Thu Apr 30 | | |
+| | Thu Apr 30 | | |
 
 ### May
 
-| Date   | Topic                    | Slides                             |
-|--------|---------------------------|-------------------------|
-| Mon May 4 | **Final Exam** in PH 108 | |
+| Week |Date   | Topic                    | Slides                             |
+|-|--------|---------------------------|-------------------------|
+| 16 | Mon May 4 | **Final Exam** in PH 108 | |

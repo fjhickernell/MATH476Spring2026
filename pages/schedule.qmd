@@ -19,7 +19,7 @@ Classes are held in RE 102
 
 ### February
 
-Week | Date   | Topic                    | Slides                             |
+| Week | Date   | Topic                    | Slides                             |
 |-|--------|---------------------------|-------------------------|
 | 4 | Tue Feb 3 | Distributions of estimators | |
 |  | Thu Feb 5 | Confidence intervals | |

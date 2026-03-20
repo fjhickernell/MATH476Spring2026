@@ -6,8 +6,8 @@
 <script src="02-estimator_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="02-estimator_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="02-estimator_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="02-estimator_files/libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.27">
+<link href="02-estimator_files/libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.36">
 
   <meta name="author" content="Fred J. Hickernell">
   <meta name="dcterms.date" content="2026-03-20">
@@ -18,6 +18,9 @@
   <link rel="stylesheet" href="02-estimator_files/libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="02-estimator_files/libs/revealjs/dist/reveal.css">
   <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -30,7 +33,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="02-estimator_files/libs/revealjs/dist/theme/quarto-34e2d5be8c4ef373f176f660ca39f1df.css">
+  <link rel="stylesheet" href="02-estimator_files/libs/revealjs/dist/theme/quarto-76c6a1af59fba8bd2ff0830f09d9b598.css">
   <link href="02-estimator_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="02-estimator_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="02-estimator_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -489,7 +492,7 @@
 
 <section id="title-slide" data-background-color="#f5f7fb" data-background-image="https://fjhickernell.github.io/MATH476Spring2026/classlib/classlib/quarto/assets/images/normal-scatter.png" data-background-position="top left" data-background-size="55%" class="quarto-title-block center">
   <h1 class="title">MATH 476 — Statistics</h1>
-  <p class="subtitle"></p><p><span class="deck-title">Estimators and Confidence Intervals</span><br> <span class="deck-meta">Wackerly et al. Ch. 8–9<br> Assignment 3 due 2/13 <br> Test 1 on 2/19 on <br> <span class="indent">Probability Review, Estimators, &amp; Confidence Intervals for Means</span> </span></p><p></p>
+  <p class="subtitle"><span class="deck-title">Estimators and Confidence Intervals</span><br> <span class="deck-meta">Wackerly et al. Ch. 8–9<br> Assignment 3 due 2/13 <br> Test 1 on 2/19 on <br> <span class="indent">Probability Review, Estimators, &amp; Confidence Intervals for Means</span> </span></p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -759,7 +762,7 @@ c_{\alpha} := Q(1-\alpha),  \quad \text{i.e., } F(c_{\alpha}) \ge 1-\alpha \text
 </ul>
 <p>These <span class="alert">upper critical values</span> are <em>not</em> <span class="math inline">\(\alpha\)</span>-quantiles.</p>
 </div><div class="column" style="width:40%;">
-<div id="539508ac" class="cell" data-fig-height="3.6" data-fig-width="4.8" data-execution_count="1">
+<div id="0e8a0152" class="cell" data-fig-height="3.6" data-fig-width="4.8" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -801,7 +804,7 @@ c_{\alpha} := Q(1-\alpha),  \quad \text{i.e., } F(c_{\alpha}) \ge 1-\alpha \text
 <p><em>Example</em>: You observe <span class="math inline">\(\barX_n = 12.0\)</span> minutes for taxis to arrive.You construct a 95% confidence interval for the mean arrival time, <span class="math inline">\(\mu\)</span>, assuming that the arrival times are distributed <span class="math inline">\(\Exp(1/\mu)\)</span>. Recall that <span class="math inline">\(\mu = \sigma = 1/\lambda\)</span>.</p>
 <div class="columns">
 <div class="column" style="width:58%;">
-<div id="a7b8c9c1" class="cell" data-dpi="220" data-fig-height="4.6" data-fig-width="9" data-execution_count="3">
+<div id="6c63f5fa" class="cell" data-dpi="220" data-fig-height="4.6" data-fig-width="9" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -811,7 +814,7 @@ c_{\alpha} := Q(1-\alpha),  \quad \text{i.e., } F(c_{\alpha}) \ge 1-\alpha \text
 </div>
 </div>
 </div><div class="column" style="width:42%;">
-<div id="c2f7bc3a" class="cell" data-dpi="220" data-fig-height="4.6" data-fig-width="6.5" data-execution_count="4">
+<div id="5e54ce2b" class="cell" data-dpi="220" data-fig-height="4.6" data-fig-width="6.5" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -844,7 +847,7 @@ c_{\alpha} := Q(1-\alpha),  \quad \text{i.e., } F(c_{\alpha}) \ge 1-\alpha \text
 &amp;= \Prob \biggl( \frac{2 n \barX_n}{\chi^2_{2n,\,\alpha/2}} \le \mu \le \frac{2 n \barX_n}{\chi^2_{2n,\,1-\alpha/2}} \biggr),
 \end{align*}\]</span></p>
 </div><div class="column" style="width:40%;">
-<div id="8cab563d" class="cell" data-fig-height="3.4" data-fig-width="6.8" data-execution_count="6">
+<div id="7506eb8a" class="cell" data-fig-height="3.4" data-fig-width="6.8" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -858,7 +861,7 @@ c_{\alpha} := Q(1-\alpha),  \quad \text{i.e., } F(c_{\alpha}) \ge 1-\alpha \text
 <section class="slide level2">
 
 <h3 id="exact-vs-clt-sampling-distribution-of-overlinex-when-x_i-sim-exp1mu">Exact vs CLT sampling distribution of <span class="math inline">\(\overline{X}\)</span>, when <span class="math inline">\(X_i \sim \Exp(1/\mu)\)</span></h3>
-<div id="97b0c5fc" class="cell" data-fig-height="3.4" data-fig-width="6.8" data-execution_count="7">
+<div id="24887257" class="cell" data-fig-height="3.4" data-fig-width="6.8" data-execution_count="7">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -873,7 +876,7 @@ c_{\alpha} := Q(1-\alpha),  \quad \text{i.e., } F(c_{\alpha}) \ge 1-\alpha \text
 <h3 id="exact-vs-clt-confidence-intervals-for-mu-when-x_i-sim-exp1mu-two-sample-sizes">Exact vs CLT confidence intervals for <span class="math inline">\(\mu\)</span>, when <span class="math inline">\(X_i \sim \Exp(1/\mu)\)</span> (two sample sizes)</h3>
 <div class="columns">
 <div class="column" style="width:65%;">
-<div id="5989a06f" class="cell" data-fig-height="3.4" data-fig-width="6.8" data-execution_count="8">
+<div id="6ddc58f0" class="cell" data-fig-height="3.4" data-fig-width="6.8" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -911,7 +914,7 @@ c_{\alpha} := Q(1-\alpha),  \quad \text{i.e., } F(c_{\alpha}) \ge 1-\alpha \text
 <p>Student’s <span class="math inline">\(t\)</span> CIs are <span class="alert">wider</span> than CLT Normal CIs for small <span class="math inline">\(n\)</span> because <span class="math inline">\(t_{n-1,\alpha/2} &gt; z_{\alpha/2}\)</span></p>
 <p>But they are <span class="alert">exact</span> and thus more accurate for all <span class="math inline">\(n \ge 2\)</span> when the data are Normal</p>
 </div><div class="column" style="width:70%;">
-<div id="29c4a310" class="cell" data-fig-height="3.4" data-fig-width="6.8" data-execution_count="9">
+<div id="688cd030" class="cell" data-fig-height="3.4" data-fig-width="6.8" data-execution_count="9">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1270,10 +1273,10 @@ Sample mean
 <strong>Original</strong>
 </td>
 <td>
-1.77, 5.42, 7.15, 0.71, 0.25, 2.90, 0.78, 3.83
+6.43, 0.30, 0.74, 1.62, 1.54, 0.75, 3.24, 1.58
 </td>
 <td>
-2.85
+2.02
 </td>
 </tr>
 <tr>
@@ -1281,10 +1284,10 @@ Sample mean
 Bootstrap 1
 </td>
 <td>
-2.90, 7.15, 3.83, 1.77, 7.15, 3.83, 7.15, 2.90
+1.62, 1.58, 3.24, 6.43, 6.43, 0.30, 0.75, 1.54
 </td>
 <td>
-4.59
+2.74
 </td>
 </tr>
 <tr>
@@ -1292,10 +1295,10 @@ Bootstrap 1
 Bootstrap 2
 </td>
 <td>
-0.78, 0.78, 1.77, 1.77, 3.83, 0.71, 7.15, 3.83
+0.30, 1.58, 1.54, 3.24, 0.75, 1.62, 0.74, 0.75
 </td>
 <td>
-2.58
+1.31
 </td>
 </tr>
 <tr>
@@ -1303,10 +1306,10 @@ Bootstrap 2
 Bootstrap 3
 </td>
 <td>
-3.83, 2.90, 7.15, 7.15, 1.77, 0.78, 0.25, 2.90
+6.43, 1.54, 0.30, 1.54, 1.62, 3.24, 1.58, 1.54
 </td>
 <td>
-3.34
+2.22
 </td>
 </tr>
 <tr>
@@ -1314,10 +1317,10 @@ Bootstrap 3
 Bootstrap 4
 </td>
 <td>
-7.15, 7.15, 0.71, 3.83, 2.90, 1.77, 7.15, 1.77
+1.62, 1.62, 1.58, 1.62, 0.75, 0.74, 6.43, 0.75
 </td>
 <td>
-4.05
+1.89
 </td>
 </tr>
 <tr>
@@ -1630,7 +1633,7 @@ Bootstrap 4
 </section>
 <section id="manufacturing-example-parameterized" class="slide level2">
 <h2>Manufacturing example (parameterized)</h2>
-<div id="d8433558" class="cell" data-message="false" data-execution_count="12">
+<div id="50fb873f" class="cell" data-message="false" data-execution_count="12">
 <div class="cell-output cell-output-display cell-output-markdown">
 <ul>
 <li><span class="math inline">\(n=25\)</span>, <span class="math inline">\(\barx=10.0200\)</span>, <span class="math inline">\(s=0.2000\)</span></li>
@@ -1649,7 +1652,7 @@ Bootstrap 4
 </section>
 <section class="slide level2">
 
-<div id="aff0bba4" class="cell" data-message="false" data-execution_count="13">
+<div id="e6ff2ca3" class="cell" data-message="false" data-execution_count="13">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -2017,6 +2020,37 @@ Bootstrap 4
     <div class="deck-nav-nextwrap">
       <a class="deck-nav-next" href="#" aria-label="Next deck" title="Next deck">»</a>
     </div>
+    <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      console.log("qmcpy-pypi-impact script loaded");
+
+      const el = document.getElementById("qmcpy-pypi-impact");
+      console.log("qmcpy-pypi-impact element:", el);
+
+      if (!el) {
+        console.log("qmcpy-pypi-impact element not found");
+        return;
+      }
+
+      el.textContent = "Testing PyPI impact fetch...";
+
+      const url =
+        "https://raw.githubusercontent.com/QMCSoftware/QMCSoftware/pypi-stats/stats/pypi_impact_one_liner.txt?v=" +
+        Date.now();
+
+      try {
+        const response = await fetch(url);
+        console.log("fetch response status:", response.status);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const text = (await response.text()).trim();
+        console.log("fetched text:", text);
+        el.textContent = text;
+      } catch (err) {
+        console.error("PyPI impact fetch failed:", err);
+        el.textContent = "PyPI impact metric unavailable.";
+      }
+    });
+    </script>
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

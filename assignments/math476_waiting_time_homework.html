@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Assignments – MATH 476 — Spring 2026</title>
+<title>Homework 5: Exact and Approximate Inference for Call Center Waiting Times – MATH 476 — Spring 2026</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -70,7 +70,299 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
+  window.MathJax = {
+    startup: {
+      typeset: false,
+      pageReady: () => {
+        const typesetAndLayout = (() => {
+          let busy = false;
+          let queued = false;
 
+          const run = async () => {
+            if (busy) {
+              queued = true;
+              return;
+            }
+            busy = true;
+            queued = false;
+
+            try {
+              await MathJax.typesetPromise();
+              if (window.Reveal && typeof Reveal.layout === "function") {
+                Reveal.layout();
+              }
+            } finally {
+              busy = false;
+              if (queued) {
+                requestAnimationFrame(run);
+              }
+            }
+          };
+
+          return () => requestAnimationFrame(run);
+        })();
+
+        return MathJax.startup.defaultPageReady().then(() => {
+          if (window.Reveal) {
+            Reveal.on("ready", typesetAndLayout);
+            Reveal.on("slidechanged", typesetAndLayout);
+            Reveal.on("fragmentshown", typesetAndLayout);
+            Reveal.on("fragmenthidden", typesetAndLayout);
+          }
+          typesetAndLayout();
+        });
+      }
+    },
+    
+    svg: {
+      mtextInheritFont: true,
+      fontCache: "global"
+    },
+    
+    tex: {
+      macros: {
+
+        mathlink: ["\\href{#1}{\\text{\\color{##0f8b8d}{#2}}}", 2],
+        frag: ["{\\class{fragment}{#2}}", 2],
+        alert: ["{\\class{alert}{#1}}", 1],
+        notimplies: "\\ \\mathrel{\\not\\!\\!\\!\\Longrightarrow}",
+        convas: ["\\xrightarrow{\\mathsf{a.s.}}", 0],
+        convp:  ["\\xrightarrow{\\Prob}", 0],
+        convd:  ["\\xrightarrow{\\mathsf{d}}", 0],
+
+        nconvas: ["\\mathrel{\\;\\not\\!\\!\\!\\xrightarrow{\\mathsf{a.s.}}}", 0],
+        nconvp:  ["\\mathrel{\\;\\not\\!\\xrightarrow{\\Prob}}", 0],
+        nconvd:  ["\\mathrel{\\;\\not\\!\\xrightarrow{\\mathsf{d}}}", 0],
+
+        asto: ["\\xrightarrow{\\mathsf{a.s.}}", 0],
+        pto:  ["\\xrightarrow{\\Prob}", 0],
+        dto:  ["\\xrightarrow{\\mathsf{d}}", 0],
+
+        success: "{\\operatorname{succ}}",
+        sinc:    "{\\operatorname{sinc}}",
+        sech:    "{\\operatorname{sech}}",
+        csch:    "{\\operatorname{csch}}",
+
+        Prob: "{\\mathbb{P}}",
+        Ex:   "{\\mathbb{E}}",
+
+
+        dist:  "{\\operatorname{dist}}",
+        Dsc:  "{\\operatorname{D}}",
+        ESD:  "{\\operatorname{ESD}}",
+        WESD:  "{\\operatorname{WESD}}",
+        Vtn:   "{\\operatorname{V}}",
+        spn:   "{\\operatorname{span}}",
+        sgn:   "{\\operatorname{sgn}}",
+        releff: "{\\operatorname{rel-eff}}",
+        mse:   "{\\operatorname{mse}}",
+        rmse:  "{\\operatorname{rmse}}",
+        rank:  "{\\operatorname{rank}}",
+        erfc:  "{\\operatorname{erfc}}",
+        erf:   "{\\operatorname{erf}}",
+        cov:   "{\\operatorname{cov}}",
+        cost:  "{\\operatorname{cost}}",
+        comp:  "{\\operatorname{comp}}",
+        corr:  "{\\operatorname{corr}}",
+        diag:  "{\\operatorname{diag}}",
+        power: "{\\operatorname{power}}",
+        var:   "{\\operatorname{var}}",
+        opt:   "{\\operatorname{opt}}",
+        brandnew: "{\\operatorname{new}}",
+        std:   "{\\operatorname{std}}",
+        se:    "{\\operatorname{se}}",
+        kurt:  "{\\operatorname{kurt}}",
+        med:   "{\\operatorname{med}}",
+        vol:   "{\\operatorname{vol}}",
+        bias:  "{\\operatorname{bias}}",
+        RR:   "{\\mathcal{R}}",
+
+        Bern:  "{\\operatorname{Bern}}",
+        Bin:   "{\\operatorname{Bin}}",
+        Unif:  "{\\operatorname{Unif}}",
+        Norm:  "{\\operatorname{N}}",
+        Exp:   "{\\operatorname{Exp}}",
+        Gam:   "{\\operatorname{Gamma}}",
+        Pois:  "{\\operatorname{Pois}}",
+        Geom:  "{\\operatorname{Geom}}",
+        Cauchy:"{\\operatorname{Cauchy}}",
+        Laplace:"{\\operatorname{Laplace}}",
+        Beta:  "{\\operatorname{Beta}}",
+        Weibull:"{\\operatorname{Weibull}}",
+        Lognorm:"{\\operatorname{Lognormal}}",
+        GP:     "{\\operatorname{GP}}",
+
+        argmin: ["\\operatorname*{argmin}", 0],
+        argmax: ["\\operatorname*{argmax}", 0],
+        Argmin: ["\\argmin\\limits_{#1}", 1],
+        Argmax: ["\\argmax\\limits_{#1}", 1],
+
+        sign:  "{\\operatorname{sign}}",
+        spann: "{\\operatorname{span}}",
+        cond:  "{\\operatorname{cond}}",
+        trace: "{\\operatorname{trace}}",
+        Si:    "{\\operatorname{Si}}",
+        col:   "{\\operatorname{col}}",
+        nullspace: "{\\operatorname{null}}",
+        Order: "{\\mathcal{O}}",
+
+        IIDsim: "\\mathrel{\\stackrel{\\mathrm{IID}}{\\sim}}",
+        LDsim:  "\\mathrel{\\stackrel{\\mathrm{LD}}{\\sim}}",
+        appxsim: "\\mathrel{\\stackrel{\\cdot}{\\sim}}",
+
+        naturals:  "{\\mathbb{N}}",
+        natzero:   "{\\mathbb{N}_0}",
+        integers:  "{\\mathbb{Z}}",
+        rationals: "{\\mathbb{Q}}",
+        reals:     "{\\mathbb{R}}",
+        complex:   "{\\mathbb{C}}",
+        bbone:     "{\\mathbb{1}}",
+        indic:     "{\\mathop{\\mathchoice{\\large\\mathbb{1}}{\\large\\mathbb{1}}{\\mathbb{1}}{\\mathbb{1}}}}",  // indic: enlarged blackboard-bold indicator (uses mathchoice so subscripts scale)
+
+        abs:  ["{\\left\\lvert #1 \\right\\rvert}", 1],
+        norm: ["{\\left\\lVert #1 \\right\\rVert}", 1],
+        ip:   ["{\\left\\langle #1, #2 \\right\\rangle}", 2],
+        dim:   "{\\operatorname{dim}}",
+        df:   "{\\mathrm{df}}",
+
+
+        bvec: ["{\\boldsymbol{#1}}", 1],
+        avec: ["{\\vec{#1}}", 1],
+        vecsym: ["{\\boldsymbol{#1}}", 1],
+
+        vb:  "{\\boldsymbol{b}}",
+        vf:  "{\\boldsymbol{f}}",
+        tvf: "{\\widetilde{\\boldsymbol{f}}}",
+        vk:  "{\\boldsymbol{k}}",
+        vt:  "{\\boldsymbol{t}}",
+        vT:  "{\\boldsymbol{T}}",
+        vx:  "{\\boldsymbol{x}}",
+        vX:  "{\\boldsymbol{X}}",
+        vy:  "{\\boldsymbol{y}}",
+        vY:  "{\\boldsymbol{Y}}",
+        vz:  "{\\boldsymbol{z}}",
+        vZ:  "{\\boldsymbol{Z}}",
+        tvy: "{\\widetilde{\\boldsymbol{y}}}",
+        vY:  "{\\boldsymbol{Y}}",
+        vz:  "{\\boldsymbol{z}}",
+        vZ:  "{\\boldsymbol{Z}}",
+        
+
+        tg:  "{\\widetilde{g}}",
+        tK:  "{\\widetilde{K}}",
+        tX:  "{\\widetilde{X}}",
+        tY:  "{\\widetilde{Y}}",
+        tZ:  "{\\widetilde{Z}}",
+
+        valpha: "{\\boldsymbol{\\alpha}}",
+        vbeta:  "{\\boldsymbol{\\beta}}",
+        vgamma: "{\\boldsymbol{\\gamma}}",
+        vdelta: "{\\boldsymbol{\\delta}}",
+        vDelta: "{\\boldsymbol{\\Delta}}",
+        vepsilon: "{\\boldsymbol{\\epsilon}}",
+        vveps: "{\\boldsymbol{\\varepsilon}}",
+        vlambda:  "{\\boldsymbol{\\lambda}}",
+        vsigma:   "{\\boldsymbol{\\sigma}}",
+        vtheta:   "{\\boldsymbol{\\theta}}",
+        vTheta:   "{\\boldsymbol{\\Theta}}",
+        vomega:   "{\\boldsymbol{\\omega}}",
+        vpi:      "{\\boldsymbol{\\pi}}",
+        vphi:     "{\\boldsymbol{\\phi}}",
+        vPhi:     "{\\boldsymbol{\\Phi}}",
+        vmu:      "{\\boldsymbol{\\mu}}",
+        vnu:     "{\\boldsymbol{\\nu}}",
+        vzeta:   "{\\boldsymbol{\\zeta}}",
+
+        mX: "{\\mathsf{X}}",
+        mP: "{\\mathsf{P}}",
+        mI: "{\\mathsf{I}}",
+        mzero: "{\\mathsf{0}}",
+        mone: "{\\mathsf{1}}",
+
+        htheta: "{\\widehat{\\theta}}",
+        hTheta: "{\\widehat{\\Theta}}",
+        hbeta:  "{\\widehat{\\beta}}",
+        hvbeta: "{\\widehat{\\boldsymbol{\\beta}}}",
+        hlambda: "{\\widehat{\\lambda}}",
+        hmu:    "{\\widehat{\\mu}}",
+        hsigma: "{\\widehat{\\sigma}}",
+        hSigma: "{\\widehat{\\Sigma}}",
+        hp:    "{\\widehat{p}}",
+        hP:     "{\\widehat{P}}",
+        hX:     "{\\widehat{X}}",
+        hY:     "{\\widehat{Y}}",
+        hvY:    "{\\widehat{\\boldsymbol{Y}}}",
+        hZ:     "{\\widehat{Z}}",
+        hvveps: "{\\widehat{\\boldsymbol{\\varepsilon}}}",
+
+        ct: "{\\mathcal{T}}",
+        cf: "{\\mathcal{F}}",
+        cc: "{\\mathcal{C}}",
+        cx: "{\\mathcal{X}}",
+
+        vzero: "{\\boldsymbol{0}}",
+        vone:  "{\\boldsymbol{1}}",
+        vinf:  "{\\boldsymbol{\\infty}}",
+        
+        barD: "{\\overline{D}}",
+        barx: "{\\overline{x}}",
+        barX: "{\\overline{X}}",
+        barY: "{\\overline{Y}}",
+        bary: "{\\overline{y}}",
+        barZ: "{\\overline{Z}}",
+
+        me:  "{\\mathrm{e}}",
+        mi:  "{\\mathrm{i}}",
+        mpi: "{\\mathrm{\\pi}}",
+        mK: "{\\mathsf{K}}",
+        tmK: "{\\widetilde{\\mathsf{K}}}",
+        mSigma: "{\\mathsf{\\Sigma}}",
+
+        dif: "{\\mathrm{d}}",
+        IID: "{\\mathrm{IID}}",
+        MLE: "{\\mathrm{MLE}}",
+        LRT: "{\\mathrm{LRT}}",
+
+        exstar: "{\\mathop{\\mathchoice{\\color{gold}{\\Large\\star}}{\\color{gold}{\\Large\\star}}{\\color{gold}{\\large\\star}}{\\color{gold}{\\star}}}}",
+        exeq: "{\\mathrel{\\,\\overset{\\exstar}{=}\\,}}",
+        exsim: "{\\mathrel{\\,\\overset{\\exstar}{\\sim}\\,}}",
+        
+      } 
+    }
+  };
+</script>
+
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -112,7 +404,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Notebooks</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../pages/homework.html" aria-current="page"> 
+    <a class="nav-link" href="../pages/homework.html"> 
 <span class="menu-text">Assignments</span></a>
   </li>  
   <li class="nav-item">
@@ -186,8 +478,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#ground-rules-for-assignments" id="toc-ground-rules-for-assignments" class="nav-link active" data-scroll-target="#ground-rules-for-assignments">Ground rules for assignments</a></li>
-  <li><a href="#list-of-assignments" id="toc-list-of-assignments" class="nav-link" data-scroll-target="#list-of-assignments">List of assignments</a></li>
+  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background">Background</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li><a href="#question" id="toc-question" class="nav-link" data-scroll-target="#question">Question</a>
+  <ul class="collapse">
+  <li><a href="#part-1-looking-at-the-data" id="toc-part-1-looking-at-the-data" class="nav-link" data-scroll-target="#part-1-looking-at-the-data">Part 1: Looking at the Data</a></li>
+  <li><a href="#part-2-exact-hypothesis-test" id="toc-part-2-exact-hypothesis-test" class="nav-link" data-scroll-target="#part-2-exact-hypothesis-test">Part 2: Exact Hypothesis Test</a></li>
+  <li><a href="#part-3-exact-upper-confidence-bound" id="toc-part-3-exact-upper-confidence-bound" class="nav-link" data-scroll-target="#part-3-exact-upper-confidence-bound">Part 3: Exact Upper Confidence Bound</a></li>
+  <li><a href="#part-4-normal-approximation" id="toc-part-4-normal-approximation" class="nav-link" data-scroll-target="#part-4-normal-approximation">Part 4: Normal Approximation</a></li>
+  <li><a href="#part-5-comparison-and-discussion" id="toc-part-5-comparison-and-discussion" class="nav-link" data-scroll-target="#part-5-comparison-and-discussion">Part 5: Comparison and Discussion</a></li>
+  </ul></li>
+  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
   </ul>
 </nav>
 </nav>
@@ -200,7 +501,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Assignments</h1>
+<h1 class="title">Homework 5: Exact and Approximate Inference for Call Center Waiting Times</h1>
 </div>
 
 
@@ -217,63 +518,106 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="ground-rules-for-assignments" class="level2">
-<h2 class="anchored" data-anchor-id="ground-rules-for-assignments">Ground rules for assignments</h2>
-<ul>
-<li><p>Unless otherwise stated, you may work on assignments <strong>individually</strong> or in <strong>pairs</strong>, and your choice may change from one assignment to the next.<br>
-</p></li>
-<li><p>For each assignment, I will create a <strong>group set in Canvas</strong>; you will sign up to form your group.<br>
-</p></li>
-<li><p><strong>Only one person per group submits</strong> the assignment in Canvas. The submission is automatically shared with all group members.<br>
-</p></li>
-<li><p>Grades and feedback are shared with the whole group. By default, all members receive the <strong>same grade</strong>.<br>
-</p></li>
-<li><p>Assignments are due by <strong>11:59 PM Chicago Time</strong> on the due date (Canvas gives due dates in your time zone).<br>
-</p></li>
-<li><p>Each submission must include <strong>all relevant files</strong>:</p>
-<ol type="1">
-<li>A self-contained, working copy of any code used<br>
-<strong>AND</strong></li>
-<li>A PDF version of item 1, including the output, plus any analytic work.
-<ul>
-<li>Legible handwriting and typed work are both acceptable.</li>
-<li>You may embed the analytic work as markdown in the code if you wish.</li>
-</ul></li>
-</ol></li>
-</ul>
+<section id="background" class="level2">
+<h2 class="anchored" data-anchor-id="background">Background</h2>
+<p>Waiting times in service systems are often modeled using the <strong>exponential distribution</strong>.</p>
+<p>Suppose</p>
+<p><span class="math display">\[
+X_1,\dots,X_n \sim \Exp(\theta),
+\]</span></p>
+<p>where <span class="math inline">\(\theta\)</span> is the mean waiting time.</p>
+<p>For exponential data, an important fact is that</p>
+<p><span class="math display">\[
+\frac{2\sum_{i=1}^n X_i}{\theta} \sim \chi^2_{2n}.
+\]</span></p>
+<p>This gives an <strong>exact</strong> method for inference about <span class="math inline">\(\theta\)</span>.</p>
+<p>We can also use a <strong>Normal approximation</strong> based on the Central Limit Theorem.</p>
 </section>
-<section id="list-of-assignments" class="level2">
-<h2 class="anchored" data-anchor-id="list-of-assignments">List of assignments</h2>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Assignment</th>
-<th>Due Date</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Assignment 1 — Diagnostic survey (Canvas / Microsoft Forms)</td>
-<td>January 16</td>
-</tr>
-<tr class="even">
-<td>Assignment 2 — Wackerly et al. 2.74, 3.10, 3.40, 4.88,<br> Find and submit a screenshot, photo or pdf of a statistical claim that you find somewhere in public. Write a paragraph describing what questions you might have about the origin or interpretation of this statistical claim.</td>
-<td>January 30</td>
-</tr>
-<tr class="odd">
-<td>Assignment 3 — Wackerly et al. 8.6, 8.12, 8.22, 8.32, 8.50</td>
-<td>February 13</td>
-</tr>
-<tr class="even">
-<td>Assignment 4 — Wackerly et al. 10.2, 10.18, 10.23, 10.43</td>
-<td>March 13</td>
-</tr>
-<tr class="odd">
-<td><a href="../assignments/math476_waiting_time_homework.html">Assignment 5 — Exact and Approximate Inference for Call Center Waiting Times</a></td>
-<td>April 10</td>
-</tr>
-</tbody>
-</table>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>The context for this assignment is based on real data from the New York City Open Data portal:</p>
+<p><strong>NYC Open Data.</strong> <em>311 Service Requests from 2010 to Present.</em><br>
+The observations used here are inter-arrival waiting times (in seconds) computed from service-request timestamps for a fixed complaint type.</p>
+<p>For this homework, we use a subset of 20 waiting times selected from that real dataset.</p>
+<p>The following waiting times (in seconds) were observed:</p>
+<pre><code>4 7 8 11 29 34 36 41 47 49
+53 65 79 89 134 134 165 178 227 375</code></pre>
+<p>Thus,</p>
+<p><span class="math display">\[
+n = 20.
+\]</span></p>
+</section>
+<section id="question" class="level2">
+<h2 class="anchored" data-anchor-id="question">Question</h2>
+<p>Suppose that a service target states that the mean waiting time should not exceed <strong>60 seconds</strong>.</p>
+<p>We test</p>
+<p><span class="math display">\[
+H_0:\theta = 60
+\qquad\text{vs}\qquad
+H_a:\theta &gt; 60.
+\]</span></p>
+<p>Use significance level</p>
+<p><span class="math display">\[
+\alpha = 0.05.
+\]</span></p>
+<section id="part-1-looking-at-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="part-1-looking-at-the-data">Part 1: Looking at the Data</h3>
+<ol type="a">
+<li><p>Compute the sample mean <span class="math inline">\(\barX\)</span>.</p></li>
+<li><p>Make a simple plot of the data, such as a histogram, dotplot, or stem-and-leaf display.</p></li>
+<li><p>Comment briefly on whether the data appear right-skewed.</p></li>
+<li><p>Explain briefly why an exponential distribution might be a reasonable model for waiting times.</p></li>
+</ol>
+</section>
+<section id="part-2-exact-hypothesis-test" class="level3">
+<h3 class="anchored" data-anchor-id="part-2-exact-hypothesis-test">Part 2: Exact Hypothesis Test</h3>
+<p>For the exact test, use</p>
+<p><span class="math display">\[
+\frac{2\sum_{i=1}^n X_i}{\theta} \sim \chi^2_{2n}.
+\]</span></p>
+<ol type="a">
+<li><p>Compute the test statistic for testing <span class="math inline">\(H_0:\theta=60\)</span>.</p></li>
+<li><p>Compute the <strong>p-value</strong>.</p></li>
+<li><p>State your conclusion in context.</p></li>
+</ol>
+</section>
+<section id="part-3-exact-upper-confidence-bound" class="level3">
+<h3 class="anchored" data-anchor-id="part-3-exact-upper-confidence-bound">Part 3: Exact Upper Confidence Bound</h3>
+<p>Using the exponential model, construct a 95% upper confidence bound for <span class="math inline">\(\theta\)</span> of the form</p>
+<p><span class="math display">\[
+[0,\theta_U].
+\]</span></p>
+<p>Compute this bound and interpret it in context.</p>
+</section>
+<section id="part-4-normal-approximation" class="level3">
+<h3 class="anchored" data-anchor-id="part-4-normal-approximation">Part 4: Normal Approximation</h3>
+<p>Using the Central Limit Theorem, approximate the distribution of <span class="math inline">\(\barX\)</span> by a Normal distribution and construct the corresponding test statistic.</p>
+<ol type="a">
+<li><p>Compute the approximate p-value.</p></li>
+<li><p>Construct the approximate 95% upper confidence bound.</p></li>
+</ol>
+</section>
+<section id="part-5-comparison-and-discussion" class="level3">
+<h3 class="anchored" data-anchor-id="part-5-comparison-and-discussion">Part 5: Comparison and Discussion</h3>
+<p>Compare the <strong>exact exponential inference</strong> and the <strong>Normal approximation</strong>.</p>
+<p>Discuss:</p>
+<ol type="a">
+<li><p>the two p-values,</p></li>
+<li><p>the two upper confidence bounds,</p></li>
+<li><p>whether the two methods lead to the same practical conclusion,</p></li>
+<li><p>whether the Normal approximation seems reasonable here.</p></li>
+</ol>
+</section>
+</section>
+<section id="submission" class="level2">
+<h2 class="anchored" data-anchor-id="submission">Submission</h2>
+<p>Your work should include:</p>
+<ul>
+<li>numerical calculations,</li>
+<li>a plot of the data,</li>
+<li>clear conclusions in context,</li>
+<li>and enough explanation that another student could follow your reasoning.</li>
+</ul>
 
 
 </section>

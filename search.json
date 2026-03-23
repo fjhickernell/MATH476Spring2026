@@ -98,6 +98,41 @@
     "text": "This page collects optional articles, essays, videos, and interactive resources that connect probability, statistics, and data science to real applications, historical context, or broader ideas.\n\nStatistical Inference and Data Science\n\nThe Lady Tasting Tea\n\nA famous experiment conducted by Ronald Fisher to test whether a woman could distinguish between tea poured before or after milk\nThis experiment is often cited as an example of a randomized controlled trial and the basis for Fisher’s exact test\n\nStatistical Modeling: The Two Cultures\n\nAn influential paper by Leo Breiman that discusses the differences between traditional statistical modeling and algorithmic modeling in data science\nBreiman argues that the algorithmic modeling culture, which focuses on predictive accuracy, is often more effective than the traditional statistical modeling culture, which focuses on inference and understanding\n\nAs Forecasts Go, You Can Bet on Monte Carlo\n\nAn article from the Wall Street Journal that discusses the use of Monte Carlo simulations in financial forecasting and risk management\nThe article highlights how Monte Carlo methods can help quantify uncertainty and improve decision-making in finance\n\n\n\n\nSoftware and Libraries\n\nqmcpy.org: A Python Library for Quasi-Monte Carlo Methods\n\nA Python library for quasi-Monte Carlo methods, which are used to improve the efficiency of numerical integration and simulation\n\nRankings of Computer Languages\n\nA ranking of programming languages based on their popularity and usage in the industry\nStatistical questions include: What are the errors in the percentages? What is the significance of a change in rank?"
   },
   {
+    "objectID": "assignments/math476_waiting_time_homework.html",
+    "href": "assignments/math476_waiting_time_homework.html",
+    "title": "Homework 5: Exact and Approximate Inference for Call Center Waiting Times",
+    "section": "",
+    "text": "Waiting times in service systems are often modeled using the exponential distribution.\nSuppose\n\\[\nX_1,\\dots,X_n \\sim \\Exp(\\theta),\n\\]\nwhere \\(\\theta\\) is the mean waiting time.\nFor exponential data, an important fact is that\n\\[\n\\frac{2\\sum_{i=1}^n X_i}{\\theta} \\sim \\chi^2_{2n}.\n\\]\nThis gives an exact method for inference about \\(\\theta\\).\nWe can also use a Normal approximation based on the Central Limit Theorem."
+  },
+  {
+    "objectID": "assignments/math476_waiting_time_homework.html#background",
+    "href": "assignments/math476_waiting_time_homework.html#background",
+    "title": "Homework 5: Exact and Approximate Inference for Call Center Waiting Times",
+    "section": "",
+    "text": "Waiting times in service systems are often modeled using the exponential distribution.\nSuppose\n\\[\nX_1,\\dots,X_n \\sim \\Exp(\\theta),\n\\]\nwhere \\(\\theta\\) is the mean waiting time.\nFor exponential data, an important fact is that\n\\[\n\\frac{2\\sum_{i=1}^n X_i}{\\theta} \\sim \\chi^2_{2n}.\n\\]\nThis gives an exact method for inference about \\(\\theta\\).\nWe can also use a Normal approximation based on the Central Limit Theorem."
+  },
+  {
+    "objectID": "assignments/math476_waiting_time_homework.html#data",
+    "href": "assignments/math476_waiting_time_homework.html#data",
+    "title": "Homework 5: Exact and Approximate Inference for Call Center Waiting Times",
+    "section": "Data",
+    "text": "Data\nThe context for this assignment is based on real data from the New York City Open Data portal:\nNYC Open Data. 311 Service Requests from 2010 to Present.\nThe observations used here are inter-arrival waiting times (in seconds) computed from service-request timestamps for a fixed complaint type.\nFor this homework, we use a subset of 20 waiting times selected from that real dataset.\nThe following waiting times (in seconds) were observed:\n4 7 8 11 29 34 36 41 47 49\n53 65 79 89 134 134 165 178 227 375\nThus,\n\\[\nn = 20.\n\\]"
+  },
+  {
+    "objectID": "assignments/math476_waiting_time_homework.html#question",
+    "href": "assignments/math476_waiting_time_homework.html#question",
+    "title": "Homework 5: Exact and Approximate Inference for Call Center Waiting Times",
+    "section": "Question",
+    "text": "Question\nSuppose that a service target states that the mean waiting time should not exceed 60 seconds.\nWe test\n\\[\nH_0:\\theta = 60\n\\qquad\\text{vs}\\qquad\nH_a:\\theta &gt; 60.\n\\]\nUse significance level\n\\[\n\\alpha = 0.05.\n\\]\n\nPart 1: Looking at the Data\n\nCompute the sample mean \\(\\barX\\).\nMake a simple plot of the data, such as a histogram, dotplot, or stem-and-leaf display.\nComment briefly on whether the data appear right-skewed.\nExplain briefly why an exponential distribution might be a reasonable model for waiting times.\n\n\n\nPart 2: Exact Hypothesis Test\nFor the exact test, use\n\\[\n\\frac{2\\sum_{i=1}^n X_i}{\\theta} \\sim \\chi^2_{2n}.\n\\]\n\nCompute the test statistic for testing \\(H_0:\\theta=60\\).\nCompute the p-value.\nState your conclusion in context.\n\n\n\nPart 3: Exact Upper Confidence Bound\nUsing the exponential model, construct a 95% upper confidence bound for \\(\\theta\\) of the form\n\\[\n[0,\\theta_U].\n\\]\nCompute this bound and interpret it in context.\n\n\nPart 4: Normal Approximation\nUsing the Central Limit Theorem, approximate the distribution of \\(\\barX\\) by a Normal distribution and construct the corresponding test statistic.\n\nCompute the approximate p-value.\nConstruct the approximate 95% upper confidence bound.\n\n\n\nPart 5: Comparison and Discussion\nCompare the exact exponential inference and the Normal approximation.\nDiscuss:\n\nthe two p-values,\nthe two upper confidence bounds,\nwhether the two methods lead to the same practical conclusion,\nwhether the Normal approximation seems reasonable here."
+  },
+  {
+    "objectID": "assignments/math476_waiting_time_homework.html#submission",
+    "href": "assignments/math476_waiting_time_homework.html#submission",
+    "title": "Homework 5: Exact and Approximate Inference for Call Center Waiting Times",
+    "section": "Submission",
+    "text": "Submission\nYour work should include:\n\nnumerical calculations,\na plot of the data,\nclear conclusions in context,\nand enough explanation that another student could follow your reasoning."
+  },
+  {
     "objectID": "classlib/classlib/quarto/pages/git-clone-update-with-submodules.html",
     "href": "classlib/classlib/quarto/pages/git-clone-update-with-submodules.html",
     "title": "Git setup: clone the course repo and keep it updated",
@@ -214,7 +249,7 @@
     "href": "pages/homework.html#list-of-assignments",
     "title": "Assignments",
     "section": "List of assignments",
-    "text": "List of assignments\n\n\n\n\n\n\n\nAssignment\nDue Date\n\n\n\n\nAssignment 1 — Diagnostic survey (Canvas / Microsoft Forms)\nJanuary 16\n\n\nAssignment 2 — Wackerly et al. 2.74, 3.10, 3.40, 4.88, Find and submit a screenshot, photo or pdf of a statistical claim that you find somewhere in public. Write a paragraph describing what questions you might have about the origin or interpretation of this statistical claim.\nJanuary 30\n\n\nAssignment 3 — Wackerly et al. 8.6, 8.12, 8.22, 8.32, 8.50\nFebruary 13\n\n\nAssignment 4 — Wackerly et al. 10.2, 10.18, 10.23, 10.43\nMarch 13"
+    "text": "List of assignments\n\n\n\nAssignment\nDue Date\n\n\n\n\nAssignment 1 — Diagnostic survey (Canvas / Microsoft Forms)\nJanuary 16\n\n\nAssignment 2 — Wackerly et al. 2.74, 3.10, 3.40, 4.88, Find and submit a screenshot, photo or pdf of a statistical claim that you find somewhere in public. Write a paragraph describing what questions you might have about the origin or interpretation of this statistical claim.\nJanuary 30\n\n\nAssignment 3 — Wackerly et al. 8.6, 8.12, 8.22, 8.32, 8.50\nFebruary 13\n\n\nAssignment 4 — Wackerly et al. 10.2, 10.18, 10.23, 10.43\nMarch 13\n\n\nAssignment 5 — Exact and Approximate Inference for Call Center Waiting Times\nApril 10"
   },
   {
     "objectID": "pages/project-assessment.html",

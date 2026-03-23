@@ -1,0 +1,138 @@
+---
+title: "Homework 5: Exact and Approximate Inference for Call Center Waiting Times"
+metadata-files:
+  - ../classlib/classlib/quarto/website/hickernell-website.yml
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    include-in-header:
+      - ../classlib/classlib/quarto/slides/hickernell-latex-macros.js
+---
+
+## Background
+
+Waiting times in service systems are often modeled using the **exponential distribution**.
+
+Suppose
+
+$$
+X_1,\dots,X_n \sim \Exp(\theta),
+$$
+
+where $\theta$ is the mean waiting time.
+
+For exponential data, an important fact is that
+
+$$
+\frac{2\sum_{i=1}^n X_i}{\theta} \sim \chi^2_{2n}.
+$$
+
+This gives an **exact** method for inference about $\theta$.
+
+We can also use a **Normal approximation** based on the Central Limit Theorem.
+
+## Data
+
+The context for this assignment is based on real data from the New York City Open Data portal:
+
+**NYC Open Data.** *311 Service Requests from 2010 to Present.*  
+The observations used here are inter-arrival waiting times (in seconds) computed from service-request timestamps for a fixed complaint type.
+
+For this homework, we use a subset of 20 waiting times selected from that real dataset.
+
+The following waiting times (in seconds) were observed:
+
+```
+4 7 8 11 29 34 36 41 47 49
+53 65 79 89 134 134 165 178 227 375
+```
+
+Thus,
+
+$$
+n = 20.
+$$
+
+## Question
+
+Suppose that a service target states that the mean waiting time should not exceed **60 seconds**.
+
+We test
+
+$$
+H_0:\theta = 60
+\qquad\text{vs}\qquad
+H_a:\theta > 60.
+$$
+
+Use significance level
+
+$$
+\alpha = 0.05.
+$$
+
+### Part 1: Looking at the Data
+
+a. Compute the sample mean $\barX$.
+
+b. Make a simple plot of the data, such as a histogram, dotplot, or stem-and-leaf display.
+
+c. Comment briefly on whether the data appear right-skewed.
+
+d. Explain briefly why an exponential distribution might be a reasonable model for waiting times.
+
+### Part 2: Exact Hypothesis Test
+
+For the exact test, use
+
+$$
+\frac{2\sum_{i=1}^n X_i}{\theta} \sim \chi^2_{2n}.
+$$
+
+a. Compute the test statistic for testing $H_0:\theta=60$.
+
+b. Compute the **p-value**.
+
+c. State your conclusion in context.
+
+### Part 3: Exact Upper Confidence Bound
+
+Using the exponential model, construct a 95% upper confidence bound for $\theta$ of the form
+
+$$
+[0,\theta_U].
+$$
+
+Compute this bound and interpret it in context.
+
+### Part 4: Normal Approximation
+
+Using the Central Limit Theorem, approximate the distribution of $\barX$ by a Normal distribution and construct the corresponding test statistic.
+
+a. Compute the approximate p-value.
+
+b. Construct the approximate 95% upper confidence bound.
+
+### Part 5: Comparison and Discussion
+
+Compare the **exact exponential inference** and the **Normal approximation**.
+
+Discuss:
+
+a. the two p-values,
+
+b. the two upper confidence bounds,
+
+c. whether the two methods lead to the same practical conclusion,
+
+d. whether the Normal approximation seems reasonable here.
+
+## Submission
+
+Your work should include:
+
+- numerical calculations,
+- a plot of the data,
+- clear conclusions in context,
+- and enough explanation that another student could follow your reasoning.

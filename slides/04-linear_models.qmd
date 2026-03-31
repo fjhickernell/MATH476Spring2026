@@ -34,5 +34,7 @@ subtitle: |
 
 {{< include ../classlib/classlib/quarto/slides/shared/statistics/linear/lsqregressselect.qmd >}}
 
+{{< include ../classlib/classlib/quarto/slides/shared/statistics/linear/oneway_anova.qmd >}}
+
 
 

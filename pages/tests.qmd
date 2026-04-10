@@ -22,7 +22,7 @@ Unless otherwise noted
 Date | Assessment  | PDF
 ---|---|---|---
 | Thu Feb 19 | Test 1 | [Test 1 Questions and answers](../assets/tests/current/MATH476Test1Spring2026Answers.pdf) <br>[Make-up Test 1 Questions and answers](../assets/tests/current/MATH476Test1MakeUpSpring2026Answers.pdf)
-| Thu Apr 2 | Test 2 | [Test 2 Questions and Answers](...)
+| Thu Apr 2 | Test 2 | [Test 2 Questions and Answers](../assets/tests/current/MATH476Test2Spring2026Answers.pdf)
 | Tue May 4, 8:00 AM, in PH 108 | Final Exam  | [Final Exam Questions and Answers](...)
 
 ---

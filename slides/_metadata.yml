@@ -33,6 +33,11 @@ decks:
     title: Linear Models
     short_title: Linear Models
 
+  d05:
+    file: 05-nonparametric.html
+    title: Nonparametric Methods
+    short_title: Nonparametric Methods
+
 
 
 format:

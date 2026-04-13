@@ -1,0 +1,163 @@
+---
+title: "{{< meta course_title >}}"
+deck_id: d05
+deck_title: "{{< meta decks.d05.title >}}"
+deck_short_title: "{{< meta decks.d05.short_title >}}"
+
+include-after-body:
+  - text: |
+      <script id="deck-nav-meta" type="application/json">
+      {
+        "deck_prev_file": "{{< meta decks.d04.file >}}",
+        "deck_prev_title": "{{< meta decks.d04.title >}}",
+        "deck_next_file": "",
+        "deck_next_title": ""
+      }
+      </script>
+
+subtitle: |
+  <span class="deck-title">{{< meta decks.d05.title >}}</span><br>
+  <span class="deck-meta">{{< meta texts.wms.short >}} Ch. 15
+  </span>
+---
+
+# Why nonparametric methods?
+
+- So far:
+  - Paired t-test
+  - Two-sample t-test
+  - One-way ANOVA
+
+- These rely on:
+  - Normality (or large $n$)
+  - Mean as a meaningful summary
+
+- What if:
+  - Data are skewed?
+  - Outliers are present?
+  - Only ordering is trustworthy?
+
+---
+
+# Key idea
+
+- Replace raw data with:
+  - signs
+  - ranks
+
+- Benefits:
+  - fewer assumptions
+  - robustness
+
+- Tradeoff:
+  - may lose efficiency if parametric assumptions hold
+
+---
+
+# Roadmap
+
+| Setting | Parametric | Nonparametric |
+|---|---|---|
+| Matched pairs | Paired t-test | Sign, Wilcoxon signed-rank |
+| Two samples | Two-sample t-test | Mann–Whitney |
+| $m$ groups | One-way ANOVA | Kruskal–Wallis |
+
+---
+
+# Matched-pairs setup
+
+- Observations come in pairs:
+  $$
+  (X_1,Y_1), \dots, (X_n,Y_n)
+  $$
+
+- Define differences:
+  $$
+  D_i = X_i - Y_i
+  $$
+
+- Parametric approach:
+  - Paired t-test uses $\bar{D}$
+
+- Nonparametric:
+  - Use signs or ranks of $D_i$
+
+---
+
+# Sign test
+
+- Use only:
+  $$
+  \text{sign}(D_i)
+  $$
+
+- Ignore zeros
+
+- Let:
+  $$
+  S = \#\{D_i > 0\}
+  $$
+
+---
+
+# Sign test: hypothesis
+
+- Null:
+  $$
+  P(D_i > 0) = \tfrac{1}{2}
+  $$
+
+- Under $H_0$:
+  $$
+  S \sim \text{Binomial}(n, 1/2)
+  $$
+
+---
+
+# Wilcoxon signed-rank test
+
+- Steps:
+  1. Compute $D_i$
+  2. Remove zeros
+  3. Rank $|D_i|$
+  4. Attach sign back
+
+---
+
+# Two independent samples
+
+- Data:
+  $$
+  X_1,\dots,X_{n_1}, \quad Y_1,\dots,Y_{n_2}
+  $$
+
+- Nonparametric:
+  - compare relative positions
+
+---
+
+# Mann–Whitney test
+
+- Pool all observations
+- Rank them
+- Compare rank sums
+
+---
+
+# More than two groups
+
+- Data:
+  $$
+  m \text{ groups}
+  $$
+
+- Nonparametric:
+  - Kruskal–Wallis
+
+---
+
+# Summary
+
+- Use signs and ranks
+- Fewer assumptions
+- More robust

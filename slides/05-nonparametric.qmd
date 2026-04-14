@@ -219,6 +219,54 @@ df.style \
 
 :::
 
+---
+```{python}
+import itertools
+from collections import Counter
+import pandas as pd
+
+def wilcoxon_signed_rank_distribution(n):
+    ranks = list(range(1, n+1))
+    
+    W_values = []
+    
+    for signs in itertools.product([1, -1], repeat=n):
+        W = sum(r for r, s in zip(ranks, signs) if s == 1)
+        W_values.append(W)
+    
+    counts = Counter(W_values)
+    total = 2**n
+    
+    # Build table
+    table = []
+    for W in sorted(counts):
+        prob = counts[W] / total
+        table.append((W, counts[W], prob))
+    
+    df = pd.DataFrame(table, columns=["W", "Count", "Probability"])
+    
+    # Add CDF: P(W <= w)
+    df["CDF"] = df["Probability"].cumsum()
+    
+    # Add upper tail: P(W >= w)
+    df["Upper"] = df["Probability"][::-1].cumsum()[::-1]
+    
+    return df
+
+# Generate table
+df = wilcoxon_signed_rank_distribution(5)
+
+df.style \
+  .hide(axis="index") \
+  .format({
+      "W": "{:2d}",
+      "Count": "{:5d}",
+      "Probability": "{:.5f}",
+      "CDF": "{:.5f}",
+      "Upper": "{:.5f}"
+  }) \
+  .set_properties(**{"font-size": "0.7em"})
+  ```
 
 # Two independent samples
 

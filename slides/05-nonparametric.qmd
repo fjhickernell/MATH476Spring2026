@@ -23,38 +23,31 @@ subtitle: |
 
 # Why nonparametric methods?
 
-- So far:
-  - Paired t-test
-  - Two-sample t-test
-  - One-way ANOVA
+- Our inferences thus far relied assumptions about the distribution of the data in terms of parameters (e.g., mean, variance):
+  - Confidence intervals for means and variances assuming Bernoulli, exponential, normal, etc.
+  - Hypothesis tests for means and variances assuming Bernoulli, exponential, normal, etc.
+  - If the distribution is unknown, we have relied on the CLT and large $n$ to justify normal approximations
+  - Regression models assuming that the response follows a prescribed distribution (e.g., normal, binomial) with parameters to be inferred
 
-- These rely on:
-  - Normality (or large $n$)
-  - Mean as a meaningful summary
-
-- What if:
+<h3>What if</h3>
   - Data are skewed?
   - Outliers are present?
   - Only ordering is trustworthy?
 
----
+## Key idea
 
-# Key idea
+Replace raw data with
 
-- Replace raw data with:
-  - signs
-  - ranks
+- signs
 
-- Benefits:
-  - fewer assumptions
-  - robustness
+- ranks
 
-- Tradeoff:
-  - may lose efficiency if parametric assumptions hold
+| Advantages | Disadvantages |
+|------------|----------------|
+| Fewer assumptions <br> Robustness | Loss of efficiency if parametric assumptions hold |
 
----
 
-# Roadmap
+### Roadmap
 
 | Setting | Parametric | Nonparametric |
 |---|---|---|
@@ -62,61 +55,27 @@ subtitle: |
 | Two samples | Two-sample t-test | Mann–Whitney |
 | $m$ groups | One-way ANOVA | Kruskal–Wallis |
 
----
+# Matched-pairs data
 
-# Matched-pairs setup
+- Observations come in pairs: $(X_1,Y_1), \dots, (X_n,Y_n)$
 
-- Observations come in pairs:
-  $$
-  (X_1,Y_1), \dots, (X_n,Y_n)
-  $$
+- Define differences: $D_i = X_i - Y_i$
 
-- Define differences:
-  $$
-  D_i = X_i - Y_i
-  $$
+- Parametric approach: paired $t$-test uses $\barD$ and $S_D$ to make inferences about $\mu_D$ assuming $D_i$ are IID normal
 
-- Parametric approach:
-  - Paired t-test uses $\bar{D}$
+- Nonparametric approach uses signs or ranks of $D_i$
 
-- Nonparametric:
-  - Use signs or ranks of $D_i$
+## Sign test
 
----
+Let $S = \#\{D_i > 0\}$
 
-# Sign test
+### $\displaystyle H_0: P(D_i > 0) = \frac{1}{2}$, $\displaystyle H_A: P(D_i > 0) \neq \frac{1}{2}$
+  - Under $H_0: S \sim \Bin(n, 1/2)$
 
-- Use only:
-  $$
-  \text{sign}(D_i)
-  $$
+  1. Compute $p$-value$ $p = 2 \cdot \min\bigl(P(S \le s),; P(S \ge s)\bigr)$
 
-- Ignore zeros
+## Wilcoxon signed-rank test
 
-- Let:
-  $$
-  S = \#\{D_i > 0\}
-  $$
-
----
-
-# Sign test: hypothesis
-
-- Null:
-  $$
-  P(D_i > 0) = \tfrac{1}{2}
-  $$
-
-- Under $H_0$:
-  $$
-  S \sim \text{Binomial}(n, 1/2)
-  $$
-
----
-
-# Wilcoxon signed-rank test
-
-- Steps:
   1. Compute $D_i$
   2. Remove zeros
   3. Rank $|D_i|$

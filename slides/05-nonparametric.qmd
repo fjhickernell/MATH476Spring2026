@@ -67,12 +67,33 @@ Replace raw data with
 
 ## Sign test
 
-Let $S = \#\{D_i > 0\}$
-
 ### $\displaystyle H_0: P(D_i > 0) = \frac{1}{2}$, $\displaystyle H_A: P(D_i > 0) \neq \frac{1}{2}$
-  - Under $H_0: S \sim \Bin(n, 1/2)$
 
-  1. Compute $p$-value$ $p = 2 \cdot \min\bigl(P(S \le s),; P(S \ge s)\bigr)$
+- Let $S = \#\{D_i > 0\}$
+
+- Under $H_0: S \sim \Bin(n, 1/2)$ 
+
+1. Compute $s = \#\{d_i > 0\}$ from data
+
+1. Compute $p$-value $p = 2 \times \min\bigl(P(S \le s), P(S \ge s)\bigr)$
+
+1. Reject $H_0$ if $p < \alpha$ 
+
+
+### Example
+
+Differences:
+$$
+D = [2, -3, 0, 5, -1, 4]
+$$
+
+- Remove zero → $n' = 5$
+- Signs: $+,-,+,-,+$
+- $S = 3$
+
+Under $H_0$: $S \sim \Bin(5, 1/2)$
+
+Compute p-value
 
 ## Wilcoxon signed-rank test
 

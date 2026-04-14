@@ -132,7 +132,7 @@ Under $H_0$, the ranks receive random signs.
 
 ::: {.columns}
 
-::: {.column width="70%"}
+::: {.column width="60%"}
 
 Differences: $d = [2, -3, 0, 5, 1, 4]$
 
@@ -154,8 +154,8 @@ Thus
 - From the table,
   \begin{align*}
   p & = P(w^+ \le 3) + P(w  ^+ \ge 12) \\
-  &= 2 \times (0.03125 + 0.03125 + 0.03125 + 0.0625)
-  = 0.3125
+  &
+  = 0.15625 + 0.15625 = 0.3125
   \end{align*}
 
 :::
@@ -168,58 +168,8 @@ Thus
 :::
 
 
-::: {.column width="25%" }
+::: {.column width="35%" }
 
-```{python}
-import itertools
-from collections import Counter
-
-def wilcoxon_signed_rank_distribution(n):
-    # ranks are 1,2,...,n
-    ranks = list(range(1, n+1))
-    
-    W_values = []
-    
-    # all possible sign assignments (+1 or -1)
-    for signs in itertools.product([1, -1], repeat=n):
-        # compute W = sum of positive ranks
-        W = sum(r for r, s in zip(ranks, signs) if s == 1)
-        W_values.append(W)
-    
-    # count frequencies
-    counts = Counter(W_values)
-    
-    total = 2**n
-    
-    # convert to sorted table with probabilities
-    table = []
-    for W in sorted(counts):
-        prob = counts[W] / total
-        table.append((W, counts[W], prob))
-    
-    return table
-
-# Generate table for n = 5
-table = wilcoxon_signed_rank_distribution(5)
-
-import pandas as pd
-
-df = pd.DataFrame(table, columns=["W", "Count", "Probability"])
-df.style \
-  .hide(axis="index") \
-  .format({"W": "{:2d}", "Count": "{:5d}", "Probability": "{:.5f}"}) \
-  .set_table_styles([
-      {"selector": "th, td", "props": [("font-size", "0.8em !important")]},
-      {"selector": "th, td", "props": [("padding", "2px 4px")]}
-  ])
-```
-
-:::
-
-
-:::
-
----
 ```{python}
 import itertools
 from collections import Counter
@@ -249,7 +199,7 @@ def wilcoxon_signed_rank_distribution(n):
     df["CDF"] = df["Probability"].cumsum()
     
     # Add upper tail: P(W >= w)
-    df["Upper"] = df["Probability"][::-1].cumsum()[::-1]
+    #df["Upper"] = df["Probability"][::-1].cumsum()[::-1]
     
     return df
 
@@ -263,10 +213,16 @@ df.style \
       "Count": "{:5d}",
       "Probability": "{:.5f}",
       "CDF": "{:.5f}",
-      "Upper": "{:.5f}"
   }) \
   .set_properties(**{"font-size": "0.7em"})
-  ```
+```
+
+::: 
+
+
+:::
+
+
 
 # Two independent samples
 

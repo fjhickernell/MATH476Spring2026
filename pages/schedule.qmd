@@ -55,7 +55,7 @@ Classes are held in RE 102 at 11:25 AM on Tuesdays and Thursdays
 | 12 | Tue Apr 7 | One-way ANOVA, logistic regression | |
 | | Thu Apr 9 | **Test 2** on Confidence Intervals for Variance, Hypothesis Testing, and Ordinary Least Squares Through Inference | |
 | | Fri Apr 10 | **Assignment 5 Due** | |
-| 13 | Tue Apr 14 | | |
+| 13 | Tue Apr 14 | | [Nonparametric Methods](../slides/05-nonparametric.html)| |
 | | Thu Apr 16 | | |
 | 14 | Mon Apr 20 | **Project Presentation** in Galvin Tower 14th Floor West Side Conference Room | |
 | | Tue Apr 21 | **Project Presentation** in Galvin Tower 14th Floor West Side Conference Room | |

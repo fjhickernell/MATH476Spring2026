@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.9.37">
 
   <meta name="author" content="Fred J. Hickernell">
-  <meta name="dcterms.date" content="2026-04-13">
+  <meta name="dcterms.date" content="2026-04-14">
   <title>MATH 476 — Statistics</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -568,60 +568,55 @@ Fred J. Hickernell
 </div>
 </div>
 
-  <p class="date">April 13, 2026</p>
+  <p class="date">April 14, 2026</p>
 </section>
 <section>
 <section id="why-nonparametric-methods" class="title-slide slide level1 center">
 <h1>Why nonparametric methods?</h1>
 <ul>
-<li>So far:
+<li>Our inferences thus far relied assumptions about the distribution of the data in terms of parameters (e.g., mean, variance):
 <ul>
-<li>Paired t-test</li>
-<li>Two-sample t-test</li>
-<li>One-way ANOVA</li>
+<li>Confidence intervals for means and variances assuming Bernoulli, exponential, normal, etc.</li>
+<li>Hypothesis tests for means and variances assuming Bernoulli, exponential, normal, etc.</li>
+<li>If the distribution is unknown, we have relied on the CLT and large <span class="math inline">\(n\)</span> to justify normal approximations</li>
+<li>Regression models assuming that the response follows a prescribed distribution (e.g., normal, binomial) with parameters to be inferred</li>
 </ul></li>
-<li>These rely on:
-<ul>
-<li>Normality (or large <span class="math inline">\(n\)</span>)</li>
-<li>Mean as a meaningful summary</li>
-</ul></li>
-<li>What if:
+</ul>
+<h3>
+What if
+</h3>
 <ul>
 <li>Data are skewed?</li>
 <li>Outliers are present?</li>
 <li>Only ordering is trustworthy?</li>
-</ul></li>
 </ul>
 </section>
-<section class="slide level2">
-
-</section></section>
-<section>
-<section id="key-idea" class="title-slide slide level1 center">
-<h1>Key idea</h1>
+<section id="key-idea" class="slide level2">
+<h2>Key idea</h2>
+<p>Replace raw data with</p>
 <ul>
-<li>Replace raw data with:
-<ul>
-<li>signs</li>
-<li>ranks</li>
-</ul></li>
-<li>Benefits:
-<ul>
-<li>fewer assumptions</li>
-<li>robustness</li>
-</ul></li>
-<li>Tradeoff:
-<ul>
-<li>may lose efficiency if parametric assumptions hold</li>
-</ul></li>
+<li><p>signs</p></li>
+<li><p>ranks</p></li>
 </ul>
-</section>
-<section class="slide level2">
-
-</section></section>
-<section>
-<section id="roadmap" class="title-slide slide level1 center">
-<h1>Roadmap</h1>
+<table class="caption-top">
+<colgroup>
+<col style="width: 42%">
+<col style="width: 57%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Advantages</th>
+<th>Disadvantages</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fewer assumptions <br> Robustness</td>
+<td>Loss of efficiency if parametric assumptions hold</td>
+</tr>
+</tbody>
+</table>
+<h3 id="roadmap">Roadmap</h3>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -648,76 +643,36 @@ Fred J. Hickernell
 </tr>
 </tbody>
 </table>
-</section>
-<section class="slide level2">
-
 </section></section>
 <section>
-<section id="matched-pairs-setup" class="title-slide slide level1 center">
-<h1>Matched-pairs setup</h1>
+<section id="matched-pairs-data" class="title-slide slide level1 center">
+<h1>Matched-pairs data</h1>
 <ul>
-<li><p>Observations come in pairs: <span class="math display">\[
-(X_1,Y_1), \dots, (X_n,Y_n)
-\]</span></p></li>
-<li><p>Define differences: <span class="math display">\[
-D_i = X_i - Y_i
-\]</span></p></li>
-<li><p>Parametric approach:</p>
-<ul>
-<li>Paired t-test uses <span class="math inline">\(\bar{D}\)</span></li>
-</ul></li>
-<li><p>Nonparametric:</p>
-<ul>
-<li>Use signs or ranks of <span class="math inline">\(D_i\)</span></li>
-</ul></li>
+<li><p>Observations come in pairs: <span class="math inline">\((X_1,Y_1), \dots, (X_n,Y_n)\)</span></p></li>
+<li><p>Define differences: <span class="math inline">\(D_i = X_i - Y_i\)</span></p></li>
+<li><p>Parametric approach: paired <span class="math inline">\(t\)</span>-test uses <span class="math inline">\(\barD\)</span> and <span class="math inline">\(S_D\)</span> to make inferences about <span class="math inline">\(\mu_D\)</span> assuming <span class="math inline">\(D_i\)</span> are IID normal</p></li>
+<li><p>Nonparametric approach uses signs or ranks of <span class="math inline">\(D_i\)</span></p></li>
 </ul>
 </section>
-<section class="slide level2">
-
-</section></section>
-<section>
-<section id="sign-test" class="title-slide slide level1 center">
-<h1>Sign test</h1>
+<section id="sign-test" class="slide level2">
+<h2>Sign test</h2>
+<p>Let <span class="math inline">\(S = \#\{D_i &gt; 0\}\)</span></p>
+<h3 id="displaystyle-h_0-pd_i-0-frac12-displaystyle-h_a-pd_i-0-neq-frac12"><span class="math inline">\(\displaystyle H_0: P(D_i &gt; 0) = \frac{1}{2}\)</span>, <span class="math inline">\(\displaystyle H_A: P(D_i &gt; 0) \neq \frac{1}{2}\)</span></h3>
 <ul>
-<li><p>Use only: <span class="math display">\[
-\text{sign}(D_i)
-\]</span></p></li>
-<li><p>Ignore zeros</p></li>
-<li><p>Let: <span class="math display">\[
-S = \#\{D_i &gt; 0\}
-\]</span></p></li>
+<li>Under <span class="math inline">\(H_0: S \sim \Bin(n, 1/2)\)</span></li>
 </ul>
+<ol type="1">
+<li>Compute <span class="math inline">\(p\)</span>-value$ <span class="math inline">\(p = 2 \cdot \min\bigl(P(S \le s),; P(S \ge s)\bigr)\)</span></li>
+</ol>
 </section>
-<section class="slide level2">
-
-</section></section>
-<section>
-<section id="sign-test-hypothesis" class="title-slide slide level1 center">
-<h1>Sign test: hypothesis</h1>
-<ul>
-<li><p>Null: <span class="math display">\[
-P(D_i &gt; 0) = \tfrac{1}{2}
-\]</span></p></li>
-<li><p>Under <span class="math inline">\(H_0\)</span>: <span class="math display">\[
-S \sim \text{Binomial}(n, 1/2)
-\]</span></p></li>
-</ul>
-</section>
-<section class="slide level2">
-
-</section></section>
-<section>
-<section id="wilcoxon-signed-rank-test" class="title-slide slide level1 center">
-<h1>Wilcoxon signed-rank test</h1>
-<ul>
-<li>Steps:
+<section id="wilcoxon-signed-rank-test" class="slide level2">
+<h2>Wilcoxon signed-rank test</h2>
 <ol type="1">
 <li>Compute <span class="math inline">\(D_i\)</span></li>
 <li>Remove zeros</li>
 <li>Rank <span class="math inline">\(|D_i|\)</span></li>
 <li>Attach sign back</li>
-</ol></li>
-</ul>
+</ol>
 </section>
 <section class="slide level2">
 

@@ -70,42 +70,155 @@ Replace raw data with
 
 ## Sign test
 
-### $\displaystyle H_0: P(D_i > 0) = \frac{1}{2}$, $\displaystyle H_A: P(D_i > 0) \neq \frac{1}{2}$
+### $H_0: P(D_i > 0) = \frac{1}{2}$, $H_A: P(D_i > 0) \neq \frac{1}{2}$
 
 - Let $S = \#\{D_i > 0\}$
 
-- Under $H_0: S \sim \Bin(n, 1/2)$ 
+- After removing zeros, if $n'$ is the number of nonzero differences, then under $H_0$, $S \sim \Bin(n', 1/2)$
 
-1. Compute $s = \#\{d_i > 0\}$ from data
+Test procedure:
 
-1. Compute $p$-value $p = 2 \times \min\bigl(P(S \le s), P(S \ge s)\bigr)$
+1. Compute $D_i = X_i - Y_i$
+2. Remove zeros
+3. Compute $s = \#\{d_i > 0\}$
+4. Compute $p = 2 \times \min\bigl(P(S \le s), P(S \ge s)\bigr)$
+5. Reject $H_0$ if $p < \alpha$
 
-1. Reject $H_0$ if $p < \alpha$ 
-
+---
 
 ### Example
 
-Differences:
-$$
-D = [2, -3, 0, 5, -1, 4]
-$$
+Differences: $d = [2, -3, 0, 5, 1, 4]$
 
-- Remove zero → $n' = 5$
-- Signs: $+,-,+,-,+$
-- $S = 3$
+- Remove zero $\to n' = 5$
+- Signs: $+,-,+,+,+$
+- Thus $s=4$
 
-Under $H_0$: $S \sim \Bin(5, 1/2)$
+\begin{align*}
+p
+&= 2 \times \min\bigl(P(S \le 4), P(S \ge 4)\bigr) \\
+&= 2 \times P(S \ge 4) \\
+&= 2 \times \left[\binom{5}{4} + \binom{5}{5}\right]\left(\frac12\right)^5 \\
+&= 2 \times (5+1)\times \frac{1}{32}
+= \frac{12}{32}
+= \frac{3}{8}
+= 0.375
+\end{align*}
 
-Compute p-value
+- Do not reject $H_0$ at $\alpha = 0.05$
+
 
 ## Wilcoxon signed-rank test
 
-  1. Compute $D_i$
-  2. Remove zeros
-  3. Rank $|D_i|$
-  4. Attach sign back
+1. Compute $D_i$
+2. Remove zeros
+3. Rank $|D_i|$
+4. Compute
+   \begin{align*}
+   W^+ &= \sum_{i: D_i > 0} \rank(|D_i|) \\
+   W^- &= \sum_{i: D_i < 0} \rank(|D_i|) \\
+   T &= \min(W^+, W^-)
+   \end{align*}
+
+Under $H_0$, the ranks receive random signs.
+
+- Small $T$ = strong evidence against $H_0$
+- Use a table or software to compute the $p$-value
+- Reject $H_0$ if $p < \alpha$
 
 ---
+
+### Example
+
+::: {.columns}
+
+::: {.column width="70%"}
+
+Differences: $d = [2, -3, 0, 5, 1, 4]$
+
+- Remove zero $\to d = [2,-3,5,1,4]$, so $n' = 5$
+- Absolute values: $|d| = [2,3,5,1,4]$
+- Ranks of $|d|$: $[2,3,5,1,4]$
+
+Thus
+- $w^+ = 2 + 5 + 1 + 4 = 12$
+
+- $w^- = 3$
+- $t  = \min(w^+,w^-) = 3$
+
+- Since the total rank sum is $1+2+3+4+5 = 15$,
+  $$
+  T \le 3 \iff w^+ \le 3 \text{ or } w^+ \ge 12
+  $$
+
+- From the table,
+  \begin{align*}
+  p & = P(w^+ \le 3) + P(w  ^+ \ge 12) \\
+  &= 2 \times (0.03125 + 0.03125 + 0.03125 + 0.0625)
+  = 0.3125
+  \end{align*}
+
+:::
+
+::: {.column width="5%" }
+
+&nbsp;
+
+
+:::
+
+
+::: {.column width="25%" }
+
+```{python}
+import itertools
+from collections import Counter
+
+def wilcoxon_signed_rank_distribution(n):
+    # ranks are 1,2,...,n
+    ranks = list(range(1, n+1))
+    
+    W_values = []
+    
+    # all possible sign assignments (+1 or -1)
+    for signs in itertools.product([1, -1], repeat=n):
+        # compute W = sum of positive ranks
+        W = sum(r for r, s in zip(ranks, signs) if s == 1)
+        W_values.append(W)
+    
+    # count frequencies
+    counts = Counter(W_values)
+    
+    total = 2**n
+    
+    # convert to sorted table with probabilities
+    table = []
+    for W in sorted(counts):
+        prob = counts[W] / total
+        table.append((W, counts[W], prob))
+    
+    return table
+
+# Generate table for n = 5
+table = wilcoxon_signed_rank_distribution(5)
+
+import pandas as pd
+
+df = pd.DataFrame(table, columns=["W", "Count", "Probability"])
+df.style \
+  .hide(axis="index") \
+  .format({"W": "{:2d}", "Count": "{:5d}", "Probability": "{:.5f}"}) \
+  .set_table_styles([
+      {"selector": "th, td", "props": [("font-size", "0.8em !important")]},
+      {"selector": "th, td", "props": [("padding", "2px 4px")]}
+  ])
+```
+
+:::
+
+
+:::
+
 
 # Two independent samples
 
@@ -114,8 +227,8 @@ Compute p-value
   X_1,\dots,X_{n_1}, \quad Y_1,\dots,Y_{n_2}
   $$
 
-- Nonparametric:
-  - compare relative positions
+
+
 
 ---
 

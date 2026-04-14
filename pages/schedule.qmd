@@ -51,8 +51,8 @@ Classes are held in RE 102 at 11:25 AM on Tuesdays and Thursdays
 
 | Week | Date   | Topic                    | Slides                             |
 | - | --------|---------------------------|-------------------------|
-| | Thu Apr 2 | | |
-| 12 | Tue Apr 7 | | |
+| | Thu Apr 2 | Regression diagnostics, model selection, one-way ANOVA | |
+| 12 | Tue Apr 7 | One-way ANOVA, logistic regression | |
 | | Thu Apr 9 | **Test 2** on Confidence Intervals for Variance, Hypothesis Testing, and Ordinary Least Squares Through Inference | |
 | | Fri Apr 10 | **Assignment 5 Due** | |
 | 13 | Tue Apr 14 | | |

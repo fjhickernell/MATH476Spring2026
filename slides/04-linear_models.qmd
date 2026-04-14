@@ -22,7 +22,8 @@ subtitle: |
   <span class="indent">
   Confidence Intervals for Variances,  </span> <br>
   <span class="indent"> Hypothesis Testing, & </span> <br>
-  <span class="indent">Ordinary Least Squares Through Inference</span>
+  <span class="indent">Ordinary Least Squares Through Inference</span><br>
+  (Last) assignment 6 due on 4/30</span>
   </span>
 ---
 

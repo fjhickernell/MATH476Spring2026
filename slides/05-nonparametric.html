@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="05-nonparametric_files/libs/clipboard/clipboard.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="05-nonparametric_files/libs/clipboard/clipboard.min.js"></script>
 <script src="05-nonparametric_files/libs/quarto-html/tabby.min.js"></script>
 <script src="05-nonparametric_files/libs/quarto-html/popper.min.js"></script>
 <script src="05-nonparametric_files/libs/quarto-html/tippy.umd.min.js"></script>
@@ -551,6 +551,9 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#004b80">
+  <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+  
+  <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -656,27 +659,42 @@ What if
 </section>
 <section id="sign-test" class="slide level2">
 <h2>Sign test</h2>
-<h3 id="displaystyle-h_0-pd_i-0-frac12-displaystyle-h_a-pd_i-0-neq-frac12"><span class="math inline">\(\displaystyle H_0: P(D_i &gt; 0) = \frac{1}{2}\)</span>, <span class="math inline">\(\displaystyle H_A: P(D_i &gt; 0) \neq \frac{1}{2}\)</span></h3>
+<h3 id="h_0-pd_i-0-frac12-h_a-pd_i-0-neq-frac12"><span class="math inline">\(H_0: P(D_i &gt; 0) = \frac{1}{2}\)</span>, <span class="math inline">\(H_A: P(D_i &gt; 0) \neq \frac{1}{2}\)</span></h3>
 <ul>
 <li><p>Let <span class="math inline">\(S = \#\{D_i &gt; 0\}\)</span></p></li>
-<li><p>Under <span class="math inline">\(H_0: S \sim \Bin(n, 1/2)\)</span></p></li>
+<li><p>After removing zeros, if <span class="math inline">\(n'\)</span> is the number of nonzero differences, then under <span class="math inline">\(H_0\)</span>, <span class="math inline">\(S \sim \Bin(n', 1/2)\)</span></p></li>
 </ul>
+<p>Test procedure:</p>
 <ol type="1">
-<li><p>Compute <span class="math inline">\(s = \#\{d_i &gt; 0\}\)</span> from data</p></li>
-<li><p>Compute <span class="math inline">\(p\)</span>-value <span class="math inline">\(p = 2 \times \min\bigl(P(S \le s), P(S \ge s)\bigr)\)</span></p></li>
-<li><p>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(p &lt; \alpha\)</span></p></li>
+<li>Compute <span class="math inline">\(D_i = X_i - Y_i\)</span></li>
+<li>Remove zeros</li>
+<li>Compute <span class="math inline">\(s = \#\{d_i &gt; 0\}\)</span></li>
+<li>Compute <span class="math inline">\(p = 2 \times \min\bigl(P(S \le s), P(S \ge s)\bigr)\)</span></li>
+<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(p &lt; \alpha\)</span></li>
 </ol>
+</section>
+<section class="slide level2">
+
 <h3 id="example">Example</h3>
-<p>Differences: <span class="math display">\[
-D = [2, -3, 0, 5, -1, 4]
-\]</span></p>
+<p>Differences: <span class="math inline">\(d = [2, -3, 0, 5, 1, 4]\)</span></p>
 <ul>
-<li>Remove zero → <span class="math inline">\(n' = 5\)</span></li>
-<li>Signs: <span class="math inline">\(+,-,+,-,+\)</span></li>
-<li><span class="math inline">\(S = 3\)</span></li>
+<li>Remove zero <span class="math inline">\(\to n' = 5\)</span></li>
+<li>Signs: <span class="math inline">\(+,-,+,+,+\)</span></li>
+<li>Thus <span class="math inline">\(s=4\)</span></li>
 </ul>
-<p>Under <span class="math inline">\(H_0\)</span>: <span class="math inline">\(S \sim \Bin(5, 1/2)\)</span></p>
-<p>Compute p-value</p>
+<p><span class="math display">\[\begin{align*}
+p
+&amp;= 2 \times \min\bigl(P(S \le 4), P(S \ge 4)\bigr) \\
+&amp;= 2 \times P(S \ge 4) \\
+&amp;= 2 \times \left[\binom{5}{4} + \binom{5}{5}\right]\left(\frac12\right)^5 \\
+&amp;= 2 \times (5+1)\times \frac{1}{32}
+= \frac{12}{32}
+= \frac{3}{8}
+= 0.375
+\end{align*}\]</span></p>
+<ul>
+<li>Do not reject <span class="math inline">\(H_0\)</span> at <span class="math inline">\(\alpha = 0.05\)</span></li>
+</ul>
 </section>
 <section id="wilcoxon-signed-rank-test" class="slide level2">
 <h2>Wilcoxon signed-rank test</h2>
@@ -684,23 +702,165 @@ D = [2, -3, 0, 5, -1, 4]
 <li>Compute <span class="math inline">\(D_i\)</span></li>
 <li>Remove zeros</li>
 <li>Rank <span class="math inline">\(|D_i|\)</span></li>
-<li>Attach sign back</li>
+<li>Compute <span class="math display">\[\begin{align*}
+W^+ &amp;= \sum_{i: D_i &gt; 0} \rank(|D_i|) \\
+W^- &amp;= \sum_{i: D_i &lt; 0} \rank(|D_i|) \\
+T &amp;= \min(W^+, W^-)
+\end{align*}\]</span></li>
 </ol>
+<p>Under <span class="math inline">\(H_0\)</span>, the ranks receive random signs.</p>
+<ul>
+<li>Small <span class="math inline">\(T\)</span> = strong evidence against <span class="math inline">\(H_0\)</span></li>
+<li>Use a table or software to compute the <span class="math inline">\(p\)</span>-value</li>
+<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(p &lt; \alpha\)</span></li>
+</ul>
 </section>
 <section class="slide level2">
 
+<h3 id="example-1">Example</h3>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p>Differences: <span class="math inline">\(d = [2, -3, 0, 5, 1, 4]\)</span></p>
+<ul>
+<li>Remove zero <span class="math inline">\(\to d = [2,-3,5,1,4]\)</span>, so <span class="math inline">\(n' = 5\)</span></li>
+<li>Absolute values: <span class="math inline">\(|d| = [2,3,5,1,4]\)</span></li>
+<li>Ranks of <span class="math inline">\(|d|\)</span>: <span class="math inline">\([2,3,5,1,4]\)</span></li>
+</ul>
+<p>Thus - <span class="math inline">\(w^+ = 2 + 5 + 1 + 4 = 12\)</span></p>
+<ul>
+<li><p><span class="math inline">\(w^- = 3\)</span></p></li>
+<li><p><span class="math inline">\(t  = \min(w^+,w^-) = 3\)</span></p></li>
+<li><p>Since the total rank sum is <span class="math inline">\(1+2+3+4+5 = 15\)</span>, <span class="math display">\[
+T \le 3 \iff w^+ \le 3 \text{ or } w^+ \ge 12
+\]</span></p></li>
+<li><p>From the table, <span class="math display">\[\begin{align*}
+p &amp; = P(w^+ \le 3) + P(w  ^+ \ge 12) \\
+&amp;= 2 \times (0.03125 + 0.03125 + 0.03125 + 0.0625)
+= 0.3125
+\end{align*}\]</span></p></li>
+</ul>
+</div><div class="column" style="width:5%;">
+<p>&nbsp;</p>
+</div><div class="column" style="width:25%;">
+<div id="45e381f9" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<style type="text/css">
+#T_0f216 th {
+  font-size: 0.8em !important;
+}
+#T_0f216  td {
+  font-size: 0.8em !important;
+}
+#T_0f216 th {
+  padding: 2px 4px;
+}
+#T_0f216  td {
+  padding: 2px 4px;
+}
+</style>
+
+<table id="T_0f216" class="caption-top">
+<thead>
+<tr class="header">
+<th id="T_0f216_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">W</th>
+<th id="T_0f216_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Count</th>
+<th id="T_0f216_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Probability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_0f216_row0_col0" class="data row0 col0">0</td>
+<td id="T_0f216_row0_col1" class="data row0 col1">1</td>
+<td id="T_0f216_row0_col2" class="data row0 col2">0.03125</td>
+</tr>
+<tr class="even">
+<td id="T_0f216_row1_col0" class="data row1 col0">1</td>
+<td id="T_0f216_row1_col1" class="data row1 col1">1</td>
+<td id="T_0f216_row1_col2" class="data row1 col2">0.03125</td>
+</tr>
+<tr class="odd">
+<td id="T_0f216_row2_col0" class="data row2 col0">2</td>
+<td id="T_0f216_row2_col1" class="data row2 col1">1</td>
+<td id="T_0f216_row2_col2" class="data row2 col2">0.03125</td>
+</tr>
+<tr class="even">
+<td id="T_0f216_row3_col0" class="data row3 col0">3</td>
+<td id="T_0f216_row3_col1" class="data row3 col1">2</td>
+<td id="T_0f216_row3_col2" class="data row3 col2">0.06250</td>
+</tr>
+<tr class="odd">
+<td id="T_0f216_row4_col0" class="data row4 col0">4</td>
+<td id="T_0f216_row4_col1" class="data row4 col1">2</td>
+<td id="T_0f216_row4_col2" class="data row4 col2">0.06250</td>
+</tr>
+<tr class="even">
+<td id="T_0f216_row5_col0" class="data row5 col0">5</td>
+<td id="T_0f216_row5_col1" class="data row5 col1">3</td>
+<td id="T_0f216_row5_col2" class="data row5 col2">0.09375</td>
+</tr>
+<tr class="odd">
+<td id="T_0f216_row6_col0" class="data row6 col0">6</td>
+<td id="T_0f216_row6_col1" class="data row6 col1">3</td>
+<td id="T_0f216_row6_col2" class="data row6 col2">0.09375</td>
+</tr>
+<tr class="even">
+<td id="T_0f216_row7_col0" class="data row7 col0">7</td>
+<td id="T_0f216_row7_col1" class="data row7 col1">3</td>
+<td id="T_0f216_row7_col2" class="data row7 col2">0.09375</td>
+</tr>
+<tr class="odd">
+<td id="T_0f216_row8_col0" class="data row8 col0">8</td>
+<td id="T_0f216_row8_col1" class="data row8 col1">3</td>
+<td id="T_0f216_row8_col2" class="data row8 col2">0.09375</td>
+</tr>
+<tr class="even">
+<td id="T_0f216_row9_col0" class="data row9 col0">9</td>
+<td id="T_0f216_row9_col1" class="data row9 col1">3</td>
+<td id="T_0f216_row9_col2" class="data row9 col2">0.09375</td>
+</tr>
+<tr class="odd">
+<td id="T_0f216_row10_col0" class="data row10 col0">10</td>
+<td id="T_0f216_row10_col1" class="data row10 col1">3</td>
+<td id="T_0f216_row10_col2" class="data row10 col2">0.09375</td>
+</tr>
+<tr class="even">
+<td id="T_0f216_row11_col0" class="data row11 col0">11</td>
+<td id="T_0f216_row11_col1" class="data row11 col1">2</td>
+<td id="T_0f216_row11_col2" class="data row11 col2">0.06250</td>
+</tr>
+<tr class="odd">
+<td id="T_0f216_row12_col0" class="data row12 col0">12</td>
+<td id="T_0f216_row12_col1" class="data row12 col1">2</td>
+<td id="T_0f216_row12_col2" class="data row12 col2">0.06250</td>
+</tr>
+<tr class="even">
+<td id="T_0f216_row13_col0" class="data row13 col0">13</td>
+<td id="T_0f216_row13_col1" class="data row13 col1">1</td>
+<td id="T_0f216_row13_col2" class="data row13 col2">0.03125</td>
+</tr>
+<tr class="odd">
+<td id="T_0f216_row14_col0" class="data row14 col0">14</td>
+<td id="T_0f216_row14_col1" class="data row14 col1">1</td>
+<td id="T_0f216_row14_col2" class="data row14 col2">0.03125</td>
+</tr>
+<tr class="even">
+<td id="T_0f216_row15_col0" class="data row15 col0">15</td>
+<td id="T_0f216_row15_col1" class="data row15 col1">1</td>
+<td id="T_0f216_row15_col2" class="data row15 col2">0.03125</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div></div>
 </section></section>
 <section>
 <section id="two-independent-samples" class="title-slide slide level1 center">
 <h1>Two independent samples</h1>
 <ul>
-<li><p>Data: <span class="math display">\[
+<li>Data: <span class="math display">\[
 X_1,\dots,X_{n_1}, \quad Y_1,\dots,Y_{n_2}
-\]</span></p></li>
-<li><p>Nonparametric:</p>
-<ul>
-<li>compare relative positions</li>
-</ul></li>
+\]</span></li>
 </ul>
 </section>
 <section class="slide level2">

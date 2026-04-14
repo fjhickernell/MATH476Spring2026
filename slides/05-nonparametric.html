@@ -656,14 +656,27 @@ What if
 </section>
 <section id="sign-test" class="slide level2">
 <h2>Sign test</h2>
-<p>Let <span class="math inline">\(S = \#\{D_i &gt; 0\}\)</span></p>
 <h3 id="displaystyle-h_0-pd_i-0-frac12-displaystyle-h_a-pd_i-0-neq-frac12"><span class="math inline">\(\displaystyle H_0: P(D_i &gt; 0) = \frac{1}{2}\)</span>, <span class="math inline">\(\displaystyle H_A: P(D_i &gt; 0) \neq \frac{1}{2}\)</span></h3>
 <ul>
-<li>Under <span class="math inline">\(H_0: S \sim \Bin(n, 1/2)\)</span></li>
+<li><p>Let <span class="math inline">\(S = \#\{D_i &gt; 0\}\)</span></p></li>
+<li><p>Under <span class="math inline">\(H_0: S \sim \Bin(n, 1/2)\)</span></p></li>
 </ul>
 <ol type="1">
-<li>Compute <span class="math inline">\(p\)</span>-value$ <span class="math inline">\(p = 2 \cdot \min\bigl(P(S \le s),; P(S \ge s)\bigr)\)</span></li>
+<li><p>Compute <span class="math inline">\(s = \#\{d_i &gt; 0\}\)</span> from data</p></li>
+<li><p>Compute <span class="math inline">\(p\)</span>-value <span class="math inline">\(p = 2 \times \min\bigl(P(S \le s), P(S \ge s)\bigr)\)</span></p></li>
+<li><p>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(p &lt; \alpha\)</span></p></li>
 </ol>
+<h3 id="example">Example</h3>
+<p>Differences: <span class="math display">\[
+D = [2, -3, 0, 5, -1, 4]
+\]</span></p>
+<ul>
+<li>Remove zero → <span class="math inline">\(n' = 5\)</span></li>
+<li>Signs: <span class="math inline">\(+,-,+,-,+\)</span></li>
+<li><span class="math inline">\(S = 3\)</span></li>
+</ul>
+<p>Under <span class="math inline">\(H_0\)</span>: <span class="math inline">\(S \sim \Bin(5, 1/2)\)</span></p>
+<p>Compute p-value</p>
 </section>
 <section id="wilcoxon-signed-rank-test" class="slide level2">
 <h2>Wilcoxon signed-rank test</h2>

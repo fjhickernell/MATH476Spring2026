@@ -26,28 +26,27 @@ subtitle: |
 
 # Why nonparametric methods?
 
-- Our inferences thus far relied assumptions about the distribution of the data in terms of parameters (e.g., mean, variance):
+- Our inferences thus far relied on assumptions about the distribution of the data through models involving unknown parameters (e.g., mean, variance):
   - Confidence intervals for means and variances assuming Bernoulli, exponential, normal, etc.
   - Hypothesis tests for means and variances assuming Bernoulli, exponential, normal, etc.
   - If the distribution is unknown, we have relied on the CLT and large $n$ to justify normal approximations
   - Regression models assuming that the response follows a prescribed distribution (e.g., normal, binomial) with parameters to be inferred
 
-<h3>What if</h3>
+<h3>When parametric assumptions are questionable</h3>
   - Data are skewed?
   - Outliers are present?
   - Only ordering is trustworthy?
 
 ## Key idea
 
-Replace raw data with
+Replace raw data  by simpler summaries such as
 
 - signs
-
 - ranks
 
 | Advantages | Disadvantages |
 |------------|----------------|
-| Fewer assumptions <br> Robustness | Loss of efficiency if parametric assumptions hold |
+| Fewer assumptions <br> Robustness | Loss of efficiency if parametric assumptions hold exactly|
 
 
 ### Roadmap
@@ -64,13 +63,13 @@ Replace raw data with
 
 - Define differences: $D_i = X_i - Y_i$
 
-- Parametric approach: paired $t$-test uses $\barD$ and $S_D$ to make inferences about $\mu_D$ assuming $D_i$ are IID normal
+- Parametric approach: paired $t$-test uses $\barD$ and $S_D$ to make inferences under the assumption that the $D_i$ are IID normal
 
 - Nonparametric approach uses signs or ranks of $D_i$
 
-## Sign test
+## Sign tests
 
-### $H_0: P(D > 0) = \frac{1}{2}$, $H_A: P(D > 0) \neq \frac{1}{2}$
+### $H_0: \Prob(D > 0) = \frac{1}{2}$ versus $H_A: \Prob(D > 0) \neq \frac{1}{2}$
 
 - Let $S = \#\{D_i > 0\}$
 
@@ -96,8 +95,8 @@ Differences: $d = [2.3, -3.4, 0, 5.1, 2.1, 3.6]$
 
 \begin{align*}
 p
-&= 2 \times \min\bigl(P(S \le 4), P(S \ge 4)\bigr) \\
-&= 2 \times P(S \ge 4) \\
+&= 2 \times \min\bigl(\Prob(S \le 4), \Prob(S \ge 4)\bigr) \\
+&= 2 \times \Prob(S \ge 4) \\
 &= 2 \times \left[\binom{5}{4} + \binom{5}{5}\right]\left(\frac12\right)^5 \\
 &= 2 \times (5+1)\times \frac{1}{32}
 = \frac{12}{32}
@@ -110,15 +109,16 @@ p
 
 ## Wilcoxon signed-rank test
 
+This test uses not only the signs of the differences, 
+
+But also the [relative sizes]{.alert} of the nonzero differences through their ranks
+
+Under $H_0$, if the distribution of $D$ is symmetric about $0$, the ranks receive random signs
+
 1. Compute $D_i$
 2. Remove zeros
 3. Rank $|D_i|$
-4. Compute
-   \begin{align*}
-   W^+ &= \sum_{i: D_i > 0} \rank(|D_i|) \\
-   W^- &= \sum_{i: D_i < 0} \rank(|D_i|) \\
-   T &= \min(W^+, W^-)
-   \end{align*}
+4. Compute $\displaystyle W^+ = \sum_{i: D_i > 0} \rank(|D_i|), \quad W^- = \sum_{i: D_i < 0} \rank(|D_i|), \quad T = \min(W^+, W^-)$
 
 Under $H_0$, the ranks receive random signs.
 
@@ -134,26 +134,23 @@ Under $H_0$, the ranks receive random signs.
 
 ::: {.column width="60%"}
 
-Differences: $d = [2, -3, 0, 5, 1, 4]$
+Differences: $d = [2.3, -3.4, 0, 5.1, 2.1, 3.6]$
 
-- Remove zero $\to d = [2,-3,5,1,4]$, so $n' = 5$
-- Absolute values: $|d| = [2,3,5,1,4]$
+- Remove zero $\to d = [2.3,-3.4,5.1,2.1,3.6]$
+- So $n' = 5$
+- Absolute values: $|d| = [2.3,3.4,5.1,2.1,3.6]$
 - Ranks of $|d|$: $[2,3,5,1,4]$
 
-Thus
+Let $w^+, w^-, t$ denote the observed values of $W^+, W^-, T$
+
 - $w^+ = 2 + 5 + 1 + 4 = 12$
 
 - $w^- = 3$
+
 - $t  = \min(w^+,w^-) = 3$
 
-- Since the total rank sum is $1+2+3+4+5 = 15$,
-  $$
-  T \le 3 \iff w^+ \le 3 \text{ or } w^+ \ge 12
-  $$
-
-- From the table,
-  \begin{align*}
-  p & = P(w^+ \le 3) + P(w  ^+ \ge 12) \\
+- \begin{align*}
+  p & = \Prob(W^+ \le 3) + \Prob(W^+ \ge 12) \\
   &
   = 0.15625 + 0.15625 = 0.3125
   \end{align*}
@@ -223,41 +220,95 @@ df.style \
 :::
 
 
-
 # Two independent samples
 
-- Data:
-  $$
-  X_1,\dots,X_{n_1}, \quad Y_1,\dots,Y_{n_2}
-  $$
+- Data from different populations: $X_1,\dots,X_{n_1}, \quad Y_1,\dots,Y_{n_2}$
+
+- Are the populations similar or different?
+
+- Parametric approach:
+  - Two-sample $t$-test for means
+  - F-test for variances
+  - Assumes normality (or large $n$ via CLT)
+
+- What if:
+  - Distributions are skewed?
+  - Outliers are present?
+  - Variances differ?
 
 
+## Mann–Whitney test
 
-
----
-
-# Mann–Whitney test
+### Key idea
 
 - Pool all observations
 - Rank them
-- Compare rank sums
+- Compare rank sums between groups
+
+### Interpretation
+
+- If the two populations are similar:
+  - ranks should be “mixed”
+
+- If one population tends to have larger values:
+  - its observations get larger ranks
 
 ---
 
-# More than two groups
+### Mann–Whitney test
+
+- Let $R_X$ = sum of ranks for the $X$ sample
+
+- Test statistic:
+  $$
+  U = R_X - \frac{n_1(n_1+1)}{2}
+  $$
+
+- Under $H_0$ (same distribution):
+  - $U$ has a known distribution (or normal approximation for large samples)
+
+- Reject $H_0$ if $U$ is too small or too large
+
+## More than two groups
 
 - Data:
   $$
-  m \text{ groups}
+  m \text{ groups}, \quad X_{ij}, \; i=1,\dots,n_j
   $$
 
+- Parametric:
+  - One-way ANOVA
+
 - Nonparametric:
-  - Kruskal–Wallis
+  - Kruskal–Wallis test
+
+---
+
+## Kruskal–Wallis test
+
+- Pool all observations
+- Rank them
+- Compare rank sums across groups
+
+## Interpretation
+
+- If all groups are similar:
+  - rank sums should be similar
+
+- Large differences in rank sums:
+  - evidence against $H_0$
 
 ---
 
 # Summary
 
-- Use signs and ranks
-- Fewer assumptions
-- More robust
+- Replace raw data with:
+  - signs (sign test)
+  - ranks (Wilcoxon, Mann–Whitney, Kruskal–Wallis)
+
+- Advantages:
+  - Fewer assumptions
+  - Robust to outliers and skewness
+
+- Tradeoff:
+  - Less efficient if parametric assumptions hold exactly

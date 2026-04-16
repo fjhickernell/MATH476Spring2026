@@ -222,16 +222,16 @@ df.style \
 
 # Two independent samples
 
-- Data from different populations: $X_1,\dots,X_{n_1}, \quad Y_1,\dots,Y_{n_2}$
+- Data from different populations: $X_1,\dots,X_{n_1}$ and  $Y_1,\dots,Y_{n_2}$
 
-- Are the populations similar or different?
+- Are the populations [similar]{.alert}?  $H_0$: same distribution
 
 - Parametric approach:
   - Two-sample $t$-test for means
   - F-test for variances
   - Assumes normality (or large $n$ via CLT)
 
-- What if:
+- But what if:
   - Distributions are skewed?
   - Outliers are present?
   - Variances differ?
@@ -261,7 +261,7 @@ df.style \
 
 - Test statistic:
   $$
-  U = R_X - \frac{n_1(n_1+1)}{2}
+  U = R_X - \frac{n_1(n_1+1)}{2} \qquad \text{how much larger than smallest possible?}
   $$
 
 - Under $H_0$ (same distribution):
@@ -271,34 +271,21 @@ df.style \
 
 ## More than two groups
 
-- Data:
-  $$
-  m \text{ groups}, \quad X_{ij}, \; i=1,\dots,n_j
-  $$
+- Data:  $X_{ij}, \; i=1,\dots,n_j$, $j=1,\dots,m$
 
-- Parametric:
-  - One-way ANOVA
+- $H_0$: same distribution for all $m$ groups
 
-- Nonparametric:
-  - Kruskal–Wallis test
+- Parametric:  one-way ANOVA
 
----
+- Nonparametric:  Kruskal–Wallis test
 
-## Kruskal–Wallis test
+### Kruskal–Wallis test
 
 - Pool all observations
 - Rank them
 - Compare rank sums across groups
 
-## Interpretation
-
-- If all groups are similar:
-  - rank sums should be similar
-
-- Large differences in rank sums:
-  - evidence against $H_0$
-
----
+- Large differences in rank sums is evidence against $H_0$
 
 # Summary
 

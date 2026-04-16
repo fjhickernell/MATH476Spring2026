@@ -38,7 +38,7 @@ Classes are held in RE 102 at 11:25 AM on Tuesdays and Thursdays
 | 8 |  Tue Mar 3 |Hypothesis testing examples, likelihood ratio tests  | |
 | | Thu Mar 5 | Likelihood ratio tests | |
 | | Fri Mar 6 | **Project Submission Due** | |
-| 9 |  Tue Mar 10 | Linear models| [Linear Models](../slides/04-linear_models.html)| |
+| 9 |  Tue Mar 10 | Linear models| [Linear Models](../slides/04-linear_models.html)|
 | | Thu Mar 12 | Ordinary least squares | |
 | | Fri Mar 13 | **Assignment 4 Due** | |
 | | Tue Mar 17 | **No Class, Spring Break** | |
@@ -55,14 +55,14 @@ Classes are held in RE 102 at 11:25 AM on Tuesdays and Thursdays
 | 12 | Tue Apr 7 | One-way ANOVA, logistic regression | |
 | | Thu Apr 9 | **Test 2** on Confidence Intervals for Variance, Hypothesis Testing, and Ordinary Least Squares Through Inference | |
 | | Fri Apr 10 | **Assignment 5 Due** | |
-| 13 | Tue Apr 14 | | [Nonparametric Methods](../slides/05-nonparametric.html)| |
-| | Thu Apr 16 | | |
+| 13 | Tue Apr 14 | Logistic regression, general linear models (GLMs) | | |
+| | Thu Apr 16 | Sign and rank tests | [Nonparametric Methods](../slides/05-nonparametric.html)|
 | 14 | Mon Apr 20 | **Project Presentation** in Galvin Tower 14th Floor West Side Conference Room | |
 | | Tue Apr 21 | **Project Presentation** in Galvin Tower 14th Floor West Side Conference Room | |
 | | Wed Apr 22 | **Project Presentation** in Galvin Tower 14th Floor West Side Conference Room | |
 | | Thu Apr 23 | | |
 | 15 | Tue Apr 28 | | |
-| | Thu Apr 30 | | |
+| | Thu Apr 30 | **Assignment 6 Due** | |
 
 ### May
 

@@ -219,6 +219,20 @@ df.style \
 
 :::
 
+---
+
+$\exstar$ What would the outcome be for $H_A: \Prob(D > 0) > \frac{1}{2}$ instead of $H_A: \Prob(D > 0) \neq \frac{1}{2}$?
+
+$\exstar$ How large does $n$ need to for there to be a chance of rejecting $H_0$ at $\alpha = 0.05$?
+
+::: {.exitem}
+<span class="exbullet">$\exstar$</span>
+<span>
+Construct an example where the sign test fails to reject $H_0$ but the Wilcoxon signed-rank test does reject $H_0$ at $\alpha = 0.05$
+</span>
+:::
+
+
 
 # Two independent samples
 
@@ -228,7 +242,7 @@ df.style \
 
 - Parametric approach:
   - Two-sample $t$-test for means
-  - F-test for variances
+  - $F$-test for variances
   - Assumes normality (or large $n$ via CLT)
 
 - But what if:

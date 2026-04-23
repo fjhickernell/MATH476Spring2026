@@ -38,6 +38,11 @@ decks:
     title: Nonparametric Methods
     short_title: Nonparametric Methods
 
+  d06:
+    file: 06-conclusion.html
+    title: Conclusion
+    short_title: Conclusion
+
 
 
 format:

@@ -16,7 +16,7 @@ include-after-body:
       </script>
 
 subtitle: |
-  <span class="deck-title">{{< meta decks.d04.title >}}</span><br> 
+  <span class="deck-title">{{< meta deck_title >}}</span><br> 
   <span class="deck-meta">{{< meta texts.wms.short >}} Ch. 11, 13<br> 
   Test 2 on 4/9 on <br>
   <span class="indent">

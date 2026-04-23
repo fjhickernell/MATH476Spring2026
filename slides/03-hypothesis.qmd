@@ -16,7 +16,7 @@ include-after-body:
       </script>
 
 subtitle: |
-  <span class="deck-title">{{< meta decks.d03.title >}}</span><br> 
+  <span class="deck-title">{{< meta deck_title >}}</span><br> 
   <span class="deck-meta">{{< meta texts.wms.short >}} Ch. 10<br> 
   Assignment 4 due 3/13 <br>
   Assignment 5 due 4/10 </span>

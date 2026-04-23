@@ -43,8 +43,6 @@ decks:
     title: Conclusion
     short_title: Conclusion
 
-
-
 format:
   revealjs:
     navigation-mode: grid

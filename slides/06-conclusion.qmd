@@ -8,8 +8,8 @@ include-after-body:
   - text: |
       <script id="deck-nav-meta" type="application/json">
       {
-        "deck_prev_file": "{{< meta decks.d04.file >}}",
-        "deck_prev_title": "{{< meta decks.d04.title >}}",
+        "deck_prev_file": "{{< meta decks.d05.file >}}",
+        "deck_prev_title": "{{< meta decks.d05.title >}}",
         "deck_next_file": "",
         "deck_next_title": ""
       }

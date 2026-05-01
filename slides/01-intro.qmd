@@ -28,6 +28,7 @@ subtitle: |
 - [{{< meta decks.d02.title >}}]({{< meta decks.d02.file >}})
 - [{{< meta decks.d03.title >}}]({{< meta decks.d03.file >}})
 - [{{< meta decks.d04.title >}}]({{< meta decks.d04.file >}})
+- [{{< meta decks.d05.title >}}]({{< meta decks.d05.file >}})
 
 {{< include ../classlib/classlib/quarto/slides/shared/statistics/intro/how-to-read-slides.qmd >}}
 

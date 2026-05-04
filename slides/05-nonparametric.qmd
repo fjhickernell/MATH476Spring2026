@@ -91,7 +91,7 @@ Differences: $d = [2.3, -3.4, 0, 5.1, 2.1, 3.6]$
 
 - Remove zero $\to n' = 5$
 - Signs: $+,-,+,+,+$
-- Thus $s=4$
+- Thus, $s=4$
 
 \begin{align*}
 p
